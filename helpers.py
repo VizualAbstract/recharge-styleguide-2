@@ -2,7 +2,7 @@
 
 from flask import Flask
 from flask import render_template, render_template_string, make_response, escape
-from run import app
+from styleguide import app
 
 # Global variables
 site_name = "website"

@@ -1,4 +1,4 @@
-from run import app
+from styleguide import app
 
 if (app.debug):
     from werkzeug.debug import DebuggedApplication

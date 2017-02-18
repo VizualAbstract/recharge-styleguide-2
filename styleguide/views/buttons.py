@@ -4,7 +4,7 @@ from flask import Flask
 from flask import render_template, render_template_string, make_response, escape
 from jinja2 import Environment, Undefined
 from helpers import *
-from run import app
+from styleguide import app
 
 @app.route('/')
 def index():
