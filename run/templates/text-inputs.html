@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Text Inputs{% endblock %}
+{% block body %}
+<h1>Text inputs</h1>
+<p>The traditional input field is best utilized for collecting variables such as: names, emails, addresses and passwords.</p>
+<div class="rc_example">
+	{{ ui_element("form/label", {'label': 'Text input', 'for': 'text_input'}) | safe }}
+	{{ ui_element("form/text_input", {'id': 'text_input', 'name': 'text_input', 'placeholder': 'Placeholder text'}) | safe }}
+</div>
+<h2>Input types</h2>
+<h3>Text</h3>
+<div class="rc_example">
+	{{ ui_element("form/text_input", {'type': 'text', 'id': 'text', 'name': 'text', 'placeholder': 'password', 'value': 'Text'}) | safe }}
+</div>
+
+<h3>Email</h3>
+<p>Using <code>type="email"</code> will trigger rudimentary browser validation.</p>
+<div class="rc_example">
+	{{ ui_element("form/text_input", {'type': 'email', 'id': 'email', 'name': 'email', 'placeholder': 'email', 'value': 'email@address.com'}) | safe }}
+</div>
+
+<h3>Password</h3>
+<div class="rc_example">
+	{{ ui_element("form/text_input", {'type': 'password', 'id': 'password', 'name': 'password', 'placeholder': 'password', 'value': 'Password'}) | safe }}
+</div>
+<h2>Field groups</h2>
+<p>Field groups will improve the presentation of form inputs. Additionally, consider wraping them up in the <code>&lt;fieldset&gt;&lt;/fieldset&gt;</code> element.</p>
+<div class="rc_example">
+	{{ ui_element("form/field_text_input", {'label': 'First name', 'id': 'first_name', 'name': '
+	first_name', 'placeholder': 'Your first name', 'value': 'James', 'required': True}) | safe }}
+	{{ ui_element("form/field_text_input", {'label': 'Password', 'type': 'password', 'id': 'password', 'name': 'password', 'placeholder': 'password', 'value': 'Existing value'}) | safe }}
+</div>
+{% endblock %}

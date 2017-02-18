@@ -1,0 +1,14 @@
+.form__label {
+	display: block;
+	max-width: 100%; // Force IE8 to wrap long content
+	font-weight: normal;
+	font-style: normal;
+	display: block;
+	line-height: 1;
+	font-family: 'ralewayregular';
+	margin-bottom: 15px;
+}
+
+.form__group {
+	margin-bottom: 35px;
+}

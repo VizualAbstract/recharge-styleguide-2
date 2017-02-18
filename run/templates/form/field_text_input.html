@@ -1,0 +1,4 @@
+<div class="form__group">
+	<label for="{{ parameters['id'] }}" class="form__label">{{ parameters['label'] }}</label>
+	<input type="{{ parameters['type'] }}" id="{{ parameters['id'] }}" name="{{ parameters['name'] }}" placeholder="{{ parameters['placeholder'] }}" value="{{ parameters['value'] }}"{% if parameters['javascript'] %} onClick="{{ parameters['onclick'] }}"{% endif %}{% if parameters['disabled'] %} disabled{% endif %}{% if parameters['required'] %} required{% endif %}{% if parameters['autocomplete'] == True %} autocomplete="on"{% endif %}{% if parameters['autocomplete'] == False %} autocomplete="off"{% endif %} class="form__input">
+</div><!-- .form__group -->

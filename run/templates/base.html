@@ -1,0 +1,54 @@
+{% set page_title = page_title | default('') %}
+{% set page_class = page_class | default(page_title) | lower %}
+{% set active_page = active_page | default(page_class) %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ page_title | site_title }}</title>
+		<link href="{{ url_for('static', filename='css/style.scss.css') }}" rel="stylesheet" type="text/css">
+	</head>
+	<body class="{% if page_class %}page__{{ page_class }}{% endif %}">
+	<style>
+		.rc_container {
+			margin: 20px;
+		}
+		.rc_example {
+			padding: 20px;
+			border: 1px solid #CCC;
+			box-shadow: 4px 4px 0 0px #DDD;
+		}
+		.rc_example + .rc_example {
+			margin-top: 25px;
+		}
+		.rc_container > h1,
+		.rc_container > h2,
+		.rc_container > h3 {
+			margin-bottom: 10px;
+			font-family: 'ralewaysemibold';
+		}
+		.rc_container > h1 {
+			font-size: 40px;
+			font-family: 'ralewaybold';
+		}
+		.rc_container > h2 {
+			margin-top: 40px;
+			font-size: 25px;
+			font-family: 'ralewaysemibold';
+		}
+		.rc_container > h3 {
+			margin-top: 20px;
+			font-size: 18px;
+			font-family: 'ralewaymedium';
+		}
+		.rc_container > p {
+			margin: 5px 0 10px;
+			font-family: 'ralewaymedium';
+			font-size: 14px;
+		}
+	</style>
+	<div class="rc_container">
+		<a href="/">Index</a> <a href="/buttons">Buttons</a> <a href="/text-inputs">Text Inputs</a>
+{% block body %}
+{% endblock %}
+	</body>
+</html>

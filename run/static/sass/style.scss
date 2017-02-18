@@ -1,0 +1,103 @@
+@import 'helpers/_variables.scss';
+@import 'helpers/_reset.scss';
+@import 'helpers/_normalize.scss';
+@import 'helpers/_fonts.scss';
+
+body,
+html {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+input, button, p, a {
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Variables */
+// Standard contrast
+$white: #FFFFFF;
+$black: #000000;
+// Shades
+$gray-lighter: #EEEEEE;
+$gray-light: #CCCCCC;
+$gray: #8E8F8E;
+$gray-dark: #676767;
+$gray-darker: #424242;
+// Colors
+$cyan: #53BAD3;
+$blue: #2C93AC;
+$green: #2BAC8F;
+$aquamarine: #4DD6B7;
+$mint: #BDF0E4;
+$yellow: #FFF155;
+$orange: #FB8309;
+$red: #EC3D10;
+$magenta: #C00399;
+$pink: #D06EAB;
+// Brand
+$brand: $blue; // #2C93AC
+
+// Status-related
+$default: $gray-darker;
+$primary: $aquamarine;
+$danger: $red;
+$disabled: $gray-light;
+
+// Font sizes
+$font-size-small: 14px !default;
+$font-size-base: 16px !default;
+$font-size-large: 24px !default;
+
+
+
+
+@import '_labels.scss';
+@import '_buttons.scss';
+@import '_text-inputs.scss';
+
+$h1-font-size: 35px !default;
+$h2-font-size: 30px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 20px !default;
+$h5-font-size: 16px !default;
+
+h1, .rc_h1 {
+	font-size: $h1-font-size;
+	font-family: 'ralewayregular', arial, san-serif;
+	font-weight: normal;
+	font-style: normal;
+	margin-top: 23px;
+	margin-bottom: 38px;
+}
+h2, .rc_h2 {
+	font-size: $h2-font-size;
+	font-family: 'ralewayregular', arial, san-serif;
+	font-weight: normal;
+	font-style: normal;
+	margin-bottom: 12px;
+}
+h3, .rc_h3 {
+	font-family: 'ralewaysemibold', arial, san-serif;
+	font-size: $h3-font-size;
+	font-weight: normal;
+	font-style: normal;
+}
+h4, .rc_h4 {
+	font-family: 'ralewayregular', arial, san-serif;
+	font-weight: normal;
+	font-size: $h4-font-size;
+	line-height: 24px;
+	margin-bottom: 22px;
+}
+h5, .rc_h5 {
+	font-family: 'ralewaysemibold', arial, san-serif;
+	font-size: $h5-font-size;
+	font-weight: normal;
+	line-height: 25px;
+	font-style: normal;
+}
