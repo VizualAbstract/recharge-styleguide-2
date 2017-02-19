@@ -22,29 +22,61 @@ def build_title(page_title):
     return capitalize_title + " | " + site_name
 app.jinja_env.globals.update(build_title = build_title)
 
-def validate_color(color):
+def validate_colors(color):
     if color in list_swatch_defaults:
-        return True
+        return color
     elif color in list_swatch_colors:
-        return True
+        return color
     elif color in list_swatch_shades:
-        return True
+        return color
     elif color in list_swatch_keywords:
-        return True
+        return color
     else:
         return False
 
 def validate_styles(style):
     if style in list_styles:
-        return True
+        return style
     else:
         return False
 
 def validate_sizes(size):
     if size in list_sizes:
-        return True
+        return size
     else:
         return False
+
+def ui_element(component, parameters = {}):
+    ui_template = str(component) + ".html"
+
+    if type(parameters) is dict:
+        # Creat a tooltip if necessary
+        try:
+            parameters["tooltip"] = render_template("dynamic/tooltip.html", parameters = parameters["tooltip"])
+        except:
+            parameters["tooltip"] = ''
+    if str(component) == 'buttons/button':
+        try:
+            color = validate_colors(parameters["color"])
+            parameters["color"] = " button--" + str(color)
+        except:
+            pass
+        try:
+            style = validate_styles(parameters["style"])
+            parameters["style"] = " button--" + str(style)
+        except:
+            pass
+        try:
+            size = validate_sizes(parameters["size"])
+            parameters["size"] = " button--" + str(size)
+        except:
+            pass
+    else:
+        return False
+
+    return render_template(ui_template, parameters = parameters)
+
+app.jinja_env.globals.update(ui_element = ui_element)
 
 # Custom Filters
 @app.template_filter('site_title')

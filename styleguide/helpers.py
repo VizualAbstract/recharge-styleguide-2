@@ -45,6 +45,23 @@ def validate_sizes(size):
     else:
         return False
 
+def ui_element(component, parameters = {}):
+    ui_template = str(component) + ".html"
+
+    if type(parameters) == dict:
+        # Create a tooltip if requested
+        try:
+            parameter['tooltip'] = render_template("dynamic/tooltip.html", parameters = parameters['tooltip'])
+        except:
+            parameter['tooltip'] = ''
+    if str(component)  == 'buttons/button':
+        try:
+            color = validate_colors(parameters['color'])
+            parameter['color'] = " button--" + str(color)
+    except:
+        return False
+app.jinja_env.globals.update(ui_element = ui_element)
+
 # Custom Filters
 @app.template_filter('site_title')
 def site_title(page_title):
