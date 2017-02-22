@@ -2,6 +2,7 @@
 
 from flask import Flask
 from flask import render_template, render_template_string, make_response, escape
+from styleguide import app
 
 # Global variables
 site_name = "website"
@@ -21,29 +22,61 @@ def build_title(page_title):
     return capitalize_title + " | " + site_name
 app.jinja_env.globals.update(build_title = build_title)
 
-def validate_color(color):
+def validate_colors(color):
     if color in list_swatch_defaults:
-        return True
+        return color
     elif color in list_swatch_colors:
-        return True
+        return color
     elif color in list_swatch_shades:
-        return True
+        return color
     elif color in list_swatch_keywords:
-        return True
+        return color
     else:
         return False
+app.jinja_env.globals.update(validate_colors = validate_colors)
 
 def validate_styles(style):
     if style in list_styles:
-        return True
+        return style
     else:
         return False
+app.jinja_env.globals.update(validate_styles = validate_styles)
 
 def validate_sizes(size):
     if size in list_sizes:
-        return True
+        return size
     else:
         return False
+app.jinja_env.globals.update(validate_sizes = validate_sizes)
+
+def ui_element(component, parameters = {}):
+    ui_template = str(component) + ".html"
+
+    if type(parameters) == dict:
+        # Create a tooltip if requested
+        try:
+            parameters['tooltip'] = render_template("dynamic/tooltip.html", parameters = parameters['tooltip'])
+        except:
+            parameters['tooltip'] = ''
+    if str(component)  == 'buttons/button':
+        # import ipdb; ipdb.set_trace()
+        try:
+            color = validate_colors(parameters['color'])
+            parameters['color'] = " button--" + str(color)
+        except:
+            parameters['color'] = ''
+        try:
+            style = validate_styles(parameters['style'])
+            parameters['style'] = " button--" + str(style)
+        except:
+            parameters['style'] = ''
+        try:
+            size = validate_sizes(parameters['size'])
+            parameters['size'] = " button--" + str(size)
+        except:
+            parameters['size'] = ''
+    return render_template(ui_template, parameters = parameters)
+app.jinja_env.globals.update(ui_element = ui_element)
 
 # Custom Filters
 @app.template_filter('site_title')
