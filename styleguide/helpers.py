@@ -3,6 +3,7 @@
 from flask import Flask
 from flask import render_template, render_template_string, make_response, escape
 from styleguide import app
+import random, string
 
 # Global variables
 site_name = "website"
@@ -63,6 +64,10 @@ def ui_element(component, parameters = {}):
             parameters['id'] = str(parameters['for'])
         except:
             parameters['id'] = ''
+    if str(component) in ['form/checkbox', 'form/field_checkbox']:
+        if 'id' not in parameters:
+            # An id attribute is required for a checkbox. If none is provided, generate a random one
+            parameters['id'] = ''.join([random.choice(string.lowercase) for i in xrange(10)])
     if str(component) == 'buttons/button':
         try:
             color = validate_colors(parameters['color'])

@@ -6,4 +6,9 @@
 	{{ ui_element("form/checkbox", {'label': 'Checkbox label', 'id': 'checkbox', 'name': 'checkbox', 'checked': 'true'}) | safe }}
 	{{ ui_element("form/field_checkbox", {'label': 'Field checkbox label', 'id': 'field_checkbox', 'name': 'field_checkbox'}) | safe }}
 </div>
+
+<div class="rc_example">
+{{ ui_element("form/field_checkbox", {"label": "My Checkbox", "checked": "true"}) | safe }}
+{{ ui_element("form/field_checkbox", {"label": "My 2nd Checkbox", "id": "allowed_checkbox_2"}) | safe }}
+</div>
 {% endblock %}
