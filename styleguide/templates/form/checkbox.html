@@ -1,0 +1,2 @@
+<input type="checkbox" id="{{ parameters['id'] }}" name="{{ parameters['name'] }}"{% if parameters['value'] %} value="{{ parameters['value'] }}"{% endif %}{% if parameters['checked'] %} checked{% endif %} class="form__checkbox">
+{% include 'form/label.html' %}

@@ -3,16 +3,18 @@
 @import 'helpers/_normalize.scss';
 @import 'helpers/_fonts.scss';
 
-body,
-html {
-	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-}
-
 * {
 	box-sizing: border-box;
 }
 
-input, button, p, a {
+body,
+html {
+	font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-weight: normal;
+	font-style: normal;
+	color: #424242;
+	font-size: 16px;
+	line-height: 1.5625;
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -53,12 +55,16 @@ $font-size-small: 14px !default;
 $font-size-base: 16px !default;
 $font-size-large: 24px !default;
 
-
+$input-disabled-background: #F9F9F9 !default;
+$input-disabled-border: #CCC !default;
+$input-disabled-color: #999 !default;
+$cursor-disabled: not-allowed;
 
 
 @import '_labels.scss';
 @import '_buttons.scss';
 @import '_text-inputs.scss';
+@import '_checkboxes.scss';
 
 $h1-font-size: 35px !default;
 $h2-font-size: 30px !default;

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Checkboxes{% endblock %}
+{% block body %}
+<h1>Checkboxes</h1>
+<div class="rc_example">
+	{{ ui_element("form/checkbox", {'label': 'Checkbox label', 'id': 'checkbox', 'name': 'checkbox', 'checked': 'true'}) | safe }}
+	{{ ui_element("form/field_checkbox", {'label': 'Field checkbox label', 'id': 'field_checkbox', 'name': 'field_checkbox'}) | safe }}
+</div>
+{% endblock %}

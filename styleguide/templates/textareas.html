@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Textareas{% endblock %}
+{% block body %}
+<h1>Textareas</h1>
+<p>While the textarea is useful for large blocks of text, the <strong>Code</strong> version is more prominently used in ReCharge for CSS, HTML and template code entry</p>
+<div class="rc_example">
+	{{ ui_element("form/label", {'label': 'Textarea', 'for': 'textarea'}) | safe }}
+	{{ ui_element("form/textarea", {'id': 'textarea', 'name': 'textarea'}) | safe }}
+</div>
+<h2>Textarea types</h2>
+<h3>Default</h3>
+<div class="rc_example">
+	{{ ui_element("form/textarea", {'id': 'textarea_text', 'name': 'textarea_text', 'value': 'Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.'}) | safe }}
+	{{ ui_element("form/textarea", {'id': 'textarea_placeholder', 'name': 'textarea_placeholder', 'placeholder': 'Sed posuere consectetur est at lobortis'}) | safe }}
+	{{ ui_element("form/textarea", {'id': 'textarea_disabled', 'name': 'textarea_disabled', 'placeholder': 'Disabled textarea', 'disabled': 'True'}) | safe }}
+</div>
+
+<h3>Code</h3>
+<p>While the textarea doesn't use the attribute <code>type</code>, passing in <code>'type': 'code'</code> will stylize the input so it uses a monospace font.</p>
+<div class="rc_example">
+	{{ ui_element("form/textarea", {'type': 'code', 'id': 'textarea_code', 'name': 'textarea_code', 'placeholder': 'Enter html...', 'value': 'Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit.'}) | safe }}
+</div>
+
+<h2>Field groups</h2>
+<p>Field groups will improve the presentation of form inputs. Additionally, consider wraping them up in the <code>&lt;fieldset&gt;&lt;/fieldset&gt;</code> element.</p>
+<div class="rc_example">
+	{{ ui_element("form/field_textarea", {'label': 'Biography', 'id': 'biography', 'name': '
+	biography', 'value': 'Born in Los Angeles.', 'required': True}) | safe }}
+</div>
+{% endblock %}

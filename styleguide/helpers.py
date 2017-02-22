@@ -58,8 +58,12 @@ def ui_element(component, parameters = {}):
             parameters['tooltip'] = render_template("dynamic/tooltip.html", parameters = parameters['tooltip'])
         except:
             parameters['tooltip'] = ''
-    if str(component)  == 'buttons/button':
-        # import ipdb; ipdb.set_trace()
+    if str(component) == 'form/label':
+        try:
+            parameters['id'] = str(parameters['for'])
+        except:
+            parameters['id'] = ''
+    if str(component) == 'buttons/button':
         try:
             color = validate_colors(parameters['color'])
             parameters['color'] = " button--" + str(color)

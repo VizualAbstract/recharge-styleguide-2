@@ -10,7 +10,9 @@
 <h2>Input types</h2>
 <h3>Text</h3>
 <div class="rc_example">
-	{{ ui_element("form/text_input", {'type': 'text', 'id': 'text', 'name': 'text', 'placeholder': 'password', 'value': 'Text'}) | safe }}
+	{{ ui_element("form/text_input", {'type': 'text', 'id': 'text', 'name': 'text'}) | safe }}
+	{{ ui_element("form/text_input", {'type': 'text', 'id': 'text', 'name': 'text', 'placeholder': 'Placeholder text'}) | safe }}
+	{{ ui_element("form/text_input", {'type': 'text', 'id': 'text', 'name': 'text', 'placeholder': 'Disabled', 'disabled': 'True'}) | safe }}
 </div>
 
 <h3>Email</h3>

@@ -20,3 +20,13 @@ def buttons():
 def text_inputs():
     template_file = "text-inputs.html"
     return render_template(template_file)
+
+@app.route('/textareas')
+def textareas():
+    template_file = "textareas.html"
+    return render_template(template_file)
+
+@app.route('/checkboxes')
+def checkboxes():
+    template_file = "checkboxes.html"
+    return render_template(template_file)

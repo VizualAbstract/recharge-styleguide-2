@@ -1,0 +1,1 @@
+<textarea id="{{ parameters['id'] }}" name="{{ parameters['name'] }}" placeholder="{{ parameters['placeholder'] }}"{% if parameters['disabled'] %} disabled{% endif %}{% if parameters['required'] %} required{% endif %} class="form__input{% if parameters['type'] == 'code' %} form__input--code{% endif %}">{{ parameters['value'] }}</textarea>

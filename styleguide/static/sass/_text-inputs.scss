@@ -16,6 +16,21 @@
 	overflow: visible;
 	font-family: 'ralewayregular';
 	margin: 0;
+
+	+ .form__input {
+		margin-top: 10px;
+	}
+}
+
+.form__input {
+	&.button--disabled,
+	&:disabled,
+	&[disabled] {
+		background-color: $input-disabled-background !important;
+		border-color: $input-disabled-border !important;
+		color: $input-disabled-color !important;
+		cursor: $cursor-disabled;
+	}
 }
 
 .form__input {
@@ -38,6 +53,17 @@
 	}
 	&:-ms-input-placeholder {
 		color: $gray-dark;
+	}
+}
+
+textarea.form__input {
+	line-height: 1.5625;
+	padding: 7px 10px;
+	height: auto;
+	min-height: 100px;
+	&--code {
+		font-family: 'pt-mono', monospace;
+		line-height: 21px;
 	}
 }
 
