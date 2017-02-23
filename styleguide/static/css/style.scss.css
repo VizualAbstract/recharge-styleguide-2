@@ -1699,13 +1699,17 @@ textarea.form__input--code {
 .form__checkbox + .form__label {
   cursor: pointer;
   display: block;
-  line-height: 20px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.form__checkbox + .form__label + .form__checkbox + .form__label {
+  margin-top: 20px;
 }
 
 .form__checkbox + .form__label:after {
   display: table;
   content: "";
-  margin: 10px 0;
 }
 
 .form__checkbox + .form__label:before {
@@ -1716,7 +1720,7 @@ textarea.form__input--code {
   box-sizing: border-box;
   background-color: #FFF;
   margin-right: 9px;
-  line-height: 15px;
+  line-height: 16px;
   text-indent: 1px;
   font-size: 11px;
   color: #FFF;
@@ -1729,16 +1733,24 @@ textarea.form__input--code {
   top: -2px;
 }
 
-.form__group .form__checkbox:first-of-type + .form__label {
-  margin-top: 6px;
+.form__checkbox.error + .form__label {
+  color: #EC3D10;
 }
 
-.form__checkbox:checked + .form__label:before, .form__checkbox.form__checkbox--checked + .form__label:before, .form__checkbox.form__input--checked + .form__label:before, .form__checkbox.checked + .form__label:before {
+.form__checkbox.error + .form__label:before {
+  border-color: #EC3D10;
+}
+
+.form__checkbox.error:checked + .form__label:before, .form__checkbox.error.checked + .form__label:before {
+  background-color: #EC3D10;
+}
+
+.form__checkbox:checked + .form__label:before, .form__checkbox.checked + .form__label:before {
   content: "\f00c";
   background-color: #767676;
 }
 
-.form__checkbox:disabled + .form__label:before, .form__checkbox.form__checkbox--disabled + .form__label:before, .form__checkbox.form__input--disabled + .form__label:before, .form__checkbox.disabled + .form__label:before {
+.form__checkbox:disabled + .form__label:before, .form__checkbox.disabled + .form__label:before {
   content: "\f068";
   color: #767676;
   text-indent: 3px;

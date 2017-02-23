@@ -4,12 +4,17 @@
 	+ .form__label {
 		cursor: pointer;
 		display: block;
-		line-height: 20px;
+		line-height: 1;
+		margin-bottom: 0;
+
+		+ .form__checkbox + .form__label {
+			margin-top: 20px;
+		}
 
 		&:after {
 			display: table;
 			content: "";
-			margin: 10px 0;
+			// margin: 10px 0;
 		}
 
 		&:before {
@@ -22,7 +27,7 @@
 
 			margin-right: 9px;
 
-			line-height: 15px;
+			line-height: 16px;
 			text-indent: 1px;
 			font-size: 11px;
 
@@ -40,18 +45,35 @@
 	}
 }
 
+.form__checkbox {
+	&.error {
+		+ .form__label {
+			color: #EC3D10;
+			&:before {
+				border-color: #EC3D10;
+			}
+		}
+		&:checked,
+		&.checked {
+			+ .form__label {
+				&:before {
+					background-color: #EC3D10;
+				}
+			}
+		}
+	}
+}
+
 .form__group {
 	.form__checkbox:first-of-type {
 		+ .form__label {
-			margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
+			// margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
 		}
 	}
 }
 
 .form__checkbox {
 	&:checked,
-	&.form__checkbox--checked,
-	&.form__input--checked,
 	&.checked {
 
 		+ .form__label {
@@ -65,8 +87,6 @@
 
 .form__checkbox {
 	&:disabled,
-	&.form__checkbox--disabled,
-	&.form__input--disabled,
 	&.disabled {
 
 		+ .form__label {

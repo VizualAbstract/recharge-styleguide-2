@@ -1,2 +1,2 @@
-<input type="checkbox" id="{{ parameters['id'] }}" name="{{ parameters['name'] }}"{% if parameters['value'] %} value="{{ parameters['value'] }}"{% endif %}{% if parameters['checked'] %} checked{% endif %} class="form__checkbox">
+<input type="checkbox" id="{{ parameters['id'] }}" name="{{ parameters['name'] }}"{% if parameters['value'] %} value="{{ parameters['value'] }}"{% endif %}{% if parameters['checked'] %} checked{% endif %}{% if parameters['disabled'] %} disabled{% endif %} class="form__checkbox{% if parameters['error'] %} error{% endif %}">
 {% include 'form/label.html' %}
