@@ -1,11 +1,11 @@
-.form__checkbox {
+.form__radio {
 	display: none;
 
 	+ .form__label {
 		cursor: pointer;
 		margin-bottom: 0;
 
-		+ .form__checkbox + .form__label {
+		+ .form__radio + .form__label {
 			margin-top: 20px;
 		}
 
@@ -41,7 +41,16 @@
 	}
 }
 
-.form__checkbox {
+.form__radio {
+	+ label,
+	+ .form__radio__label {
+		&:before {
+			border-radius: 50%;
+		}
+	}
+}
+
+.form__radio {
 	&.error {
 		+ .form__label {
 			color: #EC3D10;
@@ -61,14 +70,14 @@
 }
 
 .form__group {
-	.form__checkbox:first-of-type {
+	.form__radio:first-of-type {
 		+ .form__label {
 			// margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
 		}
 	}
 }
 
-.form__checkbox {
+.form__radio {
 	&:checked,
 	&.checked {
 

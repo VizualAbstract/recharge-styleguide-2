@@ -30,3 +30,8 @@ def textareas():
 def checkboxes():
     template_file = "checkboxes.html"
     return render_template(template_file)
+
+@app.route('/radios')
+def radios():
+    template_file = "radios.html"
+    return render_template(template_file)

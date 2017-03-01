@@ -2,6 +2,7 @@
 {% block title %}Checkboxes{% endblock %}
 {% block body %}
 <h1>Checkboxes</h1>
+<p>Checkboxes act as switches for booleans, perfect for enabling or disabling multiple options. They also include styling for <code>disabled</code> and <code>.error</code> class.</p>
 <div class="rc_example">
 	{{ ui_element("form/checkbox", {'label': 'Checkbox 1', 'id': 'checkbox_1', 'name': 'checkbox_1', 'checked': 'true'}) | safe }}
 	{{ ui_element("form/checkbox", {'label': 'Checkbox 2', 'id': 'checkbox_2', 'name': 'checkbox_2'}) | safe }}
@@ -9,10 +10,26 @@
 	{{ ui_element("form/checkbox", {'label': 'Checkbox 4', 'id': 'checkbox_4', 'name': 'checkbox_4', 'checked': 'true', 'error': 'true'}) | safe }}
 </div>
 
+<h2>Using checkboxes</h2>
+<h3>Required ID</h3>
+<p>In order to use the label to trigger the checkbox, the input requires that both the <code>id</code> be set, as well as the proceeding label's <code>for</code> attribute. These must match.</p>
 <div class="rc_example">
-	{{ ui_element("form/field_checkbox", {'label': 'Checkbox 1', 'id': 'checkbox_1', 'name': 'checkbox_1', 'checked': 'true'}) | safe }}
-	{{ ui_element("form/field_checkbox", {'label': 'Checkbox 2', 'id': 'checkbox_2', 'name': 'checkbox_2'}) | safe }}
-	{{ ui_element("form/field_checkbox", {'label': 'Checkbox 3', 'id': 'checkbox_3', 'name': 'checkbox_3', 'disabled': 'true'}) | safe }}
-	{{ ui_element("form/field_checkbox", {'label': 'Checkbox 4', 'id': 'checkbox_4', 'name': 'checkbox_4', 'checked': 'true', 'error': 'true'}) | safe }}
+	{{ ui_element("form/field_checkbox", {'label': 'Group 1', 'checked': 'true'}) | safe }}
+	{{ ui_element("form/field_checkbox", {'label': 'Group 2', 'checked': 'true'}) | safe }}
+</div>
+
+<h3>Form groups</h3>
+<p>Checkboxes are best when bundled up within a <code>.form__group</code> element with several other options.</p>
+<div class="rc_example">
+	<div class="form__group">
+		{{ ui_element("form/checkbox", {'label': 'Enable colors', 'checked': 'true'}) | safe }}
+		{{ ui_element("form/checkbox", {'label': 'Enable shadows'}) | safe }}
+		{{ ui_element("form/checkbox", {'label': 'Enable light', 'checked': 'true'}) | safe }}
+	</div>
+	<div class="form__group">
+		{{ ui_element("form/checkbox", {'label': 'Include eyes?', 'checked': 'true'}) | safe }}
+		{{ ui_element("form/checkbox", {'label': 'Include hands?', 'disabled': 'true'}) | safe }}
+		{{ ui_element("form/checkbox", {'label': 'Include feet?', 'checked': 'true', 'error': 'true'}) | safe }}
+	</div>
 </div>
 {% endblock %}

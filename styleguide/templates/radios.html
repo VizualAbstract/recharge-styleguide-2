@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Radios{% endblock %}
+{% block body %}
+<h1>Radios</h1>
+<p>Radios allow the single-selection from an small array of options. Useful if multiple options need to be immediatly visible, unlike a dropdown select.</p>
+<div class="rc_example">
+	{{ ui_element("form/radio", {'label': 'Radio 1', 'id': 'radio_1', 'checked': 'true'}) | safe }}
+	{{ ui_element("form/radio", {'label': 'Radio 2', 'id': 'radio_2'}) | safe }}
+	{{ ui_element("form/radio", {'label': 'Radio 3', 'id': 'radio_3', 'disabled': 'true'}) | safe }}
+	{{ ui_element("form/radio", {'label': 'Radio 4', 'id': 'radio_4', 'error': 'true'}) | safe }}
+</div>
+
+<h2>Using Radios</h2>
+<h3>Required ID</h3>
+<p>In order to use the label to trigger the checkbox, the input requires that both the <code>id</code> be set, as well as the proceeding label's <code>for</code> attribute. These must match.</p>
+<div class="rc_example">
+	{{ ui_element("form/field_radio", {'label': 'Group 1', 'id': 'radio_group_1'}) | safe }}
+	{{ ui_element("form/field_radio", {'label': 'Group 2', 'id': 'radio_group_2'}) | safe }}
+</div>
+
+<h3>Required name</h3>
+<p>And in order to be able to switch between related radio-options, they must all share the same name.</p>
+<p>Additionally, this makes only one radio option selectable at any given time within the group.</p>
+<div class="rc_example">
+	<div class="form__group">
+		{{ ui_element("form/field_radio", {'name': 'alignment', 'label': 'Left', 'id': 'alignment_left', 'checked': 'true'}) | safe }}
+		{{ ui_element("form/field_radio", {'name': 'alignment', 'label': 'Center', 'id': 'alignment_center'}) | safe }}
+		{{ ui_element("form/field_radio", {'name': 'alignment', 'label': 'Right', 'id': 'alignment_right'}) | safe }}
+	</div>
+</div>
+
+<h3>Radio groups</h3>
+<p>Radios are best visualized when bundled up within a <code>.form__group</code> element with several other options.</p>
+<div class="rc_example">
+	<div class="form__group">
+		{{ ui_element("form/radio", {'name': 'case_type', 'label': 'lowercase', 'id': 'case_type_case'}) | safe }}
+		{{ ui_element("form/radio", {'name': 'case_type', 'label': 'UPPERCASE', 'id': 'case_type_uppercase'}) | safe }}
+		{{ ui_element("form/radio", {'name': 'case_type', 'label': 'CamelCase', 'id': 'case_type_camelcase', 'checked': 'true'}) | safe }}
+	</div>
+</div>
+{% endblock %}
