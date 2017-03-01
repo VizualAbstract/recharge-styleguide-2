@@ -1882,14 +1882,8 @@ h5, .rc_h5 {
 
 .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
 .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
+  line-height: 1;
   margin: 0;
-}
-
-@media screen and (min-width: 678px) {
-  .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
-  .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
-    line-height: 1;
-  }
 }
 
 @media screen and (max-width: 677px) {

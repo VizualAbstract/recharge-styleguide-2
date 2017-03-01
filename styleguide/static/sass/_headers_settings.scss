@@ -27,10 +27,8 @@
 
 	h1, h2, h3, h4, h5, h6,
 	.rc_h1, .rc_h2, .rc_h3, .rc_h4, .rc_h5, .rc_h6 {
+		line-height: 1;
 		margin: 0;
-		@media screen and (min-width: $screen-sm-min) {
-			line-height: 1;
-		}
 		@media screen and (max-width: $screen-xs-max) {
 			display: table;
 		}
