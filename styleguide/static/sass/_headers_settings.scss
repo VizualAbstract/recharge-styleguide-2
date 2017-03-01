@@ -1,0 +1,49 @@
+.header-settings {
+	width: 100%;
+	min-height: 40px;
+
+	&__title,
+	&__description {
+		display: table;
+		width: 100%;
+	}
+
+	&__title {
+
+	}
+	&__description {
+		padding-top: 19px;
+	}
+	$screen-xs-max: 677px;
+	$screen-sm-min: 678px;
+
+	h1, h2, h3, h4, h5, h6,
+	.rc_h1, .rc_h2, .rc_h3, .rc_h4, .rc_h5, .rc_h6,
+	&__actions {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+
+	h1, h2, h3, h4, h5, h6,
+	.rc_h1, .rc_h2, .rc_h3, .rc_h4, .rc_h5, .rc_h6 {
+		margin: 0;
+		@media screen and (min-width: $screen-sm-min) {
+			line-height: 1;
+		}
+		@media screen and (max-width: $screen-xs-max) {
+			display: table;
+		}
+	}
+	&__actions {
+		text-align: right;
+		@media screen and (max-width: $screen-xs-max) {
+			display: flex;
+			padding-top: 19px;
+			text-align: center;
+			.button {
+				width: 100%;
+			}
+		}
+	}
+}

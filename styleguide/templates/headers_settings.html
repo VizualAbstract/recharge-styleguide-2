@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Settings Headers{% endblock %}
+{% block body %}
+<h1>Settings headers</h1>
+<p>Used on settings pages</p>
+<div class="rc_example">
+	{{ ui_element("headers/settings", {'title': 'H1 Settings header', 'description': 'Instructional text that applies to the page. This copy should give user context for what this page’s purpose is and the actions that should be expected.', 'primary': 'action', 'secondary': 'back'}) | safe }}
+</div>
+
+{% endblock %}

@@ -629,6 +629,10 @@ html {
   margin-top: 10px;
 }
 
+.button + .button {
+  margin-left: 10px;
+}
+
 .button.button--disabled, .button.disabled, .button[disabled],
 fieldset[disabled] .button {
   cursor: not-allowed !important;
@@ -1810,7 +1814,7 @@ textarea.form__input--code {
   background-color: #767676;
 }
 
-.form__checkbox:disabled + .form__label:before, .form__checkbox.disabled + .form__label:before {
+.form__radio:disabled + .form__label:before, .form__radio.disabled + .form__label:before {
   content: "\f068";
   color: #767676;
   text-indent: 3px;
@@ -1854,6 +1858,60 @@ h5, .rc_h5 {
   font-weight: normal;
   line-height: 25px;
   font-style: normal;
+}
+
+.header-settings {
+  width: 100%;
+  min-height: 40px;
+}
+
+.header-settings__title, .header-settings__description {
+  display: table;
+  width: 100%;
+}
+
+.header-settings__description {
+  padding-top: 19px;
+}
+
+.header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
+.header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6, .header-settings__actions {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
+.header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
+  margin: 0;
+}
+
+@media screen and (min-width: 678px) {
+  .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
+  .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 677px) {
+  .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
+  .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
+    display: table;
+  }
+}
+
+.header-settings__actions {
+  text-align: right;
+}
+
+@media screen and (max-width: 677px) {
+  .header-settings__actions {
+    display: flex;
+    padding-top: 19px;
+    text-align: center;
+  }
+  .header-settings__actions .button {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=../css/style.scss.css.map */

@@ -35,3 +35,9 @@ def checkboxes():
 def radios():
     template_file = "radios.html"
     return render_template(template_file)
+
+
+@app.route('/headers/settings')
+def headers_settings():
+    template_file = "headers_settings.html"
+    return render_template(template_file)
