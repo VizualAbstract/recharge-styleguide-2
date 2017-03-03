@@ -6,7 +6,24 @@
 	<head>
 		<title>{{ page_title | site_title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/tether.js') }}"></script>
+
+		<script type="text/javascript" src="{{ url_for('static', filename='js/util.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/alert.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/button.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/collapse.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/dropdown.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/modal.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/scrollspy.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/tab.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/popover.js') }}"></script>
+
 		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ url_for('static', filename='css/fontawesome.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/style.scss.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body class="{% if page_class %}page__{{ page_class }}{% endif %}">
@@ -64,14 +81,20 @@
 		}
 	</style>
 	<div class="rc_container">
-		<a href="/">Index</a><br>
+		<a href="/">Index</a>
+		<br>
 		Forms:
 		<a href="/buttons">Buttons</a>
 		<a href="/text-inputs">Text Inputs</a>
 		<a href="/textareas">Textareas</a>
 		<a href="/checkboxes">Checkboxes</a>
-		<a href="/radios">Radios</a><br>
+		<a href="/radios">Radios</a>
+		<br>
+		Components:
 		<a href="/headers">Headers</a>
+		<br>
+		Dynamic:
+		<a href="/dropdowns">Dropdowns</a>
 {% block body %}
 {% endblock %}
 	</body>

@@ -1,4 +1,4 @@
-.header-settings {
+.header-dropdown {
 	width: 100%;
 	min-height: 40px;
 	display: flex;
@@ -20,27 +20,48 @@
 		flex-grow: 1;
 	}
 
-	h1,
-	.rc_h1
+	h3,
+	.rc_h3
 	&__actions {
 		vertical-align: middle;
 	}
 
-	h1,
-	.rc_h1 {
+	h3,
+	.rc_h3 {
 		line-height: 1;
 		margin: 0;
 	}
 
+	.rc_dropdown > .button {
+		min-height: 40px;
+		height: auto;
+	}
+
 	@media screen and (max-width: 677px) {
-		.header-settings__title {
+		.header-dropdown__title {
 			order: 1;
 			width: 100%;
+			.rc_dropdown > .button {
+				white-space: normal;
+				text-align: left;
+				line-height: 1;
+				width: 100%;
+				padding-right: 22px;
+			}
+			.rc_dropdown > .rc_dropdown__toggle:after {
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -10px;
+			}
+			.rc_dropdown.show > .rc_dropdown__toggle:after {
+				margin-top: -11px;
+			}
 		}
-		.header-settings__description {
+		.header-dropdown__description {
 			order: 2;
 		}
-		.header-settings__actions {
+		.header-dropdown__actions {
 			order: 3;
 			width: 100%;
 			display: flex;

@@ -43,3 +43,9 @@ def radios():
 def headers_settings():
     template_file = "headers.html"
     return render_template(template_file)
+
+# Dynamics
+@app.route('/dropdowns')
+def dynamics_dropdowns():
+    template_file = "dropdowns.html"
+    return render_template(template_file)

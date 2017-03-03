@@ -1,0 +1,21 @@
+.header-signup {
+	text-align: center;
+	margin: 0 auto;
+
+	h1,
+	.rc_h1 {
+		line-height: 1;
+		margin: 0;
+		letter-spacing: -0.037em;
+	}
+
+	&__title {
+		color: $cyan;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	&__description {
+
+	}
+}

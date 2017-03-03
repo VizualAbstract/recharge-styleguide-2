@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Dropdowns</h1>
+<div class="rc_example">
+	{{ ui_element('dynamic/dropdown', {'title': "My Dropdown", 'active': true, 'links': [{
+			'title': 'Link 1',
+			'url': '/link-1',
+			'active': false
+		}, {
+			'title': 'Link 2',
+			'url': '/link-2',
+			'active': false
+		}, {
+			'title': 'Link 3',
+			'url': '/link-3',
+			'active': false
+		}]
+	}) | safe }}
+</div>
+{% endblock %}

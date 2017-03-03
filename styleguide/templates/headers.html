@@ -57,4 +57,19 @@
 	}) | safe }}
 </div>
 
+<h2>Dropdown</h2>
+<p>The dropdown header allows for quick navigation between the related pages. This should only be used in sub-setting areas (such as: individual notification, an API token or integration page).</p>
+<div class="rc_example">
+	{{ ui_element('headers/dropdown', {
+		'title': "Recurring Charge Confirmation", 
+		'description': "The Customer Portal is where your customers manage their subscriptions. Set the controls for the portal so that your customers see only the options that you set.", 
+		'buttons': [{
+			'text': "Cancel"
+		}, {
+			'text': "Save",
+			'color': "primary"
+		}]
+	}) | safe }}
+</div>
+
 {% endblock %}
