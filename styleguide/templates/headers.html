@@ -2,7 +2,12 @@
 {% block title %}Settings Headers{% endblock %}
 {% block body %}
 <h1>Headers</h1>
-
+<p>Utilized at the top of most pages and usually containing an H1. Several types are provided, each with a specific use-case.</p>
+<div class="rc_example">
+	{{ ui_element('headers/settings', {
+		'title': "My page title"
+	}) | safe }}
+</div>
 <h2>Settings</h2>
 <p>Used on settings pages</p>
 <div class="rc_example">
