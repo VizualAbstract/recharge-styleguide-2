@@ -11,11 +11,13 @@ def index():
     template_file = "index.html"
     return render_template(template_file)
 
+# Buttons
 @app.route('/buttons')
 def buttons():
     template_file = "buttons.html"
     return render_template(template_file)
 
+# Forms
 @app.route('/text-inputs')
 def text_inputs():
     template_file = "text-inputs.html"
@@ -36,8 +38,8 @@ def radios():
     template_file = "radios.html"
     return render_template(template_file)
 
-
-@app.route('/headers/settings')
+# Headers
+@app.route('/headers')
 def headers_settings():
-    template_file = "headers_settings.html"
+    template_file = "headers.html"
     return render_template(template_file)

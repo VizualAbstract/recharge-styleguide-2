@@ -1,0 +1,22 @@
+.force-mobile .header-settings__title {
+  order: 1;
+  width: 100%;
+}
+
+.force-mobile .header-settings__description {
+  order: 2;
+}
+
+.force-mobile .header-settings__actions {
+  order: 3;
+  width: 100%;
+  display: flex;
+  padding-top: 19px;
+  text-align: center;
+}
+
+.force-mobile .header-settings__actions .button {
+  width: 100%;
+}
+
+/*# sourceMappingURL=../css/styleguide.scss.css.map */

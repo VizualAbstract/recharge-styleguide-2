@@ -6,6 +6,7 @@
 	<head>
 		<title>{{ page_title | site_title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/style.scss.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body class="{% if page_class %}page__{{ page_class }}{% endif %}">
@@ -54,14 +55,23 @@
 			padding-right: 4px;
 			color: #333;
 		}
+		.rc_example > hr {
+			border-color: #CCC;
+			border-width: 1px;
+			border-style: solid;
+			border-bottom: 0;
+			margin: 20px -20px;
+		}
 	</style>
 	<div class="rc_container">
-		<a href="/">Index</a>
+		<a href="/">Index</a><br>
+		Forms:
 		<a href="/buttons">Buttons</a>
 		<a href="/text-inputs">Text Inputs</a>
 		<a href="/textareas">Textareas</a>
 		<a href="/checkboxes">Checkboxes</a>
-		<a href="/radios">Radios</a>
+		<a href="/radios">Radios</a><br>
+		<a href="/headers">Headers</a>
 {% block body %}
 {% endblock %}
 	</body>

@@ -1,0 +1,22 @@
+.force-mobile {
+	.header-settings {
+		&__title {
+			order: 1;
+			width: 100%;
+		}
+		&__description {
+			order: 2;
+		}
+		&__actions {
+			order: 3;
+			width: 100%;
+			display: flex;
+			padding-top: 19px;
+			text-align: center;
+
+			.button {
+				width: 100%;
+			}
+		}
+	}
+}

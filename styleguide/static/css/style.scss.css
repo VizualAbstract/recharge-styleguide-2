@@ -572,6 +572,7 @@ html {
   box-sizing: border-box;
   outline: 0;
   min-width: 100px;
+  padding: 0 10px;
   display: inline-block;
   cursor: pointer;
   touch-action: manipulation;
@@ -1863,20 +1864,30 @@ h5, .rc_h5 {
 .header-settings {
   width: 100%;
   min-height: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.header-settings__title, .header-settings__description {
-  display: table;
-  width: 100%;
+.header-settings__title {
+  order: 1;
+  flex-grow: 1;
 }
 
 .header-settings__description {
+  width: 100%;
   padding-top: 19px;
+  order: 3;
+  flex-grow: 2;
+}
+
+.header-settings__actions {
+  text-align: right;
+  order: 2;
+  flex-grow: 1;
 }
 
 .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
 .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6, .header-settings__actions {
-  display: table-cell;
   vertical-align: middle;
 }
 
@@ -1887,23 +1898,21 @@ h5, .rc_h5 {
 }
 
 @media screen and (max-width: 677px) {
-  .header-settings h1, .header-settings h2, .header-settings h3, .header-settings h4, .header-settings h5, .header-settings h6,
-  .header-settings .rc_h1, .header-settings .rc_h2, .header-settings .rc_h3, .header-settings .rc_h4, .header-settings .rc_h5, .header-settings .rc_h6 {
-    display: table;
+  .header-settings .header-settings__title {
+    order: 1;
+    width: 100%;
   }
-}
-
-.header-settings__actions {
-  text-align: right;
-}
-
-@media screen and (max-width: 677px) {
-  .header-settings__actions {
+  .header-settings .header-settings__description {
+    order: 2;
+  }
+  .header-settings .header-settings__actions {
+    order: 3;
+    width: 100%;
     display: flex;
     padding-top: 19px;
     text-align: center;
   }
-  .header-settings__actions .button {
+  .header-settings .header-settings__actions .button {
     width: 100%;
   }
 }

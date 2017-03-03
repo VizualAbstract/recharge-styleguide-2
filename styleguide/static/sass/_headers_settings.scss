@@ -1,44 +1,52 @@
 .header-settings {
 	width: 100%;
 	min-height: 40px;
-
-	&__title,
-	&__description {
-		display: table;
-		width: 100%;
-	}
+	display: flex;
+	flex-wrap: wrap;
 
 	&__title {
-
+		order: 1;
+		flex-grow: 1;
 	}
 	&__description {
+		width: 100%;
 		padding-top: 19px;
+		order: 3;
+		flex-grow: 2;
 	}
-	$screen-xs-max: 677px;
-	$screen-sm-min: 678px;
+	&__actions {
+		text-align: right;
+		order: 2;
+		flex-grow: 1;
+	}
 
 	h1, h2, h3, h4, h5, h6,
 	.rc_h1, .rc_h2, .rc_h3, .rc_h4, .rc_h5, .rc_h6,
 	&__actions {
-		display: table-cell;
 		vertical-align: middle;
 	}
-
 
 	h1, h2, h3, h4, h5, h6,
 	.rc_h1, .rc_h2, .rc_h3, .rc_h4, .rc_h5, .rc_h6 {
 		line-height: 1;
 		margin: 0;
-		@media screen and (max-width: $screen-xs-max) {
-			display: table;
-		}
 	}
-	&__actions {
-		text-align: right;
-		@media screen and (max-width: $screen-xs-max) {
+
+	@media screen and (max-width: 677px) {
+		.header-settings__title {
+			order: 1;
+			width: 100%;
+		}
+		.header-settings__description {
+			order: 2;
+		}
+		.header-settings__actions {
+			order: 3;
+			width: 100%;
 			display: flex;
 			padding-top: 19px;
 			text-align: center;
+
 			.button {
 				width: 100%;
 			}

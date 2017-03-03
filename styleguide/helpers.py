@@ -59,15 +59,18 @@ def ui_element(component, parameters = {}):
             parameters['tooltip'] = render_template("dynamic/tooltip.html", parameters = parameters['tooltip'])
         except:
             parameters['tooltip'] = ''
+
     if str(component) == 'form/label':
         try:
             parameters['id'] = str(parameters['for'])
         except:
             parameters['id'] = ''
+
     if str(component) in ['form/checkbox', 'form/field_checkbox']:
         if 'id' not in parameters:
             # An id attribute is required for a checkbox. If none is provided, generate a random one
             parameters['id'] = ''.join([random.choice(string.lowercase) for i in xrange(10)])
+
     if str(component) == 'buttons/button':
         try:
             color = validate_colors(parameters['color'])
@@ -84,6 +87,7 @@ def ui_element(component, parameters = {}):
             parameters['size'] = " button--" + str(size)
         except:
             parameters['size'] = ''
+
     return render_template(ui_template, parameters = parameters)
 app.jinja_env.globals.update(ui_element = ui_element)
 

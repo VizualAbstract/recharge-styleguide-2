@@ -1,12 +1,19 @@
 <div class="header-settings">
 	<div class="header-settings__title">
-		<h1>H1 Section header test test</h1>
-		<div class="header-settings__actions">
-			<button class="button button">Cancel</button>
-			<button class="button button--primary">Save</button>
+		<h1>{{ parameters['title'] }}</h1>
+	</div>
+	{% if parameters['description'] %}
+		<div class="header-settings__description">
+			<p>{{ parameters['description'] }}</p>
 		</div>
-	</div>
-	<div class="header-settings__description">
-		<p>Instructional text that applies to the page. This copy should give user context for what this page's purpose is and the actions that should be expected.</p>
-	</div>
-</div>
+	{% endif %}
+	{% if parameters['buttons'] %}
+		<div class="header-settings__actions">
+			{% for button in parameters['buttons'] %}
+				{% with parameters = button %}
+					{{ ui_element("buttons/button", parameters) | safe }}
+				{% endwith %}
+			{% endfor %}
+		</div>
+	{% endif %}
+</div><!-- .header-settings -->
