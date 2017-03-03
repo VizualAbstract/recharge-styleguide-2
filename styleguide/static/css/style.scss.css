@@ -1978,6 +1978,10 @@ h5, .rc_h5 {
   height: auto;
 }
 
+.header-dropdown .header-dropdown__title .rc_dropdown > .button {
+  padding-right: 22px;
+}
+
 @media screen and (max-width: 677px) {
   .header-dropdown .header-dropdown__title {
     order: 1;
@@ -1988,13 +1992,15 @@ h5, .rc_h5 {
     text-align: left;
     line-height: 1;
     width: 100%;
-    padding-right: 22px;
+    padding: 0 35px 0 14px;
+    padding: 0;
   }
   .header-dropdown .header-dropdown__title .rc_dropdown > .rc_dropdown__toggle:after {
     position: absolute;
-    right: 0;
+    right: 14px;
     top: 50%;
     margin-top: -10px;
+    right: 0;
   }
   .header-dropdown .header-dropdown__title .rc_dropdown.show > .rc_dropdown__toggle:after {
     margin-top: -11px;
