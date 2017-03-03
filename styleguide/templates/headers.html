@@ -31,16 +31,7 @@
 	}) | safe }}
 </div>
 
-<h2>Signup</h2>
-<p>Used only on signup pages. Perfect for full-width, minimum layouts</p>
-<div class="rc_example">
-	{{ ui_element('headers/signup', {
-		'title': "H1 Settings header test",
-		'description': "Instructional text that applies to the page."
-	}) | safe }}
-</div>
-
-<h2>Devon's thorn</h2>
+<h3>Devon's thorn</h3>
 <p>Due to the way content collapses, this was previously unacheivable. With the move to flexbox, we can now have the Description appear beneath the Action Buttons on mobile devices.</p>
 <div class="rc_example">
 	<div class="force-mobile" style="max-width: 360px;">
@@ -55,6 +46,15 @@
 			}]
 		}) | safe }}
 	</div>
+</div>
+
+<h2>Signup</h2>
+<p>Used only on signup pages. Perfect for full-width, minimum layouts</p>
+<div class="rc_example">
+	{{ ui_element('headers/signup', {
+		'title': "H1 Settings header test",
+		'description': "Instructional text that applies to the page."
+	}) | safe }}
 </div>
 
 {% endblock %}
