@@ -1,0 +1,141 @@
+$screen-xs-max: 575px;
+$screen-sm-min: 576px;
+$screen-sm-max: 767px;
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+$screen-xl-min: 1200px;
+
+.flex {
+
+	&__container {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+
+		.flex__layout {
+			display: flex;
+			flex-wrap: wrap;
+
+			div[class^="flex__"] {
+
+			}
+			@media screen and (min-width: $screen-xs-max) {
+				.flex__xs__1 {
+					flex-basis: percentage(1 / 12);
+					flex-grow: 1;
+					max-width: percentage(1 / 12);
+				}
+				@for $i from 2 through 12 {
+					.flex__xs__#{$i} {
+						flex-basis: percentage($i / 12);
+						flex-grow: 1;
+						flex-shrink: 0;
+						max-width: percentage($i / 12);
+					}
+				}
+			}
+			@media screen and (min-width: $screen-sm-min) {
+				@for $i from 1 through 12 {
+					.flex__sm__#{$i} {
+						flex-basis: percentage($i / 12);
+						flex-grow: 1;
+						flex-shrink: 0;
+						max-width: percentage($i / 12);
+					}
+				}
+			}
+			@media screen and (min-width: $screen-md-min) {
+				@for $i from 1 through 12 {
+					.flex__md__#{$i} {
+						flex-basis: percentage($i / 12);
+						flex-grow: 1;
+						flex-shrink: 0;
+						max-width: percentage($i / 12);
+					}
+				}
+			}
+			@media screen and (min-width: $screen-lg-min) {
+				@for $i from 1 through 12 {
+					.flex__lg__#{$i} {
+						flex-basis: percentage($i / 12);
+						flex-grow: 1;
+						flex-shrink: 0;
+						max-width: percentage($i / 12);
+					}
+				}
+			}
+			@media screen and (min-width: $screen-xl-min) {
+				@for $i from 1 through 12 {
+					.flex__xg__#{$i} {
+						flex-basis: percentage($i / 12);
+						flex-grow: 1;
+						flex-shrink: 0;
+						max-width: percentage($i / 12);
+					}
+				}
+			}
+
+			.flex__xs,
+			.flex__block {
+				flex-basis: 0;
+				flex-grow: 1;
+			}
+			.flex__sm {
+				@media screen and (min-width: $screen-sm-min) {
+					flex-basis: 0;
+					flex-grow: 1;
+				}
+			}
+			.flex__md {
+				@media screen and (min-width: $screen-md-min) {
+					flex-basis: 0;
+					flex-grow: 1;
+				}
+			}
+			.flex__lg {
+				@media screen and (min-width: $screen-lg-min) {
+					flex-basis: 0;
+					flex-grow: 1;
+				}
+			}
+			.flex__xl {
+				@media screen and (min-width: $screen-xl-min) {
+					flex-basis: 0;
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+}
+
+
+.flex__container--visible {
+	padding: 5px;
+	background-color: #8E8F8E;
+
+	.flex__layout {
+		padding: 5px;
+		background-color: #CCC;
+
+		div[class^="flex__"] {
+			line-height: 1;
+			padding: 5px;
+			background-color: #EEE;
+
+			+ div[class^="flex__"] {
+				border-left: 1px solid #CCC;
+				overflow: hidden;
+			}
+		}
+
+		+ .flex__layout {
+			border-top: 1px solid #8E8F8E;
+		}
+	}
+
+	+ .flex__container--visible {
+		border-top: 1px solid #FFF;
+	}
+}
