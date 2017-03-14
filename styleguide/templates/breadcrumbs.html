@@ -1,0 +1,40 @@
+<h1>Breadcrumbs</h1>
+<div class="rc_example">
+	{{ ui_element("navigation/breadcrumb", {
+		'crumbs': [{
+				'title': "Section",
+				'url': "/"
+			}, {
+				'title': "One level in",
+				'url': "/"
+			}, {
+				'title': "Two levels in",
+				'url': "/"
+			}]
+		}) | safe }}
+	{{ ui_element("navigation/breadcrumb", {
+		'crumbs': [{
+				'title': "Section with icon",
+				'icon': "wrench",
+				'url': "/"
+			}, {
+				'title': "One level in",
+				'url': "/"
+			}, {
+				'title': "Two levels in",
+				'url': "/"
+			}]
+		}) | safe }}
+	{{ ui_element("navigation/breadcrumb", {
+		'crumbs': [{
+			'title': "Settings",
+			'icon': "wrench",
+			'url': "/"
+			}, {
+				'title': "Notifications",
+				'url': "/"
+			}, {
+				'title': "Recurring charge confirmation"
+			}]
+		}) | safe }}
+</div>

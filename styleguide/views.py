@@ -40,12 +40,18 @@ def radios():
 
 # Headers
 @app.route('/headers')
-def headers_settings():
+def headers():
     template_file = "headers.html"
+    return render_template(template_file)
+
+# Headers
+@app.route('/breadcrumbs')
+def breadcrumbs():
+    template_file = "breadcrumbs.html"
     return render_template(template_file)
 
 # Dynamics
 @app.route('/dropdowns')
-def dynamics_dropdowns():
+def dropdowns():
     template_file = "dropdowns.html"
     return render_template(template_file)

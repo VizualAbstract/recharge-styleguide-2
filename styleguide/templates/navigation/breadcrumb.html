@@ -1,0 +1,15 @@
+
+<ol class="breadcrumbs">
+	{% for crumb in parameters['crumbs'] %}
+		<li class="crumb">
+			{% if crumb['url'] -%}
+				<a href="{{ crumb['url'] }}">
+			{%- endif -%}
+				{% if crumb['icon'] %}<span class="fa fa-{{ crumb['icon'] }}"></span> {% endif -%}
+				{{ crumb['title'] }}
+			{%- if crumb['url'] -%}
+				</a>
+			{%- endif %}
+		</li>
+	{% endfor %}
+</ol><!-- .breadcrumbs -->

@@ -6,6 +6,7 @@
 	<head>
 		<title>{{ page_title | site_title }}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<meta name="robots" content="noindex, nofollow">
 
 		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="{{ url_for('static', filename='js/tether.js') }}"></script>
@@ -37,8 +38,9 @@
 		<a href="/checkboxes">Checkboxes</a>
 		<a href="/radios">Radios</a>
 		<br>
-		Components:
+		Interface:
 		<a href="/headers">Headers</a>
+		<a href="/breadcrumbs">Breadcrumbs</a>
 		<br>
 		Dynamic:
 		<a href="/dropdowns">Dropdowns</a>

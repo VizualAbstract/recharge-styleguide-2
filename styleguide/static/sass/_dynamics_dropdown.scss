@@ -81,16 +81,15 @@ $zindex-dropdown-backdrop: 30;
     // border-top: $caret-width solid;
     // border-right: $caret-width solid transparent;
     // border-left: $caret-width solid transparent;
-content: '\f0d7';
-position: relative;
-font-family: fontawesome;
-font-weight: normal;
-font-size: $caret-width;
-line-height: 1;
-display: inline-block;
-margin-right: 1px;
-top: 0px;
-margin-left: 10px;
+    content: '\f0d7';
+    position: relative;
+    font-family: fontawesome;
+    font-weight: normal;
+    font-size: $caret-width;
+    line-height: 1;
+    display: inline-block;
+    top: 0;
+    margin-left: 10px;
   }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns

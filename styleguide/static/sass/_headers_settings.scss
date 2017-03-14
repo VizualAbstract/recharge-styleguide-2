@@ -10,14 +10,23 @@
 	}
 	&__description {
 		width: 100%;
-		padding-top: 19px;
+		margin-top: 7px;
 		order: 3;
 		flex-grow: 2;
 	}
 	&__actions {
+		display: flex;
 		text-align: right;
 		order: 2;
 		flex-grow: 1;
+
+		.button {
+			margin: 0 0 0 auto;
+
+			+ .button {
+				margin-left: 12px;
+			}
+		}
 	}
 
 	h1,
@@ -43,8 +52,7 @@
 		.header-settings__actions {
 			order: 3;
 			width: 100%;
-			display: flex;
-			padding-top: 19px;
+			margin-top: 12px;
 			text-align: center;
 
 			.button {
