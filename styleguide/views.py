@@ -55,3 +55,9 @@ def breadcrumbs():
 def dropdowns():
     template_file = "dropdowns.html"
     return render_template(template_file)
+
+# Dynamics
+@app.route('/layouts')
+def layouts():
+    template_file = "layouts.html"
+    return render_template(template_file)
