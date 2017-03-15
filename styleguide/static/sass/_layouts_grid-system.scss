@@ -209,7 +209,7 @@ $gutter: 30px;
 
 .flex__layout {
 	.flex__full {
-		padding-top: $gutter;
+		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
 		padding-bottom: $gutter;
 		padding-left: $gutter;
 		padding-right: $gutter;
