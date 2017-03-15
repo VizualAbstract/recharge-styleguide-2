@@ -25,7 +25,8 @@
 
 .rc_container > h1,
 .rc_container > h2,
-.rc_container > h3 {
+.rc_container > h3,
+.rc_container > h4 {
   margin-bottom: 10px;
   font-family: 'ralewaysemibold';
 }
@@ -44,6 +45,12 @@
 .rc_container > h3 {
   margin-top: 20px;
   font-size: 18px;
+  font-family: 'ralewaymedium';
+}
+
+.rc_container > h4 {
+  margin-top: 10px;
+  font-size: 16px;
   font-family: 'ralewaymedium';
 }
 

@@ -2185,11 +2185,21 @@ h5, .rc_h5 {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .flex__container .flex__layout {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.flex__container .flex__layout div[class^="flex__"] {
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 1px;
 }
 
 @media screen and (min-width: 575px) {
@@ -2492,73 +2502,73 @@ h5, .rc_h5 {
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__container .flex__layout .flex__xg__1 {
+  .flex__container .flex__layout .flex__xl__1 {
     flex-basis: 8.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 8.33333%;
   }
-  .flex__container .flex__layout .flex__xg__2 {
+  .flex__container .flex__layout .flex__xl__2 {
     flex-basis: 16.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 16.66667%;
   }
-  .flex__container .flex__layout .flex__xg__3 {
+  .flex__container .flex__layout .flex__xl__3 {
     flex-basis: 25%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 25%;
   }
-  .flex__container .flex__layout .flex__xg__4 {
+  .flex__container .flex__layout .flex__xl__4 {
     flex-basis: 33.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 33.33333%;
   }
-  .flex__container .flex__layout .flex__xg__5 {
+  .flex__container .flex__layout .flex__xl__5 {
     flex-basis: 41.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 41.66667%;
   }
-  .flex__container .flex__layout .flex__xg__6 {
+  .flex__container .flex__layout .flex__xl__6 {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 50%;
   }
-  .flex__container .flex__layout .flex__xg__7 {
+  .flex__container .flex__layout .flex__xl__7 {
     flex-basis: 58.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 58.33333%;
   }
-  .flex__container .flex__layout .flex__xg__8 {
+  .flex__container .flex__layout .flex__xl__8 {
     flex-basis: 66.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 66.66667%;
   }
-  .flex__container .flex__layout .flex__xg__9 {
+  .flex__container .flex__layout .flex__xl__9 {
     flex-basis: 75%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 75%;
   }
-  .flex__container .flex__layout .flex__xg__10 {
+  .flex__container .flex__layout .flex__xl__10 {
     flex-basis: 83.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 83.33333%;
   }
-  .flex__container .flex__layout .flex__xg__11 {
+  .flex__container .flex__layout .flex__xl__11 {
     flex-basis: 91.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 91.66667%;
   }
-  .flex__container .flex__layout .flex__xg__12 {
+  .flex__container .flex__layout .flex__xl__12 {
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
@@ -2600,33 +2610,221 @@ h5, .rc_h5 {
   }
 }
 
+.flex__layout[flex-reverse="true"], .flex__layout[flex-order="reverse"] {
+  flex-direction: row-reverse;
+}
+
+.flex__layout[flex-row="true"], .flex__layout[flex-order="false"], .flex__layout[flex-order="row"] {
+  flex-direction: row;
+}
+
+.flex__layout[flex-column="true"], .flex__layout[flex-order="column"] {
+  flex-direction: column;
+}
+
+.flex__layout[flex-unset="true"], .flex__layout[flex-order="unset"] {
+  flex-direction: unset;
+}
+
+.flex__container[flex-reverse="true"] .flex__layout, .flex__container[flex-order="reverse"] .flex__layout {
+  flex-direction: row-reverse;
+}
+
+.flex__container[flex-row="true"] .flex__layout, .flex__container[flex-order="false"] .flex__layout, .flex__container[flex-order="row"] .flex__layout {
+  flex-direction: row;
+}
+
+.flex__container[flex-column="true"] .flex__layout, .flex__container[flex-order="column"] .flex__layout {
+  flex-direction: column;
+}
+
+.flex__container[flex-unset="true"] .flex__layout, .flex__container[flex-order="unset"] .flex__layout {
+  flex-direction: unset;
+}
+
+@media screen and (max-width: 575px) {
+  .flex__container.flex__container--static,
+  .flex__container[flex-style="static"],
+  .flex__container[flex-static="true"] {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .flex__container.flex__container--static,
+  .flex__container[flex-style="static"],
+  .flex__container[flex-static="true"] {
+    max-width: 576px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .flex__container.flex__container--static,
+  .flex__container[flex-style="static"],
+  .flex__container[flex-static="true"] {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .flex__container.flex__container--static,
+  .flex__container[flex-style="static"],
+  .flex__container[flex-static="true"] {
+    max-width: 992px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flex__container.flex__container--static,
+  .flex__container[flex-style="static"],
+  .flex__container[flex-static="true"] {
+    max-width: 1200px;
+  }
+}
+
+.flex__container.flex__container--seamless,
+.flex__container[flex-style="seamless"],
+.flex__container[flex-seamless="true"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.flex__container.flex__container--seamless > .flex__layout,
+.flex__container[flex-style="seamless"] > .flex__layout,
+.flex__container[flex-seamless="true"] > .flex__layout {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.flex__container.flex__container--seamless > .flex__layout > .flex__full,
+.flex__container.flex__container--seamless > .flex__layout > .flex__sidebar,
+.flex__container.flex__container--seamless > .flex__layout > .flex__content,
+.flex__container.flex__container--seamless > .flex__layout > div[class^="flex__xs__"],
+.flex__container.flex__container--seamless > .flex__layout > div[class^="flex__sm__"],
+.flex__container.flex__container--seamless > .flex__layout > div[class^="flex__md__"],
+.flex__container.flex__container--seamless > .flex__layout > div[class^="flex__lg__"],
+.flex__container.flex__container--seamless > .flex__layout > div[class^="flex__xl__"],
+.flex__container[flex-style="seamless"] > .flex__layout > .flex__full,
+.flex__container[flex-style="seamless"] > .flex__layout > .flex__sidebar,
+.flex__container[flex-style="seamless"] > .flex__layout > .flex__content,
+.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xs__"],
+.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__sm__"],
+.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__md__"],
+.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__lg__"],
+.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xl__"],
+.flex__container[flex-seamless="true"] > .flex__layout > .flex__full,
+.flex__container[flex-seamless="true"] > .flex__layout > .flex__sidebar,
+.flex__container[flex-seamless="true"] > .flex__layout > .flex__content,
+.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xs__"],
+.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__sm__"],
+.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__md__"],
+.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__lg__"],
+.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xl__"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.flex__container .flex__layout .flex__full {
+  flex-basis: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .flex__container .flex__layout .flex__sidebar {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .flex__container .flex__layout .flex__sidebar {
+    flex-basis: 33.33333%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .flex__container .flex__layout .flex__sidebar {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .flex__container .flex__layout .flex__sidebar {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flex__container .flex__layout .flex__sidebar {
+    flex-basis: 16.66667%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .flex__container .flex__layout .flex__content {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .flex__container .flex__layout .flex__content {
+    flex-basis: 66.66667%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .flex__container .flex__layout .flex__content {
+    flex-basis: 75%;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .flex__container .flex__layout .flex__content {
+    flex-basis: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flex__container .flex__layout .flex__content {
+    flex-basis: 83.33333%;
+  }
+}
+
 .flex__container--visible {
-  padding: 5px;
-  background-color: #8E8F8E;
+  padding: 10px;
+  background-color: #F6F6F6;
+}
+
+.flex__container--visible[flex-order="reverse"] div[class^="flex__"] + div[class^="flex__"] {
+  border-right: 10px solid #bef0e5;
+  border-left: 0;
+}
+
+.flex__container--visible[flex-order="reverse"] div[class^="flex__"] + div[class^="flex__"]:last-child {
+  border-left: 0 !important;
 }
 
 .flex__container--visible .flex__layout {
-  padding: 5px;
-  background-color: #CCC;
+  padding: 10px;
+  background-color: #bef0e5;
 }
 
 .flex__container--visible .flex__layout div[class^="flex__"] {
   line-height: 1;
-  padding: 5px;
-  background-color: #EEE;
+  padding: 10px;
+  text-align: center;
+  background-color: #6bddc3;
 }
 
 .flex__container--visible .flex__layout div[class^="flex__"] + div[class^="flex__"] {
-  border-left: 1px solid #CCC;
+  border-left: 10px solid #bef0e5;
   overflow: hidden;
 }
 
 .flex__container--visible .flex__layout + .flex__layout {
-  border-top: 1px solid #8E8F8E;
+  border-top: 10px solid #F6F6F6;
 }
 
 .flex__container--visible + .flex__container--visible {
-  border-top: 1px solid #FFF;
+  border-top: 10px solid #FFF;
 }
 
 /*# sourceMappingURL=../css/style.scss.css.map */
