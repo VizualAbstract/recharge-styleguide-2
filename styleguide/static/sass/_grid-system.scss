@@ -1,0 +1,455 @@
+$screen-xs-max: 575px;
+$screen-sm-min: 576px;
+$screen-sm-max: 767px;
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+$screen-xl-min: 1200px;
+
+.flex__layout {
+	display: flex;
+	flex-wrap: wrap;
+
+	.flex__full,
+	.flex__sidebar,
+	.flex__content,
+	[class^="flex__xs"],
+	[class^="flex__sm"],
+	[class^="flex__md"],
+	[class^="flex__lg"],
+	[class^="flex__xl"] {
+		min-height: 1px;
+	}
+
+	[class^="flex__xs"],
+	[class^="flex__sm"],
+	[class^="flex__md"],
+	[class^="flex__lg"],
+	[class^="flex__xl"] {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.flex__xs__1 {
+		flex-basis: percentage(1 / 12);
+		flex-grow: 1;
+		max-width: percentage(1 / 12);
+	}
+	@for $i from 2 through 12 {
+		.flex__xs__#{$i} {
+			flex-basis: percentage($i / 12);
+			flex-grow: 1;
+			flex-shrink: 0;
+			max-width: percentage($i / 12);
+		}
+	}
+	@media screen and (min-width: $screen-sm-min) {
+		@for $i from 1 through 12 {
+			.flex__sm__#{$i} {
+				flex-basis: percentage($i / 12);
+				flex-grow: 1;
+				flex-shrink: 0;
+				max-width: percentage($i / 12);
+			}
+		}
+	}
+	@media screen and (min-width: $screen-md-min) {
+		@for $i from 1 through 12 {
+			.flex__md__#{$i} {
+				flex-basis: percentage($i / 12);
+				flex-grow: 1;
+				flex-shrink: 0;
+				max-width: percentage($i / 12);
+			}
+		}
+	}
+	@media screen and (min-width: $screen-lg-min) {
+		@for $i from 1 through 12 {
+			.flex__lg__#{$i} {
+				flex-basis: percentage($i / 12);
+				flex-grow: 1;
+				flex-shrink: 0;
+				max-width: percentage($i / 12);
+			}
+		}
+	}
+	@media screen and (min-width: $screen-xl-min) {
+		@for $i from 1 through 12 {
+			.flex__xl__#{$i} {
+				flex-basis: percentage($i / 12);
+				flex-grow: 1;
+				flex-shrink: 0;
+				max-width: percentage($i / 12);
+			}
+		}
+	}
+
+	.flex__xs,
+	.flex__block {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+	.flex__sm {
+		@media screen and (min-width: $screen-sm-min) {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
+	.flex__md {
+		@media screen and (min-width: $screen-md-min) {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
+	.flex__lg {
+		@media screen and (min-width: $screen-lg-min) {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
+	.flex__xl {
+		@media screen and (min-width: $screen-xl-min) {
+			flex-basis: 0;
+			flex-grow: 1;
+		}
+	}
+}
+
+[flex-reverse="true"],
+[flex-order="reverse"] {
+	.flex__layout {
+		flex-direction: row-reverse;
+	}
+}
+[flex-row="true"],
+[flex-order="false"],
+[flex-order="row"] {
+	.flex__layout {
+		flex-direction: row;
+	}
+}
+[flex-column="true"],
+[flex-order="column"] {
+	.flex__layout {
+		flex-direction: column;
+	}
+}
+[flex-unset="true"],
+[flex-order="unset"] {
+	.flex__layout {
+		flex-direction: unset;
+	}
+}
+
+.flex__layout {
+	&[flex-reverse="true"],
+	&[flex-order="reverse"] {
+		flex-direction: row-reverse;
+	}
+	&[flex-row="true"],
+	&[flex-order="false"],
+	&[flex-order="row"] {
+		flex-direction: row;
+	}
+	&[flex-column="true"],
+	&[flex-order="column"] {
+		flex-direction: column;
+	}
+	&[flex-unset="true"],
+	&[flex-order="unset"] {
+		flex-direction: unset;
+	}
+}
+
+.flex__container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	.flex__layout {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+}
+
+/* Fixing the first and last-column padding */
+.flex__layout {
+	@media screen and (max-width: $screen-xs-max) {
+		.flex__xs__12 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		.flex__sm__12 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+		.flex__md__12 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+		.flex__lg__12 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	@media screen and (min-width: $screen-xl-min) {
+		.flex__xl__12 {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+}
+
+.flex__layout {
+	.flex__full {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.flex__sidebar {
+		padding-left: 20px;
+		padding-right: 10px;
+	}
+	.flex__content {
+		padding-right: 20px;
+		padding-left: 10px;
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		.flex__sidebar,
+		.flex__content {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	[class^="flex__xs"],
+	[class^="flex__sm"],
+	[class^="flex__md"],
+	[class^="flex__lg"],
+	[class^="flex__xl"] {
+		&:first-child {
+			padding-left: 20px;
+		}
+		&:last-child {
+			padding-right: 20px;
+		}
+	}
+	.flex__layout {
+		[class^="flex__xs"],
+		[class^="flex__sm"],
+		[class^="flex__md"],
+		[class^="flex__lg"],
+		[class^="flex__xl"] {
+			&:first-child {
+				padding-left: 10px;
+			}
+			&:last-child {
+				padding-right: 10px;
+			}
+		}
+	}
+}
+.flex__container[flex-reverse="true"],
+.flex__container[flex-order="reverse"] {
+	.flex__layout {
+		.flex__sidebar {
+			padding-left: 10px;
+			padding-right: 20px;
+		}
+		.flex__content {
+			padding-right: 10px;
+			padding-left: 20px;
+		}
+		@media screen and (max-width: $screen-xs-max) {
+			.flex__sidebar,
+			.flex__content {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+		[class^="flex__xs"],
+		[class^="flex__sm"],
+		[class^="flex__md"],
+		[class^="flex__lg"],
+		[class^="flex__xl"] {
+			&:first-child {
+				padding-right: 20px;
+			}
+			&:last-child {
+				padding-left: 20px;
+			}
+		}
+		.flex__layout {
+			[class^="flex__xs"],
+			[class^="flex__sm"],
+			[class^="flex__md"],
+			[class^="flex__lg"],
+			[class^="flex__xl"] {
+				&:first-child {
+					padding-right: 10px;
+				}
+				&:last-child {
+					padding-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+.flex__container[flex-style="static"],
+.flex__container[flex-static="true"] {
+	margin-left: auto;
+	margin-right: auto;
+	@media screen and (max-width: $screen-xs-max) {
+		max-width: 100%;
+	}
+	@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		max-width: $screen-sm-min;
+	}
+	@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+		max-width: $screen-md-min;
+	}
+	@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+		max-width: $screen-lg-min;
+	}
+	@media screen and (min-width: $screen-xl-min) {
+		max-width: $screen-xl-min;
+	}
+}
+
+.flex__container[flex-style="seamless"],
+.flex__container[flex-seamless="true"] {
+	padding-left: 0;
+	padding-right: 0;
+
+	> .flex__layout {
+		margin-left: 0;
+		margin-right: 0;
+
+		> .flex__full,
+		> .flex__sidebar,
+		> .flex__content,
+		> div[class^="flex__xs"],
+		> div[class^="flex__sm"],
+		> div[class^="flex__md"],
+		> div[class^="flex__lg"],
+		> div[class^="flex__xl"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.flex__layout {
+	.flex__full {
+		flex-basis: percentage(12 / 12);
+	}
+	.flex__sidebar {
+		@media screen and (max-width: $screen-xs-max) {
+			flex-basis: percentage(12 / 12);
+		}
+		@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			flex-basis: percentage(4 / 12);
+		}
+		@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+			flex-basis: percentage(3 / 12);
+		}
+		@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+			flex-basis: percentage(3 / 12);
+		}
+		@media screen and (min-width: $screen-xl-min) {
+			flex-basis: percentage(2 / 12);
+		}
+	}
+	.flex__content {
+		@media screen and (max-width: $screen-xs-max) {
+			flex-basis: percentage(12 / 12);
+		}
+		@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			flex-basis: percentage(8 / 12);
+		}
+		@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+			flex-basis: percentage(9 / 12);
+		}
+		@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+			flex-basis: percentage(9 / 12);
+		}
+		@media screen and (min-width: $screen-xl-min) {
+			flex-basis: percentage(10 / 12);
+		}
+	}
+}
+
+.flex--visible {
+	margin-left: -20px;
+	margin-right: -20px;
+
+	&[flex-order="reverse"] {
+
+		div[class^="flex__"] {
+
+			+ div[class^="flex__"] {
+				border-right: 1px solid #fff;
+				border-left: 0;
+
+				&:last-child {
+					border-left: 0 !important;
+				}
+			}
+		}
+	}
+
+
+	.flex__layout {
+		background-color: #6bddc3;
+
+		> .flex__full,
+		> .flex__sidebar,
+		> .flex__content,
+		> div[class^="flex__xs"],
+		> div[class^="flex__sm"],
+		> div[class^="flex__md"],
+		> div[class^="flex__lg"],
+		> div[class^="flex__xl"] {
+
+			p {
+				text-align: center;
+				background-color: #bef0e5;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+
+			+ .flex__full,
+			+ .flex__sidebar,
+			+ .flex__content,
+			+ div[class^="flex__xs"],
+			+ div[class^="flex__sm"],
+			+ div[class^="flex__md"],
+			+ div[class^="flex__lg"],
+			+ div[class^="flex__xl"] {
+				border-left: 1px solid #FFF;
+				overflow: hidden;
+			}
+		}
+
+		+ .flex__layout {
+			border-top: 1px solid #FFF;
+		}
+	}
+
+	+ .flex--visible {
+		border-top: 1px solid #FFF;
+	}
+}
+
+[flex-justify="center"] {
+	justify-content: center;
+}

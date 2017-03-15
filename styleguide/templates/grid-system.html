@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Grid system</h1>
+
+<h2>Flex grid</h2>
+
+<h3>Regular columns</h3>
+<div class="flex__container flex--visible">
+	<div class="flex__layout">
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+		<div class="flex__xs__1"><p>1/12</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xs__2"><p>2/12</p></div>
+		<div class="flex__xs__2"><p>2/12</p></div>
+		<div class="flex__xs__2"><p>2/12</p></div>
+		<div class="flex__xs__2"><p>2/12</p></div>
+		<div class="flex__xs__2"><p>2/12</p></div>
+		<div class="flex__xs__2"><p>2/12</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xs__8"><p>8/12</p></div>
+		<div class="flex__xs__4"><p>4/12</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xs__4"><p>4/12</p></div>
+		<div class="flex__xs__4"><p>4/12</p></div>
+		<div class="flex__xs__4"><p>4/12</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xs__6"><p>6/12</p></div>
+		<div class="flex__xs__6"><p>6/12</p></div>
+	</div>
+</div>
+
+<h3>Mix-and-match sizes</h3>
+<div class="flex__container flex--visible">
+	<div class="flex__layout">
+		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>1</p></div>
+		<div class="flex__xs__12 flex__sm__4 flex__lg__4"><p>2</p></div>
+		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>3</p></div>
+		<div class="flex__xs__12 flex__sm__4 flex__lg__1"><p>4</p></div>
+		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>5</p></div>
+		<div class="flex__xs__12 flex__sm__4 flex__lg__1"><p>6</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xs__2 flex__md__1 flex__lg__6 flex__xl__3"><p>a</p></div>
+		<div class="flex__xs__4 flex__md__6 flex__lg__6 flex__xl__3"><p>b</p></div>
+		<div class="flex__xs__4 flex__md__3 flex__lg__6 flex__xl__3"><p>c</p></div>
+		<div class="flex__xs__2 flex__md__2 flex__lg__6 flex__xl__3"><p>d</p></div>
+	</div>
+</div>
+
+<h3>Nested Columns</h3>
+<div class="flex__container flex--visible">
+	<div class="flex__layout">
+		<div class="flex__xs__4">
+			<p>4/12</p>
+		</div>
+		<div class="flex__xs__8">
+			<div class="flex__layout">
+				<div class="flex__xs__4"><p>4/12</p></div>
+				<div class="flex__xs__4"><p>4/12</p></div>
+				<div class="flex__xs__4"><p>4/12</p></div>
+			</div>
+			<div class="flex__layout">
+				<div class="flex__xs__4"><p>4/12</p></div>
+				<div class="flex__xs__4"><p>4/12</p></div>
+				<div class="flex__xs__4"><p>4/12</p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<h3>Window-width dependant</h3>
+<div class="flex__container flex--visible">
+	<div class="flex__layout">
+		<div class="flex__xs"><p>.flex__xs</p></div>
+		<div class="flex__xs"><p>.flex__xs</p></div>
+		<div class="flex__xs"><p>.flex__xs</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__sm"><p>.flex__sm</p></div>
+		<div class="flex__sm"><p>.flex__sm</p></div>
+		<div class="flex__sm"><p>.flex__sm</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__md"><p>.flex__md</p></div>
+		<div class="flex__md"><p>.flex__md</p></div>
+		<div class="flex__md"><p>.flex__md</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__lg"><p>.flex__lg</p></div>
+		<div class="flex__lg"><p>.flex__lg</p></div>
+		<div class="flex__lg"><p>.flex__lg</p></div>
+	</div>
+	<div class="flex__layout">
+		<div class="flex__xl"><p>.flex__xl</p></div>
+		<div class="flex__xl"><p>.flex__xl</p></div>
+		<div class="flex__xl"><p>.flex__xl</p></div>
+	</div>
+</div>
+
+<h2>Layouts</h2>
+<p>Use layouts as an alternative to setting the flex-column sizing manually per screen-size. Pre-optimized for different secreen resolutions.</p>
+<div class="flex__container flex--visible">
+	<div class="flex__layout">
+		<div class="flex__full"><p>.flex__full</p></div>
+	</div>
+	<br>
+	<div class="flex__layout">
+		<div class="flex__sidebar"><p>.flex__sidebar</p></div>
+		<div class="flex__content"><p>.flex__content</p></div>
+	</div>
+</div>
+
+<h2>Style Attributes</h2>
+<p>Attributes are added to the container to give an additional layer of control to the grid system, such as reversing it, giving it a fixed-width, or removing horizontal padding</p>
+<h3>Reverse</h3>
+<div class="flex__container flex--visible" flex-order="reverse">
+	<div class="flex__layout">
+		<div class="flex__sidebar"><p>.flex__sidebar</p></div>
+		<div class="flex__content"><p>.flex__content</p></div>
+	</div>
+</div>
+<h3>Seamless</h3>
+<div class="flex__container flex--visible" flex-style="seamless">
+	<div class="flex__layout">
+		<div class="flex__sidebar" style="background-color: #6bddc3; border-right: 1px solid #bef0e5;"><p>.flex__sidebar seamless</p></div>
+		<div class="flex__content" style="background-color: #6bddc3;"><p>.flex__content seamless</p></div>
+	</div>
+</div>
+<h3>Static</h3>
+<div class="flex__container flex--visible" flex-style="static">
+	<div class="flex__layout">
+		<div class="flex__full"><p>.flex__full static</p></div>
+	</div>
+	<br>
+	<div class="flex__layout">
+		<div class="flex__sidebar"><p>.flex__sidebar static</p></div>
+		<div class="flex__content"><p>.flex__content static</p></div>
+	</div>
+</div>
+{% endblock %}
