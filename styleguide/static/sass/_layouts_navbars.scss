@@ -1,0 +1,41 @@
+$gutter: 30px;
+
+.sidebar {
+	background-color: #EEE;
+}
+
+.flex__sidebar {
+	.sidebar {
+		margin-left: -$gutter;
+		margin-top: -($gutter - 5);
+		margin-bottom: -$gutter;
+		@media screen and (max-width: $screen-xs-max) {
+			margin-right: -$gutter;
+		}
+	}
+}
+
+.sidebar__menu {
+	width: 100%;
+	padding: 0;
+	list-style: none;
+	.menu__item {
+		text-transform: uppercase;
+		> a {
+			width: 100%;
+			line-height: 1;
+			font-size: $font-size-base;
+			display: block;
+			padding: 14px 15px;
+			text-decoration: none;
+			color: #424242;
+			&:hover,
+			&:focus,
+			&:active,
+			&.active {
+				background-color: #2C93AC;
+				color: #FFF;
+			}
+		}
+	}
+}

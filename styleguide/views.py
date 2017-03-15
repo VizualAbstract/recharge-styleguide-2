@@ -69,3 +69,9 @@ def grid_systems():
 def sidebars():
     template_file = "sidebars.html"
     return render_template(template_file)
+
+# Layouts
+@app.route('/navbars')
+def navbars():
+    template_file = "navbars.html"
+    return render_template(template_file)
