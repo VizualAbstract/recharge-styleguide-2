@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Sidebars</h1>
+<div class="rc_example">
+	<div class="flex__container" style="margin-left: -20px; margin-right: -20px;">
+		<div class="flex__layout">
+			<div class="flex__sidebar">
+				<div class="sidebar">
+					<ul class="sidebar__menu">
+						<li class="menu__item">
+							<a href="#">Payments</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Apps</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Partner Badges</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="active">Account</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex__content">
+				{{ ui_element("headers/settings", {'title': "Welcome James Erck"}) | safe }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -56,10 +56,16 @@ def dropdowns():
     template_file = "dropdowns.html"
     return render_template(template_file)
 
-# Dynamics
+# Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
 @app.route('/grids')
-def layouts():
-    template_file = "grid-system.html"
+def grid_systems():
+    template_file = "grid-systems.html"
+    return render_template(template_file)
+
+# Layouts
+@app.route('/sidebars')
+def sidebars():
+    template_file = "sidebars.html"
     return render_template(template_file)

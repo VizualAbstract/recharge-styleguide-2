@@ -7,6 +7,9 @@ $screen-lg-min: 992px;
 $screen-lg-max: 1199px;
 $screen-xl-min: 1200px;
 
+
+$gutter: 30px;
+
 .flex__layout {
 	display: flex;
 	flex-wrap: wrap;
@@ -25,8 +28,8 @@ $screen-xl-min: 1200px;
 	[class^="flex__md"],
 	[class^="flex__lg"],
 	[class^="flex__xl"] {
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: ($gutter / 2);
+		padding-right: ($gutter / 2);
 	}
 	.flex__xs__1 {
 		flex-basis: percentage(1 / 12);
@@ -162,11 +165,11 @@ $screen-xl-min: 1200px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: ($gutter / 2);
+	padding-right: ($gutter / 2);
 	.flex__layout {
-		margin-left: -10px;
-		margin-right: -10px;
+		margin-left: -($gutter / 2);
+		margin-right: -($gutter / 2);
 	}
 }
 
@@ -174,54 +177,60 @@ $screen-xl-min: 1200px;
 .flex__layout {
 	@media screen and (max-width: $screen-xs-max) {
 		.flex__xs__12 {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 		.flex__sm__12 {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 		.flex__md__12 {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
 		.flex__lg__12 {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-xl-min) {
 		.flex__xl__12 {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 }
 
 .flex__layout {
 	.flex__full {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-top: $gutter;
+		padding-bottom: $gutter;
+		padding-left: $gutter;
+		padding-right: $gutter;
 	}
 	.flex__sidebar {
-		padding-left: 20px;
-		padding-right: 10px;
+		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
+		padding-bottom: $gutter;
+		padding-left: $gutter;
+		padding-right: ($gutter / 2);
 	}
 	.flex__content {
-		padding-right: 20px;
-		padding-left: 10px;
+		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
+		padding-bottom: $gutter;
+		padding-right: $gutter;
+		padding-left: ($gutter / 2);
 	}
 	@media screen and (max-width: $screen-xs-max) {
 		.flex__sidebar,
 		.flex__content {
-			padding-left: 20px;
-			padding-right: 20px;
+			padding-left: $gutter;
+			padding-right: $gutter;
 		}
 	}
 	[class^="flex__xs"],
@@ -230,10 +239,10 @@ $screen-xl-min: 1200px;
 	[class^="flex__lg"],
 	[class^="flex__xl"] {
 		&:first-child {
-			padding-left: 20px;
+			padding-left: $gutter;
 		}
 		&:last-child {
-			padding-right: 20px;
+			padding-right: $gutter;
 		}
 	}
 	.flex__layout {
@@ -243,10 +252,10 @@ $screen-xl-min: 1200px;
 		[class^="flex__lg"],
 		[class^="flex__xl"] {
 			&:first-child {
-				padding-left: 10px;
+				padding-left: ($gutter / 2);
 			}
 			&:last-child {
-				padding-right: 10px;
+				padding-right: ($gutter / 2);
 			}
 		}
 	}
@@ -255,18 +264,18 @@ $screen-xl-min: 1200px;
 .flex__container[flex-order="reverse"] {
 	.flex__layout {
 		.flex__sidebar {
-			padding-left: 10px;
-			padding-right: 20px;
+			padding-left: ($gutter / 2);
+			padding-right: $gutter;
 		}
 		.flex__content {
-			padding-right: 10px;
-			padding-left: 20px;
+			padding-right: ($gutter / 2);
+			padding-left: $gutter;
 		}
 		@media screen and (max-width: $screen-xs-max) {
 			.flex__sidebar,
 			.flex__content {
-				padding-left: 20px;
-				padding-right: 20px;
+				padding-left: $gutter;
+				padding-right: $gutter;
 			}
 		}
 		[class^="flex__xs"],
@@ -275,10 +284,10 @@ $screen-xl-min: 1200px;
 		[class^="flex__lg"],
 		[class^="flex__xl"] {
 			&:first-child {
-				padding-right: 20px;
+				padding-right: $gutter;
 			}
 			&:last-child {
-				padding-left: 20px;
+				padding-left: $gutter;
 			}
 		}
 		.flex__layout {
@@ -288,10 +297,10 @@ $screen-xl-min: 1200px;
 			[class^="flex__lg"],
 			[class^="flex__xl"] {
 				&:first-child {
-					padding-right: 10px;
+					padding-right: ($gutter / 2);
 				}
 				&:last-child {
-					padding-left: 10px;
+					padding-left: ($gutter / 2);
 				}
 			}
 		}
