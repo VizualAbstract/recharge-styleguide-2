@@ -10,7 +10,6 @@ $screen-xl-min: 1200px;
 .flex__layout {
 	display: flex;
 	flex-wrap: wrap;
-
 	.flex__full,
 	.flex__sidebar,
 	.flex__content,
@@ -21,7 +20,6 @@ $screen-xl-min: 1200px;
 	[class^="flex__xl"] {
 		min-height: 1px;
 	}
-
 	[class^="flex__xs"],
 	[class^="flex__sm"],
 	[class^="flex__md"],
@@ -30,7 +28,6 @@ $screen-xl-min: 1200px;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-
 	.flex__xs__1 {
 		flex-basis: percentage(1 / 12);
 		flex-grow: 1;
@@ -84,7 +81,6 @@ $screen-xl-min: 1200px;
 			}
 		}
 	}
-
 	.flex__xs,
 	.flex__block {
 		flex-basis: 0;
@@ -166,10 +162,8 @@ $screen-xl-min: 1200px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-
 	padding-left: 10px;
 	padding-right: 10px;
-
 	.flex__layout {
 		margin-left: -10px;
 		margin-right: -10px;
@@ -329,11 +323,9 @@ $screen-xl-min: 1200px;
 .flex__container[flex-seamless="true"] {
 	padding-left: 0;
 	padding-right: 0;
-
 	> .flex__layout {
 		margin-left: 0;
 		margin-right: 0;
-
 		> .flex__full,
 		> .flex__sidebar,
 		> .flex__content,
@@ -389,15 +381,11 @@ $screen-xl-min: 1200px;
 }
 
 .flex--visible {
-
 	&[flex-order="reverse"] {
-
 		div[class^="flex__"] {
-
 			+ div[class^="flex__"] {
 				border-right: 1px solid #fff;
 				border-left: 0;
-
 				&:last-child {
 					border-left: 0 !important;
 				}
@@ -417,14 +405,12 @@ $screen-xl-min: 1200px;
 		> div[class^="flex__md"],
 		> div[class^="flex__lg"],
 		> div[class^="flex__xl"] {
-
 			p {
 				text-align: center;
 				background-color: #bef0e5;
 				padding-top: 5px;
 				padding-bottom: 5px;
 			}
-
 			+ .flex__full,
 			+ .flex__sidebar,
 			+ .flex__content,
@@ -437,17 +423,11 @@ $screen-xl-min: 1200px;
 				overflow: hidden;
 			}
 		}
-
 		+ .flex__layout {
 			border-top: 1px solid #FFF;
 		}
 	}
-
 	+ .flex--visible {
 		border-top: 1px solid #FFF;
 	}
-}
-
-[flex-justify="center"] {
-	justify-content: center;
 }
