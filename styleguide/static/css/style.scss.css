@@ -3125,4 +3125,105 @@ h5, .rc_h5 {
   color: #FFF;
 }
 
+.navbar {
+  position: relatrive;
+  align-items: center;
+  flex-wrap: nowrap;
+  display: flex;
+  background-color: #424242;
+}
+
+.navbar a {
+  color: #FFF;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-block;
+}
+
+.navbar__logo {
+  padding: 22px 15px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.navbar__toggle {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.navbar__nav {
+  list-style: none;
+  display: flex;
+}
+
+.navbar__nav > li > a {
+  padding: 22px 15px;
+}
+
+.navbar__nav > li > a:hover, .navbar__nav > li > a:focus, .navbar__nav > li > a:active, .navbar__nav > li > a.active {
+  background-color: #000;
+}
+
+.navbar + .navbar {
+  margin-top: 30px;
+}
+
+.navbar .rc_dropdown {
+  height: 60px;
+  padding: 0;
+  margin: 0 0 0 auto;
+}
+
+.navbar .rc_dropdown .rc_dropdown__toggle {
+  padding: 22px 15px;
+  height: 60px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #FFF;
+}
+
+.sidebar {
+  background-color: #EEE;
+}
+
+.flex__sidebar .sidebar {
+  margin-left: -30px;
+  margin-top: -25px;
+  margin-bottom: -30px;
+}
+
+@media screen and (max-width: 575px) {
+  .flex__sidebar .sidebar {
+    margin-right: -30px;
+  }
+}
+
+.sidebar__menu {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar__menu .menu__item {
+  text-transform: uppercase;
+}
+
+.sidebar__menu .menu__item > a {
+  width: 100%;
+  line-height: 1;
+  font-size: 16px;
+  display: block;
+  padding: 14px 15px;
+  text-decoration: none;
+  color: #424242;
+}
+
+.sidebar__menu .menu__item > a:hover, .sidebar__menu .menu__item > a:focus, .sidebar__menu .menu__item > a:active, .sidebar__menu .menu__item > a.active {
+  background-color: #2C93AC;
+  color: #FFF;
+}
+
 /*# sourceMappingURL=../css/style.scss.css.map */

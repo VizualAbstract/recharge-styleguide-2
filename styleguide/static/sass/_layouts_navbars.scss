@@ -1,5 +1,62 @@
 $gutter: 30px;
 
+
+.navbar {
+	position: relatrive;
+	align-items: center;
+	flex-wrap: nowrap;
+	display: flex;
+	background-color: #424242;
+	a {
+		color: #FFF;
+		font-size: 16px;
+		text-decoration: none;
+		text-transform: uppercase;
+		line-height: 1;
+		display: inline-block;
+	}
+	&__logo {
+		padding: 22px 15px;
+		display: inline-block;
+		white-space: nowrap;
+	}
+	&__toggle {
+		position: absolute;
+		top: 0;
+		right: ($gutter / 2);
+	}
+	&__nav {
+		list-style: none;
+		display: flex;
+		> li {
+			> a {
+				padding: 22px 15px;
+				&:hover,
+				&:focus,
+				&:active,
+				&.active {
+					background-color: #000;
+				}
+			}
+		}
+	}
+	+ .navbar {
+		margin-top: $gutter;
+	}
+	.rc_dropdown {
+		height: 60px;
+		padding: 0;
+		margin: 0 0 0 auto;
+		.rc_dropdown__toggle {
+			padding: 22px 15px;
+			height: 60px;
+			text-transform: uppercase;
+			line-height: 1;
+			color: #FFF;
+		}
+	}
+}
+
 .sidebar {
 	background-color: #EEE;
 }

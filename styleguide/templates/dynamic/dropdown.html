@@ -1,13 +1,14 @@
 <div class="rc_dropdown">
-	<button class="rc_h3 button button--link rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
-		Recurring Charge Confirmation
+	<button class="{% if parameters['style'] %}rc_{{ parameters['style'] }} {% endif %}button button--link rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+		{{ parameters['title'] }}
 	</button>
-	<div class="rc_dropdown__menu rc_dropdown__menu--right">
-		<a class="rc_item" href="#">Link 1</a>
-		<a class="rc_item" href="#">Link 2</a>
-		<a class="rc_item" href="#">Link 3</a>
-		<div class="rc_dropdown__divider"></div>
-		<a class="rc_item" href="#">Another action</a>
-		<a class="rc_item" href="#">Something else here</a>
+	<div class="rc_dropdown__menu{% if parameters['alignment'] %} rc_dropdown__menu--{{ parameters['alignment'] }}{% endif %}">
+		{% for link in parameters['links'] %}
+			{% if link['title'] %}
+				<a href="{{ link['url'] }}" class="rc_item{% if link['active'] %} rc_ctive{% endif %}">{{ link['title'] }}</a>
+			{% else %}
+				<div class="rc_dropdown__divider"></div>
+			{% endif %}
+		{% endfor %}
 	</div>
 </div>
