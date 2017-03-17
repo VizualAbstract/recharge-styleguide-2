@@ -1,7 +1,7 @@
 # app/helpers.py
 
 from flask import Flask
-from flask import render_template, render_template_string, make_response, escape
+from flask import render_template, render_template_string, make_response, escape, request
 from styleguide import app
 import random, string
 
@@ -90,6 +90,13 @@ def ui_element(component, parameters = {}):
 
     return render_template(ui_template, parameters = parameters)
 app.jinja_env.globals.update(ui_element = ui_element)
+
+# ReCharge Functions
+def is_recharge_admin():
+    is_recharge_admin = True # is_recharge_admin = 'true' if request.cookies.get('admin') == "bootstrap" else None
+    return is_recharge_admin
+
+app.jinja_env.globals.update(is_recharge_admin = is_recharge_admin)
 
 # Custom Filters
 @app.template_filter('site_title')

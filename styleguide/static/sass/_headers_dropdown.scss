@@ -47,7 +47,7 @@
 		margin: 0;
 	}
 
-	@media screen and (max-width: $screen-xs-max) {
+	@media screen and (max-width: $mobile-nav-max) {
 		.header-dropdown__title {
 			order: 1;
 			width: 100%;

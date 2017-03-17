@@ -8,68 +8,95 @@
 		<a href="#" class="navbar__logo">
 			ReCharge
 		</a>
-		<ul class="navbar__nav">
-			<li><a href="#">Orders</a></li>
-			<li><a href="#">Customers</a></li>
-			<li><a href="#">Rulesets</a></li>
-			<li><a href="#">Reports</a></li>
-		</ul>
-		{{ ui_element('dynamic/dropdown', {
-			'title': "My Dropdown",
-			'active': true,
-			'alignment': "right",
-			'links': [{
-					'title': 'Link 1',
-					'url': '/link-1',
-					'active': false
-				}, {
-					'title': 'Link 2',
-					'url': '/link-2',
-					'active': false
-				}, {
-					'title': 'Link 3',
-					'url': '/link-3',
-					'active': false
-				}]
-		}) | safe }}
+		<button class="navbar__toggle" data-toggle="collapse" data-target="#navbar__menu"></button>
+		<div id="navbar__menu" class="navbar__collapse collapse"> <!-- collapse -->
+			<ul class="navbar__nav">
+				<li><a href="#">Orders</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#" class="active">Rulesets</a></li>
+				<li><a href="#">Reports</a></li>
+			</ul>
+			{{ ui_element('dynamic/dropdown', {
+				'title': "Store settings",
+				'alignment': "right",
+				'icon': "wrench",
+				'links': [{
+						'title': 'General settings'
+					}, {
+						'title': 'Discounts',
+					}, {
+						'title': 'Subscription prices',
+						'admin': true,
+					}, {
+						'title': 'Taxes',
+					}, {
+						'title': 'Shipping',
+					}, {
+						'title': 'Shipping zones',
+						'admin': true,
+					}, {
+						'title': 'Integrations',
+					}, {
+						'title': 'Customer portal',
+					}, {
+						'title': 'Checkout',
+					}, {
+						'title': 'Notifications',
+					}, {
+						'title': 'Subscription widget',
+					}, {
+						'title': 'Refer a friend',
+					}]
+			}) | safe }}
+			{{ ui_element('dynamic/dropdown', {
+				'title': "Account settings",
+				'alignment': "right",
+				'icon': "user",
+				'links': [{
+						'title': 'Support center'
+					}, {
+						'title': 'My account',
+					}]
+			}) | safe }}
+		</div>
 	</div>
-
-	<nav class="navbar navbar--one-pager">
-		<div class="container">
-			<a href="/" class="navbar__brand navbar__brand--partners">
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<a href="#" class="navbar__logo">
 				ReCharge
 			</a>
+			<span class="navbar__title">
+				Partners
+			</span>
+			<button class="navbar__toggle" data-toggle="collapse" data-target="#navbar__menu__partners"></button>
 		</div>
-	</nav>
-
-	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<a class="navbar-brand" href="#">Navbar</a>
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-					<div class="dropdown-menu" aria-labelledby="dropdown01">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
+		<div id="navbar__menu__partners" class="navbar__collapse collapse">
+			<ul class="navbar__nav navbar__nav--right">
+				<li>
+					<a href="#">Sign in</a>
 				</li>
 			</ul>
 		</div>
-	</nav>
-
-
+	</div>
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<a href="#" class="navbar__logo">
+				ReCharge
+			</a>
+			<span class="navbar__title">
+				API
+			</span>
+		</div>
+	</div>
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<a href="#" class="navbar__logo">
+				ReCharge
+			</a>
+			<span class="navbar__title">
+				Migrations
+			</span>
+		</div>
+	</div>
 </div>
 {% endblock %}

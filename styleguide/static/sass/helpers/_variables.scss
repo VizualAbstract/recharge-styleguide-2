@@ -1,2 +1,16 @@
 $screen-xs-max: 709px; // 677px;
 $screen-sm-min: 710px; // 678px;
+
+
+$screen-xs-max: 575px;
+$screen-sm-min: 576px;
+$screen-sm-max: 767px;
+$screen-md-min: 768px;
+$screen-md-max: 991px;
+$screen-lg-min: 992px;
+$screen-lg-max: 1199px;
+$screen-xl-min: 1200px;
+
+
+$gutter: 30px;
+$mobile-nav-max: $screen-sm-max;

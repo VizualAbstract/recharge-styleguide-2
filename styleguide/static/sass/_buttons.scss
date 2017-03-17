@@ -117,11 +117,12 @@
 .button--link + .button--link {
 	margin-left: 0;
 }
-.button--block + .button--block {
-	margin-top: 10px;
-}
 .button + .button {
 	margin-left: 10px;
+}
+.button--block + .button--block {
+	margin-top: 10px;
+	margin-left: 0;
 }
 // Button: Disabled
 .button {

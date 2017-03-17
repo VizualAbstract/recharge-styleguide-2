@@ -3,9 +3,9 @@ $dropdown-bg: #676767;
 $body-color: #FFF;
 $dropdown-link-color: #FFF;
 $dropdown-link-hover-color: #FFF;
-$dropdown-link-hover-bg: #53BAD3;
+$dropdown-link-hover-bg: #000;
 $dropdown-link-active-color: #FFF;
-$dropdown-link-active-bg: #53BAD3;
+$dropdown-link-active-bg: #000;
 $dropdown-min-width: 240px;
 $dropdown-font-weight: 700;
 $dropdown-link-font-weight: 400;
@@ -64,7 +64,7 @@ $zindex-dropdown-backdrop: 30;
 .rc_dropdown {
   position: relative;
   display: inline-block;
-  @media screen and (max-width: $screen-xs-max) {
+  @media screen and (max-width: $mobile-nav-max) {
     width: 100%;
   }
 }
@@ -90,6 +90,11 @@ $zindex-dropdown-backdrop: 30;
     display: inline-block;
     top: 0;
     margin-left: 10px;
+  }
+
+  .fa {
+    font-size: 25px;
+    margin-top: -4px;
   }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -124,7 +129,7 @@ $zindex-dropdown-backdrop: 30;
   list-style: none;
   background-color: $dropdown-bg;
   background-clip: padding-box;
-  @media screen and (max-width: $screen-xs-max) {
+  @media screen and (max-width: $mobile-nav-max) {
     width: 100%;
   }
   // &:before {

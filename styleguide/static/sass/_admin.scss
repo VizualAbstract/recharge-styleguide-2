@@ -1,0 +1,17 @@
+a.admin-recharge {
+	color: #53bad3;
+}
+.admin-recharge a {
+	color: #53bad3;
+}
+
+.rc_dropdown .rc_item.admin-recharge {
+	color: #53bad3;
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		color: #FFF;
+		background-color: #53bad3;
+	}
+}

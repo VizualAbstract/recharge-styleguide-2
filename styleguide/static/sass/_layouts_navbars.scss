@@ -1,98 +1,301 @@
-$gutter: 30px;
-
-
 .navbar {
-	position: relatrive;
+	position: relative;
 	align-items: center;
 	flex-wrap: nowrap;
 	display: flex;
 	background-color: #424242;
+	font-family: 'ralewaymedium', arial, sans-serif;
+
+	@media screen and (max-width: $mobile-nav-max) {
+		text-align: left;
+		flex-direction: column;
+	}
 	a {
 		color: #FFF;
 		font-size: 16px;
 		text-decoration: none;
-		text-transform: uppercase;
 		line-height: 1;
 		display: inline-block;
 	}
-	&__logo {
-		padding: 22px 15px;
-		display: inline-block;
-		white-space: nowrap;
+}
+
+.navbar__logo {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 60px;
+
+	margin-left: 0;
+	margin-right: auto;
+
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	min-width: 58px;
+	width: 58px;
+	background-image: url(../images/logos/logo__icon__white.svg);
+	background-size: 29px;
+
+	@media screen and (max-width: $mobile-nav-max) {
+		min-width: 165px;
+		width: 165px;
+		background-image: url(../images/logos/logo__white.svg);
+		background-size: 135px 40px;
 	}
-	&__toggle {
-		position: absolute;
-		top: 0;
-		right: ($gutter / 2);
+}
+
+.navbar__toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+	background-color: transparent;
+	border: none;
+	padding: 0 15px;
+	line-height: 1;
+	height: 60px;
+	line-height: 60px;
+	outline: none;
+	color: #FFF;
+	cursor: pointer;
+	&:hover,
+	&:active {
+		color: #4dd6b7;
 	}
-	&__nav {
-		list-style: none;
-		display: flex;
-		> li {
-			> a {
-				padding: 22px 15px;
-				&:hover,
-				&:focus,
-				&:active,
-				&.active {
-					background-color: #000;
-				}
+	&:before {
+		font-size: 26px;
+		display: block;
+		content: "\f0c9";
+		font-family: 'fontawesome';
+		text-align: center;
+	}
+	@media screen and (max-width: $mobile-nav-max) {
+		display: block;
+	}
+}
+
+.navbar__header {
+	display: flex;
+	margin: 0 auto 0 0;
+	.navbar__title {
+		padding: 27px 15px;
+		display: block;
+		text-transform: uppercase;
+	}
+}
+
+.navbar__nav {
+	list-style: none;
+	display: flex;
+    width: 100%;
+    .navbar__collapse & {
+    	width: initial;
+    }
+	> li {
+		> span,
+		> a {
+			text-transform: uppercase;
+			display: inline-block;
+			padding: 22px 15px;
+			line-height: 1;
+			@media screen and (max-width: $mobile-nav-max) {
+				padding: 17px 15px;
+			}
+		}
+		> a {
+			&:hover,
+			&:focus,
+			&:active,
+			&.active {
+				background-color: #000;
 			}
 		}
 	}
-	+ .navbar {
-		margin-top: $gutter;
+	@media screen and (max-width: $mobile-nav-max) {
+		flex-direction: column;
+		> li {
+			> a {
+				display: block;
+			}
+		}
 	}
+	&--right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		@media screen and (max-width: $mobile-nav-max) {
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.navbar__collapse {
+	width: 100%;
+	@media screen and (min-width: $mobile-nav-max + 1) {
+		display: flex !important;
+	}
+	@media screen and (max-width: $mobile-nav-max) {
+		display: block;
+		// background-color: #676767;
+	}
+}
+
+.navbar {
 	.rc_dropdown {
 		height: 60px;
 		padding: 0;
 		margin: 0 0 0 auto;
+
 		.rc_dropdown__toggle {
 			padding: 22px 15px;
 			height: 60px;
 			text-transform: uppercase;
 			line-height: 1;
 			color: #FFF;
+			min-width: 40px;
+		}
+
+		@media screen and (max-width: $mobile-nav-max) {
+			height: 50px;
+			border-top: 1px solid #8e8f8e;
+
+			.rc_dropdown__toggle {
+				height: 50px;
+				padding: 17px 15px;
+			}
+		}
+
+		.rc_item {
+			text-transform: initial;
+			font-family: 'raleway-semibold', arial, non-serif;
+		}
+	
+		+ .rc_dropdown {
+			margin-left: 0;
+		}
+
+		@media screen and (max-width: $mobile-nav-max) {
+			.rc_dropdown__toggle {
+				width: 100%;
+				text-align: left;
+				.fa {
+					position: relative;
+					margin-right: 9px;
+					top: 4px;
+					margin-top: -8px;
+				}
+				&:after {
+					float: right;
+				}
+			}
 		}
 	}
 }
 
-.sidebar {
-	background-color: #EEE;
+.collapsing {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	transition-property: height;
+	transition-duration: 0.35s;
+	transition-timing-function: ease;
 }
 
-.flex__sidebar {
-	.sidebar {
-		margin-left: -$gutter;
-		margin-top: -($gutter - 5);
-		margin-bottom: -$gutter;
-		@media screen and (max-width: $screen-xs-max) {
-			margin-right: -$gutter;
-		}
+.collapse {
+	display: none;
+
+	&.show {
+		display: block;
 	}
 }
 
-.sidebar__menu {
-	width: 100%;
-	padding: 0;
-	list-style: none;
-	.menu__item {
-		text-transform: uppercase;
-		> a {
-			width: 100%;
-			line-height: 1;
-			font-size: $font-size-base;
-			display: block;
-			padding: 14px 15px;
-			text-decoration: none;
+.navbar--standalone {
+	background-color: #fff;
+	.navbar__logo {
+		min-width: 179px;
+		width: 179px;
+		background-image: url(../images/logos/logo__color.svg);
+		background-size: 165px 43px;
+		background-position: 100% 43%;
+		height: 80px;
+	}
+	a {
+		color: #F6A623;
+	}
+	.navbar__nav {
+		> li {
+			> span,
+			> a {
+				padding: 32px 15px;
+				@media screen and (max-width: $mobile-nav-max) {
+					padding: 22px 15px;
+				}
+			}
+			> a {
+				font-family: 'ralewaysemibold';
+				text-transform: initial;
+				&:hover,
+				&:focus,
+				&:active,
+				&.active {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+	.navbar__toggle {
+		color: #4dd6b7;
+		padding: 0 15px;
+		height: 80px;
+		&:hover,
+		&:active {
+			color: #4dd6b7;
+		}
+	}
+	.rc_dropdown {
+		height: 80px;
+
+		.rc_dropdown__toggle {
 			color: #424242;
+			height: 80px;
+			padding: 0 15px;
+			background-color: transparent;
 			&:hover,
 			&:focus,
 			&:active,
 			&.active {
-				background-color: #2C93AC;
-				color: #FFF;
+				color: #000;
+			}
+		}
+
+		@media screen and (max-width: $mobile-nav-max) {
+			height: 60px;
+			border-top: 1px solid #CCC;
+
+			.rc_dropdown__toggle {
+				height: 60px;
+				padding: 22px 15px;
+			}
+		}
+
+		.rc_dropdown__menu {
+			background-color: #EEE;
+			.rc_item {
+				color: #474747;
+				&:hover,
+				&:focus,
+				&:active,
+				&.active {
+					color: #000;
+					background-color: #CCC;
+				}
 			}
 		}
 	}
+}
+
+.navbar--inverse {
 }

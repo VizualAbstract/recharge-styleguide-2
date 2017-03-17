@@ -1,0 +1,17 @@
+.visible--xs {
+	display: none;
+	@media screen and (max-width: $screen-xs-max) {
+		display: initial;
+	}
+}
+
+.visible--mobile {
+	display: none;
+	@media screen and (max-width: $mobile-nav-max) {
+		display: initial;
+	}
+}
+
+.pull--right {
+	float: right;
+}

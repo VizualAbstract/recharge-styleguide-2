@@ -41,7 +41,7 @@
 		margin: 0;
 	}
 
-	@media screen and (max-width: 677px) {
+	@media screen and (max-width: $mobile-nav-max) {
 		.header-settings__title {
 			order: 1;
 			width: 100%;

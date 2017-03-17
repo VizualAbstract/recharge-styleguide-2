@@ -1,13 +1,24 @@
 <div class="rc_dropdown">
-	<button class="{% if parameters['style'] %}rc_{{ parameters['style'] }} {% endif %}button button--link rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
-		{{ parameters['title'] }}
+	<button class="{% if parameters['style'] %}rc_{{ parameters['style'] }} {% endif %}button{% if parameters['link'] %} button--link{% endif %} rc_dropdown__toggle{% if parameters['active'] %} active{% endif %}" id="dropdownMenuButton" data-toggle="dropdown">
+		{% if parameters['icon'] %}
+			<span class="fa fa-{{ parameters['icon'] }}"></span>
+		{% endif %}
+		{% if parameters['icon'] and parameters['title'] -%}
+			<span class="visible--xs">
+		{%- endif -%}
+			{{ parameters['title'] }}
+		{%- if parameters['icon'] and parameters['title'] -%}
+			</span>
+		{%- endif %}
 	</button>
 	<div class="rc_dropdown__menu{% if parameters['alignment'] %} rc_dropdown__menu--{{ parameters['alignment'] }}{% endif %}">
 		{% for link in parameters['links'] %}
-			{% if link['title'] %}
-				<a href="{{ link['url'] }}" class="rc_item{% if link['active'] %} rc_ctive{% endif %}">{{ link['title'] }}</a>
-			{% else %}
-				<div class="rc_dropdown__divider"></div>
+			{% if not link['admin'] or (link['admin'] and is_recharge_admin()) %}
+				{% if link['title'] %}
+					<a href="{{ link['url'] }}" class="rc_item{% if link['active'] %} active{% endif %}{% if link['admin'] %} admin-recharge{% endif %}">{{ link['title'] }}</a>
+				{% else %}
+					<div class="rc_dropdown__divider"></div>
+				{% endif %}
 			{% endif %}
 		{% endfor %}
 	</div>

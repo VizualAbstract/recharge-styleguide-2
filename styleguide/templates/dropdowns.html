@@ -4,9 +4,44 @@
 <p>Under active development</p>
 <div class="rc_example">
 	{{ ui_element('dynamic/dropdown', {
+		'title': "My Dropdown",
+		'links': [{
+				'title': 'Link 1',
+				'url': '/link-1',
+				'active': false
+			}, {
+				'title': 'Link 2',
+				'url': '/link-2',
+				'active': false
+			}, {
+				'title': 'Link 3',
+				'url': '/link-3',
+				'active': false
+			}]
+	}) | safe }}
+	{{ ui_element('dynamic/dropdown', {
+		'title': "My Dropdown",
+		'active': true,
+		'links': [{
+				'title': 'Link 1',
+				'url': '/link-1',
+				'active': false
+			}, {
+				'title': 'Link 2',
+				'url': '/link-2',
+				'active': false
+			}, {
+				'title': 'Link 3',
+				'url': '/link-3',
+				'active': false
+			}]
+	}) | safe }}
+</div>
+<div class="rc_example">
+	{{ ui_element('dynamic/dropdown', {
 		'title': "Recurring Charge Confirmation", 
-		'active': false,
 		'style': 'h3',
+		'link': true,
 		'alignment': 'right',
 		'links': [{
 				'title': 'Link 1',
@@ -26,24 +61,6 @@
 			}, {
 				'title': 'Something else here'
 			}]
-		}) | safe }}
-</div>
-<div class="rc_example">
-		{{ ui_element('dynamic/dropdown', {
-			'title': "My Dropdown",
-			'active': true,
-			'alignment': "left",
-			'links': [{
-					'title': 'Link 1',
-					'url': '/link-1'
-				}, {
-					'title': 'Link 2',
-					'url': '/link-2',
-					'active': true
-				}, {
-					'title': 'Link 3',
-					'url': '/link-3'
-				}]
 		}) | safe }}
 </div>
 {% endblock %}
