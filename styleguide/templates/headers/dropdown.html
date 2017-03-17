@@ -1,8 +1,10 @@
 <div class="header-dropdown">
 	<div class="header-dropdown__title">
-		{% with parameters = dropdown %}
-			{{ ui_element("dynamic/dropdown", parameters) | safe }}
-		{% endwith %}
+		{% if parameters['dropdown'] %}
+			{% with parameters = parameters['dropdown'] %}
+				{{ ui_element("dynamic/dropdown", parameters) | safe }}
+			{% endwith %}
+		{% endif %}
 	</div>
 	{% if parameters['description'] %}
 		<div class="header-dropdown__description">

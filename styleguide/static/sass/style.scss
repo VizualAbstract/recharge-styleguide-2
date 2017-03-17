@@ -109,15 +109,31 @@ h5, .rc_h5 {
 	font-style: normal;
 }
 
+a {
+	text-decoration: none;
+	&:link,
+	&:visited {
+		color: $primary;
+	}
+	&:hover,
+	&:active,
+	&.active {
+		color: darken($primary, 10%);
+	}
+}
+
 @import '_headers_settings.scss';
 @import '_headers_signup.scss';
 @import '_headers_dropdown.scss';
 
 @import '_dynamics_dropdown.scss';
 
-@import '_layouts_grid-system.scss';
-@import '_layouts_sidebar.scss';
-@import '_layouts_navbars.scss';
+@import '_layout_grid-system.scss';
+@import '_layout_tables.scss';
+
+@import '_navigation_sidebar.scss';
+@import '_navigation_navbars.scss';
+@import '_navigation_breadcrumbs.scss';
 
 @import '_admin.scss';
 @import '_utilities.scss';

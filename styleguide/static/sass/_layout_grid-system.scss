@@ -337,6 +337,30 @@
 	}
 }
 
+.flex__container[flex-max="xs"],
+.flex__container[flex-xs="true"] {
+	max-width: $screen-xs-max !important;
+}
+.flex__container[flex-max="sm"],
+.flex__container[flex-sm="true"] {
+	max-width: $screen-sm-max !important;
+}
+.flex__container[flex-max="md"],
+.flex__container[flex-md="true"] {
+	max-width: $screen-md-max !important;
+}
+.flex__container[flex-max="lg"],
+.flex__container[flex-lg="true"] {
+	max-width: $screen-lg-max !important;
+}
+
+.flex__container[flex-anchor="left"] {
+	margin-left: 0;
+}
+.flex__container[flex-anchor="right"] {
+	margin-right: 0;
+}
+
 .flex__layout {
 	.flex__full,
 	.flex__sidebar,
@@ -443,5 +467,12 @@
 	}
 	+ .flex--visible {
 		border-top: 1px solid #FFF;
+	}
+}
+
+.flex__content {
+	> .flex__container {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }

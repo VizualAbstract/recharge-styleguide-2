@@ -106,3 +106,9 @@
 	margin-left: -20px;
 	margin-right: -20px;
 }
+
+.rc_example .breadcrumbs {
+	+ .breadcrumbs {
+		margin-top: 20px;
+	}	
+}

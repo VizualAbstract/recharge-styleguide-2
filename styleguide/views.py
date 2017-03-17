@@ -75,3 +75,9 @@ def sidebars():
 def navbars():
     template_file = "navbars.html"
     return render_template(template_file)
+
+# Layouts
+@app.route('/tables')
+def tables():
+    template_file = "tables.html"
+    return render_template(template_file)

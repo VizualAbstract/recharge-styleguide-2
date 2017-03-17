@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Tables</h1>
+<div class="rc_example">
+<div class="rc_table__container">
+	<table class="rc_table">
+		<tfoot>
+			<tr>
+				<td>Total</td>
+				<td>$73.91</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>Charged to stores last month</td>
+				<td>$73.91</td>
+			</tr>
+			<tr>
+				<td>Affiliate percentage</td>
+				<td>20%</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="rc_table__container">
+	<table class="rc_table">
+		<thead>
+			<tr>
+				<th>URL</th>
+				<th>Charged to store last month</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>Total</td>
+				<td>$73.91</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>thrive-market-2.myshopify.com</td>
+				<td>$0.00</td>
+			</tr>
+			<tr>
+				<td>phivebar.myshopify.com</td>
+				<td>$73.91</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="rc_table__container">
+	<table class="rc_table">
+		<thead>
+			<tr>
+				<th>URL</th>
+				<th>Charged to store last month</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="#">API token name</a></td>
+				<td>76edcegbbc92d30b9020a8383a6932a</td>
+				<td><button class="button button--link"><span class="fa fa-trash"></span></button>
+			</tr>
+			<tr>
+				<td><a href="#">custom checkout</a></td>
+				<td>cb7b91588793beb4c46d49d3bbb05912</td>
+				<td><button class="button button--link"><span class="fa fa-trash"></span></button>
+			</tr>
+			<tr>
+				<td><a href="#">POS Integration</a></td>
+				<td>cb9d6d5a6s700ad5as98asdf0asdfad3</td>
+				<td><button class="button button--link"><span class="fa fa-trash"></span></button>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+{% endblock %}
