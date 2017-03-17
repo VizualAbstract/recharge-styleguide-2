@@ -338,41 +338,58 @@
 }
 
 .flex__layout {
+	.flex__full,
+	.flex__sidebar,
+	.flex__content {
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
 	.flex__full {
 		flex-basis: percentage(12 / 12);
+		max-width: percentage(12 / 12);
 	}
 	.flex__sidebar {
 		@media screen and (max-width: $screen-xs-max) {
 			flex-basis: percentage(12 / 12);
+			max-width: percentage(12 / 12);
 		}
 		@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 			flex-basis: percentage(4 / 12);
+			max-width: percentage(4 / 12);
 		}
 		@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 			flex-basis: percentage(3 / 12);
+			max-width: percentage(3 / 12);
 		}
 		@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
 			flex-basis: percentage(3 / 12);
+			max-width: percentage(3 / 12);
 		}
 		@media screen and (min-width: $screen-xl-min) {
 			flex-basis: percentage(2 / 12);
+			max-width: percentage(2 / 12);
 		}
 	}
 	.flex__content {
 		@media screen and (max-width: $screen-xs-max) {
 			flex-basis: percentage(12 / 12);
+			max-width: percentage(12 / 12);
 		}
 		@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 			flex-basis: percentage(8 / 12);
+			max-width: percentage(8 / 12);
 		}
 		@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 			flex-basis: percentage(9 / 12);
+			max-width: percentage(9 / 12);
 		}
 		@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
 			flex-basis: percentage(9 / 12);
+			max-width: percentage(9 / 12);
 		}
 		@media screen and (min-width: $screen-xl-min) {
 			flex-basis: percentage(10 / 12);
+			max-width: percentage(10 / 12);
 		}
 	}
 }

@@ -1,14 +1,12 @@
 .visible--xs {
-	display: none;
-	@media screen and (max-width: $screen-xs-max) {
-		display: initial;
+	@media screen and (min-width: $screen-xs-max + 1) {
+		display: none;
 	}
 }
 
 .visible--mobile {
-	display: none;
-	@media screen and (max-width: $mobile-nav-max) {
-		display: initial;
+	@media screen and (min-width: $mobile-nav-max + 1) {
+		display: none;
 	}
 }
 
