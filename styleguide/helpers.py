@@ -71,7 +71,7 @@ def ui_element(component, parameters = {}):
             # An id attribute is required for a checkbox. If none is provided, generate a random one
             parameters['id'] = ''.join([random.choice(string.lowercase) for i in xrange(10)])
 
-    if str(component) == 'buttons/button':
+    if str(component) in ['buttons/button', 'buttons/links']:
         try:
             color = validate_colors(parameters['color'])
             parameters['color'] = " button--" + str(color)

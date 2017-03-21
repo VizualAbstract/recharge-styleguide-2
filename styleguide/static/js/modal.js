@@ -19,9 +19,9 @@ var Modal = function ($) {
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'modal';
+  var NAME = 'rc_modal';
   var VERSION = '4.0.0-alpha.6';
-  var DATA_KEY = 'bs.modal';
+  var DATA_KEY = 'rc_modal';
   var EVENT_KEY = '.' + DATA_KEY;
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
@@ -58,17 +58,17 @@ var Modal = function ($) {
   };
 
   var ClassName = {
-    SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
-    BACKDROP: 'modal-backdrop',
-    OPEN: 'modal-open',
-    FADE: 'fade',
-    SHOW: 'show'
+    SCROLLBAR_MEASURER: 'rc_modal__scrollbar-measure',
+    BACKDROP: 'rc_modal__backdrop',
+    OPEN: 'rc_modal__open',
+    FADE: 'rc_fade',
+    SHOW: 'rc_show'
   };
 
   var Selector = {
-    DIALOG: '.modal-dialog',
-    DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
+    DIALOG: '.rc_modal',
+    DATA_TOGGLE: '[data-toggle="rc_modal"]',
+    DATA_DISMISS: '[data-dismiss="rc_modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top'
   };
 
@@ -532,4 +532,3 @@ var Modal = function ($) {
 
   return Modal;
 }(jQuery);
-//# sourceMappingURL=modal.js.map

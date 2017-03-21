@@ -27,7 +27,39 @@
 				<div class="flex__container" flex-static="true" flex-seamless="true" flex-max="md" flex-anchor="left">
 					<div class="flex__layout">
 						<div class="flex__full">
-							form
+							{{ ui_element('headers/subtitle', {
+								'title': "Partner details",
+								'size': "3",
+								'links': [{
+									'icon': "pencil",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<br>
+							{{ ui_element('headers/subtitle', {
+								'title': "Email",
+								'size': "5",
+								'text': "james.erck@abovemarket.com"
+							}) | safe }}
+							<hr>
+							{{ ui_element('headers/subtitle', {
+								'title': "Partner details",
+								'size': "5",
+								'links': [{
+									'text': "http://shopifysubscriptions.com/affiliate/4",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<hr>
+							{{ ui_element('headers/subtitle', {
+								'title': "Paypal",
+								'size': "5",
+								'links': [{
+									'text': "paypal@abovemarket.com",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<hr>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 $table-border-color: #EEE;
 $table-font-size: 14px;
-$table-footer-font-size: 16px;
+$table-label-font-size: 16px;
 
 .rc_table {
 	width: 100%;
@@ -14,6 +14,11 @@ $table-footer-font-size: 16px;
 			padding-right: 0;
 			text-align: right;
 		}
+		&:first-child:last-child {
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	th {
 		text-align: left;
@@ -22,11 +27,11 @@ $table-footer-font-size: 16px;
 	thead {
 		td, th {
 			border-bottom: 1px solid $table-border-color;
-			font-size: $table-font-size;
+			font-size: $table-label-font-size;
 		}
 	}
 	tfoot {
-		font-size: $table-footer-font-size;
+		font-size: $table-label-font-size;
 		font-family: 'ralewaysemibold', arial, sans-serif;
 		td {
 			border-top: 2px solid $table-border-color;

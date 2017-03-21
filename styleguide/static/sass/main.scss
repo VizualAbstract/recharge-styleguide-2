@@ -3,6 +3,8 @@
 @import 'helpers/_normalize.scss';
 @import 'helpers/_fonts.scss';
 
+@import '_general.scss';
+
 * {
 	box-sizing: border-box;
 }
@@ -125,8 +127,10 @@ a {
 @import '_headers_settings.scss';
 @import '_headers_signup.scss';
 @import '_headers_dropdown.scss';
+@import '_headers_subtitle.scss';
 
 @import '_dynamics_dropdown.scss';
+@import '_dynamics_modals.scss';
 
 @import '_layout_grid-system.scss';
 @import '_layout_tables.scss';

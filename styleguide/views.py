@@ -3,8 +3,8 @@
 from flask import Flask
 from flask import render_template, render_template_string, make_response, escape
 from jinja2 import Environment, Undefined
-from helpers import *
 from styleguide import app
+from helpers import *
 
 @app.route('/')
 def index():
@@ -56,6 +56,11 @@ def dropdowns():
     template_file = "dropdowns.html"
     return render_template(template_file)
 
+@app.route('/modals')
+def modals():
+    template_file = "modals.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
@@ -81,3 +86,37 @@ def navbars():
 def tables():
     template_file = "tables.html"
     return render_template(template_file)
+
+@app.route('/generate/assets')
+def generate_assets():
+    compile_js()
+    rename_css()
+    return "JS Assets concactenated!<br>CSS Renamed"
+
+def rename_css():
+    with open("styleguide/static/css/main.scss.css", "rt") as fin:
+        with open("styleguide/static/export/main.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/main.scss.css.map */', ''))
+app.jinja_env.globals.update(rename_css = rename_css)
+
+def compile_js():
+    toLoad = [
+        "styleguide/static/js/tether.js",
+        "styleguide/static/js/util.js",
+        "styleguide/static/js/button.js",
+        "styleguide/static/js/collapse.js",
+        "styleguide/static/js/dropdown.js",
+        "styleguide/static/js/modal.js",
+        "styleguide/static/js/tooltip.js",
+        "styleguide/static/js/popover.js",
+    ]
+
+    final_script = ''
+    for script_name in toLoad:
+        with open(script_name, 'r') as f:
+            final_script += ('\n' + f.read())
+
+    with open('styleguide/static/export/main.js', 'w') as f:
+        f.write(final_script)
+app.jinja_env.globals.update(compile_js = compile_js)

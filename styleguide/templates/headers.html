@@ -9,8 +9,18 @@
 	}) | safe }}
 </div>
 
+
+<h2>Signup</h2>
+<p>Used only on signup pages. Perfect for minimal layouts</p>
+<div class="rc_example">
+	{{ ui_element('headers/signup', {
+		'title': "H1 Settings header test",
+		'description': "Instructional text that applies to the page."
+	}) | safe }}
+</div>
+
 <h2>Settings</h2>
-<p>Used on settings pages</p>
+<p>Used specifically to title settings pages</p>
 <div class="rc_example">
 	{{ ui_element('headers/settings', {
 		'title': "API tokens", 
@@ -33,7 +43,7 @@
 </div>
 
 <h3>Devon's thorn</h3>
-<p>Due to the way content collapses, this was previously unacheivable. With the move to flexbox, we can now have the Description appear beneath the Action Buttons on mobile devices.</p>
+<p>Due to the way content collapses, this was previously unacheivable. With the move to flexbox, we can now have the Description appear above the Action Buttons on mobile devices.</p>
 <div class="rc_example">
 	<div class="force-mobile" style="max-width: 360px;">
 		{{ ui_element('headers/settings', {
@@ -49,12 +59,16 @@
 	</div>
 </div>
 
-<h2>Signup</h2>
-<p>Used only on signup pages. Perfect for full-width, minimum layouts</p>
+<h2>Subtitle</h2>
+<p>Perfect for secondary titles. Also allows for link and button actions.</p>
 <div class="rc_example">
-	{{ ui_element('headers/signup', {
-		'title': "H1 Settings header test",
-		'description': "Instructional text that applies to the page."
+	{{ ui_element('headers/subtitle', {
+		'title': "Partner details",
+		'size': "3",
+		'links': [{
+			'icon': "pencil",
+			'color': "primary",
+		}]
 	}) | safe }}
 </div>
 

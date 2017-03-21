@@ -25,7 +25,7 @@
 
 		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/fontawesome.scss.css') }}" rel="stylesheet" type="text/css">
-		<link href="{{ url_for('static', filename='css/style.scss.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ url_for('static', filename='css/main.scss.css') }}" rel="stylesheet" type="text/css">
 	</head>
 	<body class="{% if page_class %}page__{{ page_class }}{% endif %}">
 	<div class="rc_container">
@@ -45,6 +45,7 @@
 		<br>
 		Dynamic:
 		<a href="/dropdowns">Dropdowns</a>
+		<a href="/modals">Modals</a>
 		<br>
 		Layout:
 		<a href="/headers">Headers</a>

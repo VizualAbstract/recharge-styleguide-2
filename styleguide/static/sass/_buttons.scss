@@ -61,6 +61,7 @@
 	border-width: 0;
 	border-style: solid;
 	height: 40px;
+	line-height: 40px;
 	box-sizing: border-box;
 	outline: 0;
 	min-width: 100px;
@@ -70,8 +71,12 @@
 	touch-action: manipulation;
     white-space: nowrap;
     vertical-align: middle;
-    background-color: $default;
-    color: link-color($default);
+    &,
+    &:link,
+    &:visited {
+		background-color: $default;
+		color: #FFF;
+    }
 }
 // Button sizes
 .button {
@@ -85,8 +90,7 @@
 		font-size: $font-size-base;
 	}
 	&--large {
-		font-size: $font-size-large;
-		padding: 17px 20px;
+		padding: 10px 15px;
 		height: auto;
 	}
 }

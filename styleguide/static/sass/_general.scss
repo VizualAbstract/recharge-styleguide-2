@@ -1,0 +1,19 @@
+hr {
+	border: none;
+    margin: 15px auto;
+	border-bottom: 1px solid #EEE;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+    + fieldset {
+    	margin-top: 30px;
+    }
+}
+
+.form__actions {
+	margin-top: 30px;
+}

@@ -1,4 +1,4 @@
-.header-settings {
+.header-subtitle {
 	width: 100%;
 	min-height: 40px;
 	display: flex;
@@ -22,10 +22,14 @@
 		text-align: right;
 		order: 2;
 		flex-grow: 1;
-
+		p,
+		a,
+		span,
 		.button {
 			margin: 0 0 0 auto;
-
+			+ p,
+			+ a,
+			+ span,
 			+ .button {
 				margin-left: 12px;
 			}
@@ -33,34 +37,18 @@
 	}
 
 	h1,
-	.rc_h1
-	&__actions {
-		vertical-align: middle;
-	}
-
-	h1,
-	.rc_h1 {
+	.rc_h1,
+	h2,
+	.rc_h2,
+	h3,
+	.rc_h3,
+	h4,
+	.rc_h4,
+	h5,
+	.rc_h5,
+	h6,
+	.rc_h6 {
 		line-height: 1;
 		margin: 0;
-	}
-
-	@media screen and (max-width: $mobile-nav-max) {
-		.header-settings__title {
-			order: 1;
-			width: 100%;
-		}
-		.header-settings__description {
-			order: 2;
-		}
-		.header-settings__actions {
-			order: 3;
-			width: 100%;
-			margin-top: 12px;
-			text-align: center;
-
-			.button {
-				width: 100%;
-			}
-		}
 	}
 }

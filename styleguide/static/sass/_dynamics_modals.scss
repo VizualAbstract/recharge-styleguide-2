@@ -1,0 +1,162 @@
+$zindex-modal: 100090;
+$zindex-modal-background: 100080;
+$zindex-modal-close: 100090;
+
+.rc_fade {
+	opacity: 0;
+	transition: .5s all ease;
+	&.rc_show {
+		opacity: 1;
+	}
+}
+
+.rc_modal__backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $zindex-modal-background;
+	background-color: #000;
+
+	&.rc_fade {
+		opacity: 0;
+		filter: alpha(opacity=0);
+		transition: opacity 0.2s linear;
+	}
+
+	&.rc_show {
+		opacity: 0.7;
+		filter: alpha(opacity=70);
+	}
+}
+
+.rc_modal__container {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: $zindex-modal;
+	outline: 0;
+}
+
+.rc_modal__container {
+
+	&.rc_fade .rc_modal {
+		transform: translate(0, -25%);
+		transition: transform 0.3s ease-out;
+	}
+
+	&.rc_show .rc_modal {
+		transform: translate(0, 0);
+	}
+}
+
+.rc_modal__open {
+	overflow: hidden;
+
+	.rc_modal__container {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+.rc_modal {
+	position: relative;
+    width: 700px;
+    margin: 4% auto;
+
+	@media (max-width: $mobile-nav-max) {
+		width: auto;
+		margin: 10px;
+	}
+}
+
+.rc_modal__content {
+	position: relative;
+	display: flex;
+	padding: 0;
+	flex-direction: column;
+	background-color: #FFF;
+	background-clip: padding-box;
+	outline: 0;
+}
+
+// Modal header
+.rc_modal__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 30px 15px;
+	position: relative;
+	min-height: 30px;
+
+	h1, .rc_h1,
+	h2, .rc_h2,
+	h3, .rc_h3,
+	h4, .rc_h4,
+	h5, .rc_h5,
+	h6, .rc_h6
+	.rc_modal__title {
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+	}
+
+	.rc_modal__close {
+		-webkit-appearance: none;
+		border: 0;
+		padding: 0;
+		background: transparent;
+		outline: 0;
+		z-index: $zindex-modal-close;
+		cursor: pointer;
+
+		position: absolute;
+		top: 25px;
+		right: 28px;
+
+		&:before {
+			color: #424242;
+			font-family: fontawesome;
+			content: "\f00d";
+			font-size: 24px;
+			line-height: 1;
+		}
+
+		&:hover,
+		&:focus {
+			&:before {
+				color: #000;
+			}
+		}
+	}
+}
+
+.rc_modal__body {
+	position: relative;
+	flex: 1 1 auto;
+	padding: 15px 35px;
+}
+
+.rc_modal__footer {
+	display: flex;
+	align-items: center;
+	padding: 15px 30px 30px;
+
+	.button {
+		width: 100%;
+	}
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.rc_modal__scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}

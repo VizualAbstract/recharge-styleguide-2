@@ -620,4 +620,3 @@ var Tooltip = function ($) {
 
   return Tooltip;
 }(jQuery); /* global Tether */
-//# sourceMappingURL=tooltip.js.map

@@ -5,25 +5,28 @@ $button-hover-background: darken($button-background, 10%);
 
 .breadcrumbs {
 	list-style: none;
-	display: table;
+	display: flex;
+	flex-wrap: nowrap;
 	height: 30px;
-	width: 100%;
+	min-width: 100%;
 	overflow: hidden;
 	background-color: $button-background;
 	color: $button-color;
 	font-family: 'ralewaysemibold', arial, sans-serif;
-	@media screen and (max-width: $mobile-nav-max) {
-		display: block;
-	}
 	.crumb {
 		list-style: none;
 		position: relative;
-		display: table-cell;
+		// display: table-cell;
 		overflow: hidden;
 		white-space: nowrap;
 		text-align: left;
-		max-width: max-content;
+		// max-width: max-content;
 		font-size: $font-size-small;
+		line-height: 30px;
+
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: auto;
 		> a,
 		> span {
 			color: $button-color;
@@ -91,5 +94,15 @@ $button-hover-background: darken($button-background, 10%);
 				background-color: $button-background;
 			}
 		}
+	}
+}
+
+.flex__content,
+.flex__full {
+	> .breadcrumbs {
+		margin-bottom: 25px;
+		margin-left: -30px;
+		margin-right: -30px;
+		margin-top: -25px;
 	}
 }

@@ -6,10 +6,11 @@ $gutter: 30px;
 
 .flex__sidebar {
 	.sidebar {
+		height: 100%;
 		margin-left: -$gutter;
-		margin-top: -($gutter - 5);
-		margin-bottom: -$gutter;
-		@media screen and (max-width: $screen-xs-max) {
+		// margin-top: -($gutter - 5);
+		// margin-bottom: -$gutter;
+		@media screen and (max-width: $mobile-nav-max) {
 			margin-right: -$gutter;
 		}
 	}

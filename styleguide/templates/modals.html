@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Modals{% endblock %}
+{% block body %}
+<h1>Modals</h1>
+
+<style>
+	.rc_example > .rc_modal__container {
+		position: relative !important;
+		opacity: 1 !important;
+		display: block !important;
+		background-color: rgba(0, 0, 0, .7);
+		z-index: 10;
+	}
+</style>
+
+<div class="rc_example">
+	<div class="rc_modal__container rc_fade rc_show">
+		<div class="rc_modal">
+			<div class="rc_modal__content">
+				<div class="rc_modal__header">
+					<h3 class="rc_modal__title">Modal title</h3>
+					<button type="button" class="rc_modal__close" data-dismiss="rc_modal"></button>
+				</div>
+				<div class="rc_modal__body">
+					<p>Modal body text goes here.</p>
+				</div>
+				<div class="rc_modal__footer">
+					<button type="button" class="button button--large" data-dismiss="rc_modal">Cancel</button>
+					<button type="button" class="button button--large button--primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<button data-toggle="rc_modal" data-target="#myModal" class="button">Launch Modal</button>
+</div>
+
+<div id="myModal" class="rc_modal__container rc_fade">
+	<div class="rc_modal">
+		<div class="rc_modal__content">
+			<div class="rc_modal__header">
+				<h1 class="rc_modal__title">Modal title</h1>
+				<button type="button" class="rc_modal__close" data-dismiss="rc_modal"></button>
+			</div>
+			<div class="rc_modal__body">
+				<p>Modal body text goes here.</p>
+			</div>
+			<div class="rc_modal__footer">
+				<button type="button" class="button button--large" data-dismiss="rc_modal">Cancel</button>
+				<button type="button" class="button button--large button--primary">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
