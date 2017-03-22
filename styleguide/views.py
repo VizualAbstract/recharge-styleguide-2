@@ -1,10 +1,14 @@
 # views.py
 
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template, render_template_string, make_response, escape
 from jinja2 import Environment, Undefined
+from sassutils.wsgi import SassMiddleware
+from sassutils.builder import *
+import sassutils
 from styleguide import app
 from helpers import *
+import shutil
 
 @app.route('/')
 def index():
@@ -87,17 +91,20 @@ def tables():
     template_file = "tables.html"
     return render_template(template_file)
 
-@app.route('/generate/assets')
+@app.route('/generate-assets')
 def generate_assets():
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'main.scss')
     compile_js()
     rename_css()
-    return "JS Assets concactenated!<br>CSS Renamed"
+    template_file = "generate-assets.html"
+    return render_template(template_file)
 
 def rename_css():
-    with open("styleguide/static/css/main.scss.css", "rt") as fin:
+    with open("styleguide/static/sass/styleguide/static/sass/main.scss.css", "rt") as fin:
         with open("styleguide/static/export/main.css", "wt") as fout:
             for line in fin:
                 fout.write(line.replace('/*# sourceMappingURL=../css/main.scss.css.map */', ''))
+    shutil.rmtree("styleguide/static/sass/styleguide")
 app.jinja_env.globals.update(rename_css = rename_css)
 
 def compile_js():
