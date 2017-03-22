@@ -57,11 +57,13 @@
 	height: 60px;
 	line-height: 60px;
 	outline: none;
-	color: #FFF;
 	cursor: pointer;
-	&:hover,
-	&:active {
+	&,
+	&.collapsed:hover {
 		color: #4dd6b7;
+	}
+	&.collapsed {
+		color: #FFF;
 	}
 	&:before {
 		font-size: 26px;
@@ -79,7 +81,7 @@
 	display: flex;
 	margin: 0 auto 0 0;
 	.navbar__title {
-		padding: 27px 15px;
+		padding: 17px 15px;
 		display: block;
 		text-transform: uppercase;
 	}
@@ -170,7 +172,7 @@
 
 		.rc_item {
 			text-transform: initial;
-			font-family: 'raleway-semibold', arial, non-serif;
+			font-family: 'ralewaysemibold', arial, non-serif;
 		}
 	
 		+ .rc_dropdown {
@@ -213,15 +215,24 @@
 }
 
 .navbar--standalone {
-	background-color: #fff;
-	border-bottom: 1px solid #EEE;
+	background-color: #fff;f
+
+	+ .flex__container {
+		> .flex__layout {
+			> .flex__sidebar,
+			> .flex__content {
+				border-top: 1px solid #EEE;
+			}
+		}
+	}
+
 	.navbar__logo {
-		min-width: 179px;
-		width: 179px;
+		min-width: 169px;
+		width: 169px;
 		background-image: url(../images/logos/logo__color.svg);
-		background-size: 165px 43px;
+		background-size: 154px 40px;
 		background-position: 100% 43%;
-		height: 80px;
+		height: 60px;
 	}
 	a {
 		color: #F6A623;
@@ -230,10 +241,7 @@
 		> li {
 			> span,
 			> a {
-				padding: 32px 15px;
-				@media screen and (max-width: $mobile-nav-max) {
-					padding: 22px 15px;
-				}
+				padding: 22px 15px;
 			}
 			> a {
 				font-family: 'ralewaysemibold';
@@ -248,21 +256,23 @@
 		}
 	}
 	.navbar__toggle {
-		color: #4dd6b7;
 		padding: 0 15px;
-		height: 80px;
+		height: 60px;
 		background-color: #FFF;
-		&:hover,
-		&:active {
-			color: #4dd6b7;
+		&,
+		&.collapsed:hover {
+			color: #F6A623;
+		}
+		&.collapsed {
+			color: #4DD6B7;
 		}
 	}
 	.rc_dropdown {
-		height: 80px;
+		height: 60px;
 
 		.rc_dropdown__toggle {
 			color: #424242;
-			height: 80px;
+			height: 60px;
 			padding: 0 15px;
 			&:hover,
 			&:focus,
@@ -273,11 +283,9 @@
 		}
 
 		@media screen and (max-width: $mobile-nav-max) {
-			height: 60px;
 			border-top: 1px solid #CCC;
 
 			.rc_dropdown__toggle {
-				height: 60px;
 				padding: 22px 15px;
 			}
 		}
