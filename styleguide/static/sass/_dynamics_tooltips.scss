@@ -93,7 +93,7 @@
 
 $zindex-popover: 1000;
 $popover-min-width: 100px;
-$popover-max-width: 500px;
+$popover-max-width: 350px;
 $popover-inner-padding: 20px;
 $popover-bg: #474747;
 $popover-arrow-width: 12px;
@@ -111,10 +111,17 @@ $popover-arrow-width: 12px;
 	font-size: $font-size-base;
 	padding: 4px 8px 5px;
 	box-sizing: content-box;
+	
+	border: none;
+	outline: 0;
+	background: transparent;
+	-webkit-appearance: none;
 
 	&:empty:after {
 		content: "\f05a";
 	}
+	&:hover,
+	&:focus,
 	&--active {
 		color: #4DD6B7;
 	}
@@ -156,7 +163,7 @@ $popover-arrow-width: 12px;
 	&.rc_popover--right,
 	&.rc_tether--element-attached-top.rc_tether--target-attached-right {
 		margin-top: $popover-arrow-width;
-		margin-left: -29px;
+		margin-left: -27px;
 		&:after {
 			left: 0%;
 			right: auto;
@@ -180,7 +187,7 @@ $popover-arrow-width: 12px;
 	&.rc_popover--left,
 	&.rc_tether--element-attached-top.rc_tether--target-attached-left {
 		margin-top: $popover-arrow-width;
-		margin-left: 29px;
+		margin-left: 27px;
 		&:after {
 			left: auto;
 			right: 0%;

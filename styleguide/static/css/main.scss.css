@@ -2465,6 +2465,10 @@ a:hover, a:active, a.active {
   font-size: 16px;
   padding: 4px 8px 5px;
   box-sizing: content-box;
+  border: none;
+  outline: 0;
+  background: transparent;
+  -webkit-appearance: none;
   z-index: 999;
 }
 
@@ -2472,7 +2476,7 @@ a:hover, a:active, a.active {
   content: "\f05a";
 }
 
-.rc_popover__button--active {
+.rc_popover__button:hover, .rc_popover__button:focus, .rc_popover__button--active {
   color: #4DD6B7;
 }
 
@@ -2482,7 +2486,7 @@ a:hover, a:active, a.active {
   left: 0;
   display: block;
   z-index: 1000;
-  max-width: 500px;
+  max-width: 350px;
   min-width: 100px;
   padding: 5px 0 0;
   font-size: 16px;
@@ -2509,7 +2513,7 @@ a:hover, a:active, a.active {
 
 .rc_popover.rc_popover--right, .rc_popover.rc_tether--element-attached-top.rc_tether--target-attached-right {
   margin-top: 12px;
-  margin-left: -29px;
+  margin-left: -27px;
 }
 
 .rc_popover.rc_popover--right:after, .rc_popover.rc_tether--element-attached-top.rc_tether--target-attached-right:after {
@@ -2535,7 +2539,7 @@ a:hover, a:active, a.active {
 
 .rc_popover.rc_popover--left, .rc_popover.rc_tether--element-attached-top.rc_tether--target-attached-left {
   margin-top: 12px;
-  margin-left: 29px;
+  margin-left: 27px;
 }
 
 .rc_popover.rc_popover--left:after, .rc_popover.rc_tether--element-attached-top.rc_tether--target-attached-left:after {

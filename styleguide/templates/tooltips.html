@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
-<style>
-.button--link {
-	background-color: #CCC !important;
-}
-</style>
 <h1>Tooltips</h1>
+<p>Tooltips now automatically align and resize according to available screen dimensions.</p>
 <p>Under active development</p>
 <div class="rc_example" style="margin-bottom: 400px;">
 	<button style="left: 0%" class="rc_popover__button" data-toggle="popover" data-content="Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."><span class="fa fa-info-circle"></span></button><br>
@@ -51,141 +47,61 @@
 	<button style="left: 100%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."><span class="fa fa-info-circle"></span></button>
 </div>
 <style>
-.button {
-	position: relative;
-	top: 10px;
-}
+	.rc_example .rc_popover__button {
+		position: relative;
+		margin-bottom: 10px;
+	}
 </style>
 <script>
-function enoughRoom(space, popup) {
-	var space_remaining = space - popup;
-	if (space_remaining >= 0) {
-		return true;
-	} else {
+	function isWideEnough(availableSpace, elementWidth) {
+		return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
+	}
+	function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
+		if (isWideEnough(rightSpacing, popupWidth)) {
+			return "right";
+		} else if (isWideEnough(leftSpacing, popupWidth)) {
+			return "left";
+		} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
+			return "bottom";
+		}
 		return false;
 	}
-}
-
-function calculatePosition(areaRightOfElement, areaLeftOfElement, popupWidth, elem_width, win_width) {
-	if (enoughRoom(areaLeftOfElement, popupWidth)) {
-		return "left";
-	}
-	if (enoughRoom(areaRightOfElement + 20, popupWidth)) {
-		return "right";
-	}
-	if (enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2)) {
-		return "bottom"
-	}
-	return false
-}
-var options = {
-    placement: function(context, source) {
-        var position = $(source).position();
-
-        var elem_top = position.top;
-        var elem_left = position.left;
-        var elem_height = $(source).outerHeight();
-        var elem_width = $(source).outerWidth();
-
-        var win_width = $(window).width();
-        var win_height = $(window).height();
-        var win_scrollY = window.pageYOffset;
-        var win_scrollX = window.pageXOffset;
-
-        var doc_height = $(document).height();
-        var doc_width = $(document).width();
-
-        var workArea = win_scrollY + win_height;
-
-        var areaAboveElement = elem_top - win_scrollY;
-        var areaBelowElement = workArea - (elem_top + elem_height);
-
-        var areaLeftOfElement = elem_left;
-        var areaRightOfElement = win_width - (elem_width + elem_left);
-
-        var popupHeight = $(context).height();
-
-        var popupWidth = 200;
-
-        var characterLength = $(source).data('content').length;
-    	var width = (characterLength * 10) + 40;
-    	if (width >= 500) {
-    		popupWidth = 500;
-    	} else {
-    		popupWidth = width;
-    	}
-        for (var i = 0; i < 600; i = i+50) {
-        	var my_return = calculatePosition(areaRightOfElement, areaLeftOfElement, popupWidth - i, elem_width, win_width);
-        	if (my_return) {
-        		$(context).width(popupWidth - i);
-        		return my_return;
-        	}
-        }
-
-        // if (enoughRoom(areaRightOfElement, popupWidth)) {
-        // 	console.log('1');
-        // 	return "right";
-        // }
-
-        // if (enoughRoom(areaLeftOfElement + 18, popupWidth)) {
-        // 	console.log('2');
-        // 	return "left";
-        // }
-        // if (win_width < (popupWidth + elem_width) && enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2.25) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2.25)) {
-        // 	console.log('3');
-        // 	return "bottom"
-        // }
-        // popupWidth = popupWidth - 100;
-        // $(context).width(popupWidth);
-        if (enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2.25) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2.25)) {
-        	console.log('4');
-        	return "bottom"
-        }
-        if (areaRightOfElement > 250) {
-        	console.log('5');
-        	return "right"
-        }
-
-        if (areaLeftOfElement > areaRightOfElement) {
-        	console.log('6');
-        	return "left";
-        }
-
-        if (areaLeftOfElement < areaRightOfElement) {
-        	console.log('7');
-        	return "right";
-        }
-
-        if (enoughRoom(areaBelowElement, popupHeight)) {
-        	console.log('8');
-        	return "bottom";
-        }
-
-        if (enoughRoom(areaAboveElement, popupHeight)) {
-        	console.log('9');
-        	return "top";
-        } else {
-        	console.log('10');
-        	return "top";
-        }
-
-
-        // if (position.top < 110){
-        //     return "bottom";
-        // }
-
-        // if (position.left > 515) {
-        //     return "left";
-        // }
-
-        // if (position.left < 515) {
-        //     return "right";
-        // }
-        // return "top";
-    },
-    trigger: "hover",
-    html: true
-};
-$('.rc_popover__button').popover(options);
+	var options = {
+		placement: function(context, source) {
+			var icon = $(source).position(),
+				iconLeft = icon.left,
+				iconWidth = $(source).outerWidth() / 2,
+				winWidth = $(window).width(),
+				leftSpacing = iconLeft + iconWidth,
+				rightSpacing = winWidth - (iconWidth + iconLeft),
+				popupWidth = 350;
+			if (popupWidth > winWidth) {
+				popupWidth = winWidth;
+			}
+			if (isWideEnough(rightSpacing, popupWidth)) {
+				return "right";
+			} else if (isWideEnough(leftSpacing, popupWidth)) {
+				return "left";
+			} else {
+				var characterLength = $(source).data('content').length,
+					calculatePopupWidth = (characterLength * 9) + (25 * 2), // (? * 9 = average character width) + (25 * 2 = horizontal padding)
+					iconWidth = iconWidth / 2,
+					reductionAmount = 30;
+				if (calculatePopupWidth >= popupWidth) {
+					calculatePopupWidth = popupWidth;
+				}
+				for (var i = 0; i <= popupWidth; i += reductionAmount) {
+					var my_return = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
+					if (my_return) {
+						$(context).width(calculatePopupWidth - i);
+						return my_return;
+					}
+				}
+			}
+		},
+		trigger: "hover",
+		html: true
+	};
+	$('.rc_popover__button').popover(options);
 </script>
 {% endblock %}
