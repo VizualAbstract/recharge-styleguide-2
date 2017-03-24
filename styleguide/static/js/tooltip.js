@@ -33,11 +33,11 @@ var Tooltip = function ($) {
   var EVENT_KEY = '.' + DATA_KEY;
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 150;
-  var CLASS_PREFIX = 'bs-tether';
+  var CLASS_PREFIX = 'rc_tether';
 
   var Default = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-inner"></div></div>',
+    template: '<div class="rc_tooltip" role="tooltip">' + '<div class="rc_tooltip__inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -65,9 +65,9 @@ var Tooltip = function ($) {
 
   var AttachmentMap = {
     TOP: 'bottom center',
-    RIGHT: 'middle left',
+    RIGHT: 'top left', // middle left
     BOTTOM: 'top center',
-    LEFT: 'middle right'
+    LEFT: 'top right' // middle right
   };
 
   var HoverState = {

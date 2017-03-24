@@ -33,7 +33,7 @@ var Popover = function ($) {
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<h3 class="popover-title"></h3>' + '<div class="popover-content"></div></div>'
+    template: '<div class="rc_popover" role="tooltip">' + '<div class="rc_popover__title"></div>' + '<div class="rc_popover__content"></div></div>'
   });
 
   var DefaultType = $.extend({}, Tooltip.DefaultType, {
@@ -46,8 +46,8 @@ var Popover = function ($) {
   };
 
   var Selector = {
-    TITLE: '.popover-title',
-    CONTENT: '.popover-content'
+    TITLE: '.rc_popover__title',
+    CONTENT: '.rc_popover__content'
   };
 
   var Event = {

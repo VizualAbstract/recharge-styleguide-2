@@ -65,6 +65,11 @@ def modals():
     template_file = "modals.html"
     return render_template(template_file)
 
+@app.route('/tooltips')
+def tooltips():
+    template_file = "tooltips.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')

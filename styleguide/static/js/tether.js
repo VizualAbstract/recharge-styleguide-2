@@ -652,7 +652,7 @@ var TetherClass = (function (_Evented) {
       if (typeof classes !== 'undefined' && classes[key]) {
         return this.options.classes[key];
       } else if (this.options.classPrefix) {
-        return this.options.classPrefix + '-' + key;
+        return this.options.classPrefix + '--' + key;
       } else {
         return key;
       }

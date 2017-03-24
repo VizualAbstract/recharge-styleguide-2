@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+.button--link {
+	background-color: #CCC !important;
+}
+</style>
+<h1>Tooltips</h1>
+<p>Under active development</p>
+<div class="rc_example" style="margin-bottom: 400px;">
+	<button style="left: 0%" class="rc_popover__button" data-toggle="popover" data-content="Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 5%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="<p>Aenean lacinia bibendum nulla sed consectetur.</p><p><a href='#'>Link to docs...</a></p>"><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 10%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Curabitur blandit tempus porttitor."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 15%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Tristique Nullam Mattis Cursus Ullamcorper"><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 20%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Lorem Sit Pellentesque Mollis Malesuada"><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 25%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Maecenas sed diam eget risus varius blandit sit amet non magna."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 30%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 35%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 40%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 45%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Praesent commodo cursus magna, vel scelerisque nisl consectetur et."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 50%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Donec sed odio dui."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 55%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 60%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Donec ullamcorper nulla non metus auctor fringilla."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 65%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 70%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Cras mattis consectetur purus sit amet fermentum."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 75%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Nullam quis risus eget urna mollis ornare vel eu leo."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 80%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Cras justo odio, dapibus ac facilisis in, egestas eget quam."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 85%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Curabitur blandit tempus porttitor."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 90%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Donec ullamcorper nulla non metus auctor fringilla."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 95%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."><span class="fa fa-info-circle"></span></button><br>
+
+	<button style="left: 100%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."><span class="fa fa-info-circle"></span></button>
+</div>
+<style>
+.button {
+	position: relative;
+	top: 10px;
+}
+</style>
+<script>
+function enoughRoom(space, popup) {
+	var space_remaining = space - popup;
+	if (space_remaining >= 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function calculatePosition(areaRightOfElement, areaLeftOfElement, popupWidth, elem_width, win_width) {
+	if (enoughRoom(areaLeftOfElement, popupWidth)) {
+		return "left";
+	}
+	if (enoughRoom(areaRightOfElement + 20, popupWidth)) {
+		return "right";
+	}
+	if (enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2)) {
+		return "bottom"
+	}
+	return false
+}
+var options = {
+    placement: function(context, source) {
+        var position = $(source).position();
+
+        var elem_top = position.top;
+        var elem_left = position.left;
+        var elem_height = $(source).outerHeight();
+        var elem_width = $(source).outerWidth();
+
+        var win_width = $(window).width();
+        var win_height = $(window).height();
+        var win_scrollY = window.pageYOffset;
+        var win_scrollX = window.pageXOffset;
+
+        var doc_height = $(document).height();
+        var doc_width = $(document).width();
+
+        var workArea = win_scrollY + win_height;
+
+        var areaAboveElement = elem_top - win_scrollY;
+        var areaBelowElement = workArea - (elem_top + elem_height);
+
+        var areaLeftOfElement = elem_left;
+        var areaRightOfElement = win_width - (elem_width + elem_left);
+
+        var popupHeight = $(context).height();
+
+        var popupWidth = 200;
+
+        var characterLength = $(source).data('content').length;
+    	var width = (characterLength * 10) + 40;
+    	if (width >= 500) {
+    		popupWidth = 500;
+    	} else {
+    		popupWidth = width;
+    	}
+        for (var i = 0; i < 600; i = i+50) {
+        	var my_return = calculatePosition(areaRightOfElement, areaLeftOfElement, popupWidth - i, elem_width, win_width);
+        	if (my_return) {
+        		$(context).width(popupWidth - i);
+        		return my_return;
+        	}
+        }
+
+        // if (enoughRoom(areaRightOfElement, popupWidth)) {
+        // 	console.log('1');
+        // 	return "right";
+        // }
+
+        // if (enoughRoom(areaLeftOfElement + 18, popupWidth)) {
+        // 	console.log('2');
+        // 	return "left";
+        // }
+        // if (win_width < (popupWidth + elem_width) && enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2.25) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2.25)) {
+        // 	console.log('3');
+        // 	return "bottom"
+        // }
+        // popupWidth = popupWidth - 100;
+        // $(context).width(popupWidth);
+        if (enoughRoom(areaLeftOfElement + (elem_width / 2), popupWidth / 2.25) && enoughRoom(areaRightOfElement + (elem_width / 2), popupWidth / 2.25)) {
+        	console.log('4');
+        	return "bottom"
+        }
+        if (areaRightOfElement > 250) {
+        	console.log('5');
+        	return "right"
+        }
+
+        if (areaLeftOfElement > areaRightOfElement) {
+        	console.log('6');
+        	return "left";
+        }
+
+        if (areaLeftOfElement < areaRightOfElement) {
+        	console.log('7');
+        	return "right";
+        }
+
+        if (enoughRoom(areaBelowElement, popupHeight)) {
+        	console.log('8');
+        	return "bottom";
+        }
+
+        if (enoughRoom(areaAboveElement, popupHeight)) {
+        	console.log('9');
+        	return "top";
+        } else {
+        	console.log('10');
+        	return "top";
+        }
+
+
+        // if (position.top < 110){
+        //     return "bottom";
+        // }
+
+        // if (position.left > 515) {
+        //     return "left";
+        // }
+
+        // if (position.left < 515) {
+        //     return "right";
+        // }
+        // return "top";
+    },
+    trigger: "hover",
+    html: true
+};
+$('.rc_popover__button').popover(options);
+</script>
+{% endblock %}
