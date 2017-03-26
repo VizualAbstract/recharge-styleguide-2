@@ -3785,17 +3785,19 @@ var Tooltip = function ($) {
           var eventIn = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
           var eventOut = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
           $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
+            $(this).addClass('rc_tooltip__button--active');
             return _this3._enter(event);
           }).on(eventOut, _this3.config.selector, function (event) {
             var jToElement = $(event.toElement),
               jElem = $(_this3);
             if (!jToElement.hasClass('rc_tooltip')) {
+              $(this).removeClass('rc_tooltip__button--active');
               return _this3._leave(event);
             }
           });
           // This will ensure the tooltip box is removed after it's served its purpose
           $(document).on('mouseleave', '.rc_tooltip', function(event) {
-            $(_this3.element).rcTooltip('hide');
+            $(_this3.element).rcTooltip('hide').removeClass('rc_tooltip__button--active');
           });
         } else if (trigger !== Trigger.MANUAL) {
           var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
