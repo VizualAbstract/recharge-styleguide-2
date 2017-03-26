@@ -1,3 +1,4 @@
+/* Variables */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -528,6 +529,91 @@ textarea {
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html.rc_sticky {
+  position: relative;
+  min-height: 100%;
+}
+
+html.rc_sticky body {
+  margin-bottom: 58px;
+}
+
+html.rc_sticky #rc_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 58px;
+}
+
+body,
+html {
+  font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-weight: normal;
+  font-style: normal;
+  color: #424242;
+  font-size: 16px;
+  line-height: 1.5625;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .rc_h1 {
+  font-size: 35px;
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 23px;
+  margin-bottom: 38px;
+}
+
+h2, .rc_h2 {
+  font-size: 30px;
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 12px;
+}
+
+h3, .rc_h3 {
+  font-family: 'ralewaysemibold', arial, san-serif;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h4, .rc_h4 {
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 22px;
+}
+
+h5, .rc_h5 {
+  font-family: 'ralewaysemibold', arial, san-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: #4DD6B7;
+}
+
+a:hover, a:active, a.active {
+  color: #2dc3a1;
+}
+
 hr {
   border: none;
   margin: 15px auto;
@@ -547,38 +633,6 @@ fieldset + fieldset {
 
 .form__actions {
   margin-top: 30px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body,
-html {
-  font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  font-weight: normal;
-  font-style: normal;
-  color: #424242;
-  font-size: 16px;
-  line-height: 1.5625;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Variables */
-.form__label {
-  display: block;
-  max-width: 100%;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  font-family: 'ralewayregular';
-  margin-bottom: 15px;
-}
-
-.form__group + .form__group {
-  margin-top: 35px;
 }
 
 /* Mixins */
@@ -1658,6 +1712,35 @@ fieldset[disabled] .button--red.focus {
   color: #a42a0b;
 }
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+fieldset + fieldset {
+  margin-top: 30px;
+}
+
+.form__actions {
+  margin-top: 30px;
+}
+
+.form__label {
+  display: block;
+  max-width: 100%;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-family: 'ralewayregular';
+  margin-bottom: 15px;
+}
+
+.form__group + .form__group {
+  margin-top: 35px;
+}
+
 .form__input {
   display: block;
   width: 100%;
@@ -1719,6 +1802,20 @@ textarea.form__input {
 textarea.form__input--code {
   font-family: 'pt-mono', monospace;
   line-height: 21px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+input[type="color"],
+input[type="calendar"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form__checkbox {
@@ -1844,58 +1941,6 @@ textarea.form__input--code {
   content: "\f068";
   color: #767676;
   text-indent: 3px;
-}
-
-h1, .rc_h1 {
-  font-size: 35px;
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-top: 23px;
-  margin-bottom: 38px;
-}
-
-h2, .rc_h2 {
-  font-size: 30px;
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-bottom: 12px;
-}
-
-h3, .rc_h3 {
-  font-family: 'ralewaysemibold', arial, san-serif;
-  font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-}
-
-h4, .rc_h4 {
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 22px;
-}
-
-h5, .rc_h5 {
-  font-family: 'ralewaysemibold', arial, san-serif;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 25px;
-  font-style: normal;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:link, a:visited {
-  color: #4DD6B7;
-}
-
-a:hover, a:active, a.active {
-  color: #2dc3a1;
 }
 
 .header-settings {
@@ -2580,7 +2625,7 @@ a:hover, a:active, a.active {
 .rc_tooltip__title {
   background-color: #474747;
   font-family: 'ralewaysemibold';
-  padding: 15px 20px 0;
+  padding: 20px 20px 0;
   line-height: 1;
   margin: 0;
   font-size: 16px;

@@ -66,6 +66,12 @@ def ui_element(component, parameters = {}):
         except:
             parameters['id'] = ''
 
+    if str(component) in ['form/text_input', 'form/field_text_input']:
+        try:
+            parameters['type'] = str(parameters['type'])
+        except:
+            parameters['type'] = 'text'
+
     if str(component) in ['form/checkbox', 'form/field_checkbox']:
         if 'id' not in parameters:
             # An id attribute is required for a checkbox. If none is provided, generate a random one

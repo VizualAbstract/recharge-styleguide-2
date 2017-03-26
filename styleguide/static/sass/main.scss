@@ -1,37 +1,17 @@
 @import 'helpers/_variables.scss';
-@import 'helpers/_reset.scss';
-@import 'helpers/_normalize.scss';
-@import 'helpers/_fonts.scss';
-
-@import '_general.scss';
-
-* {
-	box-sizing: border-box;
-}
-
-body,
-html {
-	font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-	font-weight: normal;
-	font-style: normal;
-	color: #424242;
-	font-size: 16px;
-	line-height: 1.5625;
-	text-rendering: geometricPrecision;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
 
 /* Variables */
 // Standard contrast
 $white: #FFFFFF;
 $black: #000000;
+
 // Shades
 $gray-lighter: #EEEEEE;
 $gray-light: #CCCCCC;
 $gray: #8E8F8E;
 $gray-dark: #676767;
 $gray-darker: #424242;
+
 // Colors
 $cyan: #53BAD3;
 $blue: #2C93AC;
@@ -43,13 +23,16 @@ $orange: #FB8309;
 $red: #EC3D10;
 $magenta: #C00399;
 $pink: #D06EAB;
+
 // Brand
 $brand: $blue; // #2C93AC
 
 // Status-related
 $default: $gray-darker;
 $primary: $aquamarine;
+$success: $green;
 $danger: $red;
+$info: $blue;
 $disabled: $gray-light;
 
 // Font sizes
@@ -57,72 +40,33 @@ $font-size-small: 14px !default;
 $font-size-base: 16px !default;
 $font-size-large: 24px !default;
 
+// Input style
 $input-disabled-background: #F9F9F9 !default;
 $input-disabled-border: #CCC !default;
 $input-disabled-color: #999 !default;
 $cursor-disabled: not-allowed;
 
-
-@import '_labels.scss';
-@import '_buttons.scss';
-@import '_text-inputs.scss';
-@import '_checkboxes.scss';
-@import '_radios.scss';
-
+// Header font sizes
 $h1-font-size: 35px !default;
 $h2-font-size: 30px !default;
 $h3-font-size: 24px !default;
 $h4-font-size: 20px !default;
 $h5-font-size: 16px !default;
 
-h1, .rc_h1 {
-	font-size: $h1-font-size;
-	font-family: 'ralewayregular', arial, san-serif;
-	font-weight: normal;
-	font-style: normal;
-	margin-top: 23px;
-	margin-bottom: 38px;
-}
-h2, .rc_h2 {
-	font-size: $h2-font-size;
-	font-family: 'ralewayregular', arial, san-serif;
-	font-weight: normal;
-	font-style: normal;
-	margin-bottom: 12px;
-}
-h3, .rc_h3 {
-	font-family: 'ralewaysemibold', arial, san-serif;
-	font-size: $h3-font-size;
-	font-weight: normal;
-	font-style: normal;
-}
-h4, .rc_h4 {
-	font-family: 'ralewayregular', arial, san-serif;
-	font-weight: normal;
-	font-size: $h4-font-size;
-	line-height: 24px;
-	margin-bottom: 22px;
-}
-h5, .rc_h5 {
-	font-family: 'ralewaysemibold', arial, san-serif;
-	font-size: $h5-font-size;
-	font-weight: normal;
-	line-height: 25px;
-	font-style: normal;
-}
+@import 'helpers/_reset.scss';
+@import 'helpers/_normalize.scss';
+@import 'helpers/_fonts.scss';
 
-a {
-	text-decoration: none;
-	&:link,
-	&:visited {
-		color: $primary;
-	}
-	&:hover,
-	&:active,
-	&.active {
-		color: darken($primary, 10%);
-	}
-}
+@import '_general.scss';
+
+@import '_buttons.scss';
+@import '_forms.scss';
+
+@import '_inputs_label.scss';
+@import '_inputs_text.scss';
+@import '_inputs_checkbox.scss';
+@import '_inputs_radio.scss';
+@import '_inputs_select.scss';
 
 @import '_headers_settings.scss';
 @import '_headers_signup.scss';

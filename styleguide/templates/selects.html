@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Selects</h1>
+<p>JavaScript is used to replace stylize the select and and multiselect inputs.</p>
+<div class="rc_example">
+	<select class="form__select">
+		<option value="one">One fish</option>
+		<option value="two">Two fish</option>
+		<option value="blue">Blue fish</option>
+		<option value="green">Green fish</option>
+	</select>
+	<select disabled class="form__select">
+		<option>Option 1</option>
+		<option selected="selected">Option 2</option>
+		<option>Option 3</option>
+	</select><!-- .form__select -->
+</div>
+
+<h2>Multiselect</h2>
+<div class="rc_example">
+	<select multiple class="form__select">
+		<option selected="selected">Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+	</select><!-- .form__select -->
+	<select multiple disabled class="form__select">
+		<option>Option 1</option>
+		<option selected="selected">Option 2</option>
+		<option>Option 3</option>
+	</select><!-- .form__select -->
+</div>
+{% endblock %}

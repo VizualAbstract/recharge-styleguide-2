@@ -24,6 +24,7 @@
 		<script type="text/javascript" src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
 		<script type="text/javascript" src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/selects.js') }}"></script>
 
 		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/fontawesome.scss.css') }}" rel="stylesheet" type="text/css">
@@ -34,26 +35,27 @@
 		<a href="/">Home</a>
 		<br>
 		Forms:
-		<a href="/buttons">Buttons</a>
-		<a href="/text-inputs">Text inputs</a>
-		<a href="/textareas">Textareas</a>
-		<a href="/checkboxes">Checkboxes</a>
-		<a href="/radios">Radios</a>
+		<a href="/buttons">Buttons</a>,
+		<a href="/inputs">Inputs</a>,
+		<a href="/textareas">Textareas</a>,
+		<a href="/checkboxes">Checkboxes</a>,
+		<a href="/radios">Radios</a>,
+		<a href="/selects">Selects</a>
 		<br>
 		Navigation:
-		<a href="/breadcrumbs">Breadcrumbs</a>
-		<a href="/sidebars">Sidebars</a>
+		<a href="/breadcrumbs">Breadcrumbs</a>,
+		<a href="/sidebars">Sidebars</a>,
 		<a href="/navbars">Navbars</a>
 		<br>
 		Dynamic:
-		<a href="/dropdowns">Dropdowns</a>
-		<a href="/modals">Modals</a>
-		<a href="/tooltips">Tooltips</a>
+		<a href="/dropdowns">Dropdowns</a>,
+		<a href="/modals">Modals</a>,
+		<a href="/tooltips">Tooltips</a>,
 		<a href="/notifications">Notifications</a>
 		<br>
 		Layout:
-		<a href="/headers">Headers</a>
-		<a href="/grid-system">Grid system</a>
+		<a href="/headers">Headers</a>,
+		<a href="/grid-system">Grid system</a>,
 		<a href="/tables">Tables</a>
 		<br>
 		Tools: <strong><a href="/generate-assets">Generate Assets</a></strong>
@@ -66,6 +68,8 @@
 
 			// Activate tooltips
 			$('.rc_tooltip__button').rcTooltip();
+
+			$('.form__select').rcSelect();
 		</script>
 	</body>
 </html>

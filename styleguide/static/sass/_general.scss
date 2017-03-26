@@ -1,8 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+// sticky footer
+html.rc_sticky {
+    position: relative;
+    min-height: 100%;
+}
+
+html.rc_sticky body {
+    margin-bottom: 58px;
+}
+
+html.rc_sticky #rc_footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 58px;
+}
+
+body,
+html {
+    font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    font-weight: normal;
+    font-style: normal;
+    color: #424242;
+    font-size: 16px;
+    line-height: 1.5625;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .rc_h1 {
+    font-size: $h1-font-size;
+    font-family: 'ralewayregular', arial, san-serif;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 23px;
+    margin-bottom: 38px;
+}
+h2, .rc_h2 {
+    font-size: $h2-font-size;
+    font-family: 'ralewayregular', arial, san-serif;
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 12px;
+}
+h3, .rc_h3 {
+    font-family: 'ralewaysemibold', arial, san-serif;
+    font-size: $h3-font-size;
+    font-weight: normal;
+    font-style: normal;
+}
+h4, .rc_h4 {
+    font-family: 'ralewayregular', arial, san-serif;
+    font-weight: normal;
+    font-size: $h4-font-size;
+    line-height: 24px;
+    margin-bottom: 22px;
+}
+h5, .rc_h5 {
+    font-family: 'ralewaysemibold', arial, san-serif;
+    font-size: $h5-font-size;
+    font-weight: normal;
+    line-height: 25px;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+        color: $primary;
+    }
+    &:hover,
+    &:active,
+    &.active {
+        color: darken($primary, 10%);
+    }
+}
+
 hr {
 	border: none;
     margin: 15px auto;
 	border-bottom: 1px solid #EEE;
 }
+
 fieldset {
     padding: 0;
     margin: 0;

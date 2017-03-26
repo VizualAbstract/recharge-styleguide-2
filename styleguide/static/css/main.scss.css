@@ -1,3 +1,4 @@
+/* Variables */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -528,6 +529,91 @@ textarea {
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html.rc_sticky {
+  position: relative;
+  min-height: 100%;
+}
+
+html.rc_sticky body {
+  margin-bottom: 58px;
+}
+
+html.rc_sticky #rc_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 58px;
+}
+
+body,
+html {
+  font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-weight: normal;
+  font-style: normal;
+  color: #424242;
+  font-size: 16px;
+  line-height: 1.5625;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .rc_h1 {
+  font-size: 35px;
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 23px;
+  margin-bottom: 38px;
+}
+
+h2, .rc_h2 {
+  font-size: 30px;
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 12px;
+}
+
+h3, .rc_h3 {
+  font-family: 'ralewaysemibold', arial, san-serif;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h4, .rc_h4 {
+  font-family: 'ralewayregular', arial, san-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 22px;
+}
+
+h5, .rc_h5 {
+  font-family: 'ralewaysemibold', arial, san-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  color: #4DD6B7;
+}
+
+a:hover, a:active, a.active {
+  color: #2dc3a1;
+}
+
 hr {
   border: none;
   margin: 15px auto;
@@ -547,38 +633,6 @@ fieldset + fieldset {
 
 .form__actions {
   margin-top: 30px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body,
-html {
-  font-family: "ralewayregular", "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  font-weight: normal;
-  font-style: normal;
-  color: #424242;
-  font-size: 16px;
-  line-height: 1.5625;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Variables */
-.form__label {
-  display: block;
-  max-width: 100%;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1;
-  font-family: 'ralewayregular';
-  margin-bottom: 15px;
-}
-
-.form__group + .form__group {
-  margin-top: 35px;
 }
 
 /* Mixins */
@@ -1658,6 +1712,35 @@ fieldset[disabled] .button--red.focus {
   color: #a42a0b;
 }
 
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+fieldset + fieldset {
+  margin-top: 30px;
+}
+
+.form__actions {
+  margin-top: 30px;
+}
+
+.form__label {
+  display: block;
+  max-width: 100%;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-family: 'ralewayregular';
+  margin-bottom: 15px;
+}
+
+.form__group + .form__group {
+  margin-top: 35px;
+}
+
 .form__input {
   display: block;
   width: 100%;
@@ -1719,6 +1802,21 @@ textarea.form__input {
 textarea.form__input--code {
   font-family: 'pt-mono', monospace;
   line-height: 21px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="color"],
+input[type="calendar"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form__checkbox {
@@ -1846,56 +1944,282 @@ textarea.form__input--code {
   text-indent: 3px;
 }
 
-h1, .rc_h1 {
-  font-size: 35px;
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-top: 23px;
-  margin-bottom: 38px;
+/*
+	6-5-2016:
+		- Change min-width to 80px. This is primarily to accomidate numbers.
+		- We may eventually go to a named-class minimum
+	6-18-2016:
+		- Form select should have just as much bottom margin as input fields
+	10-7-2016:
+		- Include variables and utilize $zindex-dropkick
+*/
+.rc_select,
+.rc_select *,
+.rc_select *:before,
+.rc_select *:after,
+.rc_select--multi,
+.rc_select--multi *,
+.rc_select--multi *:before,
+.rc_select--multi *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h2, .rc_h2 {
-  font-size: 30px;
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-style: normal;
-  margin-bottom: 12px;
+.rc_select,
+.rc_select--multi {
+  position: relative;
+  display: block;
+  vertical-align: middle;
+  line-height: 1.5625;
+  width: 100%;
+  min-width: 80px;
+  max-width: 100%;
+  margin: 12px 0;
+  cursor: pointer;
+  color: #424242;
 }
 
-h3, .rc_h3 {
-  font-family: 'ralewaysemibold', arial, san-serif;
-  font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
+.rc_select ::-moz-selection,
+.rc_select--multi ::-moz-selection {
+  background: transparent;
 }
 
-h4, .rc_h4 {
-  font-family: 'ralewayregular', arial, san-serif;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 22px;
+.rc_select ::selection,
+.rc_select--multi ::selection {
+  background: transparent;
 }
 
-h5, .rc_h5 {
-  font-family: 'ralewaysemibold', arial, san-serif;
+.rc_select__selected {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  background-color: #FFF;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #424242;
+  border-radius: 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
   font-size: 16px;
+  line-height: 1.5625;
+  padding: 7px 10px;
+  height: 40px;
+}
+
+.rc_select__selected:before, .rc_select__selected:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+}
+
+.rc_select__selected:before {
+  content: '\f0d7';
+  position: relative;
+  font-family: FontAwesome;
   font-weight: normal;
-  line-height: 25px;
-  font-style: normal;
+  font-size: 19px;
+  line-height: 40px;
+  color: #424242;
+  float: right;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  display: block;
+  top: -8px;
+  right: -10px;
+  margin: 0;
 }
 
-a {
-  text-decoration: none;
+.rc_select__selected:after {
+  top: 0;
+  height: 100%;
+  margin: 0 1.5em 0 0;
 }
 
-a:link, a:visited {
-  color: #4DD6B7;
+.rc_select__selected-disabled {
+  color: #999;
+  background-color: #F9F9F9;
+  border-color: #CCC;
 }
 
-a:hover, a:active, a.active {
-  color: #2dc3a1;
+.rc_select .rc_select--options {
+  position: absolute;
+  display: none;
+  left: 0;
+  right: 0;
+}
+
+.rc_select--open-up .rc_select--options {
+  border-radius: 0 0 0 0;
+  margin-bottom: -1px;
+  bottom: 100%;
+}
+
+.rc_select--open-down .rc_select--options {
+  border-radius: 0 0 0 0;
+  margin-top: -1px;
+  top: 100%;
+}
+
+.rc_select--multi .rc_select--options {
+  max-height: 10em;
+}
+
+.rc_select--options {
+  background-color: white;
+  border: 1px solid #424242;
+  border-radius: 0;
+  list-style: none;
+  margin: 0;
+  max-height: 10.5em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  width: auto;
+  z-index: 100030;
+}
+
+.rc_select__option--selected {
+  background-color: #BDF0E4;
+  color: #424242;
+}
+
+.rc_select--options-highlight .rc_select__option--selected {
+  background-color: transparent;
+  color: inherit;
+}
+
+.rc_select__option {
+  font-size: 16px;
+  line-height: 1.5625;
+  padding: 7px 10px;
+  height: 40px;
+  white-space: nowrap;
+}
+
+.rc_select--options .rc_select__option--highlight {
+  background-color: #BDF0E4;
+  color: #424242;
+}
+
+.rc_select--options .rc_select__option--disabled {
+  color: #999;
+  background-color: #F9F9F9;
+  border-color: #CCC;
+}
+
+.rc_select--options .rc_select__option--hidden {
+  display: none;
+}
+
+.rc_select__optgroup {
+  border: solid #424242;
+  border-width: 1px 0;
+  padding: 0.25em 0;
+  margin-top: 0.25em;
+}
+
+.rc_select__optgroup + .rc_select__option {
+  margin-top: 0.25em;
+}
+
+.rc_select__optgroup + .rc_select__optgroup {
+  border-top-width: 0;
+  margin-top: 0;
+}
+
+.rc_select__optgroup:nth-child(2) {
+  padding-top: 0;
+  border-top: none;
+  margin-top: 0;
+}
+
+.rc_select__optgroup:last-child {
+  border-bottom-width: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.rc_select__optgroup--label {
+  padding: 0 0.5em 0.25em;
+  font-weight: bold;
+  width: 100%;
+}
+
+.rc_select__optgroup--options {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rc_select__optgroup--options li {
+  padding-left: 1.2em;
+}
+
+.rc_select--open-up .rc_select__selected {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-color: #4DD6B7;
+}
+
+.rc_select--open-down .rc_select__selected {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: #4DD6B7;
+}
+
+.rc_select--open-up .rc_select__selected:before,
+.rc_select--open-down .rc_select__selected:before {
+  content: '\f0d8';
+  top: -9px;
+  color: #424242;
+}
+
+.rc_select--open-up .rc_select--options,
+.rc_select--open-down .rc_select--options,
+.rc_select--multi:focus .rc_select--options {
+  display: block;
+  border-color: #4DD6B7;
+}
+
+.rc_select--multi {
+  outline: none;
+}
+
+.rc_select__selected:focus {
+  outline: none;
+  border-color: #4DD6B7;
+}
+
+.rc_select__selected:focus:before {
+  border-top-color: #424242;
+}
+
+.rc_select--disabled {
+  opacity: 0.6;
+  color: #999;
+  background-color: #F9F9F9;
+  border-color: #CCC;
+  cursor: not-allowed;
+}
+
+.rc_select--disabled .rc_select__selected {
+  background-color: #F9F9F9;
+  border-color: #CCC;
+}
+
+.rc_select--disabled .rc_select__selected:active, .rc_select--disabled .rc_select__selected:hover, .rc_select--disabled .rc_select__selected:focus {
+  border-color: #CCC !important;
+}
+
+.rc_select--disabled .rc_select__selected:active:before, .rc_select--disabled .rc_select__selected:hover:before, .rc_select--disabled .rc_select__selected:focus:before {
+  border-color: #CCC !important;
+}
+
+select[data-dkcacheid] {
+  display: none;
 }
 
 .header-settings {

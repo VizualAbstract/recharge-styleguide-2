@@ -22,9 +22,9 @@ def buttons():
     return render_template(template_file)
 
 # Forms
-@app.route('/text-inputs')
-def text_inputs():
-    template_file = "text-inputs.html"
+@app.route('/inputs')
+def inputs():
+    template_file = "inputs.html"
     return render_template(template_file)
 
 @app.route('/textareas')
@@ -40,6 +40,11 @@ def checkboxes():
 @app.route('/radios')
 def radios():
     template_file = "radios.html"
+    return render_template(template_file)
+
+@app.route('/selects')
+def selects():
+    template_file = "selects.html"
     return render_template(template_file)
 
 # Headers
@@ -127,6 +132,8 @@ def compile_js():
         "styleguide/static/js/modal.js",
         "styleguide/static/js/tooltip.js",
         "styleguide/static/js/popover.js",
+        "styleguide/static/js/notifications.js",
+        "styleguide/static/js/selects.js",
     ]
 
     final_script = ''
