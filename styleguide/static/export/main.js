@@ -1923,13 +1923,16 @@ var Util = function ($) {
     },
     getSelectorFromElement: function getSelectorFromElement(element) {
       var selector = element.getAttribute('data-target');
-
-      if (!selector) {
+      if (!selector || selector === '#') {
         selector = element.getAttribute('href') || '';
-        selector = /^#[a-z]/i.test(selector) ? selector : null;
       }
 
-      return selector;
+      try {
+        var $selector = $(selector);
+        return $selector.length > 0 ? selector : null;
+      } catch (error) {
+        return null;
+      }
     },
     reflow: function reflow(element) {
       return element.offsetHeight;
@@ -1959,7 +1962,6 @@ var Util = function ($) {
 
   return Util;
 }(jQuery);
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2188,7 +2190,8 @@ var Collapse = function ($) {
 
   var Selector = {
     ACTIVES: '.card > .show, .card > .collapsing',
-    DATA_TOGGLE: '[data-toggle="collapse"]'
+    DATA_TOGGLE: '[data-toggle="collapse"]',
+    DATA_CHILDREN: 'data-children'
   };
 
   /**
@@ -2205,11 +2208,18 @@ var Collapse = function ($) {
       this._element = element;
       this._config = this._getConfig(config);
       this._triggerArray = $.makeArray($('[data-toggle="collapse"][href="#' + element.id + '"],' + ('[data-toggle="collapse"][data-target="#' + element.id + '"]')));
-
       this._parent = this._config.parent ? this._getParent() : null;
 
       if (!this._config.parent) {
         this._addAriaAndCollapsedClass(this._element, this._triggerArray);
+      }
+
+      this._selectorActives = Selector.ACTIVES;
+      if (this._parent) {
+        var childrenSelector = this._parent.hasAttribute(Selector.DATA_CHILDREN) ? this._parent.getAttribute(Selector.DATA_CHILDREN) : null;
+        if (childrenSelector !== null) {
+          this._selectorActives = childrenSelector + ' > .show, ' + childrenSelector + ' > .collapsing';
+        }
       }
 
       if (this._config.toggle) {
@@ -2244,7 +2254,7 @@ var Collapse = function ($) {
       var activesData = void 0;
 
       if (this._parent) {
-        actives = $.makeArray($(this._parent).find(Selector.ACTIVES));
+        actives = $.makeArray($(this._parent).find(this._selectorActives));
         if (!actives.length) {
           actives = null;
         }
@@ -2324,9 +2334,8 @@ var Collapse = function ($) {
       }
 
       var dimension = this._getDimension();
-      var offsetDimension = dimension === Dimension.WIDTH ? 'offsetWidth' : 'offsetHeight';
 
-      this._element.style[dimension] = this._element[offsetDimension] + 'px';
+      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + 'px';
 
       Util.reflow(this._element);
 
@@ -2484,7 +2493,6 @@ var Collapse = function ($) {
 
   return Collapse;
 }(jQuery);
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2511,9 +2519,11 @@ var Dropdown = function ($) {
   var DATA_API_KEY = '.data-api';
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+  var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
   var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
   var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
   var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + '|' + ARROW_DOWN_KEYCODE + '|' + ESCAPE_KEYCODE + '|' + SPACE_KEYCODE);
 
   var Event = {
     HIDE: 'hide' + EVENT_KEY,
@@ -2527,18 +2537,18 @@ var Dropdown = function ($) {
   };
 
   var ClassName = {
-    BACKDROP: 'dropdown-backdrop',
+    BACKDROP: 'rc_dropdown__backdrop',
     DISABLED: 'disabled',
     SHOW: 'show'
   };
 
   var Selector = {
-    BACKDROP: '.rcdropdown__backdrop',
+    BACKDROP: '.rc_dropdown__backdrop',
     DATA_TOGGLE: '[data-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
     ROLE_MENU: '[role="menu"]',
     ROLE_LISTBOX: '[role="listbox"]',
-    NAVBAR_NAV: '.navbar-nav',
+    NAVBAR_NAV: '.navbar__nav',
     VISIBLE_ITEMS: '[role="menu"] li:not(.disabled) a, ' + '[role="listbox"] li:not(.disabled) a'
   };
 
@@ -2575,15 +2585,6 @@ var Dropdown = function ($) {
         return false;
       }
 
-      if ('ontouchstart' in document.documentElement && !$(parent).closest(Selector.NAVBAR_NAV).length) {
-
-        // if mobile we use a backdrop because click events don't delegate
-        var dropdown = document.createElement('div');
-        dropdown.className = ClassName.BACKDROP;
-        $(dropdown).insertBefore(this);
-        $(dropdown).on('click', Dropdown._clearMenus);
-      }
-
       var relatedTarget = {
         relatedTarget: this
       };
@@ -2593,6 +2594,16 @@ var Dropdown = function ($) {
 
       if (showEvent.isDefaultPrevented()) {
         return false;
+      }
+
+      // set the backdrop only if the dropdown menu will be opened
+      if ('ontouchstart' in document.documentElement && !$(parent).closest(Selector.NAVBAR_NAV).length) {
+
+        // if mobile we use a backdrop because click events don't delegate
+        var dropdown = document.createElement('div');
+        dropdown.className = ClassName.BACKDROP;
+        $(dropdown).insertBefore(this);
+        $(dropdown).on('click', Dropdown._clearMenus);
       }
 
       this.focus();
@@ -2641,11 +2652,6 @@ var Dropdown = function ($) {
         return;
       }
 
-      var backdrop = $(Selector.BACKDROP)[0];
-      if (backdrop) {
-        backdrop.parentNode.removeChild(backdrop);
-      }
-
       var toggles = $.makeArray($(Selector.DATA_TOGGLE));
 
       for (var i = 0; i < toggles.length; i++) {
@@ -2668,6 +2674,12 @@ var Dropdown = function ($) {
           continue;
         }
 
+        // remove backdrop only if the dropdown menu will be hidden
+        var backdrop = $(parent).find(Selector.BACKDROP)[0];
+        if (backdrop) {
+          backdrop.parentNode.removeChild(backdrop);
+        }
+
         toggles[i].setAttribute('aria-expanded', 'false');
 
         $(parent).removeClass(ClassName.SHOW).trigger($.Event(Event.HIDDEN, relatedTarget));
@@ -2686,7 +2698,7 @@ var Dropdown = function ($) {
     };
 
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
-      if (!/(38|40|27|32)/.test(event.which) || /input|textarea/i.test(event.target.tagName)) {
+      if (!REGEXP_KEYDOWN.test(event.which) || /input|textarea/i.test(event.target.tagName)) {
         return;
       }
 
@@ -2771,7 +2783,6 @@ var Dropdown = function ($) {
 
   return Dropdown;
 }(jQuery);
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -3210,7 +3221,7 @@ var Modal = function ($) {
       var scrollDiv = document.createElement('div');
       scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
       document.body.appendChild(scrollDiv);
-      var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+      var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
       return scrollbarWidth;
     };
@@ -3416,6 +3427,7 @@ var Tooltip = function ($) {
     HOVER: 'hover',
     FOCUS: 'focus',
     CLICK: 'click',
+    STICKY: 'sticky',
     MANUAL: 'manual'
   };
 
@@ -3524,7 +3536,7 @@ var Tooltip = function ($) {
       var showEvent = $.Event(this.constructor.Event.SHOW);
       if (this.isWithContent() && this._isEnabled) {
         if (this._isTransitioning) {
-          throw new Error('Tooltip is transitioning');
+          // throw new Error('Tooltip is transitioning');
         }
         $(this.element).trigger(showEvent);
 
@@ -3546,7 +3558,67 @@ var Tooltip = function ($) {
           $(tip).addClass(ClassName.FADE);
         }
 
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+
+        // var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+        // Commenting out the original snippet above for this script which adds auto-calculation of position for attachment
+		function isWideEnough(availableSpace, elementWidth) {
+			return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
+		}
+		function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
+			if (isWideEnough(rightSpacing, popupWidth)) {
+				return "right";
+			} else if (isWideEnough(leftSpacing, popupWidth)) {
+				return "left";
+			} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
+				return "bottom";
+			}
+			return false;
+		}
+        function calculateAutoPlacement(context, source) {
+			var icon = $(source).position(),
+				iconLeft = icon.left,
+				iconWidth = $(source).outerWidth() / 2,
+				winWidth = $(window).width(),
+				leftSpacing = iconLeft + iconWidth,
+				rightSpacing = winWidth - (iconWidth + iconLeft),
+				popupWidth = 350,
+				characterLength = $(source).data('content').length;
+			if (characterLength > 100) {
+				popupWidth = 500;
+				$(context).css('max-width', popupWidth);
+			} else if (popupWidth > winWidth) {
+				popupWidth = winWidth;
+			}
+			if (isWideEnough(rightSpacing, popupWidth)) {
+				return "right";
+			} else if (isWideEnough(leftSpacing, popupWidth)) {
+				return "left";
+			} else {
+				var calculatePopupWidth = (characterLength * 9) + 50, // (? * 9 = average character width) + (25 * 2 = horizontal padding)
+					iconWidth = iconWidth / 2,
+					reductionAmount = 30;
+				if (calculatePopupWidth >= popupWidth) {
+					calculatePopupWidth = popupWidth;
+				}
+				for (var i = 0; i <= popupWidth; i += reductionAmount) {
+					var alignment = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
+					if (alignment) {
+						$(context).width(calculatePopupWidth - i);
+						return alignment;
+					}
+				}
+			}
+        }
+
+        var placement;
+        if (typeof(this.config.placement) === 'function') {
+        	placement = this.config.placement.call(this, tip, this.element);
+        } else if (this.config.placement === "auto") {
+        	// If auto, calculate attachment based on window dimensions and size of box
+        	placement = calculateAutoPlacement(tip, this.element);
+        } else {
+        	placement = this.config.placement;
+        }
 
         var attachment = this._getAttachment(placement);
 
@@ -3600,7 +3672,7 @@ var Tooltip = function ($) {
       var tip = this.getTipElement();
       var hideEvent = $.Event(this.constructor.Event.HIDE);
       if (this._isTransitioning) {
-        throw new Error('Tooltip is transitioning');
+        // throw new Error('Tooltip is transitioning');
       }
       var complete = function complete() {
         if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
@@ -3628,6 +3700,7 @@ var Tooltip = function ($) {
       this._activeTrigger[Trigger.CLICK] = false;
       this._activeTrigger[Trigger.FOCUS] = false;
       this._activeTrigger[Trigger.HOVER] = false;
+      this._activeTrigger[Trigger.STICKY] = false;
 
       if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
         this._isTransitioning = true;
@@ -3707,6 +3780,23 @@ var Tooltip = function ($) {
           $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
             return _this3.toggle(event);
           });
+        } else if (trigger === 'sticky') {
+          // Most references to HOVER have been dupliated to include a similair action, STICKY
+          var eventIn = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
+          var eventOut = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
+          $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
+            return _this3._enter(event);
+          }).on(eventOut, _this3.config.selector, function (event) {
+            var jToElement = $(event.toElement),
+              jElem = $(_this3);
+            if (!jToElement.hasClass('rc_tooltip')) {
+              return _this3._leave(event);
+            }
+          });
+          // This will ensure the tooltip box is removed after it's served its purpose
+          $(document).on('mouseleave', '.rc_tooltip', function(event) {
+            $(_this3.element).rcTooltip('hide');
+          });
         } else if (trigger !== Trigger.MANUAL) {
           var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
           var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
@@ -3753,6 +3843,7 @@ var Tooltip = function ($) {
 
       if (event) {
         context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
+        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.STICKY] = true;
       }
 
       if ($(context.getTipElement()).hasClass(ClassName.SHOW) || context._hoverState === HoverState.SHOW) {
@@ -3788,6 +3879,7 @@ var Tooltip = function ($) {
 
       if (event) {
         context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
+        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.STICKY] = false;
       }
 
       if (context._isWithActiveTrigger()) {
@@ -3955,17 +4047,18 @@ var Popover = function ($) {
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'popover';
+  var NAME = 'rcTooltip';
   var VERSION = '4.0.0-alpha.6';
-  var DATA_KEY = 'bs.popover';
+  var DATA_KEY = 'bs.rcTooltip';
   var EVENT_KEY = '.' + DATA_KEY;
   var JQUERY_NO_CONFLICT = $.fn[NAME];
 
   var Default = $.extend({}, Tooltip.Default, {
-    placement: 'right',
-    trigger: 'click',
+    placement: 'auto', // 'right'
+    trigger: 'sticky',
     content: '',
-    template: '<div class="rc_popover" role="tooltip">' + '<div class="rc_popover__title"></div>' + '<div class="rc_popover__content"></div></div>'
+    html: true,
+    template: '<div class="rc_tooltip" role="tooltip">' + '<div class="rc_tooltip__title"></div>' + '<div class="rc_tooltip__content"></div></div>'
   });
 
   var DefaultType = $.extend({}, Tooltip.DefaultType, {
@@ -3978,8 +4071,8 @@ var Popover = function ($) {
   };
 
   var Selector = {
-    TITLE: '.rc_popover__title',
-    CONTENT: '.rc_popover__content'
+    TITLE: '.rc_tooltip__title',
+    CONTENT: '.rc_tooltip__content'
   };
 
   var Event = {

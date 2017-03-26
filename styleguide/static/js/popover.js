@@ -23,17 +23,18 @@ var Popover = function ($) {
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'popover';
+  var NAME = 'rcTooltip';
   var VERSION = '4.0.0-alpha.6';
-  var DATA_KEY = 'bs.popover';
+  var DATA_KEY = 'bs.rcTooltip';
   var EVENT_KEY = '.' + DATA_KEY;
   var JQUERY_NO_CONFLICT = $.fn[NAME];
 
   var Default = $.extend({}, Tooltip.Default, {
-    placement: 'right',
-    trigger: 'click',
+    placement: 'auto', // 'right'
+    trigger: 'sticky',
     content: '',
-    template: '<div class="rc_popover" role="tooltip">' + '<div class="rc_popover__title"></div>' + '<div class="rc_popover__content"></div></div>'
+    html: true,
+    template: '<div class="rc_tooltip" role="tooltip">' + '<div class="rc_tooltip__title"></div>' + '<div class="rc_tooltip__content"></div></div>'
   });
 
   var DefaultType = $.extend({}, Tooltip.DefaultType, {
@@ -46,8 +47,8 @@ var Popover = function ($) {
   };
 
   var Selector = {
-    TITLE: '.rc_popover__title',
-    CONTENT: '.rc_popover__content'
+    TITLE: '.rc_tooltip__title',
+    CONTENT: '.rc_tooltip__content'
   };
 
   var Event = {

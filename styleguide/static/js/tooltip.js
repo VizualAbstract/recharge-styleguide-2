@@ -107,6 +107,7 @@ var Tooltip = function ($) {
     HOVER: 'hover',
     FOCUS: 'focus',
     CLICK: 'click',
+    STICKY: 'sticky',
     MANUAL: 'manual'
   };
 
@@ -215,7 +216,7 @@ var Tooltip = function ($) {
       var showEvent = $.Event(this.constructor.Event.SHOW);
       if (this.isWithContent() && this._isEnabled) {
         if (this._isTransitioning) {
-          throw new Error('Tooltip is transitioning');
+          // throw new Error('Tooltip is transitioning');
         }
         $(this.element).trigger(showEvent);
 
@@ -237,7 +238,67 @@ var Tooltip = function ($) {
           $(tip).addClass(ClassName.FADE);
         }
 
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+
+        // var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+        // Commenting out the original snippet above for this script which adds auto-calculation of position for attachment
+		function isWideEnough(availableSpace, elementWidth) {
+			return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
+		}
+		function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
+			if (isWideEnough(rightSpacing, popupWidth)) {
+				return "right";
+			} else if (isWideEnough(leftSpacing, popupWidth)) {
+				return "left";
+			} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
+				return "bottom";
+			}
+			return false;
+		}
+        function calculateAutoPlacement(context, source) {
+			var icon = $(source).position(),
+				iconLeft = icon.left,
+				iconWidth = $(source).outerWidth() / 2,
+				winWidth = $(window).width(),
+				leftSpacing = iconLeft + iconWidth,
+				rightSpacing = winWidth - (iconWidth + iconLeft),
+				popupWidth = 350,
+				characterLength = $(source).data('content').length;
+			if (characterLength > 100) {
+				popupWidth = 500;
+				$(context).css('max-width', popupWidth);
+			} else if (popupWidth > winWidth) {
+				popupWidth = winWidth;
+			}
+			if (isWideEnough(rightSpacing, popupWidth)) {
+				return "right";
+			} else if (isWideEnough(leftSpacing, popupWidth)) {
+				return "left";
+			} else {
+				var calculatePopupWidth = (characterLength * 9) + 50, // (? * 9 = average character width) + (25 * 2 = horizontal padding)
+					iconWidth = iconWidth / 2,
+					reductionAmount = 30;
+				if (calculatePopupWidth >= popupWidth) {
+					calculatePopupWidth = popupWidth;
+				}
+				for (var i = 0; i <= popupWidth; i += reductionAmount) {
+					var alignment = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
+					if (alignment) {
+						$(context).width(calculatePopupWidth - i);
+						return alignment;
+					}
+				}
+			}
+        }
+
+        var placement;
+        if (typeof(this.config.placement) === 'function') {
+        	placement = this.config.placement.call(this, tip, this.element);
+        } else if (this.config.placement === "auto") {
+        	// If auto, calculate attachment based on window dimensions and size of box
+        	placement = calculateAutoPlacement(tip, this.element);
+        } else {
+        	placement = this.config.placement;
+        }
 
         var attachment = this._getAttachment(placement);
 
@@ -291,7 +352,7 @@ var Tooltip = function ($) {
       var tip = this.getTipElement();
       var hideEvent = $.Event(this.constructor.Event.HIDE);
       if (this._isTransitioning) {
-        throw new Error('Tooltip is transitioning');
+        // throw new Error('Tooltip is transitioning');
       }
       var complete = function complete() {
         if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
@@ -319,6 +380,7 @@ var Tooltip = function ($) {
       this._activeTrigger[Trigger.CLICK] = false;
       this._activeTrigger[Trigger.FOCUS] = false;
       this._activeTrigger[Trigger.HOVER] = false;
+      this._activeTrigger[Trigger.STICKY] = false;
 
       if (Util.supportsTransitionEnd() && $(this.tip).hasClass(ClassName.FADE)) {
         this._isTransitioning = true;
@@ -398,6 +460,23 @@ var Tooltip = function ($) {
           $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
             return _this3.toggle(event);
           });
+        } else if (trigger === 'sticky') {
+          // Most references to HOVER have been dupliated to include a similair action, STICKY
+          var eventIn = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
+          var eventOut = trigger === Trigger.STICKY ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
+          $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
+            return _this3._enter(event);
+          }).on(eventOut, _this3.config.selector, function (event) {
+            var jToElement = $(event.toElement),
+              jElem = $(_this3);
+            if (!jToElement.hasClass('rc_tooltip')) {
+              return _this3._leave(event);
+            }
+          });
+          // This will ensure the tooltip box is removed after it's served its purpose
+          $(document).on('mouseleave', '.rc_tooltip', function(event) {
+            $(_this3.element).rcTooltip('hide');
+          });
         } else if (trigger !== Trigger.MANUAL) {
           var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
           var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
@@ -444,6 +523,7 @@ var Tooltip = function ($) {
 
       if (event) {
         context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
+        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.STICKY] = true;
       }
 
       if ($(context.getTipElement()).hasClass(ClassName.SHOW) || context._hoverState === HoverState.SHOW) {
@@ -479,6 +559,7 @@ var Tooltip = function ($) {
 
       if (event) {
         context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
+        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.STICKY] = false;
       }
 
       if (context._isWithActiveTrigger()) {

@@ -1,78 +1,16 @@
 {% extends 'base.html' %}
+{% set page_class = "tooltips" %}
 {% block body %}
 <h1>Tooltips</h1>
-<p>Tooltips now automatically align and resize according to available screen dimensions.</p>
-<p>Under active development</p>
-<div class="rc_example" style="margin-bottom: 400px;">
-	<button style="left: 0%" class="rc_popover__button" data-toggle="popover" title="Need help finding keys?" data-content="<a href='#'>Go to setup instructions...</a>"><span class="fa fa-info-circle"></span></button><br>
+<p>Tooltips and popovers have been merged and utilize the "sticky" hover, where hovering on the box maintains its visibility.</p>
 
-	<button style="left: 25%" class="rc_popover__button" data-toggle="popover" title="Need help finding keys?" data-content="<a href='#'>Go to setup instructions...</a>"><span class="fa fa-info-circle"></span></button><br>
-
-	<button style="left: 50%" class="rc_popover__button" data-toggle="popover" title="This is a tool tip header" data-content="<p>This is body copy for a tool tip. It can be up to 3 sentences.  More than that and no one will read it.</p><p><a href='#'>This is a tool tip link...</a></p>"><span class="fa fa-info-circle"></span></button><br>
-
-	<button style="left: 75%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."><span class="fa fa-info-circle"></span></button><br>
-	
-	<button style="left: 100%" class="rc_popover__button" data-toggle="popover" title="Popover title" data-content="Donec ullamcorper nulla non metus auctor fringilla."><span class="fa fa-info-circle"></span></button><br>
+<h2>Auto placement</h2>
+<p>Tooltips will automatically change their position depending on allowable realestate. If the box is too large, it'll begin to shrink until an optimal location is detected.</p>
+<div class="rc_example">
+	<button class="rc_tooltip__button" title="Need help finding keys?" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+	<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+	<button class="rc_tooltip__button" data-content="Donec ullamcorper nulla non metus"></button>
+	<button class="rc_tooltip__button" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."></button>
+	<button class="rc_tooltip__button" title="This is a tool tip header" data-content="<p>This is body copy for a tool tip. It can be up to 3 sentences.  More than that and no one will read it.</p><p><a href='#'>This is a tool tip link...</a></p>"></button>
 </div>
-<style>
-	.rc_example .rc_popover__button {
-		position: relative;
-		margin-bottom: 10px;
-	}
-</style>
-<script>
-	function isWideEnough(availableSpace, elementWidth) {
-		return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
-	}
-	function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
-		if (isWideEnough(rightSpacing, popupWidth)) {
-			return "right";
-		} else if (isWideEnough(leftSpacing, popupWidth)) {
-			return "left";
-		} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
-			return "bottom";
-		}
-		return false;
-	}
-	var options = {
-		placement: function(context, source) {
-			var icon = $(source).position(),
-				iconLeft = icon.left,
-				iconWidth = $(source).outerWidth() / 2,
-				winWidth = $(window).width(),
-				leftSpacing = iconLeft + iconWidth,
-				rightSpacing = winWidth - (iconWidth + iconLeft),
-				popupWidth = 350,
-				characterLength = $(source).data('content').length;
-			if (characterLength > 100) {
-				popupWidth = 500;
-				$(context).css('max-width', popupWidth);
-			} else if (popupWidth > winWidth) {
-				popupWidth = winWidth;
-			}
-			if (isWideEnough(rightSpacing, popupWidth)) {
-				return "right";
-			} else if (isWideEnough(leftSpacing, popupWidth)) {
-				return "left";
-			} else {
-				var calculatePopupWidth = (characterLength * 9) + 50, // (? * 9 = average character width) + (25 * 2 = horizontal padding)
-					iconWidth = iconWidth / 2,
-					reductionAmount = 30;
-				if (calculatePopupWidth >= popupWidth) {
-					calculatePopupWidth = popupWidth;
-				}
-				for (var i = 0; i <= popupWidth; i += reductionAmount) {
-					var alignment = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
-					if (alignment) {
-						$(context).width(calculatePopupWidth - i);
-						return alignment;
-					}
-				}
-			}
-		},
-		trigger: "hover",
-		html: true
-	};
-	$('.rc_popover__button').popover(options);
-</script>
 {% endblock %}
