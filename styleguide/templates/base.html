@@ -23,6 +23,8 @@
 		<script type="text/javascript" src="{{ url_for('static', filename='js/tooltip.js') }}"></script>
 		<script type="text/javascript" src="{{ url_for('static', filename='js/popover.js') }}"></script>
 
+		<script type="text/javascript" src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+
 		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/fontawesome.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/main.scss.css') }}" rel="stylesheet" type="text/css">
@@ -47,6 +49,7 @@
 		<a href="/dropdowns">Dropdowns</a>
 		<a href="/modals">Modals</a>
 		<a href="/tooltips">Tooltips</a>
+		<a href="/notifications">Notifications</a>
 		<br>
 		Layout:
 		<a href="/headers">Headers</a>
@@ -56,5 +59,10 @@
 		Tools: <strong><a href="/generate-assets">Generate Assets</a></strong>
 {% block body %}
 {% endblock %}
+		<script>
+			// Checks for pending notifications. If so, display it
+			var notification = new rcNotification();
+			notification.pending();
+		</script>
 	</body>
 </html>

@@ -26,6 +26,8 @@ $table-label-font-size: 16px;
 	}
 	thead {
 		td, th {
+			font-weight: normal;
+			font-family: 'ralewaysemibold', arial, sans-serif;
 			border-bottom: 1px solid $table-border-color;
 			font-size: $table-label-font-size;
 		}

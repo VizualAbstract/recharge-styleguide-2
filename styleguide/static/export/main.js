@@ -653,7 +653,7 @@ var TetherClass = (function (_Evented) {
       if (typeof classes !== 'undefined' && classes[key]) {
         return this.options.classes[key];
       } else if (this.options.classPrefix) {
-        return this.options.classPrefix + '-' + key;
+        return this.options.classPrefix + '--' + key;
       } else {
         return key;
       }
@@ -3342,11 +3342,11 @@ var Tooltip = function ($) {
   var EVENT_KEY = '.' + DATA_KEY;
   var JQUERY_NO_CONFLICT = $.fn[NAME];
   var TRANSITION_DURATION = 150;
-  var CLASS_PREFIX = 'bs-tether';
+  var CLASS_PREFIX = 'rc_tether';
 
   var Default = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="tooltip-inner"></div></div>',
+    template: '<div class="rc_tooltip" role="tooltip">' + '<div class="rc_tooltip__inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -3374,9 +3374,9 @@ var Tooltip = function ($) {
 
   var AttachmentMap = {
     TOP: 'bottom center',
-    RIGHT: 'middle left',
+    RIGHT: 'top left', // middle left
     BOTTOM: 'top center',
-    LEFT: 'middle right'
+    LEFT: 'top right' // middle right
   };
 
   var HoverState = {
@@ -3965,7 +3965,7 @@ var Popover = function ($) {
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<h3 class="popover-title"></h3>' + '<div class="popover-content"></div></div>'
+    template: '<div class="rc_popover" role="tooltip">' + '<div class="rc_popover__title"></div>' + '<div class="rc_popover__content"></div></div>'
   });
 
   var DefaultType = $.extend({}, Tooltip.DefaultType, {
@@ -3978,8 +3978,8 @@ var Popover = function ($) {
   };
 
   var Selector = {
-    TITLE: '.popover-title',
-    CONTENT: '.popover-content'
+    TITLE: '.rc_popover__title',
+    CONTENT: '.rc_popover__content'
   };
 
   var Event = {

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Notifications</h1>
+<p>While notifications may potentially be phased out, they are currently used prominently as action confirmations.</p>
+
+<h2>Standard notifications</h2>
+<div class="rc_example">
+	<button id="triggerMessage">Trigger Message</button>
+	<button id="triggerInfo">Trigger Info</button>
+	<button id="triggerSuccess">Trigger Success</button>
+	<button id="triggerError">Trigger Error</button>
+	<button id="triggerStatic">Trigger Static</button>
+</div>
+
+<h3>On reload</h3>
+<p>These notifications will only display after a reload.</p>
+<div class="rc_example">
+	<button id="reloadMessage">Reload Message</button>
+	<button id="reloadInfo">Reload Info</button>
+	<button id="reloadSuccess">Reload Success</button>
+	<button id="reloadError">Reload Error</button>
+	<button id="reloadStatic">Reload Static</button>
+</div>
+
+<script>
+	$(function() {
+		function reloadPage() {
+			window.location.reload();
+		}
+		// Messages
+		var triggerMessage = new rcNotification({
+			message: "This is a notification message"
+		});
+		var triggerInfo = new rcNotification({
+			message: "This is an info message",
+			type: 'info'
+		});
+		var triggerSuccess = new rcNotification({
+			message: "This is a success message",
+			type: 'success'
+		});
+		var triggerError = new rcNotification({
+			message: "This is an error message",
+			type: 'error'
+		});
+		var triggerStatic = new rcNotification({
+			message: "This message wont close unless close button is clicked.",
+			type: 'warning',
+			static: true
+		});
+		// Triggered
+		$(document).on('click', '#triggerMessage', function() {
+			triggerMessage.show();
+		});
+		$(document).on('click', '#triggerInfo', function() {
+			triggerInfo.show();
+		});
+		$(document).on('click', '#triggerSuccess', function() {
+			triggerSuccess.show();
+		});
+		$(document).on('click', '#triggerError', function() {
+			triggerError.show();
+		});
+		$(document).on('click', '#triggerStatic', function() {
+			triggerStatic.show();
+		});
+		// On reload
+		$(document).on('click', '#reloadMessage', function() {
+			triggerMessage.reload();
+			reloadPage();
+		});
+		$(document).on('click', '#reloadInfo', function() {
+			triggerInfo.reload();
+			reloadPage();
+		});
+		$(document).on('click', '#reloadSuccess', function() {
+			triggerSuccess.reload();
+			reloadPage();
+		});
+		$(document).on('click', '#reloadError', function() {
+			triggerError.reload();
+			reloadPage();
+		});
+		$(document).on('click', '#reloadStatic', function() {
+			triggerStatic.reload();
+			reloadPage();
+		});
+	});
+</script>
+{% endblock %}

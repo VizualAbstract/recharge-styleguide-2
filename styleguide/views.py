@@ -70,6 +70,11 @@ def tooltips():
     template_file = "tooltips.html"
     return render_template(template_file)
 
+@app.route('/notifications')
+def notifications():
+    template_file = "notifications.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
