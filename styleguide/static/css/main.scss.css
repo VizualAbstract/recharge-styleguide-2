@@ -2496,17 +2496,11 @@ a:hover, a:active, a.active {
 }
 
 .rc_tooltip:before {
-  line-height: 16px;
-  font-size: 16px;
-  padding: 3px 5px 5px 5px;
-  background-color: #FFF;
-  font-family: 'fontawesome', arial, san-serif;
-  content: "\f05a";
+  content: "";
   position: absolute;
-  width: 14px;
-  height: 16px;
+  width: 25px;
+  height: 24px;
   cursor: pointer;
-  color: #4DD6B7;
 }
 
 .rc_tooltip.rc_tooltip--top, .rc_tooltip.rc_tether--element-attached-bottom.rc_tether--target-attached-center {

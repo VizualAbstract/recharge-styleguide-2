@@ -5,7 +5,7 @@ $tooltip-inner-padding: 20px;
 $tooltip-bg: #474747;
 $tooltip-arrow-width: 12px;
 
-.rc_tooltip__button, {
+.rc_tooltip__button {
 	width: 14px;
 	height: 16px;
 	color: #424242;
@@ -56,17 +56,11 @@ $tooltip-arrow-width: 12px;
 
 	// Gives the apperance that the user is hovering over the info bubble
 	&:before {
-		line-height: $font-size-base;
-		font-size: $font-size-base;
-		padding: 3px 5px 5px 5px;
-		background-color: #FFF;
-		font-family: 'fontawesome', arial, san-serif;
-		content: "\f05a";
+		content: "";
 		position: absolute;
-		width: 14px;
-		height: 16px;
+		width: 25px;
+		height: 24px;
 		cursor: pointer;
-		color: #4DD6B7;
 	}
 
 	// tooltip directions
