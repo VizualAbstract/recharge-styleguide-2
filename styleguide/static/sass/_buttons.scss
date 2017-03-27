@@ -80,11 +80,6 @@
 }
 // Button sizes
 .button {
-	&--small {
-		font-size: $font-size-small;
-		padding: 5px 10px;
-		height: auto;
-	}
 	&--base,
 	&--medium {
 		font-size: $font-size-base;

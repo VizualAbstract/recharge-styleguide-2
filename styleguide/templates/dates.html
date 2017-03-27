@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Dates</h1>
+<p>Under active development</p>
+<div class="rc_example">
+<div class="form__group">
+	<label for="date" class="form__label">Date</label>
+	<input type="text" name="date" id="date" value="2016-11-08" placeholder="select a date" class="form__date">
+</div><!-- .form__group -->
+
+<div class="form__group">
+	<label for="date_empty" class="form__label">Date</label>
+	<input type="text" name="date_empty" id="date_empty" value="" placeholder="select a date" class="form__date">
+</div><!-- .form__group -->
+</div>
+
+<h2>Date range</h2>
+<p>Date rangers require a container, with each individual element also having a wrapper.</p>
+<div class="rc_example">
+<div class="dates__container">
+	<div class="dates__start">
+		<label for="start_date" class="form__label">Start date</label>
+		<input type="text" name="start_date" id="start_date" data-default="2016-08-01" value="2016-08-01" placeholder="select a date" class="form__date">
+	</div><!-- .date-range__start -->
+	<div class="dates__end">
+		<label for="end_date" class="form__label">End date</label>
+		<input type="text" name="end_date" id="end_date" data-default="2016-08-08" value="2016-08-08" placeholder="select a date" class="form__date">
+	</div><!-- .date-range__end -->
+	<div class="dates__submit">
+		<button class="button">Update charts</button>
+	</div><!-- .date-range__submit -->
+</div><!-- .date-picker -->
+</div>
+{% endblock %}

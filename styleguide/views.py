@@ -47,6 +47,21 @@ def selects():
     template_file = "selects.html"
     return render_template(template_file)
 
+@app.route('/numbers')
+def numbers():
+    template_file = "numbers.html"
+    return render_template(template_file)
+
+@app.route('/colors')
+def colors():
+    template_file = "colors.html"
+    return render_template(template_file)
+
+@app.route('/dates')
+def dates():
+    template_file = "dates.html"
+    return render_template(template_file)
+
 # Headers
 @app.route('/headers')
 def headers():
@@ -143,4 +158,32 @@ def compile_js():
 
     with open('styleguide/static/export/main.js', 'w') as f:
         f.write(final_script)
+
+
+    toLoad = [
+        "styleguide/static/js/colorpicker.js",
+    ]
+
+    final_script = ''
+    for script_name in toLoad:
+        with open(script_name, 'r') as f:
+            final_script += ('\n' + f.read())
+
+    with open('styleguide/static/export/colors.js', 'w') as f:
+        f.write(final_script)
+
+
+    toLoad = [
+        "styleguide/static/js/moment.js",
+        "styleguide/static/js/pikaday.js",
+    ]
+
+    final_script = ''
+    for script_name in toLoad:
+        with open(script_name, 'r') as f:
+            final_script += ('\n' + f.read())
+
+    with open('styleguide/static/export/dates.js', 'w') as f:
+        f.write(final_script)
+
 app.jinja_env.globals.update(compile_js = compile_js)

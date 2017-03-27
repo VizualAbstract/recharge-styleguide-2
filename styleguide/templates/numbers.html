@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Numbers</h1>
+<p></p>
+<div class="rc_example">
+	<div class="form__group">
+		<input type="number" min="0" max="999" value="999" class="form__number">
+	</div>
+	<div class="form__group">
+		<label class="form__label">Number select</label>
+		<select class="form__number">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="999" selected="selected">999</option>
+		</select>
+		item
+	</div>
+</div>
+{% endblock %}
