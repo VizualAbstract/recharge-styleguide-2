@@ -14,3 +14,58 @@ $screen-xl-min: 1200px;
 
 $gutter: 30px;
 $mobile-nav-max: $screen-sm-max;
+
+
+/* Variables */
+// Standard contrast
+$white: #FFFFFF;
+$black: #000000;
+
+// Shades
+$gray-lighter: #EEEEEE;
+$gray-light: #CCCCCC;
+$gray: #8E8F8E;
+$gray-dark: #676767;
+$gray-darker: #424242;
+
+// Colors
+$cyan: #53BAD3;
+$blue: #2C93AC;
+$green: #2BAC8F;
+$aquamarine: #4DD6B7;
+$mint: #BDF0E4;
+$yellow: #FFF155;
+$orange: #FB8309;
+$red: #EC3D10;
+$magenta: #C00399;
+$pink: #D06EAB;
+
+// Brand
+$brand: $blue; // #2C93AC
+$admin-color: $cyan;
+
+// Status-related
+$default: $gray-darker;
+$primary: $aquamarine;
+$success: $green;
+$danger: $red;
+$info: $blue;
+$disabled: $gray-light;
+
+// Font sizes
+$font-size-small: 14px !default;
+$font-size-base: 16px !default;
+$font-size-large: 24px !default;
+
+// Input style
+$input-disabled-background: #F9F9F9 !default;
+$input-disabled-border: #CCC !default;
+$input-disabled-color: #999 !default;
+$cursor-disabled: not-allowed;
+
+// Header font sizes
+$h1-font-size: 35px !default;
+$h2-font-size: 30px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 20px !default;
+$h5-font-size: 16px !default;

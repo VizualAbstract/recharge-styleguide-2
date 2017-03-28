@@ -22,6 +22,16 @@ def buttons():
     return render_template(template_file)
 
 # Forms
+@app.route('/form-addons')
+def form_addons():
+    template_file = "form-addons.html"
+    return render_template(template_file)
+
+@app.route('/contextual-inputs')
+def contextual_inputs():
+    template_file = "contextual-inputs.html"
+    return render_template(template_file)
+
 @app.route('/inputs')
 def inputs():
     template_file = "inputs.html"
@@ -121,9 +131,17 @@ def tables():
     template_file = "tables.html"
     return render_template(template_file)
 
+
+# Utilities
+@app.route('/admin-class')
+def admin_class():
+    template_file = "admin-class.html"
+    return render_template(template_file)
+
 @app.route('/generate-assets')
 def generate_assets():
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'main.scss')
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'admin.scss')
     compile_js()
     rename_css()
     template_file = "generate-assets.html"
@@ -134,6 +152,12 @@ def rename_css():
         with open("styleguide/static/export/main.css", "wt") as fout:
             for line in fin:
                 fout.write(line.replace('/*# sourceMappingURL=../css/main.scss.css.map */', ''))
+
+    with open("styleguide/static/sass/styleguide/static/sass/admin.scss.css", "rt") as fin:
+        with open("styleguide/static/export/admin.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/admin.scss.css.map */', ''))
+
     shutil.rmtree("styleguide/static/sass/styleguide")
 app.jinja_env.globals.update(rename_css = rename_css)
 

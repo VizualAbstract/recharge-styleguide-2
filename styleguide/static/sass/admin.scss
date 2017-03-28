@@ -1,0 +1,306 @@
+@import 'helpers/_variables.scss';
+
+/* HTML elements */
+.admin-recharge {
+	color: $admin-color;
+	a {
+		color: $admin-color;;
+		&:hover,
+		&:focus,
+		&:active {
+			color: darken($admin-color, 15%);
+		}
+	}
+	img {
+		box-shadow: 0px 0px 0px 1px $admin-color;
+	}
+	input[type="submit"],
+	button {
+		background-color: $admin-color;
+		color: #FFF;
+	}
+}
+
+/* Form elements */
+.admin-recharge {
+	&.button,
+	.button {
+		color: #FFF;
+		background-color: $admin-color;
+		&:hover,
+		&:active,
+		&.active,
+		&.rc_active {
+			background-color: darken($admin-color, 15%);
+		}
+		&.button--disabled,
+		&.rc_disabled,
+		&:disabled {
+			background-color: lighten($admin-color, 30%) !important;
+		}
+	}
+	&.button.button--link,
+	.button.button--link {
+		color: $admin-color;
+		&.button--disabled,
+		&.rc_disabled,
+		&:disabled {
+			color: lighten($admin-color, 20%) !important;
+			background-color: transparent !important;
+		}
+		&:hover,
+		&:active,
+		&.active,
+		&.rc_active {
+			color: darken($admin-color, 15%);
+		}
+	}
+}
+.admin-recharge {
+	textarea,
+	input,
+	&.form__input {
+		border: 1px solid $admin-color;
+		color: $admin-color;
+		&:focus,
+		&:active {
+			border-color: $primary;
+		}
+		&::-webkit-input-placeholder {
+		  color: lighten($admin-color, 10%);
+		}
+		&::-moz-placeholder {
+		  color: lighten($admin-color, 10%);
+		}
+		&:-ms-input-placeholder {
+		  color: lighten($admin-color, 10%);
+		}
+		&:-moz-placeholder {
+		  color: lighten($admin-color, 10%);
+		}
+		&:disabled,
+		&.form__input--disabled,
+		&.rc_disabled {
+			color: lighten($admin-color, 16%) !important;
+			background-color: lighten($admin-color, 40%) !important;
+			border-color: lighten($admin-color, 25%) !important;
+		}
+	}
+}
+.admin-recharge {
+	&.form__radio,
+	&.form__checkbox,
+	.form__radio,
+	.form__checkbox {
+		+ .form__label {
+			color: $admin-color;
+		}
+		+ .form__label:before {
+			border-color: $admin-color;
+		}
+		&:checked {
+			+ .form__label:before {
+				background-color: $admin-color;
+			}
+		}
+		&.error,
+		&.rc_error {
+			+ .form__label:before {
+				border-color: $admin-color;
+				background-color: $red;
+			}
+		}
+	}
+}
+.admin-recharge {
+	&.form__select,
+	&.form__number,
+	.form__select,
+	.form__number {
+		border-color: $admin-color;
+		color: $admin-color;
+		&.rc_select--open-down {
+			.rc_select__selected  {
+				border-color: $primary;
+			}
+		}
+		&.rc_select--disabled {
+			.rc_select__selected  {
+				background-color: lighten($admin-color, 37%) !important;
+				border-color: lighten($admin-color, 16%) !important;
+			}
+			.rc_select__option--highlight,
+			.rc_select__option--selected {
+				background-color: lighten($admin-color, 20%) !important;
+			}
+		}
+		.rc_select__option--highlight,
+		.rc_select__option--selected {
+			background-color: $admin-color;
+			color: #FFF;
+		}
+	}
+	.rc_select--multi .rc_select--options,
+	.rc_select__selected {
+		border-color: $admin-color;
+	}
+	&.rc_select__option.rc_select__option--selected,
+	&.rc_select__option.rc_select__option--highlight {
+			background-color: $admin-color;
+			color: #FFF;
+	}
+}
+.admin-recharge {
+	.rc_color__replacer {
+		border-color: $admin-color;
+	}
+	.form__color {
+		&:disabled,
+		&.form__input--disabled,
+		&.rc_disabled {
+			+ .form__color__picker + .rc_color__replacer {
+				cursor: not-allowed;
+				border-color: lighten($admin-color, 16%) !important;
+			}
+		}
+	}
+}
+
+/* Navigation elements */
+.admin-recharge {
+	.breadcrumbs,
+	&.breadcrumbs {
+		background-color: $admin-color;
+		.crumb {
+			color: #FFF;
+			a {
+				color: #FFF;
+			}
+			&:hover {
+				a {
+					background: darken($admin-color, 15%);
+				}
+				& + .crumb {
+					&:after {
+						border-left-color: darken($admin-color, 15%);
+					}
+				}
+			}
+			&:last-child {
+				&:hover {
+					background-color: transparent;
+				}
+			}
+			& + .crumb {
+				&:after {
+					border-left-color: $admin-color;
+				}
+			}
+		}
+	}
+	&.crumb {
+		background-color: $admin-color;
+		color: #FFF;
+		&:hover {
+			background: darken($admin-color, 15%);
+			& + .crumb {
+				&:after {
+					border-left-color: darken($admin-color, 15%);
+				}
+			}
+		}
+		a {
+			color: #FFF;
+		}
+		& + .crumb {
+			&:after {
+				border-left-color: $admin-color;
+			}
+		}
+		&:last-child {
+			&:hover {
+				background-color: $admin-color;
+			}
+		}
+	}
+}
+.admin-recharge {
+	.sidebar__menu,
+	&.sidebar__menu {
+		background-color: lighten($admin-color, 37%) !important;
+	}
+	.menu__item,
+	&.menu__item {
+		> a {
+			color: $admin-color;
+			&.active,
+			&:hover,
+			&:focus {
+				color: #FFF;
+				background-color: $admin-color;
+			}
+		}
+	}
+}
+.admin-recharge {
+	.rc_dropdown,
+	&.rc_dropdown {
+		.button:hover {
+			background-color: darken($admin-color, 15%);
+		}
+		.rc_dropdown__menu {
+			background-color: $admin-color;
+			a {
+				background-color: darken($admin-color, 8%);
+				&.rc_active,
+				&.active,
+				&:hover,
+				&:focus {
+					background-color: darken($admin-color, 14%);
+				}
+			}
+		}
+	}
+	&.rc_item {
+		color: $admin-color;
+		&.rc_active,
+		&.active,
+		&:hover,
+		&:active {
+			background-color: darken($admin-color, 14%);
+			color: #FFF;
+		}
+	}
+	.navbar__nav,
+	&.navbar__nav {
+		> li {
+			> a,
+			> span {
+				background-color: $admin-color;
+				color: #FFF;
+				&:hover,
+				&:active,
+				&.rc_active,
+				&.active {
+					background-color: darken($admin-color, 14%);
+				}
+			}
+		}
+	}
+}
+.navbar__nav {
+	> li {
+		> a,
+		> span {
+			&.admin-recharge {
+				background-color: darken($admin-color, 14%);
+			}
+		}
+	}
+}
+.admin-recharge {
+	&.navbar,
+	.navbar {
+		background-color: $admin-color;
+	}
+}

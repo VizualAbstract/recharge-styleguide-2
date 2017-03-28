@@ -1,0 +1,408 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>Admin class</h1>
+<p>We frequently use the class <code>.admin-recharge</code> to indicate a recharge-only feature.</p>
+<h2>Form elements</h2>
+<div class="rc_example">
+	<div class="form__group">
+		<button class="button button--default admin-recharge">Default</button>
+		<button class="button button--primary admin-recharge">Primary</button>
+		<button class="button button--danger admin-recharge">Danger</button>
+		<button class="button button--disabled admin-recharge">Disabled</button>
+	</div>
+	<div class="form__group">
+		<button class="button button--default button--link admin-recharge">Default</button>
+		<button class="button button--primary button--link admin-recharge">Primary</button>
+		<button class="button button--danger button--link admin-recharge">Danger</button>
+		<button class="button button--disabled button--link admin-recharge">Disabled</button>
+	</div>
+	<div class="form__group">
+		<input type="text" id="text" name="text" placeholder="text" value="" class="form__input admin-recharge">
+		<input type="text" id="text" name="text" placeholder="Placeholder text" value="" class="form__input admin-recharge">
+		<input type="text" id="text" name="text" placeholder="Disabled" value="" disabled="" class="form__input admin-recharge">
+	</div>
+	<div class="form__group">
+		<input type="email" placeholder="email" value="email" class="form__input admin-recharge">
+		<input type="password" placeholder="password" value="password" class="form__input admin-recharge">
+		<input type="url" placeholder="url" value="url" class="form__input admin-recharge">
+		<input type="tel" placeholder="tel" value="3231236544" class="form__input admin-recharge">
+	</div>
+	<div class="form__group">
+		<textarea id="textarea_text" name="textarea_text" placeholder="" class="form__input admin-recharge">Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor.</textarea>
+		<textarea id="textarea_placeholder" name="textarea_placeholder" placeholder="Sed posuere consectetur est at lobortis" class="form__input admin-recharge"></textarea>
+		<textarea id="textarea_disabled" name="textarea_disabled" placeholder="Disabled textarea" disabled="" class="form__input admin-recharge"></textarea>
+		<textarea id="textarea_code" name="textarea_code" placeholder="Enter html..." class="form__input form__input--code admin-recharge">Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit.</textarea>
+	</div>
+	<div class="form__group">
+		<input type="checkbox" id="egyiogdiec" name="" checked="" class="form__checkbox admin-recharge">
+		<label for="egyiogdiec" class="form__label">Enable colors</label>
+		<input type="checkbox" id="mntxviglcw" name="" class="form__checkbox admin-recharge">
+		<label for="mntxviglcw" class="form__label">Enable shadows</label>
+		<input type="checkbox" id="pcguminzvb" name="" checked="" class="form__checkbox admin-recharge">
+		<label for="pcguminzvb" class="form__label">Enable light</label>
+	</div>
+	<div class="form__group">
+		<input type="checkbox" id="uucxuyxeov" name="" checked="" class="form__checkbox admin-recharge">
+		<label for="uucxuyxeov" class="form__label">Include eyes?</label>
+		<input type="checkbox" id="xxmgwtteyj" name="" disabled="" class="form__checkbox admin-recharge">
+		<label for="xxmgwtteyj" class="form__label">Include hands?</label>
+		<input type="checkbox" id="wjgiweweay" name="" checked="" class="form__checkbox rc_error admin-recharge">
+		<label for="wjgiweweay" class="form__label">Include feet?</label>
+	</div>
+	<div class="form__group">
+		<input type="radio" id="radio_1" name="" checked="" class="form__radio admin-recharge">
+		<label for="radio_1" class="form__label">Radio 1</label>
+		<input type="radio" id="radio_2" name="" class="form__radio admin-recharge">
+		<label for="radio_2" class="form__label">Radio 2</label>
+		<input type="radio" id="radio_3" name="" disabled="" class="form__radio admin-recharge">
+		<label for="radio_3" class="form__label">Radio 3</label>
+		<input type="radio" id="radio_4" name="" checked="" class="form__radio rc_error admin-recharge">
+		<label for="radio_4" class="form__label">Radio 4</label>
+	</div>
+	<div class="form__group">
+		<select class="form__select">
+			<option value="one">One fish</option>
+			<option value="two" selected>Two fish</option>
+			<option value="blue" class="admin-recharge">Red fish</option>
+			<option value="green">Blue fish</option>
+		</select>
+		<select disabled class="form__select admin-recharge">
+			<option>Option 1</option>
+			<option selected="selected">Option 2</option>
+			<option>Option 3</option>
+		</select>
+		<select class="form__select admin-recharge">
+			<option value="one" selected>One fish</option>
+			<option value="two">Two fish</option>
+			<option value="blue">Red fish</option>
+			<option value="green">Blue fish</option>
+		</select>
+	</div>
+	<div class="form__group">
+		<select multiple class="form__select">
+			<option value="one">One fish</option>
+			<option value="two" selected>Two fish</option>
+			<option value="blue">Red fish</option>
+			<option value="green" class="admin-recharge">Blue fish</option>
+		</select>
+		<select multiple disabled class="form__select admin-recharge">
+			<option>Option 1</option>
+			<option selected="selected">Option 2</option>
+			<option>Option 3</option>
+		</select><!-- .form__select -->
+		<select multiple class="form__select admin-recharge">
+			<option value="one" selected>One fish</option>
+			<option value="two">Two fish</option>
+			<option value="blue">Red fish</option>
+			<option value="green">Blue fish</option>
+		</select>
+	</div>
+	<div class="form__group">
+		<input type="number" min="0" max="999" value="999" class="form__number admin-recharge">
+	</div>
+	<div class="form__group">
+		<label class="form__label admin-recharge">Number select</label>
+		<select class="form__number admin-recharge" data-dkcacheid="0">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="999" selected>999</option>
+		</select>
+		item
+	</div>
+	<div class="form__group">
+		<input type="number" min="0" max="999" value="999" disabled class="form__number admin-recharge">
+	</div>
+	<div class="form__group">
+		<label class="form__label">Number select</label>
+		<select class="form__number admin-recharge" disabled>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="999" selected>999</option>
+		</select>
+		item
+	</div>
+	<div class="form__group admin-recharge">
+		<label for="colors_font_color_1" class="form__label">Button</label>
+		<input type="text" id="colors_font_color_1" name="colors_font_color_1" value="#4dd6b7" class="form__color">
+		<input type="color" name="colors_font_color_1" value="#4dd6b7" class="form__color__picker">
+	</div>
+	<div class="form__group admin-recharge">
+		<label for="colors_font_color_2" class="form__label">Button</label>
+		<input type="text" id="colors_font_color_2" name="colors_font_color_2" value="#5c5c5c" disabled class="form__color">
+		<input type="color" name="colors_font_color_2" value="#5c5c5c" disabled class="form__color__picker">
+	</div>
+	<div class="form__group admin-recharge">
+		<label for="date" class="form__label">Date</label>
+		<input type="text" name="date" id="date" value="2016-11-08" placeholder="select a date" class="form__date" aria-label="Use the arrow keys to pick a date">
+	</div><!-- .form__group -->
+	<div class="form__group admin-recharge">
+		<label for="date_empty" class="form__label">Date</label>
+		<input type="text" name="date_empty" id="date_empty" value="" placeholder="select a date" class="form__date">
+	</div><!-- .form__group -->
+	<div class="form__group">
+		<div class="dates__container admin-recharge">
+			<div class="dates__start">
+				<label for="start_date" class="form__label">Start date</label>
+				<input type="text" name="start_date" id="start_date" data-default="2016-08-01" value="2016-08-01" placeholder="select a date" class="form__date" aria-label="Use the arrow keys to pick a date">
+			</div>
+			<div class="dates__end">
+				<label for="end_date" class="form__label">End date</label>
+				<input type="text" name="end_date" id="end_date" data-default="2016-08-08" value="2016-08-08" placeholder="select a date" class="form__date">
+			</div>
+			<div class="dates__submit">
+				<button class="button">Update charts</button>
+			</div>
+		</div>
+	</div>
+</div>
+<h2>Navivation elements</h2>
+<div class="rc_example">
+	<ol class="breadcrumbs admin-recharge">
+		<li class="crumb">
+			<a href="/"><span class="fa fa-wrench"></span> Section with icon</a>
+		</li>
+		<li class="crumb">
+			<a href="/">One level in</a>
+		</li>
+		<li class="crumb">
+			Two levels in
+		</li>
+	</ol>
+	<ol class="breadcrumbs">
+		<li class="crumb admin-recharge">
+			<a href="/"><span class="fa fa-wrench"></span> Section with icon</a>
+		</li>
+		<li class="crumb">
+			<a href="/">One level in</a>
+		</li>
+		<li class="crumb">
+			Two levels in
+		</li>
+	</ol>
+	<ol class="breadcrumbs">
+		<li class="crumb">
+			<a href="/"><span class="fa fa-wrench"></span> Section with icon</a>
+		</li>
+		<li class="crumb">
+			<a href="/">One level in</a>
+		</li>
+		<li class="crumb admin-recharge">
+			Two levels in
+		</li>
+	</ol>
+	<div class="flex__container" style="margin-left: -20px; margin-right: -20px;">
+		<div class="flex__layout">
+			<div class="flex__sidebar">
+				<div class="sidebar">
+					<ul class="sidebar__menu admin-recharge">
+						<li class="menu__item admin-recharge">
+							<a href="#">Payments</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Apps</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Partner Badges</a>
+						</li>
+						<li class="menu__item admin-recharge">
+							<a href="#" class="active">Account</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex__content">
+				<h5>Content</h5>
+			</div>
+		</div>
+	</div>
+	<div class="navbar">
+		<a href="#" class="navbar__logo">ReCharge</a>
+		<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
+		<div id="navbar__menu" class="navbar__collapse collapse"> <!-- collapse -->
+			<ul class="navbar__nav">
+				<li><a href="#">Orders</a></li>
+				<li class="admin-recharge"><a href="#">Customers</a></li>
+				<li><a href="#" class="active admin-recharge">Rulesets</a></li>
+				<li><a href="#">Reports</a></li>
+			</ul>
+			<div class="rc_dropdown">
+				<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+					<span class="fa fa-wrench"></span>
+					<span class="visible--mobile">Store settings</span>
+				</button>
+				<div class="rc_dropdown__menu rc_dropdown__menu--right">
+					<a href="" class="rc_item">General settings</a>
+					<a href="" class="rc_item">Discounts</a>
+					<a href="" class="rc_item admin-recharge">Subscription prices</a>
+					<a href="" class="rc_item">Taxes</a>
+					<a href="" class="rc_item">Shipping</a>
+					<a href="" class="rc_item admin-recharge">Shipping zones</a>
+					<a href="" class="rc_item">Integrations</a>
+					<a href="" class="rc_item">Customer portal</a>
+					<a href="" class="rc_item">Checkout</a>
+					<a href="" class="rc_item">Notifications</a>
+					<a href="" class="rc_item">Subscription widget</a>
+					<a href="" class="rc_item">Refer a friend</a>
+				</div>
+			</div>
+			<div class="rc_dropdown admin-recharge">
+				<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+					<span class="fa fa-user"></span>
+					<span class="visible--mobile">Account settings</span>
+				</button>
+				<div class="rc_dropdown__menu rc_dropdown__menu--right">
+					<a href="" class="rc_item">Support center</a>
+					<a href="" class="rc_item">My account</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="navbar">
+		<a href="#" class="navbar__logo">ReCharge</a>
+		<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
+		<div id="navbar__menu" class="navbar__collapse collapse"> <!-- collapse -->
+			<ul class="navbar__nav admin-recharge">
+				<li><a href="#">Orders</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#" class="active">Rulesets</a></li>
+				<li><a href="#">Reports</a></li>
+			</ul>
+		</div>
+	</div>
+	<br>
+	<div class="navbar admin-recharge">
+		<a href="#" class="navbar__logo">ReCharge</a>
+		<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
+		<div id="navbar__menu" class="navbar__collapse collapse"> <!-- collapse -->
+			<ul class="navbar__nav">
+				<li><a href="#">Orders</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#" class="active">Rulesets</a></li>
+				<li><a href="#">Reports</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<h2>Dynamic elements</h2>
+<div class="rc_example">
+	<div class="rc_dropdown admin-recharge">
+		<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+			My Dropdown
+		</button>
+		<div class="rc_dropdown__menu">
+			<a href="/link-1" class="rc_item">Link 1</a>
+			<a href="/link-2" class="rc_item">Link 2</a>
+			<a href="/link-3" class="rc_item">Link 3</a>	
+		</div>
+	</div>
+	<div class="rc_dropdown">
+		<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+			My Dropdown
+		</button>
+		<div class="rc_dropdown__menu">
+			<a href="/link-1" class="rc_item">Link 1</a>
+			<a href="/link-2" class="rc_item">Link 2</a>
+			<a href="/link-3" class="rc_item admin-recharge">Link 3</a>	
+		</div>
+	</div>
+</div>
+
+<h2>Layout elements</h2>
+<div class="rc_example admin-recharge">
+	<div class="header-dropdown">
+		<div class="header-dropdown__title">	
+			<div class="rc_dropdown">
+				<button class="rc_h3 button button--link rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+					Recurring Charge Confirmation
+				</button>
+				<div class="rc_dropdown__menu">
+					<a href="/link-1" class="rc_item">Link 1</a>
+					<a href="/link-2" class="rc_item">Link 2</a>
+					<a href="/link-3" class="rc_item">Link 3</a>
+				</div>
+			</div>
+		</div>
+		<div class="header-dropdown__description">
+			<p>The Customer Portal is where your customers manage their subscriptions. Set the controls for the portal so that your customers see only the options that you set.</p>
+		</div>
+		<div class="header-dropdown__actions">
+			<button class="button">Cancel</button>
+			<button class="button button--primary">Save</button>
+		</div>
+	</div><!-- .header-dropdown -->
+</div>
+
+<h2>HTML Elements</h2>
+<h3>Inline elements</h3>
+<div class="rc_example admin-recharge">
+	<b>&lt;b&gt;&lt;/b&gt;</b><br>
+	<strong>&lt;strong&gt;&lt;/strong&gt;</strong><br>
+	<big>&lt;big&gt;&lt;/big&gt;</big><br>
+	<i>&lt;i&gt;&lt;/i&gt;</i><br>
+	<small>&lt;small&gt;&lt;/small&gt;</small><br>
+	<tt>&lt;tt&gt;&lt;/tt&gt;</tt><br>
+	<a href="#">This is a link</a><br>
+	&lt;br&gt;<br>
+	<em>&lt;em&gt;&lt;/em&gt;</em><br>
+	<code>&lt;b&gt;&lt;/b&gt;</code><br>
+	<img src="http://placehold.it/50x50/"><br>
+	<span>&lt;span&gt;&lt;/span&gt;</span><br>
+	<sub>&lt;sub&gt;&lt;/sub&gt;</sub><br>
+</div>
+<h3>Block elements</h3>
+<div class="rc_example admin-recharge">
+	<p>Etiam Nibh Lorem Mattis Vestibulum</p>
+	<h1>This is heading 1</h1>
+	<h2>This is heading 2</h2>
+	<h3>This is heading 3</h3>
+	<h4>This is heading 4</h4>
+	<h5>This is heading 5</h5>
+	<h6>This is heading 6</h6>
+	<ol>
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ol>
+	<ul>
+		<li>Coffee</li>
+		<li>Tea</li>
+		<li>Milk</li>
+	</ul>
+	<dl>
+		<dt>Coffee</dt>
+		<dd>Black hot drink</dd>
+		<dt>Milk</dt>
+		<dd>White cold drink</dd>
+	</dl>
+	<div>
+	  <h3>This is a heading</h3>
+	  <p>This is a paragraph.</p>
+	</div>
+	<hr>
+	<script>
+		document.write("Hello World!")
+	</script>
+	<noscript>Your browser does not support JavaScript!</noscript>
+	<form>
+		<fieldset>
+			<legend>Personalia:</legend>
+			Name: <input type="text"><br>
+			Email: <input type="text"><br>
+			Date of birth: <input type="text">
+		</fieldset>
+	</form>
+	<form action="/action_page.php" method="get">
+		First name: <input type="text" name="fname"><br>
+		Last name: <input type="text" name="lname"><br>
+		<input type="submit" value="Submit">
+	</form>
+</div>
+{% endblock %}

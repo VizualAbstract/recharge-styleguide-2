@@ -1,0 +1,317 @@
+/* Variables */
+/* HTML elements */
+.admin-recharge {
+  color: #53BAD3;
+}
+
+.admin-recharge a {
+  color: #53BAD3;
+}
+
+.admin-recharge a:hover, .admin-recharge a:focus, .admin-recharge a:active {
+  color: #2c94ad;
+}
+
+.admin-recharge img {
+  box-shadow: 0px 0px 0px 1px #53BAD3;
+}
+
+.admin-recharge input[type="submit"],
+.admin-recharge button {
+  background-color: #53BAD3;
+  color: #FFF;
+}
+
+/* Form elements */
+.admin-recharge.button,
+.admin-recharge .button {
+  color: #FFF;
+  background-color: #53BAD3;
+}
+
+.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active,
+.admin-recharge .button:hover,
+.admin-recharge .button:active,
+.admin-recharge .button.active,
+.admin-recharge .button.rc_active {
+  background-color: #2c94ad;
+}
+
+.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled,
+.admin-recharge .button.button--disabled,
+.admin-recharge .button.rc_disabled,
+.admin-recharge .button:disabled {
+  background-color: #cdebf2 !important;
+}
+
+.admin-recharge.button.button--link,
+.admin-recharge .button.button--link {
+  color: #53BAD3;
+}
+
+.admin-recharge.button.button--link.button--disabled, .admin-recharge.button.button--link.rc_disabled, .admin-recharge.button.button--link:disabled,
+.admin-recharge .button.button--link.button--disabled,
+.admin-recharge .button.button--link.rc_disabled,
+.admin-recharge .button.button--link:disabled {
+  color: #a4dbe8 !important;
+  background-color: transparent !important;
+}
+
+.admin-recharge.button.button--link:hover, .admin-recharge.button.button--link:active, .admin-recharge.button.button--link.active, .admin-recharge.button.button--link.rc_active,
+.admin-recharge .button.button--link:hover,
+.admin-recharge .button.button--link:active,
+.admin-recharge .button.button--link.active,
+.admin-recharge .button.button--link.rc_active {
+  color: #2c94ad;
+}
+
+.admin-recharge textarea,
+.admin-recharge input, .admin-recharge.form__input {
+  border: 1px solid #53BAD3;
+  color: #53BAD3;
+}
+
+.admin-recharge textarea:focus, .admin-recharge textarea:active,
+.admin-recharge input:focus,
+.admin-recharge input:active, .admin-recharge.form__input:focus, .admin-recharge.form__input:active {
+  border-color: #4DD6B7;
+}
+
+.admin-recharge textarea::-webkit-input-placeholder,
+.admin-recharge input::-webkit-input-placeholder, .admin-recharge.form__input::-webkit-input-placeholder {
+  color: #7ccadd;
+}
+
+.admin-recharge textarea::-moz-placeholder,
+.admin-recharge input::-moz-placeholder, .admin-recharge.form__input::-moz-placeholder {
+  color: #7ccadd;
+}
+
+.admin-recharge textarea:-ms-input-placeholder,
+.admin-recharge input:-ms-input-placeholder, .admin-recharge.form__input:-ms-input-placeholder {
+  color: #7ccadd;
+}
+
+.admin-recharge textarea:-moz-placeholder,
+.admin-recharge input:-moz-placeholder, .admin-recharge.form__input:-moz-placeholder {
+  color: #7ccadd;
+}
+
+.admin-recharge textarea:disabled, .admin-recharge textarea.form__input--disabled, .admin-recharge textarea.rc_disabled,
+.admin-recharge input:disabled,
+.admin-recharge input.form__input--disabled,
+.admin-recharge input.rc_disabled, .admin-recharge.form__input:disabled, .admin-recharge.form__input.form__input--disabled, .admin-recharge.form__input.rc_disabled {
+  color: #94d4e4 !important;
+  background-color: #f5fbfd !important;
+  border-color: #b9e3ed !important;
+}
+
+.admin-recharge.form__radio + .form__label, .admin-recharge.form__checkbox + .form__label,
+.admin-recharge .form__radio + .form__label,
+.admin-recharge .form__checkbox + .form__label {
+  color: #53BAD3;
+}
+
+.admin-recharge.form__radio + .form__label:before, .admin-recharge.form__checkbox + .form__label:before,
+.admin-recharge .form__radio + .form__label:before,
+.admin-recharge .form__checkbox + .form__label:before {
+  border-color: #53BAD3;
+}
+
+.admin-recharge.form__radio:checked + .form__label:before, .admin-recharge.form__checkbox:checked + .form__label:before,
+.admin-recharge .form__radio:checked + .form__label:before,
+.admin-recharge .form__checkbox:checked + .form__label:before {
+  background-color: #53BAD3;
+}
+
+.admin-recharge.form__radio.error + .form__label:before, .admin-recharge.form__radio.rc_error + .form__label:before, .admin-recharge.form__checkbox.error + .form__label:before, .admin-recharge.form__checkbox.rc_error + .form__label:before,
+.admin-recharge .form__radio.error + .form__label:before,
+.admin-recharge .form__radio.rc_error + .form__label:before,
+.admin-recharge .form__checkbox.error + .form__label:before,
+.admin-recharge .form__checkbox.rc_error + .form__label:before {
+  border-color: #53BAD3;
+  background-color: #EC3D10;
+}
+
+.admin-recharge.form__select, .admin-recharge.form__number,
+.admin-recharge .form__select,
+.admin-recharge .form__number {
+  border-color: #53BAD3;
+  color: #53BAD3;
+}
+
+.admin-recharge.form__select.rc_select--open-down .rc_select__selected, .admin-recharge.form__number.rc_select--open-down .rc_select__selected,
+.admin-recharge .form__select.rc_select--open-down .rc_select__selected,
+.admin-recharge .form__number.rc_select--open-down .rc_select__selected {
+  border-color: #4DD6B7;
+}
+
+.admin-recharge.form__select.rc_select--disabled .rc_select__selected, .admin-recharge.form__number.rc_select--disabled .rc_select__selected,
+.admin-recharge .form__select.rc_select--disabled .rc_select__selected,
+.admin-recharge .form__number.rc_select--disabled .rc_select__selected {
+  background-color: #e9f6f9 !important;
+  border-color: #94d4e4 !important;
+}
+
+.admin-recharge.form__select.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge.form__select.rc_select--disabled .rc_select__option--selected, .admin-recharge.form__number.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge.form__number.rc_select--disabled .rc_select__option--selected,
+.admin-recharge .form__select.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge .form__select.rc_select--disabled .rc_select__option--selected,
+.admin-recharge .form__number.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge .form__number.rc_select--disabled .rc_select__option--selected {
+  background-color: #a4dbe8 !important;
+}
+
+.admin-recharge.form__select .rc_select__option--highlight,
+.admin-recharge.form__select .rc_select__option--selected, .admin-recharge.form__number .rc_select__option--highlight,
+.admin-recharge.form__number .rc_select__option--selected,
+.admin-recharge .form__select .rc_select__option--highlight,
+.admin-recharge .form__select .rc_select__option--selected,
+.admin-recharge .form__number .rc_select__option--highlight,
+.admin-recharge .form__number .rc_select__option--selected {
+  background-color: #53BAD3;
+  color: #FFF;
+}
+
+.admin-recharge .rc_select--multi .rc_select--options,
+.admin-recharge .rc_select__selected {
+  border-color: #53BAD3;
+}
+
+.admin-recharge.rc_select__option.rc_select__option--selected, .admin-recharge.rc_select__option.rc_select__option--highlight {
+  background-color: #53BAD3;
+  color: #FFF;
+}
+
+.admin-recharge .rc_color__replacer {
+  border-color: #53BAD3;
+}
+
+.admin-recharge .form__color:disabled + .form__color__picker + .rc_color__replacer, .admin-recharge .form__color.form__input--disabled + .form__color__picker + .rc_color__replacer, .admin-recharge .form__color.rc_disabled + .form__color__picker + .rc_color__replacer {
+  cursor: not-allowed;
+  border-color: #94d4e4 !important;
+}
+
+/* Navigation elements */
+.admin-recharge .breadcrumbs, .admin-recharge.breadcrumbs {
+  background-color: #53BAD3;
+}
+
+.admin-recharge .breadcrumbs .crumb, .admin-recharge.breadcrumbs .crumb {
+  color: #FFF;
+}
+
+.admin-recharge .breadcrumbs .crumb a, .admin-recharge.breadcrumbs .crumb a {
+  color: #FFF;
+}
+
+.admin-recharge .breadcrumbs .crumb:hover a, .admin-recharge.breadcrumbs .crumb:hover a {
+  background: #2c94ad;
+}
+
+.admin-recharge .breadcrumbs .crumb:hover + .crumb:after, .admin-recharge.breadcrumbs .crumb:hover + .crumb:after {
+  border-left-color: #2c94ad;
+}
+
+.admin-recharge .breadcrumbs .crumb:last-child:hover, .admin-recharge.breadcrumbs .crumb:last-child:hover {
+  background-color: transparent;
+}
+
+.admin-recharge .breadcrumbs .crumb + .crumb:after, .admin-recharge.breadcrumbs .crumb + .crumb:after {
+  border-left-color: #53BAD3;
+}
+
+.admin-recharge.crumb {
+  background-color: #53BAD3;
+  color: #FFF;
+}
+
+.admin-recharge.crumb:hover {
+  background: #2c94ad;
+}
+
+.admin-recharge.crumb:hover + .crumb:after {
+  border-left-color: #2c94ad;
+}
+
+.admin-recharge.crumb a {
+  color: #FFF;
+}
+
+.admin-recharge.crumb + .crumb:after {
+  border-left-color: #53BAD3;
+}
+
+.admin-recharge.crumb:last-child:hover {
+  background-color: #53BAD3;
+}
+
+.admin-recharge .sidebar__menu, .admin-recharge.sidebar__menu {
+  background-color: #e9f6f9 !important;
+}
+
+.admin-recharge .menu__item > a, .admin-recharge.menu__item > a {
+  color: #53BAD3;
+}
+
+.admin-recharge .menu__item > a.active, .admin-recharge .menu__item > a:hover, .admin-recharge .menu__item > a:focus, .admin-recharge.menu__item > a.active, .admin-recharge.menu__item > a:hover, .admin-recharge.menu__item > a:focus {
+  color: #FFF;
+  background-color: #53BAD3;
+}
+
+.admin-recharge .rc_dropdown .button:hover, .admin-recharge.rc_dropdown .button:hover {
+  background-color: #2c94ad;
+}
+
+.admin-recharge .rc_dropdown .rc_dropdown__menu, .admin-recharge.rc_dropdown .rc_dropdown__menu {
+  background-color: #53BAD3;
+}
+
+.admin-recharge .rc_dropdown .rc_dropdown__menu a, .admin-recharge.rc_dropdown .rc_dropdown__menu a {
+  background-color: #34acca;
+}
+
+.admin-recharge .rc_dropdown .rc_dropdown__menu a.rc_active, .admin-recharge .rc_dropdown .rc_dropdown__menu a.active, .admin-recharge .rc_dropdown .rc_dropdown__menu a:hover, .admin-recharge .rc_dropdown .rc_dropdown__menu a:focus, .admin-recharge.rc_dropdown .rc_dropdown__menu a.rc_active, .admin-recharge.rc_dropdown .rc_dropdown__menu a.active, .admin-recharge.rc_dropdown .rc_dropdown__menu a:hover, .admin-recharge.rc_dropdown .rc_dropdown__menu a:focus {
+  background-color: #2d97b1;
+}
+
+.admin-recharge.rc_item {
+  color: #53BAD3;
+}
+
+.admin-recharge.rc_item.rc_active, .admin-recharge.rc_item.active, .admin-recharge.rc_item:hover, .admin-recharge.rc_item:active {
+  background-color: #2d97b1;
+  color: #FFF;
+}
+
+.admin-recharge .navbar__nav > li > a,
+.admin-recharge .navbar__nav > li > span, .admin-recharge.navbar__nav > li > a,
+.admin-recharge.navbar__nav > li > span {
+  background-color: #53BAD3;
+  color: #FFF;
+}
+
+.admin-recharge .navbar__nav > li > a:hover, .admin-recharge .navbar__nav > li > a:active, .admin-recharge .navbar__nav > li > a.rc_active, .admin-recharge .navbar__nav > li > a.active,
+.admin-recharge .navbar__nav > li > span:hover,
+.admin-recharge .navbar__nav > li > span:active,
+.admin-recharge .navbar__nav > li > span.rc_active,
+.admin-recharge .navbar__nav > li > span.active, .admin-recharge.navbar__nav > li > a:hover, .admin-recharge.navbar__nav > li > a:active, .admin-recharge.navbar__nav > li > a.rc_active, .admin-recharge.navbar__nav > li > a.active,
+.admin-recharge.navbar__nav > li > span:hover,
+.admin-recharge.navbar__nav > li > span:active,
+.admin-recharge.navbar__nav > li > span.rc_active,
+.admin-recharge.navbar__nav > li > span.active {
+  background-color: #2d97b1;
+}
+
+.navbar__nav > li > a.admin-recharge,
+.navbar__nav > li > span.admin-recharge {
+  background-color: #2d97b1;
+}
+
+.admin-recharge.navbar,
+.admin-recharge .navbar {
+  background-color: #53BAD3;
+}
+
+/*# sourceMappingURL=../css/admin.scss.css.map */

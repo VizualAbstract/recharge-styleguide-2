@@ -5800,23 +5800,6 @@ input.form__date:focus, input.form__date.rc_focus {
   margin-top: -25px;
 }
 
-a.admin-recharge {
-  color: #53bad3;
-}
-
-.admin-recharge a {
-  color: #53bad3;
-}
-
-.rc_dropdown .rc_item.admin-recharge {
-  color: #53bad3;
-}
-
-.rc_dropdown .rc_item.admin-recharge:hover, .rc_dropdown .rc_item.admin-recharge:focus, .rc_dropdown .rc_item.admin-recharge:active, .rc_dropdown .rc_item.admin-recharge.active {
-  color: #FFF;
-  background-color: #53bad3;
-}
-
 @media screen and (min-width: 576px) {
   .visible--xs {
     display: none;

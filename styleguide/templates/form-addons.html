@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Form addons</h1>
+<p>Under active development</p>
+<div class="rc_example">
+	<div class="form__addons">
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__actions">
+			<button class="button">Submit</button>
+		</div>
+	</div>
+</div>
+
+<h3>Inline label</h3>
+<p>Place a <code>.form__label</code> element before the <code>.form__groups</code> and individual labels will be hidden.</p>
+<div class="rc_example">
+	<div class="form__addons">
+		<label class="form__label">label</label>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__actions">
+			<button class="button">Submit</button>
+		</div>
+	</div>
+	<div class="form__addons form__addons--auto">
+		<label class="form__label">$</label>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="number" value="My text" class="form__number">
+		</div>
+		<div class="form__actions">
+			<button class="button">Calculate</button>
+		</div>
+	</div>
+</div>
+
+<h2>Seamless</h2>
+<p>The input-field padding will be removed and borders will be adjusted. It'll be restored on focus.</p>
+<div class="rc_example">
+	<div class="form__addons form__addons--seamless">
+		<label class="form__label">label</label>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__group">
+			<label class="form__label">label</label>
+			<input type="text" value="My text" class="form__input">
+		</div>
+		<div class="form__actions">
+			<button class="button">Submit</button>
+		</div>
+	</div>
+</div>
+
+<h2>Search</h2>
+<p>The search pattern is a more advanced feature that has additional elments, such as empty search results and different active/inactive stages.</p>
+<div class="rc_example">
+	<div class="form__addons form__addons--seamless">
+		<label for="search" class="form__label">Search</label>
+		<div class="form__group">
+			<input type="text" id="search" name="search" placeholder="Search terms..." class="form__input">
+		</div>
+		<div class="form__actions">
+			<button class="button" style="max-width: 40px; padding-left: 0; padding-right: 0; min-width: 40px; width: 40px;">
+				<span class="fa fa-search"></span>
+			</button>
+		</div>
+	</div>
+</div>
+{% endblock %}

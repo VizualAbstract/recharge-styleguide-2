@@ -11,6 +11,7 @@
 		<link href="{{ url_for('static', filename='css/styleguide.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/fontawesome.scss.css') }}" rel="stylesheet" type="text/css">
 		<link href="{{ url_for('static', filename='css/main.scss.css') }}" rel="stylesheet" type="text/css">
+		<link href="{{ url_for('static', filename='css/admin.scss.css') }}" rel="stylesheet" type="text/css">
 
 		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="{{ url_for('static', filename='js/tether.js') }}"></script>
@@ -53,6 +54,12 @@
 		<a href="/colors">Colors</a>,
 		<a href="/dates">Dates</a>
 		<br>
+		Form Layouts:
+		<a href="/form-groups">Form groups</a>,
+		<a href="/form-actions">Form actions</a>,
+		<a href="/form-addons">Form addons</a>,
+		<a href="/contextual-inputs">Contextual inputs</a>
+		<br>
 		Navigation:
 		<a href="/breadcrumbs">Breadcrumbs</a>,
 		<a href="/sidebars">Sidebars</a>,
@@ -68,6 +75,9 @@
 		<a href="/grid-system">Grid system</a>,
 		<a href="/headers">Headers</a>,
 		<a href="/tables">Tables</a>
+		<br>
+		Utilities:
+		<a href="/admin-class">Admin class</a>
 		<br>
 		Tools: <strong><a href="/generate-assets">Generate Assets</a></strong>
 {% block body %}

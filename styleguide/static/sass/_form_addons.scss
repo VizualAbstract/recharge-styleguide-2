@@ -1,0 +1,108 @@
+
+
+.form__addons {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .form__group {
+        padding-right: 7px;
+
+        .form__input {
+            min-width: auto;
+            margin-right: 0;
+        }
+
+        + .form__group,
+        + .form__actions {
+            margin-top: 0;
+            padding-left: 7px;
+        }
+
+        + .form__actions {
+            padding-top: 31px;
+        }
+    }
+
+    + .form__group,
+    + .form__addons,
+    .form__group + & {
+        margin-top: 34px;
+    }
+}
+
+.form__addons--seamless {
+    .form__group {
+        padding-right: 0;
+    }
+    .form__label,
+    .form__group {
+
+        + .form__group,
+        + .form__actions {
+            padding-left: 0;
+        }
+        &:first-child,
+        + .form__group {
+            .form__input {
+                border-right-width: 0;
+                &:focus,
+                &:active,
+                &.rc_active {
+                    border-right-width: 1px;
+                    margin-right: -1px;
+                }
+            }
+        }
+    }
+}
+
+.form__addons {
+    > .form__label {
+        line-height: 40px;
+        margin-bottom: 0;
+        padding-right: 15px;
+        + .form__group {
+            &,
+            & + .form__group {
+                .form__label {
+                    display: none;
+                }
+                + .form__actions {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-nav-max + 1) {
+    .form__addons {
+        > .form__group {
+            width: 100%;
+        }
+        > .form__label,
+        > .form__actions {
+            width: auto;
+        }
+        &--seamless {
+            .form__label,
+            .form__group {
+
+                + .form__group,
+                + .form__actions {
+                    .form__input {
+                        padding-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form__addons--auto {
+    width: auto;
+    > .form__group {
+        width: auto;
+    }
+}
