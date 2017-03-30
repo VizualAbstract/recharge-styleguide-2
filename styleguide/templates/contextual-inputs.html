@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Contextual inputs</h1>
+<p>The need for these arised out of a growing complexity in options that pertained only in specific situations. The element is a wrapper for form fields adn content that is visible when the preceeding checkbox or radio button is checked</p>
+<div class="rc_example">
+	<div class="form__group">
+		<input type="radio" id="radio_1" name="option_a" checked class="form__radio">
+		<label for="radio_1" class="form__label">Radio 1</label>
+		<div class="form__input__contextual">
+			<fieldset>
+				<label for="select_1" class="form__label">Allow cancellation after</label>
+				<div class="form__addons">
+					<div class="form__group">
+						<select id="select_1" name="select_1" class="form__select">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div><!-- .input-group -->
+					<div class="form__placeholder">
+						<p>charge(s)</p>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<input type="radio" id="radio_2" name="option_a" class="form__radio">
+		<label for="radio_2" class="form__label">Radio 2</label>
+		<div class="form__input__contextual">
+			<p>Input-related content</p>
+		</div>
+		<input type="radio" id="radio_3" name="option_a" class="form__radio">
+		<label for="radio_3" class="form__label">Radio 3</label>
+		<div class="form__input__contextual">
+			<p>Input-related content</p>
+		</div>
+	</div>
+	<div class="form__group">
+		<input type="checkbox" id="checkbox_1" name="option_b" checked class="form__checkbox">
+		<label for="checkbox_1" class="form__label">Checkbox 1</label>
+		<div class="form__input__contextual">
+			<p>Input-related content</p>
+		</div>
+		<input type="checkbox" id="checkbox_2" name="option_b" class="form__checkbox">
+		<label for="checkbox_2" class="form__label">Checkbox 2</label>
+		<div class="form__input__contextual">
+			<p>Input-related content</p>
+		</div>
+		<input type="checkbox" id="checkbox_3" name="option_b" class="form__checkbox">
+		<label for="checkbox_3" class="form__label">Checkbox 3</label>
+		<div class="form__input__contextual">
+			<p>Input-related content</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

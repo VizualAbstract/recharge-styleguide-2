@@ -3,6 +3,14 @@ form {
 }
 
 legend {
+    h1, .rc_h1,
+    h2, .rc_h2,
+    h3, .rc_h3,
+    h4, .rc_h4,
+    h5, .rc_h5,
+    h6, .rc_h6 {
+        line-height: 1;
+    }
 	+ fieldset {
 
 	}
@@ -19,12 +27,27 @@ fieldset {
     }
 }
 
+// Form groups
 .form__group {
     + .form__group {
         margin-top: 34px;
     }
 }
+legend + .form__group {
+    margin-top: 30px;
+}
 
+// Form actions
 .form__actions {
-	margin-top: 30px;
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    .button {
+        width: 100%;
+    }
+}
+
+// For Placeholder
+.form__placeholder {
+    padding-top: 6px;
 }

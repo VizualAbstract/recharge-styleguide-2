@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% set page_class = "banners" %}
+{% block body %}
+<h1>Banners</h1>
+<p>Banners are a varation of the notification system, using Flask flash messaging</p>
+<div class="rc_example" style="position: relative">
+	<div class="rc_notification rc_notification--error">
+		<ul>
+			<li>Discount code already exists</li>
+			<li>Start date must be formatted as YYYY-MM-DD</li>
+		</ul>
+	</div>
+	<div class="rc_notification rc_notification--warning">
+		<ul>
+			<li>Statement about something. Does not timeout.</li>
+		</ul>
+	</div>
+	<div class="rc_notification rc_notification--success">
+		<ul>
+			<li>Statement about something that needs a success message. This dropdown should timeout.</li>
+		</ul>
+	</div>
+	<div class="rc_notification rc_notification--info">
+		<ul>
+			<li>Statement about something that caters to neutral information. This dropdown should timeout.</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+// The basic mechanics. Normally hidden, only reveal if besides a checked input
+.form__input__contextual {
+	display: none;
+}
+input:checked {
+	+ .form__input__contextual {
+		display: block;
+	}
+	+ .form__label {
+		+ .form__input__contextual {
+			display: block;
+		}
+	}
+}
+
+// Styling the contextual input container
+.form__input__contextual {
+	background-color: #f3f3f3;
+	padding: 20px;
+}
+
+// Vertical spacing corrections
+.form__input__contextual {
+	+ .form__group,
+	+ .form__actions {
+		margin-top: 31px;
+	}
+	+ .form__radio + .form__label,
+	+ .form__checkbox + .form__label {
+		margin-top: 21px;
+	}
+}
+
+.form__radio,
+.form__checkbox {
+	+ .form__label {
+		+ .form__input__contextual {
+			margin-top: 15px;
+			margin-left: 25px;
+		}
+	}	
+}

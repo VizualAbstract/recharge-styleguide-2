@@ -22,6 +22,11 @@ def buttons():
     return render_template(template_file)
 
 # Forms
+@app.route('/form-actions')
+def form_actions():
+    template_file = "form-actions.html"
+    return render_template(template_file)
+
 @app.route('/form-addons')
 def form_addons():
     template_file = "form-addons.html"
@@ -129,6 +134,12 @@ def navbars():
 @app.route('/tables')
 def tables():
     template_file = "tables.html"
+    return render_template(template_file)
+
+# Layouts
+@app.route('/banners')
+def banners():
+    template_file = "banners.html"
     return render_template(template_file)
 
 

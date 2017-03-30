@@ -45,6 +45,32 @@
 		}
 	}
 
+	rcNotification.prototype.flash = function(element) {
+		// Ensures a smooth transition on reveal
+		window.getComputedStyle(element).height;
+
+		this.notification = element;
+
+		// Add class that initiates the transition
+		this.notification.className = this.notification.className + " rc_flash rc_show";
+
+		// Trigger timeout listener listener
+		var type = this.notification.className.replace("rc_notification rc_notification--", "").replace(" rc_flash rc_show", "");
+		if (type == 'error' || type == 'warning') {
+			// Add a close button
+			buildCloseButton.call(this, this.notification);
+
+			// Add a listener to the close button
+			initializeEvents.call(this, this.notification);
+		} else {
+			// Close notification automatically after a timeout if static isn't set to true
+			var _this = this;
+			setTimeout(function() {
+				_this.close();
+			}, 3500); // this.options.timeout
+		}
+	}
+
 	// Close and remove the notification
 	rcNotification.prototype.close = function() {
 		// Force-close the notification script
@@ -158,6 +184,15 @@
 
 		// Append document fragment to the body
 		document.body.appendChild(docFragment);
+	}
+
+	// Build the notification element and append to document
+	function buildCloseButton(element) {
+		// Build a button with the class .rc_banner__close
+		this.closeButton = document.createElement('button');
+		this.closeButton.className = 'rc_banner__close';
+		// // Append document fragment to the Banner
+		this.notification.appendChild(this.closeButton);
 	}
 
 	// Initialize any click events

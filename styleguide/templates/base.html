@@ -69,7 +69,8 @@
 		<a href="/dropdowns">Dropdowns</a>,
 		<a href="/modals">Modals</a>,
 		<a href="/tooltips">Tooltips</a>,
-		<a href="/notifications">Notifications</a>
+		<a href="/notifications">Notifications</a>,
+		<a href="/banners">Banners</a>
 		<br>
 		Layout:
 		<a href="/grid-system">Grid system</a>,
@@ -86,6 +87,13 @@
 			// Checks for pending notifications. If so, display it
 			var notification = new rcNotification();
 			notification.pending();
+
+			// Flash banners
+			var banners = document.getElementsByClassName("rc_notification");
+			Array.prototype.slice.call(banners).forEach(function(banner) {
+				var notification = new rcNotification();
+				notification.flash(banner);
+			});
 
 			$(function() {
 				// Activate tooltips

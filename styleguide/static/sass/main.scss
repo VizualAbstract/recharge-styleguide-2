@@ -9,6 +9,7 @@
 @import '_forms.scss';
 
 @import '_form_addons.scss';
+@import '_form_contextual.scss';
 
 @import '_inputs_label.scss';
 @import '_inputs_text.scss';
@@ -19,18 +20,19 @@
 @import '_inputs_color.scss';
 @import '_inputs_date.scss';
 
+@import '_dynamics_dropdown.scss';
+@import '_dynamics_modals.scss';
+@import '_dynamics_tooltips.scss';
+@import '_dynamics_notifications.scss';
+
 @import '_headers_settings.scss';
 @import '_headers_signup.scss';
 @import '_headers_dropdown.scss';
 @import '_headers_subtitle.scss';
 
-@import '_dynamics_dropdown.scss';
-@import '_dynamics_modals.scss';
-@import '_dynamics_tooltips.scss';
-
 @import '_layout_grid-system.scss';
 @import '_layout_tables.scss';
-@import '_dynamics_notifications.scss';
+@import '_layout_banners.scss';
 
 @import '_navigation_sidebar.scss';
 @import '_navigation_navbars.scss';

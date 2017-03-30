@@ -4058,6 +4058,7 @@ var Popover = function ($) {
   var Default = $.extend({}, Tooltip.Default, {
     placement: 'auto', // 'right'
     trigger: 'sticky',
+    animation: false,
     content: '',
     html: true,
     template: '<div class="rc_tooltip" role="tooltip">' + '<div class="rc_tooltip__title"></div>' + '<div class="rc_tooltip__content"></div></div>'

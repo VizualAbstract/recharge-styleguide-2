@@ -136,4 +136,9 @@
   top: 120px;
 }
 
+.page__banners .rc_example {
+  position: relative;
+  min-height: 200px;
+}
+
 /*# sourceMappingURL=../css/styleguide.scss.css.map */

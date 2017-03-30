@@ -1,49 +1,73 @@
-
-
 .form__addons {
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: auto;
+
+    > .form__label,
+    > .form__group,
+    > .form__actions,
+    > .form__placeholder {
+        width: auto;
+    }
+
+    .form__label,
+    .form__group,
+    .form__placeholder {
+        + .form__label,
+        + .form__group,
+        + .form__actions,
+        + .form__placeholder {
+            margin-top: 0;
+        }
+    }
+
+    .form__label,
+    .form__group,
+    .form__actions,
+    .form__placeholder {
+        padding-right: 7px;
+        padding-left: 8px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
 
     .form__group {
-        padding-right: 7px;
-
+        .form__number,
         .form__input {
             min-width: auto;
             margin-right: 0;
+            width: 100%;
         }
-
-        + .form__group,
-        + .form__actions {
-            margin-top: 0;
-            padding-left: 7px;
-        }
-
-        + .form__actions {
-            padding-top: 31px;
-        }
-    }
-
-    + .form__group,
-    + .form__addons,
-    .form__group + & {
-        margin-top: 34px;
     }
 }
 
-.form__addons--seamless {
-    .form__group {
-        padding-right: 0;
+// Allows true inline input fields, if form groups are preceeded by a .form__label element
+.form__addons {
+    > .form__label {
+        line-height: 40px;
+        margin-bottom: 0;
+        padding-right: 15px;
+        white-space: nowrap;
     }
-    .form__label,
-    .form__group {
+}
 
-        + .form__group,
-        + .form__actions {
-            padding-left: 0;
+// Removes margin between input groups, adjusts borders to prevent thick veritcal borders
+.form__addons {
+    &--seamless {
+        // Remove padding
+        .form__group {
+            padding-right: 0;
+            + .form__group,
+            + .form__actions {
+                padding-left: 0;
+            }
         }
-        &:first-child,
-        + .form__group {
+        // Prevent double-border edges
+        .form__group {
             .form__input {
                 border-right-width: 0;
                 &:focus,
@@ -57,52 +81,82 @@
     }
 }
 
-.form__addons {
-    > .form__label {
-        line-height: 40px;
-        margin-bottom: 0;
-        padding-right: 15px;
-        + .form__group {
-            &,
-            & + .form__group {
-                .form__label {
-                    display: none;
-                }
-                + .form__actions {
-                    padding-top: 0;
-                }
-            }
-        }
+// Enables full-width addon groups
+.form__addons--full {
+    width: 100%;
+    > .form__group {
+        width: 100%;
     }
 }
 
-@media screen and (min-width: $mobile-nav-max + 1) {
-    .form__addons {
-        > .form__group {
-            width: 100%;
-        }
-        > .form__label,
-        > .form__actions {
-            width: auto;
-        }
-        &--seamless {
-            .form__label,
-            .form__group {
+// Adds vertical margin between form groups and form addons (which act as group wrappers)
+.form__addons {
+    + .form__group,
+    + .form__addons,
+    .form__group + & {
+        margin-top: 34px;
+    }
+}
 
-                + .form__group,
-                + .form__actions {
-                    .form__input {
-                        padding-right: 15px;
+// Form search has all the bells and whistles and an additional "active" class for live search UI changes
+.form__search {
+    @extend .form__addons--full;
+    @extend .form__addons--seamless;
+    .form__input {
+        border-right-width: 1px !important;
+    }
+    .form__group + .form__actions {
+        padding-top: 0;
+    }
+    .form__actions {
+        .button {
+            min-width: 40px;
+            @media screen and (min-width: $mobile-nav-max + 1) {
+                max-width: 40px;
+                width: 40px;
+            }
+            > span {
+                font-size: 0;
+                &:before {
+                    font-size: 18px;
+                    content: "Search";
+                    @media screen and (min-width: $mobile-nav-max + 1) {
+                        content: "\f002";
+                        font-family: 'fontawesome';
                     }
                 }
             }
         }
     }
-}
-
-.form__addons--auto {
-    width: auto;
-    > .form__group {
-        width: auto;
+    &--active {
+        .form__input {
+            border-color: $primary;
+        }
+        .form__actions {
+            .button {
+                background-color: $primary;
+                > span {
+                    &:before {
+                        @media screen and (max-width: $mobile-nav-max) {
+                            content: "Clear";
+                        }
+                        @media screen and (min-width: $mobile-nav-max + 1) {
+                            content: "\f00d";
+                        }
+                    }
+                }
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: darken($primary, 15%);
+                }
+            }
+        }
+    }
+    &__no-results {
+        font-size: 20px;
+        line-height: 24px;
+        color: $blue;
+        text-align: center;
     }
 }

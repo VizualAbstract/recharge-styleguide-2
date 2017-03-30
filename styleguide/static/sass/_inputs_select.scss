@@ -61,7 +61,6 @@ $arrow-color: #424242 !default;
 	width: 100%;
     min-width: 80px;
 	max-width: 100%;
-	margin: 12px 0;
 
 	cursor: pointer;
 	color: $color;
@@ -71,6 +70,13 @@ $arrow-color: #424242 !default;
 	}
 	::selection {
 		background: transparent;
+	}
+}
+
+.form__select {
+	+ .rc_select,
+	+ .rc_select--multi {
+		margin-top: 12px;
 	}
 }
 
