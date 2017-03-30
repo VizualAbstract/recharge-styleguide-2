@@ -188,10 +188,10 @@
 
 	// Build the notification element and append to document
 	function buildCloseButton(element) {
-		// Build a button with the class .rc_banner__close
+		// Build a button with the class .rc_notification__close
 		this.closeButton = document.createElement('button');
-		this.closeButton.className = 'rc_banner__close';
-		// // Append document fragment to the Banner
+		this.closeButton.className = 'rc_notification__close';
+		// // Append document fragment to the notification
 		this.notification.appendChild(this.closeButton);
 	}
 

@@ -84,16 +84,16 @@
 {% block body %}
 {% endblock %}
 		<script>
-			// Checks for pending notifications. If so, display it
-			var notification = new rcNotification();
-			notification.pending();
-
 			// Flash banners
 			var banners = document.getElementsByClassName("rc_notification");
 			Array.prototype.slice.call(banners).forEach(function(banner) {
 				var notification = new rcNotification();
 				notification.flash(banner);
 			});
+
+			// Checks for pending notifications. If so, display it
+			var notification = new rcNotification();
+			notification.pending();
 
 			$(function() {
 				// Activate tooltips
