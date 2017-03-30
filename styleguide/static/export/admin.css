@@ -22,6 +22,10 @@
   color: #FFF;
 }
 
+.hidden--mobile.admin-recharge {
+  text-transform: initial !important;
+}
+
 /* Form elements */
 .admin-recharge.button,
 .admin-recharge .button {

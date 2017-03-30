@@ -568,3 +568,8 @@
 		}
 	}
 }
+
+// A fix for notification-enabled pages with a supposed full-height
+.flex__full-height > .rc_notification + .flex__container {
+    height: auto;
+}
