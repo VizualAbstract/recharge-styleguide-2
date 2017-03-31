@@ -70,41 +70,41 @@
 }
 
 .admin-recharge textarea,
-.admin-recharge input, .admin-recharge.form__input {
+.admin-recharge input, .admin-recharge.form__input, .admin-recharge[type="number"].form__number {
   border: 1px solid #53BAD3;
   color: #53BAD3;
 }
 
 .admin-recharge textarea:focus, .admin-recharge textarea:active,
 .admin-recharge input:focus,
-.admin-recharge input:active, .admin-recharge.form__input:focus, .admin-recharge.form__input:active {
+.admin-recharge input:active, .admin-recharge.form__input:focus, .admin-recharge.form__input:active, .admin-recharge[type="number"].form__number:focus, .admin-recharge[type="number"].form__number:active {
   border-color: #4DD6B7;
 }
 
 .admin-recharge textarea::-webkit-input-placeholder,
-.admin-recharge input::-webkit-input-placeholder, .admin-recharge.form__input::-webkit-input-placeholder {
+.admin-recharge input::-webkit-input-placeholder, .admin-recharge.form__input::-webkit-input-placeholder, .admin-recharge[type="number"].form__number::-webkit-input-placeholder {
   color: #7ccadd;
 }
 
 .admin-recharge textarea::-moz-placeholder,
-.admin-recharge input::-moz-placeholder, .admin-recharge.form__input::-moz-placeholder {
+.admin-recharge input::-moz-placeholder, .admin-recharge.form__input::-moz-placeholder, .admin-recharge[type="number"].form__number::-moz-placeholder {
   color: #7ccadd;
 }
 
 .admin-recharge textarea:-ms-input-placeholder,
-.admin-recharge input:-ms-input-placeholder, .admin-recharge.form__input:-ms-input-placeholder {
+.admin-recharge input:-ms-input-placeholder, .admin-recharge.form__input:-ms-input-placeholder, .admin-recharge[type="number"].form__number:-ms-input-placeholder {
   color: #7ccadd;
 }
 
 .admin-recharge textarea:-moz-placeholder,
-.admin-recharge input:-moz-placeholder, .admin-recharge.form__input:-moz-placeholder {
+.admin-recharge input:-moz-placeholder, .admin-recharge.form__input:-moz-placeholder, .admin-recharge[type="number"].form__number:-moz-placeholder {
   color: #7ccadd;
 }
 
 .admin-recharge textarea:disabled, .admin-recharge textarea.form__input--disabled, .admin-recharge textarea.rc_disabled,
 .admin-recharge input:disabled,
 .admin-recharge input.form__input--disabled,
-.admin-recharge input.rc_disabled, .admin-recharge.form__input:disabled, .admin-recharge.form__input.form__input--disabled, .admin-recharge.form__input.rc_disabled {
+.admin-recharge input.rc_disabled, .admin-recharge.form__input:disabled, .admin-recharge.form__input.form__input--disabled, .admin-recharge.form__input.rc_disabled, .admin-recharge[type="number"].form__number:disabled, .admin-recharge[type="number"].form__number.form__input--disabled, .admin-recharge[type="number"].form__number.rc_disabled {
   color: #94d4e4 !important;
   background-color: #f5fbfd !important;
   border-color: #b9e3ed !important;
@@ -137,20 +137,20 @@
   background-color: #EC3D10;
 }
 
-.admin-recharge.form__select, .admin-recharge.form__number,
+.admin-recharge.form__select, .admin-recharge.form__select--multi, .admin-recharge.form__number,
 .admin-recharge .form__select,
 .admin-recharge .form__number {
   border-color: #53BAD3;
   color: #53BAD3;
 }
 
-.admin-recharge.form__select.rc_select--open-down .rc_select__selected, .admin-recharge.form__number.rc_select--open-down .rc_select__selected,
+.admin-recharge.form__select.rc_select--open-down .rc_select__selected, .admin-recharge.form__select--multi.rc_select--open-down .rc_select__selected, .admin-recharge.form__number.rc_select--open-down .rc_select__selected,
 .admin-recharge .form__select.rc_select--open-down .rc_select__selected,
 .admin-recharge .form__number.rc_select--open-down .rc_select__selected {
   border-color: #4DD6B7;
 }
 
-.admin-recharge.form__select.rc_select--disabled .rc_select__selected, .admin-recharge.form__number.rc_select--disabled .rc_select__selected,
+.admin-recharge.form__select.rc_select--disabled .rc_select__selected, .admin-recharge.form__select--multi.rc_select--disabled .rc_select__selected, .admin-recharge.form__number.rc_select--disabled .rc_select__selected,
 .admin-recharge .form__select.rc_select--disabled .rc_select__selected,
 .admin-recharge .form__number.rc_select--disabled .rc_select__selected {
   background-color: #e9f6f9 !important;
@@ -158,7 +158,8 @@
 }
 
 .admin-recharge.form__select.rc_select--disabled .rc_select__option--highlight,
-.admin-recharge.form__select.rc_select--disabled .rc_select__option--selected, .admin-recharge.form__number.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge.form__select.rc_select--disabled .rc_select__option--selected, .admin-recharge.form__select--multi.rc_select--disabled .rc_select__option--highlight,
+.admin-recharge.form__select--multi.rc_select--disabled .rc_select__option--selected, .admin-recharge.form__number.rc_select--disabled .rc_select__option--highlight,
 .admin-recharge.form__number.rc_select--disabled .rc_select__option--selected,
 .admin-recharge .form__select.rc_select--disabled .rc_select__option--highlight,
 .admin-recharge .form__select.rc_select--disabled .rc_select__option--selected,
@@ -168,7 +169,8 @@
 }
 
 .admin-recharge.form__select .rc_select__option--highlight,
-.admin-recharge.form__select .rc_select__option--selected, .admin-recharge.form__number .rc_select__option--highlight,
+.admin-recharge.form__select .rc_select__option--selected, .admin-recharge.form__select--multi .rc_select__option--highlight,
+.admin-recharge.form__select--multi .rc_select__option--selected, .admin-recharge.form__number .rc_select__option--highlight,
 .admin-recharge.form__number .rc_select__option--selected,
 .admin-recharge .form__select .rc_select__option--highlight,
 .admin-recharge .form__select .rc_select__option--selected,
@@ -178,7 +180,7 @@
   color: #FFF;
 }
 
-.admin-recharge .rc_select--multi .rc_select--options,
+.admin-recharge .rc_select--options,
 .admin-recharge .rc_select__selected {
   border-color: #53BAD3;
 }
@@ -310,6 +312,11 @@
 
 .navbar__nav > li > a.admin-recharge,
 .navbar__nav > li > span.admin-recharge {
+  background-color: #53BAD3;
+}
+
+.navbar__nav > li > a.admin-recharge.active,
+.navbar__nav > li > span.admin-recharge.active {
   background-color: #2d97b1;
 }
 

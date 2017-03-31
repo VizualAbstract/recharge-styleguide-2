@@ -10,6 +10,12 @@
 	}
 }
 
+.hidden--mobile {
+	@media screen and (max-width: $mobile-nav-max) {
+		display: none;
+	}
+}
+
 .pull--right {
 	float: right;
 }

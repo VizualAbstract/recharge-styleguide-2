@@ -1,121 +1,125 @@
-{% extends "base.html" %}
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <h1>Navbars</h1>
 <p>Under active development</p>
 <div class="rc_example">
-
-	<div class="navbar">
-		<a href="#" class="navbar__logo">
+    <div class="navbar">
+        <a href="#" class="navbar__logo">
 			ReCharge
 		</a>
-		<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
-		<div id="navbar__menu" class="navbar__collapse collapse"> <!-- collapse -->
-			<ul class="navbar__nav">
-				<li><a href="#">Orders</a></li>
-				<li><a href="#">Customers</a></li>
-				<li><a href="#" class="active">Rulesets</a></li>
-				<li><a href="#">Reports</a></li>
-			</ul>
-			{{ ui_element('dynamic/dropdown', {
-				'title': "Store settings",
-				'alignment': "right",
-				'icon': "wrench",
-				'links': [{
-						'title': 'General settings'
-					}, {
-						'title': 'Discounts',
-					}, {
-						'title': 'Subscription prices',
-						'admin': true,
-					}, {
-						'title': 'Taxes',
-					}, {
-						'title': 'Shipping',
-					}, {
-						'title': 'Shipping zones',
-						'admin': true,
-					}, {
-						'title': 'Integrations',
-					}, {
-						'title': 'Customer portal',
-					}, {
-						'title': 'Checkout',
-					}, {
-						'title': 'Notifications',
-					}, {
-						'title': 'Subscription widget',
-					}, {
-						'title': 'Refer a friend',
-					}]
-			}) | safe }}
-			{{ ui_element('dynamic/dropdown', {
-				'title': "Account settings",
-				'alignment': "right",
-				'icon': "user",
-				'links': [{
-						'title': 'Support center'
-					}, {
-						'title': 'My account',
-					}]
-			}) | safe }}
-		</div>
-	</div>
-	<div class="navbar navbar--standalone">
-		<div class="navbar__header">
-			<a href="#" class="navbar__logo">
+        <button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
+        <div id="navbar__menu" class="navbar__collapse collapse">
+            <!-- collapse -->
+            <ul class="navbar__nav">
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#" class="active">Rulesets</a></li>
+                <li><a href="#">Reports</a></li>
+            </ul>
+            <ul class="navbar__nav navbar__nav--right">
+                <li class="hidden--mobile">
+                    <label class="rc_switch">
+                        <div class="rc_switch__inner">
+                            <input type="checkbox" class="rc_switch__input">
+                            <span class="rc_switch__button"></span>
+                            <span class="rc_switch__off">Test</span>
+                            <span class="rc_switch__on">Live</span>
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <div class="rc_dropdown">
+                        <button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+                            <span class="fa fa-wrench"></span>
+                            <span class="visible--mobile">Store settings</span>
+                        </button>
+                        <div class="rc_dropdown__menu rc_dropdown__menu--right">
+                            <a href="" class="rc_item">General settings</a>
+                            <a href="" class="rc_item">Discounts</a>
+                            <a href="" class="rc_item admin-recharge">Subscription prices</a>
+                            <a href="" class="rc_item">Taxes</a>
+                            <a href="" class="rc_item">Shipping</a>
+                            <a href="" class="rc_item admin-recharge">Shipping zones</a>
+                            <a href="" class="rc_item">Integrations</a>
+                            <a href="" class="rc_item">Customer portal</a>
+                            <a href="" class="rc_item">Checkout</a>
+                            <a href="" class="rc_item">Notifications</a>
+                            <a href="" class="rc_item">Subscription widget</a>
+                            <a href="" class="rc_item">Refer a friend</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+					<div class="rc_dropdown">
+						<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+							<span class="fa fa-user"></span>
+							<span class="visible--mobile">Account settings</span>
+						</button>
+						<div class="rc_dropdown__menu rc_dropdown__menu--right">
+							<a href="" class="rc_item">Support center</a>
+							<a href="" class="rc_item">My account</a>
+						</div>
+					</div>
+                </li>
+            </ul>
+            {# {{ ui_element('dynamic/dropdown', { 'title': "Store settings", 'alignment': "right", 'icon': "wrench", 'links': [{ 'title': 'General settings' }, { 'title': 'Discounts', }, { 'title': 'Subscription prices', 'admin': true, }, { 'title': 'Taxes', }, { 'title': 'Shipping', }, { 'title': 'Shipping zones', 'admin': true, }, { 'title': 'Integrations', }, { 'title': 'Customer portal', }, { 'title': 'Checkout', }, { 'title': 'Notifications', }, { 'title': 'Subscription widget', }, { 'title': 'Refer a friend', }] }) | safe }} {{ ui_element('dynamic/dropdown', { 'title': "Account settings", 'alignment': "right", 'icon': "user", 'links': [{ 'title': 'Support center' }, { 'title': 'My account', }] }) | safe }} #}
+        </div>
+    </div>
+    <div class="navbar navbar--standalone">
+        <div class="navbar__header">
+            <a href="#" class="navbar__logo">
 				ReCharge
 			</a>
-			<span class="navbar__title">
+            <span class="navbar__title">
 				Partners
 			</span>
-			<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu__partners"></button>
-		</div>
-		<div id="navbar__menu__partners" class="navbar__collapse collapse">
-			<ul class="navbar__nav navbar__nav--right">
-				<li>
-					<a href="#">Sign in</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="navbar navbar--standalone">
-		<div class="navbar__header">
-			<a href="#" class="navbar__logo">
+            <button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu__partners"></button>
+        </div>
+        <div id="navbar__menu__partners" class="navbar__collapse collapse">
+            <ul class="navbar__nav navbar__nav--right">
+                <li>
+                    <a href="#">Sign in</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar navbar--standalone">
+        <div class="navbar__header">
+            <a href="#" class="navbar__logo">
 				ReCharge
 			</a>
-			<span class="navbar__title">
+            <span class="navbar__title">
 				API
 			</span>
-		</div>
-	</div>
-	<div class="navbar navbar--standalone">
-		<div class="navbar__header">
-			<a href="#" class="navbar__logo">
+        </div>
+    </div>
+    <div class="navbar navbar--standalone">
+        <div class="navbar__header">
+            <a href="#" class="navbar__logo">
 				ReCharge
 			</a>
-			<span class="navbar__title">
+            <span class="navbar__title">
 				Migrations
 			</span>
-		</div>
-	</div>
-	<div class="navbar navbar--footer">
-		<ul class="navbar__nav navbar__nav--center">
-			<li>
-				<span>Copyright &copy; 2017 ReCharge</span>
-			</li>
-			<li>
-				<a href="#">About</a>
-			</li>
-			<li>
-				<a href="#">FAQ</a>
-			</li>
-			<li>
-				<a href="#">Contact us</a>
-			</li>
-			<li>
-				<span>Bootstrap dev1488924858.62</span>
-			</li>
-		</ul>
-	</div>
+        </div>
+    </div>
+    <div class="navbar navbar--footer">
+        <ul class="navbar__nav navbar__nav--center">
+            <li>
+                <span>Copyright &copy; 2017 ReCharge</span>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">FAQ</a>
+            </li>
+            <li>
+                <a href="#">Contact us</a>
+            </li>
+            <li>
+                <span>Bootstrap dev1488924858.62</span>
+            </li>
+        </ul>
+    </div>
 </div>
 {% endblock %}

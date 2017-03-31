@@ -1,0 +1,122 @@
+$switch-height: 34px;
+$switch-large-height: 44px;
+$switch-small-height: 20px;
+$switch-on-background: #4dd6b7;
+
+.rc_switch {
+	display: inline-block;
+	cursor: pointer;
+	background-color: $gray-lighter;
+	line-height: $switch-height;
+	border-radius: $switch-height / 2;
+	position: relative;
+	vertical-align: middle;
+}
+
+.rc_switch {
+	font-size: 14px;
+	&__off,
+	&__on { 
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		position: relative;
+		z-index: 20;
+		padding-left: $switch-height / 2;
+		padding-right: $switch-height / 2;
+		white-space: nowrap;
+		@media screen and (max-width: $screen-sm-max) {
+			overflow: hidden;
+		}
+	}
+	&__off {
+		float: left;
+	}
+	&__on {
+		float: right;
+	}
+}
+
+.rc_switch {
+	&--large {
+		min-width: 300px;
+		width: 100%;
+		max-width: 500px;
+		line-height: $switch-large-height;
+		height: $switch-large-height;
+		border-radius: $switch-large-height / 2;
+		font-size: $font-size-base;
+
+		.rc_switch__button {
+			height: $switch-large-height;
+			border-radius: $switch-large-height / 2;
+		}
+
+		.rc_switch__off,
+		.rc_switch__on {
+			transition: color .3s;
+		}
+
+		.rc_switch__off {
+			color: $white;
+		}
+		.rc_switch__on {
+			color: $black;
+		}
+
+		.rc_switch__input:checked {
+			+ .rc_switch__button + .rc_switch__off {
+				color: $black;
+			}
+			+ .rc_switch__button + .rc_switch__off + .rc_switch__on {
+				color: $white;
+			}
+		}
+	}
+}
+
+.rc_switch {
+	&--small {
+		min-width: 10px;
+		width: 100%;
+		max-width: $switch-small-height * 2;
+		line-height: $switch-small-height;
+		height: $switch-small-height;
+		border-radius: $switch-small-height / 2;
+		font-size: 0;
+		.rc_switch__off,
+		.rc_switch__on {
+			font-size: 0;
+		}
+		.rc_switch__button {
+			height: $switch-small-height;
+			border-radius: $switch-small-height / 2;
+		}
+	}
+}
+
+.rc_switch {
+	&__button {
+		height: $switch-height;
+		width: 50%;
+		min-width: 20px;
+		position: absolute;
+		z-index: 10;
+		left: 0;
+		right: 50%;
+		display: block;
+		transition: all .3s;
+		background: $switch-on-background;
+		border-radius: $switch-height / 2;
+	}
+}
+
+.rc_switch {
+	&__input {
+		display: none;
+		&:checked + .rc_switch__button {
+			left: 50%;
+			right: 0;
+		}
+	}
+}

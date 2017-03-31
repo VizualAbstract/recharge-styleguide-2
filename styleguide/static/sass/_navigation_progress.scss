@@ -1,0 +1,128 @@
+.rc_progress {
+	display: flex;
+	background-color: #EEEEEE;
+
+	&,
+	.rc_item {
+		height: 30px;
+		line-height: 30px;
+	}
+	.rc_item {
+		text-indent: 100%;
+		overflow: hidden;
+		width: 100%;
+		text-align: center;
+		color: #424242;
+		font-size: 14px;
+		cursor: default;
+		display: block;
+
+		&.rc_active,
+		&.rc_complete {
+			color: #FFF;
+		}
+		&.rc_active {
+			background-color: #424242;
+		}
+		&.rc_complete {
+			background-color: #4DD6B7;
+		}
+	}
+
+	&--active {
+
+		.rc_item {
+			text-indent: 0;
+
+			&.rc_complete {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.rc_progress {
+	&--active {
+
+		@media screen and (max-width: $mobile-nav-max) {
+
+			.rc_item {
+				text-transform: capitalize;
+				text-indent: 10px;
+
+				+ .rc_item {
+					text-indent: 25px;
+				}
+			}
+		}
+	}
+}
+
+.rc_progress {
+
+	.rc_item {
+		position: relative;
+
+		&:after,
+		&:before {
+			content: "";
+			position: absolute;
+			top: -1px;
+			left: 0;
+			border-width: 16px;
+			border-color: transparent;
+			border-style: solid;
+		}
+		&:first-child {
+			&:before,
+			&:after {
+				border-left-color: transparent;
+			}
+		}
+		&.rc_active { // Active (Black)
+			+ .rc_item { // Inactive (Gray)
+				&:after { // Active arrow (Black)
+					border-left-color: #424242;
+				}
+			}
+		}
+		&.rc_complete { // Complete (Green)
+			+ .rc_active { // Inactive (Black)
+				&:before { // Inactive arrow (Black)
+					border-left-color: #424242;
+				}
+				&:after { // Complete arrow (Green)
+					border-left-color: #4DD6B7;
+				}
+			}
+		}
+		&.rc_complete { // Complete (Green)
+			+ .rc_complete { // Complete (Green)
+				&:after { // Complete arrow (Green)
+					border-left-color: #4DD6B7;
+				}
+			}
+		}
+		&.rc_complete { // Complete (Green)
+			+ .rc_item { // Complete (Gray)
+				&:after { // Complete arrow (Green)
+					border-left-color: #4DD6B7;
+				}
+			}
+		}
+	}
+}
+
+.rc_progress {
+	&--active {
+		.rc_item {
+			&:before {
+				border-left-color: #FFF;
+			}
+			&:after {
+				border-left-color: #EEE;
+				left: -1px;
+			}
+		}
+	}
+}

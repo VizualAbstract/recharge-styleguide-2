@@ -63,7 +63,8 @@
 .admin-recharge {
 	textarea,
 	input,
-	&.form__input {
+	&.form__input,
+	&[type="number"].form__number {
 		border: 1px solid $admin-color;
 		color: $admin-color;
 		&:focus,
@@ -118,6 +119,7 @@
 }
 .admin-recharge {
 	&.form__select,
+	&.form__select--multi,
 	&.form__number,
 	.form__select,
 	.form__number {
@@ -144,7 +146,7 @@
 			color: #FFF;
 		}
 	}
-	.rc_select--multi .rc_select--options,
+	.rc_select--options,
 	.rc_select__selected {
 		border-color: $admin-color;
 	}
@@ -297,7 +299,10 @@
 		> a,
 		> span {
 			&.admin-recharge {
-				background-color: darken($admin-color, 14%);
+				background-color: $admin-color;
+				&.active {
+					background-color: darken($admin-color, 14%);
+				}
 			}
 		}
 	}

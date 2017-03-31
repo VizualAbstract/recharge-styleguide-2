@@ -13,6 +13,7 @@
 	{{ ui_element("buttons/button", {'text': 'Danger', 'color': 'danger'}) | safe }}
 	{{ ui_element("buttons/button", {'text': 'Disabled', 'color': 'disabled'}) | safe }}
 </div>
+
 <h3>Link buttons</h3>
 <p>These buttons are styled to look like links, if you need to trigger a javascript function instead of a traditional hyperlink.</p>
 <div class="rc_example">
@@ -20,6 +21,11 @@
 	{{ ui_element("buttons/button", {'text': 'Primary', 'color': 'primary', 'style': 'link'}) | safe }}
 	{{ ui_element("buttons/button", {'text': 'Danger', 'color': 'danger', 'style': 'link'}) | safe }}
 	{{ ui_element("buttons/button", {'text': 'Disabled', 'color': 'disabled', 'style': 'link'}) | safe }}
+	<hr>
+	<a href="#" class="button button--default">a Default</a>
+	<a href="#" class="button button--primary">a Primary</a>
+	<a href="#" class="button button--danger">a Danger</a>
+	<a href="#" class="button button--disabled">a Disabled</a>
 </div>
 <h3>Block buttons</h3>
 <div class="rc_example">

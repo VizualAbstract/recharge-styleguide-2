@@ -36,7 +36,7 @@
 	}
 
 	h3,
-	.rc_h3
+	.rc_h3,
 	&__actions {
 		vertical-align: middle;
 	}
@@ -45,6 +45,7 @@
 	.rc_h3 {
 		line-height: 1;
 		margin: 0;
+		font-family: 'ralewaysemibold';
 	}
 
 	@media screen and (max-width: $mobile-nav-max) {

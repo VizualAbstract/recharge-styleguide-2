@@ -83,12 +83,6 @@ def headers():
     template_file = "headers.html"
     return render_template(template_file)
 
-# Headers
-@app.route('/breadcrumbs')
-def breadcrumbs():
-    template_file = "breadcrumbs.html"
-    return render_template(template_file)
-
 # Dynamics
 @app.route('/dropdowns')
 def dropdowns():
@@ -110,6 +104,11 @@ def notifications():
     template_file = "notifications.html"
     return render_template(template_file)
 
+@app.route('/switches')
+def switches():
+    template_file = "switches.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
@@ -118,16 +117,25 @@ def grid_systems():
     template_file = "grid-systems.html"
     return render_template(template_file)
 
-# Layouts
+# Navigation
+@app.route('/breadcrumbs')
+def breadcrumbs():
+    template_file = "breadcrumbs.html"
+    return render_template(template_file)
+
 @app.route('/sidebars')
 def sidebars():
     template_file = "sidebars.html"
     return render_template(template_file)
 
-# Layouts
 @app.route('/navbars')
 def navbars():
     template_file = "navbars.html"
+    return render_template(template_file)
+
+@app.route('/progress')
+def progress():
+    template_file = "progress.html"
     return render_template(template_file)
 
 # Layouts
@@ -136,7 +144,7 @@ def tables():
     template_file = "tables.html"
     return render_template(template_file)
 
-# Layouts
+# Dynamic
 @app.route('/banners')
 def banners():
     template_file = "banners.html"

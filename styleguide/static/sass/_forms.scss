@@ -23,7 +23,7 @@ fieldset {
     min-width: 0;
 
     + fieldset {
-    	margin-top: 30px;
+    	margin-top: 60px;
     }
 }
 
@@ -45,6 +45,11 @@ legend + .form__group {
     .button {
         width: 100%;
     }
+}
+
+fieldset + fieldset.form__actions {
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 // For Placeholder

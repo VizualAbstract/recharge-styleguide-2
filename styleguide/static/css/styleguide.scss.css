@@ -82,8 +82,8 @@
   order: 3;
   width: 100%;
   display: flex;
-  padding-top: 19px;
   text-align: center;
+  margin-top: 19px;
 }
 
 .force-mobile .header-settings__actions .button {
@@ -139,6 +139,15 @@
 .page__banners .rc_example {
   position: relative;
   min-height: 200px;
+}
+
+.rc_example .rc_progress {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.rc_example .rc_progress + .rc_progress {
+  margin-top: 25px;
 }
 
 /*# sourceMappingURL=../css/styleguide.scss.css.map */
