@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 {% block body %}
 <h1>Switches</h1>
-<p>Under active development</p>
 <div class="rc_example">
+	<label class="rc_switch rc_switch--small">
+		<div class="rc_switch__inner">
+			<input type="checkbox" class="rc_switch__input">
+			<span class="rc_switch__button"></span>
+			<span class="rc_switch__off"></span>
+			<span class="rc_switch__on"></span>
+		</div>
+	</label>
+	<br><br>
 	<label class="rc_switch">
 		<div class="rc_switch__inner">
 			<input type="checkbox" class="rc_switch__input">
@@ -11,20 +19,13 @@
 			<span class="rc_switch__on">On</span>
 		</div>
 	</label>
+	<br><br>
 	<label class="rc_switch rc_switch--large">
 		<div class="rc_switch__inner">
 			<input type="checkbox" class="rc_switch__input">
 			<span class="rc_switch__button"></span>
 			<span class="rc_switch__off">Large Off</span>
 			<span class="rc_switch__on">Large On</span>
-		</div>
-	</label>
-	<label class="rc_switch rc_switch--small">
-		<div class="rc_switch__inner">
-			<input type="checkbox" class="rc_switch__input">
-			<span class="rc_switch__button"></span>
-			<span class="rc_switch__off"></span>
-			<span class="rc_switch__on"></span>
 		</div>
 	</label>
 </div>

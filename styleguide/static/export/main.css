@@ -1841,6 +1841,10 @@ fieldset + fieldset.form__actions {
   margin-top: 7px;
 }
 
+.form__help + .form__select {
+  margin-top: 7px;
+}
+
 fieldset > .form__group > .form__help:last-child,
 fieldset > .form__help:last-child {
   margin-bottom: -8px;
@@ -6536,7 +6540,7 @@ input.form__date:focus, input.form__date.rc_focus {
 }
 
 .rc_continue__back, .rc_continue__next {
-  width: 100px;
+  width: 60px;
   padding: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -6576,7 +6580,8 @@ input.form__date:focus, input.form__date.rc_focus {
   font-family: 'ralewaysemibold', arial, sans-serif;
   background-color: #4DD6B7;
   color: #424242;
-  width: 235px;
+  max-width: 235px;
+  width: 100%;
   text-align: left;
   text-indent: 50px;
 }
@@ -6598,6 +6603,12 @@ input.form__date:focus, input.form__date.rc_focus {
 .rc_continue__next:after {
   content: "\f0a9";
   right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .rc_continue__next {
+    max-width: 150px;
+  }
 }
 
 @media screen and (min-width: 576px) {
