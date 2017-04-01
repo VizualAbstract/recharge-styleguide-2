@@ -1761,6 +1761,95 @@ fieldset + fieldset.form__actions {
   padding-top: 6px;
 }
 
+.form__help {
+  color: #676767;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.form__label + .form__help {
+  margin-top: -11px;
+  margin-bottom: 10px;
+}
+
+.form__input + .form__help, input.form__number + .form__help, input.form__color + .form__help, input.form__date + .form__help {
+  margin-top: 7px;
+}
+
+.form__help + .form__label {
+  margin-top: 26px;
+}
+
+.form__group + .form__help,
+.form__addons + .form__help {
+  margin-top: 7px;
+}
+
+.form__group + .form__help + .form__addons,
+.form__group + .form__help + .form__group,
+.form__group + .form__help + .form__placeholder,
+.form__addons + .form__help + .form__addons,
+.form__addons + .form__help + .form__group,
+.form__addons + .form__help + .form__placeholder {
+  margin-top: 26px;
+}
+
+.form__addons .form__group + .form__help,
+.form__addons .form__placeholder + .form__help {
+  padding-left: 8px;
+}
+
+.form__addons .form__help {
+  margin-top: 0;
+  white-space: nowrap;
+}
+
+.form__addons > .form__help {
+  padding-top: 7px;
+}
+
+.form__input__contextual .form__group + .form__help:last-child,
+.form__input__contextual .form__addons + .form__help:last-child,
+.form__input__contextual .form__placeholder + .form__help:last-child {
+  margin-bottom: -8px;
+}
+
+.form__radio + .form__label + .form__help,
+.form__checkbox + .form__label + .form__help {
+  margin-top: 3px;
+  padding-left: 25px;
+}
+
+.form__radio:checked + .form__label + .form__help + .form__input__contextual,
+.form__checkbox:checked + .form__label + .form__help + .form__input__contextual {
+  display: block;
+  margin-left: 25px;
+}
+
+.form__radio + .form__label + .form__input__contextual + .form__help,
+.form__checkbox + .form__label + .form__input__contextual + .form__help {
+  margin-top: 7px;
+  margin-left: 25px;
+}
+
+.form__radio + .form__label + .form__input__contextual + .form__radio,
+.form__checkbox + .form__label + .form__input__contextual + .form__radio {
+  margin-top: 25px;
+}
+
+.form__select + .form__help {
+  margin-top: 7px;
+}
+
+.form__help + .form__select {
+  margin-top: 7px;
+}
+
+fieldset > .form__group > .form__help:last-child,
+fieldset > .form__help:last-child {
+  margin-bottom: -8px;
+}
+
 .form__addons {
   display: flex;
   flex-wrap: nowrap;
@@ -1943,6 +2032,13 @@ input:checked + .form__label + .form__input__contextual {
   padding: 20px;
 }
 
+.form__input__contextual .form__group:first-child,
+.form__input__contextual .form__actions:first-child,
+.form__input__contextual .form__placeholder:first-child,
+.form__input__contextual .form__addons:first-child {
+  margin-top: -2px;
+}
+
 .form__input__contextual + .form__group,
 .form__input__contextual + .form__actions {
   margin-top: 31px;
@@ -1955,7 +2051,7 @@ input:checked + .form__label + .form__input__contextual {
 
 .form__radio + .form__label + .form__input__contextual,
 .form__checkbox + .form__label + .form__input__contextual {
-  margin-top: 15px;
+  margin-top: 14px;
   margin-left: 25px;
 }
 
@@ -3986,12 +4082,25 @@ input.form__date:focus, input.form__date.rc_focus {
   overflow: hidden;
 }
 
+.rc_notification > ul,
 .rc_notification > p {
-  margin: 25px 12px;
+  margin: 25px;
+}
+
+.rc_notification--error > ul,
+.rc_notification--error > p, .rc_notification--warning > ul,
+.rc_notification--warning > p {
+  margin: 25px 50px;
 }
 
 .rc_notification.rc_show {
   max-height: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .rc_notification.rc_show {
+    max-height: 325px;
+  }
 }
 
 .rc_notification__close {
@@ -4036,11 +4145,20 @@ input.form__date:focus, input.form__date.rc_focus {
   position: relative;
   text-align: left;
   font-family: 'ralewayregular', arial, sans-serif;
+  font-size: 16px;
 }
 
-.rc_flash.rc_notification > p:first-child:last-child,
+.rc_flash.rc_notification > p,
 .rc_flash.rc_notification > ul {
-  margin: 54px 25px 25px 54px;
+  margin: 54px 50px 25px 54px;
+}
+
+.rc_flash.rc_notification > p + p {
+  margin-top: -14px;
+}
+
+.rc_flash.rc_notification a {
+  color: #FFF;
 }
 
 .rc_flash:before, .rc_flash:after {
@@ -5928,6 +6046,7 @@ input.form__date:focus, input.form__date.rc_focus {
   .navbar__nav {
     flex-direction: column;
   }
+  .navbar__nav > li > span,
   .navbar__nav > li > a {
     display: block;
   }
@@ -6074,12 +6193,55 @@ input.form__date:focus, input.form__date.rc_focus {
   background: transparent;
 }
 
+.navbar--setup {
+  background-color: #D6D6D6;
+}
+
+.navbar--setup .navbar__logo {
+  background-image: url(../images/logos/logo__icon__grey.svg);
+}
+
+@media screen and (max-width: 767px) {
+  .navbar--setup .navbar__logo {
+    background-image: url(../images/logos/logo__grey.svg);
+  }
+}
+
+.navbar--setup .navbar__toggle, .navbar--setup .navbar__toggle.collapsed:hover {
+  color: #4DD6B7;
+}
+
+.navbar--setup .navbar__toggle.collapsed {
+  color: #4A4A4A;
+}
+
+.navbar--setup .navbar__nav > li > span,
+.navbar--setup .navbar__nav > li > a {
+  color: #4A4A4A;
+}
+
+.navbar--setup .navbar__nav > li > span:active, .navbar--setup .navbar__nav > li > span:focus, .navbar--setup .navbar__nav > li > span:hover, .navbar--setup .navbar__nav > li > span.active,
+.navbar--setup .navbar__nav > li > a:active,
+.navbar--setup .navbar__nav > li > a:focus,
+.navbar--setup .navbar__nav > li > a:hover,
+.navbar--setup .navbar__nav > li > a.active {
+  background-color: #bdbdbd;
+}
+
+.navbar--setup .button {
+  background-color: #D6D6D6;
+}
+
+.navbar--setup .button:hover, .navbar--setup .button:focus, .navbar--setup .button:active {
+  background-color: #bdbdbd;
+}
+
 .navbar--standalone {
   background-color: #fff;
 }
 
-.navbar--standalone f + .flex__container > .flex__layout > .flex__sidebar,
-.navbar--standalone f + .flex__container > .flex__layout > .flex__content {
+.navbar--standalone + .flex__container > .flex__layout > .flex__sidebar,
+.navbar--standalone + .flex__container > .flex__layout > .flex__content {
   border-top: 1px solid #EEE;
 }
 
@@ -6291,6 +6453,7 @@ input.form__date:focus, input.form__date.rc_focus {
   font-size: 14px;
   cursor: default;
   display: block;
+  font-family: 'ralewaysemibold', arial, san-serif;
 }
 
 .rc_progress .rc_item.rc_active, .rc_progress .rc_item.rc_complete {
@@ -6368,6 +6531,84 @@ input.form__date:focus, input.form__date.rc_focus {
 .rc_progress--active .rc_item:after {
   border-left-color: #EEE;
   left: -1px;
+}
+
+.rc_continue {
+  background-color: #D6D6D6;
+  height: 58px;
+  line-height: 58px;
+}
+
+.rc_continue__back, .rc_continue__next {
+  width: 60px;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  position: relative;
+  outline: 0;
+  height: 58px;
+  cursor: pointer;
+}
+
+.rc_continue__back:after, .rc_continue__next:after {
+  font-size: 30px;
+  font-family: 'fontawesome';
+  color: #424242;
+  position: absolute;
+  top: 0;
+}
+
+.rc_continue__back {
+  background-color: transparent;
+  float: left;
+}
+
+.rc_continue__back:after {
+  content: "\f0a8";
+  left: 20px;
+}
+
+.rc_continue__back:hover:after, .rc_continue__back:focus:after, .rc_continue__back:active:after {
+  color: #292929;
+}
+
+.rc_continue__next {
+  float: right;
+  font-size: 16px;
+  font-family: 'ralewaysemibold', arial, sans-serif;
+  background-color: #4DD6B7;
+  color: #424242;
+  max-width: 235px;
+  width: 100%;
+  text-align: left;
+  text-indent: 50px;
+}
+
+.rc_continue__next:hover, .rc_continue__next:focus, .rc_continue__next:active {
+  background-color: #2dc3a1;
+}
+
+.rc_continue__next:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  border-width: 29px;
+  border-color: transparent;
+  border-left-color: #D6D6D6;
+  border-style: solid;
+}
+
+.rc_continue__next:after {
+  content: "\f0a9";
+  right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .rc_continue__next {
+    max-width: 150px;
+  }
 }
 
 @media screen and (min-width: 576px) {

@@ -2,55 +2,53 @@
 <h1>Navbars</h1>
 <p>Under active development</p>
 <div class="rc_example">
-    <div class="navbar">
-        <a href="#" class="navbar__logo">
-			ReCharge
-		</a>
-        <button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
-        <div id="navbar__menu" class="navbar__collapse collapse">
-            <!-- collapse -->
-            <ul class="navbar__nav">
-                <li><a href="#">Orders</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#" class="active">Rulesets</a></li>
-                <li><a href="#">Reports</a></li>
-            </ul>
-            <ul class="navbar__nav navbar__nav--right">
-                <li class="hidden--mobile">
-                    <label class="rc_switch">
-                        <div class="rc_switch__inner">
-                            <input type="checkbox" class="rc_switch__input">
-                            <span class="rc_switch__button"></span>
-                            <span class="rc_switch__off">Test</span>
-                            <span class="rc_switch__on">Live</span>
-                        </div>
-                    </label>
-                </li>
-                <li>
-                    <div class="rc_dropdown">
-                        <button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span class="fa fa-wrench"></span>
-                            <span class="visible--mobile">Store settings</span>
-                        </button>
-                        <div class="rc_dropdown__menu rc_dropdown__menu--right">
-                            <a href="" class="rc_item">General settings</a>
-                            <a href="" class="rc_item">Discounts</a>
-                            <a href="" class="rc_item admin-recharge">Subscription prices</a>
-                            <a href="" class="rc_item">Taxes</a>
-                            <a href="" class="rc_item">Shipping</a>
-                            <a href="" class="rc_item admin-recharge">Shipping zones</a>
-                            <a href="" class="rc_item">Integrations</a>
-                            <a href="" class="rc_item">Customer portal</a>
-                            <a href="" class="rc_item">Checkout</a>
-                            <a href="" class="rc_item">Notifications</a>
-                            <a href="" class="rc_item">Subscription widget</a>
-                            <a href="" class="rc_item">Refer a friend</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
+	<div class="navbar">
+		<span class="navbar__logo">ReCharge</span>
+		<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu"></button>
+		<div id="navbar__menu" class="navbar__collapse collapse">
+			<!-- collapse -->
+			<ul class="navbar__nav">
+				<li><a href="#">Orders</a></li>
+				<li><a href="#">Customers</a></li>
+				<li><a href="#" class="active">Rulesets</a></li>
+				<li><a href="#">Reports</a></li>
+			</ul>
+			<ul class="navbar__nav navbar__nav--right">
+				<li class="hidden--mobile">
+					<label class="rc_switch">
+						<div class="rc_switch__inner">
+							<input type="checkbox" class="rc_switch__input">
+							<span class="rc_switch__button"></span>
+							<span class="rc_switch__off">Test</span>
+							<span class="rc_switch__on">Live</span>
+						</div>
+					</label>
+				</li>
+				<li>
 					<div class="rc_dropdown">
 						<button class="button rc_dropdown__toggle" id="dropdownMenuButton" data-toggle="dropdown">
+							<span class="fa fa-wrench"></span>
+							<span class="visible--mobile">Store settings</span>
+						</button>
+						<div class="rc_dropdown__menu rc_dropdown__menu--right">
+							<a href="" class="rc_item">General settings</a>
+							<a href="" class="rc_item">Discounts</a>
+							<a href="" class="rc_item admin-recharge">Subscription prices</a>
+							<a href="" class="rc_item">Taxes</a>
+							<a href="" class="rc_item">Shipping</a>
+							<a href="" class="rc_item admin-recharge">Shipping zones</a>
+							<a href="" class="rc_item">Integrations</a>
+							<a href="" class="rc_item">Customer portal</a>
+							<a href="" class="rc_item">Checkout</a>
+							<a href="" class="rc_item">Notifications</a>
+							<a href="" class="rc_item">Subscription widget</a>
+							<a href="" class="rc_item">Refer a friend</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="rc_dropdown">
+						<button class="button rc_dropdown__toggle" data-toggle="dropdown">
 							<span class="fa fa-user"></span>
 							<span class="visible--mobile">Account settings</span>
 						</button>
@@ -59,67 +57,107 @@
 							<a href="" class="rc_item">My account</a>
 						</div>
 					</div>
-                </li>
-            </ul>
-            {# {{ ui_element('dynamic/dropdown', { 'title': "Store settings", 'alignment': "right", 'icon': "wrench", 'links': [{ 'title': 'General settings' }, { 'title': 'Discounts', }, { 'title': 'Subscription prices', 'admin': true, }, { 'title': 'Taxes', }, { 'title': 'Shipping', }, { 'title': 'Shipping zones', 'admin': true, }, { 'title': 'Integrations', }, { 'title': 'Customer portal', }, { 'title': 'Checkout', }, { 'title': 'Notifications', }, { 'title': 'Subscription widget', }, { 'title': 'Refer a friend', }] }) | safe }} {{ ui_element('dynamic/dropdown', { 'title': "Account settings", 'alignment': "right", 'icon': "user", 'links': [{ 'title': 'Support center' }, { 'title': 'My account', }] }) | safe }} #}
-        </div>
-    </div>
-    <div class="navbar navbar--standalone">
-        <div class="navbar__header">
-            <a href="#" class="navbar__logo">
-				ReCharge
-			</a>
-            <span class="navbar__title">
-				Partners
-			</span>
-            <button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu__partners"></button>
-        </div>
-        <div id="navbar__menu__partners" class="navbar__collapse collapse">
-            <ul class="navbar__nav navbar__nav--right">
-                <li>
-                    <a href="#">Sign in</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="navbar navbar--standalone">
-        <div class="navbar__header">
-            <a href="#" class="navbar__logo">
-				ReCharge
-			</a>
-            <span class="navbar__title">
-				API
-			</span>
-        </div>
-    </div>
-    <div class="navbar navbar--standalone">
-        <div class="navbar__header">
-            <a href="#" class="navbar__logo">
-				ReCharge
-			</a>
-            <span class="navbar__title">
-				Migrations
-			</span>
-        </div>
-    </div>
-    <div class="navbar navbar--footer">
-        <ul class="navbar__nav navbar__nav--center">
-            <li>
-                <span>Copyright &copy; 2017 ReCharge</span>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">FAQ</a>
-            </li>
-            <li>
-                <a href="#">Contact us</a>
-            </li>
-            <li>
-                <span>Bootstrap dev1488924858.62</span>
-            </li>
-        </ul>
-    </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<span class="navbar__logo">ReCharge</span>
+			<span class="navbar__title">Partners</span>
+			<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu__partners"></button>
+		</div>
+		<div id="navbar__menu__partners" class="navbar__collapse collapse">
+			<ul class="navbar__nav navbar__nav--right">
+				<li>
+					<a href="#">Sign in</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<span class="navbar__logo">ReCharge</span>
+			<span class="navbar__title">API</span>
+		</div>
+	</div>
+	<div class="navbar navbar--standalone">
+		<div class="navbar__header">
+			<span class="navbar__logo">ReCharge</span>
+			<span class="navbar__title">Migrations</span>
+		</div>
+	</div>
+	<div class="navbar navbar--setup">
+		<div class="navbar__header">
+			<span class="navbar__logo">ReCharge</span>
+			<button class="navbar__toggle collapsed" data-toggle="collapse" data-target="#navbar__menu__setup"></button>
+		</div>
+		<div id="navbar__menu__setup" class="navbar__collapse collapse">
+			<ul class="navbar__nav">
+				<li>
+					<span class="active">Set Up</span>
+				</li>
+			</ul>
+			<ul class="navbar__nav navbar__nav--right">
+				<li class="">
+					<div class="rc_dropdown">
+						<button class="button rc_dropdown__toggle" data-toggle="dropdown">
+							<span class="fa fa-wrench"></span>
+							<span class="hidden--mobile admin-recharge">bootstrap dev1488924...</span>
+							<span class="visible--mobile">Store settings</span>
+						</button>
+						<div class="rc_dropdown__menu rc_dropdown__menu--right">
+							<a href="/store/settings" class="rc_item">General settings</a>
+							<a href="/settings/discounts" class="rc_item">Discounts</a>
+							<a href="/purchase_item/display_recharge_variant_id_and_price_combinations" class="rc_item admin-recharge">Subscription prices</a>
+							<a href="/tax/settings" class="rc_item">Taxes</a>
+							<a href="/settings/shipping" class="rc_item">Shipping</a>
+							<a href="/shipping/zones_list" class="rc_item admin-recharge">Shipping zones</a>
+							<a href="/settings/integrations" class="rc_item">Integrations</a>
+							<a href="/settings/customer-portal" class="rc_item">Customer portal</a>
+							<a href="/settings/checkout" class="rc_item">Checkout</a>
+							<a href="/settings/translation" class="rc_item">Translation</a>
+							<a href="/settings/notifications" class="rc_item">Notifications</a>
+							<a href="/settings/subscription-widget" class="rc_item">Subscription widget</a>
+						</div>
+					</div>
+				</li>
+				<li class="admin-recharge">
+					<div class="rc_dropdown">
+						<button class="button rc_dropdown__toggle" data-toggle="dropdown">
+							<span class="fa fa-wrench"></span>
+							<span class="visible--mobile">Account settings</span>
+						</button>
+						<div class="rc_dropdown__menu rc_dropdown__menu--right">
+							<a href="/recharge_customer/store_information" class="rc_item">My account</a>
+							<a href="http://recharge.helpscoutdocs.com" target="_blank" class="rc_item">Support center</a>
+						</div>
+					</div>
+				</li>
+				<li style="border-left: 1px solid #FFF">
+					<a href="/subscriptions" class="navbar__return">Explore ReCharge</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar navbar--footer">
+		<ul class="navbar__nav navbar__nav--center">
+			<li>
+				<span>Copyright &copy; 2017 ReCharge</span>
+			</li>
+			<li>
+				<a href="#">About</a>
+			</li>
+			<li>
+				<a href="#">FAQ</a>
+			</li>
+			<li>
+				<a href="#">Contact us</a>
+			</li>
+			<li>
+				<span>ReCharge Payments</span>
+			</li>
+		</ul>
+	</div>
 </div>
 {% endblock %}

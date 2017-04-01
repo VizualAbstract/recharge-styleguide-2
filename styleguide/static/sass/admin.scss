@@ -251,8 +251,13 @@
 .admin-recharge {
 	.rc_dropdown,
 	&.rc_dropdown {
-		.button:hover {
-			background-color: darken($admin-color, 15%);
+		.button {
+			&:hover,
+			&:active,
+			&:focus,
+			&.rc_active {
+				background-color: darken($admin-color, 15%);
+			}
 		}
 		.rc_dropdown__menu {
 			background-color: $admin-color;
@@ -294,6 +299,11 @@
 		}
 	}
 }
+.admin-recharge {
+	.admin-recharge {
+		color: #FFF;
+	}
+}
 .navbar__nav {
 	> li {
 		> a,
@@ -311,5 +321,15 @@
 	&.navbar,
 	.navbar {
 		background-color: $admin-color;
+	}
+}
+
+.rc_continue {
+	&__back {
+		&.admin-recharge {
+			&:after {
+				color: $admin-color;
+			}
+		}
 	}
 }

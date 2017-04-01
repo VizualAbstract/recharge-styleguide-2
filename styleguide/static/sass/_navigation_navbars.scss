@@ -123,6 +123,7 @@
 	@media screen and (max-width: $mobile-nav-max) {
 		flex-direction: column;
 		> li {
+			> span,
 			> a {
 				display: block;
 			}
@@ -260,8 +261,49 @@
 	}
 }
 
+.navbar--setup {
+	background-color: #D6D6D6;
+	.navbar__logo {
+    	background-image: url(../images/logos/logo__icon__grey.svg);
+    	@media screen and (max-width: $mobile-nav-max) {
+			background-image: url(../images/logos/logo__grey.svg);
+    	}
+	}
+	.navbar__toggle {
+		&,
+		&.collapsed:hover {
+			color: $primary;
+		}
+		&.collapsed {
+			color: #4A4A4A;
+		}
+	}
+	.navbar__nav {
+		> li {
+			> span,
+			> a {
+				color: #4A4A4A;
+				&:active,
+				&:focus,
+				&:hover,
+				&.active {
+					background-color: darken(#D6D6D6, 10%);
+				}
+			}
+		}
+	}
+	.button {
+		background-color: #D6D6D6;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: darken(#D6D6D6, 10%);
+		}
+	}
+}
+
 .navbar--standalone {
-	background-color: #fff;f
+	background-color: #fff;
 
 	+ .flex__container {
 		> .flex__layout {

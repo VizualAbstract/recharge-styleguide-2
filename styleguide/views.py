@@ -32,6 +32,11 @@ def form_addons():
     template_file = "form-addons.html"
     return render_template(template_file)
 
+@app.route('/form-help')
+def form_help():
+    template_file = "form-help.html"
+    return render_template(template_file)
+
 @app.route('/contextual-inputs')
 def contextual_inputs():
     template_file = "contextual-inputs.html"
@@ -138,6 +143,11 @@ def progress():
     template_file = "progress.html"
     return render_template(template_file)
 
+@app.route('/continue')
+def continue_():
+    template_file = "continue.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/tables')
 def tables():
@@ -149,7 +159,6 @@ def tables():
 def banners():
     template_file = "banners.html"
     return render_template(template_file)
-
 
 # Utilities
 @app.route('/admin-class')

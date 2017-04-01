@@ -155,3 +155,21 @@
 		}
 	}
 }
+
+.rc_example {
+	.rc_continue {
+		margin-left: -20px;
+		margin-right: -20px;
+		+ .rc_continue {
+			margin-top: 25px;
+		}
+	}
+}
+
+.rc_example {
+	.navbar {
+		+ .navbar {
+			margin-top: 25px;
+		}
+	}
+}

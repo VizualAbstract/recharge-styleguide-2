@@ -1,0 +1,75 @@
+$continue_height: 58px;
+
+.rc_continue {
+	background-color: #D6D6D6;
+	height: $continue_height;
+	line-height: $continue_height;
+	&__back,
+	&__next {
+		width: 60px;
+		padding: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		border: none;
+		position: relative;
+		outline: 0;
+		height: $continue_height;
+		cursor: pointer;
+		&:after {
+			font-size: 30px;
+			font-family: 'fontawesome';
+			color: #424242;
+			position: absolute;
+			top: 0;
+		}
+	}
+	&__back {
+		background-color: transparent;
+		float: left;
+		&:after {
+			content: "\f0a8";
+			left: 20px;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			&:after {
+				color: darken(#424242, 10%);
+			}
+		}
+	}
+	&__next {
+		float: right;
+		font-size: 16px;
+		font-family: 'ralewaysemibold', arial, sans-serif;
+		background-color: $primary;
+		color: #424242;
+		max-width: 235px;
+		width: 100%;
+		text-align: left;
+		text-indent: 50px;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: darken($primary, 10%);
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			border-width: 29px;
+			border-color: transparent;
+			border-left-color: #D6D6D6;
+			border-style: solid;
+		}
+		&:after {
+			content: "\f0a9";
+			right: 20px;
+		}
+
+		@media screen and (max-width: $mobile-nav-max) {
+			max-width: 150px;
+		}
+	}
+}

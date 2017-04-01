@@ -150,4 +150,17 @@
   margin-top: 25px;
 }
 
+.rc_example .rc_continue {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.rc_example .rc_continue + .rc_continue {
+  margin-top: 25px;
+}
+
+.rc_example .navbar + .navbar {
+  margin-top: 25px;
+}
+
 /*# sourceMappingURL=../css/styleguide.scss.css.map */

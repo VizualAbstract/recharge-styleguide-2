@@ -17,6 +17,14 @@ input:checked {
 .form__input__contextual {
 	background-color: #f3f3f3;
 	padding: 20px;
+	.form__group,
+	.form__actions,
+	.form__placeholder,
+	.form__addons {
+		&:first-child {
+			margin-top: -2px;
+		}
+	}
 }
 
 // Vertical spacing corrections
@@ -35,7 +43,7 @@ input:checked {
 .form__checkbox {
 	+ .form__label {
 		+ .form__input__contextual {
-			margin-top: 15px;
+			margin-top: 14px;
 			margin-left: 25px;
 		}
 	}	

@@ -10,9 +10,18 @@
 	text-align: center;
 	font-family: 'ralewaysemibold', arial, sans-serif;
 	max-height: 0;
-
+	
+	> ul,
 	> p {
-		margin: 25px 12px;
+		margin: 25px;
+	}
+	&--error,
+	&--warning {
+		> ul,
+		> p {
+			// Fix issue where a close button and the content overlays on eachother
+			margin: 25px 50px;
+		}
 	}
 
 	-webkit-transition: max-height 0.6s;
@@ -23,6 +32,9 @@
 
 	&.rc_show {
 		max-height: 200px;
+		@media screen and (max-width: $mobile-nav-max) {
+			max-height: 325px;
+		}
 	}
 
 	&__close {
@@ -66,9 +78,16 @@
 		position: relative;
 		text-align: left;
 		font-family: 'ralewayregular', arial, sans-serif;
-		> p:first-child:last-child,
+    	font-size: 16px;
+		> p,
 		> ul {
-			margin: 54px 25px 25px 54px;
+			margin: 54px 50px 25px 54px;
+		}
+		> p + p {
+			margin-top: -14px;
+		}
+		a {
+			color: #FFF;
 		}
 	}
 	&:before,
