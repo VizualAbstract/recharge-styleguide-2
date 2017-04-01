@@ -122,3 +122,9 @@ fieldset {
 		}
 	}
 }
+
+.dates__container {
+	+ .form__help {
+		margin-top: 7px;
+	}
+}

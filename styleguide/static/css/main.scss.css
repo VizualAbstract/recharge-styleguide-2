@@ -1850,6 +1850,10 @@ fieldset > .form__help:last-child {
   margin-bottom: -8px;
 }
 
+.dates__container + .form__help {
+  margin-top: 7px;
+}
+
 .form__addons {
   display: flex;
   flex-wrap: nowrap;

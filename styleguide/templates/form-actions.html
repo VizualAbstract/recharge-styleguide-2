@@ -2,25 +2,29 @@
 
 {% block body %}
 	<h1>Form actions</h1>
+	<p>The <code>.form__action</code> wrapper will distribute buttons evenly along a single row.</p>
+	<p>It will also have increased margins when used immediatly following fieldsets or form groups</p>
 	<div class="rc_example">
 		<form>
 			<fieldset>
 				<div class="form__placeholder">
-					<p>fieldset</p>
+					<p>&lt;fieldset&gt;&lt;/fieldset&gt;</p>
 				</div>
 			</fieldset>
 			<div class="form__actions">
+				<button class="button">Cancel</button>
 				<button class="button button--primary">Submit</button>
 			</div>
 		</form>
 		<br>
 		<form>
 			<div class="form__placeholder">
-				<p>.form__group</p>
+				<p>&lt;div class="form__group&gt;&lt;/div&gt;</p>
 			</div>
 			<div class="form__actions">
 				<button class="button">Cancel</button>
 				<button class="button button--primary">Submit</button>
+				<button class="button button--disabled">Disabled</button>
 			</div>
 		</form>
 	</div>
