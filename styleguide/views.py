@@ -175,6 +175,16 @@ def cards():
     template_file = "cards.html"
     return render_template(template_file)
 
+@app.route('/stats')
+def stats():
+    template_file = "stats.html"
+    return render_template(template_file)
+
+@app.route('/flags')
+def flags():
+    template_file = "flags.html"
+    return render_template(template_file)
+
 # Utilities
 @app.route('/admin-class')
 def admin_class():
