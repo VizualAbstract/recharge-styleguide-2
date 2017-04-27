@@ -17,18 +17,18 @@
 <h2>Date range</h2>
 <p>Date rangers require a container, with each individual element also having a wrapper.</p>
 <div class="rc_example">
-<div class="dates__container">
-	<div class="dates__start">
-		<label for="start_date" class="form__label">Start date</label>
-		<input type="text" name="start_date" id="start_date" data-default="2016-08-01" value="2016-08-01" placeholder="select a date" class="form__date">
-	</div><!-- .date-range__start -->
-	<div class="dates__end">
-		<label for="end_date" class="form__label">End date</label>
-		<input type="text" name="end_date" id="end_date" data-default="2016-08-08" value="2016-08-08" placeholder="select a date" class="form__date">
-	</div><!-- .date-range__end -->
-	<div class="dates__submit">
-		<button class="button">Update charts</button>
-	</div><!-- .date-range__submit -->
-</div><!-- .date-picker -->
+	<div class="dates__container">
+		<div class="dates__start">
+			<label for="first_date" class="form__label">Start date</label>
+			<input type="text" name="first_date" id="first_date" data-default="2016-08-01" value="2016-08-01" placeholder="select a date" class="form__date">
+		</div>
+		<div class="dates__end">
+			<label for="second_date" class="form__label">End date</label>
+			<input type="text" name="second_date" id="second_date" data-default="2016-08-08" value="2016-08-08" placeholder="select a date" class="form__date">
+		</div>
+		<div class="dates__submit">
+			<button class="button">Update charts</button>
+		</div>
+	</div>
 </div>
 {% endblock %}

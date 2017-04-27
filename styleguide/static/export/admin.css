@@ -332,3 +332,38 @@
 .rc_continue__back.admin-recharge:after {
   color: #53BAD3;
 }
+
+.admin-recharge__container {
+  background-color: #54bad3;
+  padding: 25px;
+}
+
+.admin-recharge__container > .admin-recharge {
+  color: #FFF;
+}
+
+.admin-recharge__container .admin-recharge .form__label {
+  color: #FFF;
+}
+
+.admin-recharge__container .admin-recharge .form__input,
+.admin-recharge__container .admin-recharge .form__number,
+.admin-recharge__container .admin-recharge .form__date,
+.admin-recharge__container .admin-recharge .form__color,
+.admin-recharge__container .admin-recharge .form__checkbox + .form__label:before,
+.admin-recharge__container .admin-recharge .form__radio + .form__label:before {
+  border-color: #FFF;
+}
+
+.admin-recharge__container .admin-recharge .form__checkbox + .form__label:before,
+.admin-recharge__container .admin-recharge .form__radio + .form__label:before {
+  background-color: #54bad3;
+}
+
+.admin-recharge__container .admin-recharge .button.button--link {
+  color: #FFF;
+}
+
+.admin-recharge__container .admin-recharge .button.button--link:hover, .admin-recharge__container .admin-recharge .button.button--link:active {
+  color: #f2f2f2;
+}

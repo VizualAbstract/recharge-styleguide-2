@@ -64,6 +64,7 @@ textarea.form__input {
 	&--code {
 		font-family: 'pt-mono', monospace;
 		line-height: 21px;
+		min-height: 215px;
 	}
 }
 
@@ -80,4 +81,10 @@ textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
+}
+
+.form__input {
+	&.error {
+		border-color: $red;
+	}
 }

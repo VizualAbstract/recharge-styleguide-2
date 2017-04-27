@@ -106,9 +106,18 @@
 
 			// Build default options
 			this.options.message = pending_message;
-			this.options.type = readCookie.call(this, 'rcNoticeType');
-			this.options.timeout = readCookie.call(this, 'rcNoticeTimeout');
-			this.options.static = readCookie.call(this, 'rcNoticeStatic');
+			try {
+				this.options.type = readCookie.call(this, 'rcNoticeType');
+			}
+			catch(error) {}
+			try {
+				this.options.timeout = readCookie.call(this, 'rcNoticeTimeout');
+			}
+			catch(error) {}
+			try {
+				this.options.static = readCookie.call(this, 'rcNoticeStatic');
+			}
+			catch(error) {}
 
 			// Trigger the notification
 			this.show();

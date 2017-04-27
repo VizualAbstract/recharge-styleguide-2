@@ -161,6 +161,7 @@
 		</div>
 	</div>
 </div>
+
 <h2>Navivation elements</h2>
 <div class="rc_example">
 	<ol class="breadcrumbs admin-recharge">
@@ -338,6 +339,33 @@
 			<button class="button button--primary">Save</button>
 		</div>
 	</div><!-- .header-dropdown -->
+</div>
+
+<h2>Admin wrapper</h2>
+<p>Use the admin-wrapper when there's an entire set of admin tools grouped together in one section of the page</p>
+<div class="rc_example">
+	<div class="admin-recharge__container">
+		<div class="admin-recharge">
+			<legend>
+				<h4>Legal notices</h4>
+			</legend>
+			<div class="form__group">
+				<label for="terms_of_service_url" class="form__label">Terms of service link</label>
+				<input type="text" id="terms_of_service_url" name="terms_of_service_url" value="http://www.rechargeapp.com/testingur" placeholder="www.yoursite.com/terms" class="form__input">
+			</div>
+			<div class="form__group">
+				<label for="email_footer_legal_text" class="form__label">
+					Email footer legal disclaimer
+					<button data-input="#email_footer_legal_text" data-default="#default_email_footer_legal_text" onclick="resetDefaultText(this);" class="button button--link pull--right"><span class="fa fa-undo"></span> reset</button>
+				</label>
+				<textarea id="email_footer_legal_text" name="email_footer_legal_text" placeholder="Add leagal disclaimer text here..." class="form__input">email footer legal text -- </textarea>
+			</div>
+			<div class="form__group">
+				<input type="checkbox" id="uses_in_store_pickup" name="uses_in_store_pickup" checked="checked" class="form__checkbox">
+				<label for="uses_in_store_pickup" class="form__label">Store Pickup</label>
+			</div>
+		</div>
+	</div>
 </div>
 
 <h2>HTML Elements</h2>

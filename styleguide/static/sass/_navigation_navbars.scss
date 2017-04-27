@@ -1,3 +1,6 @@
+$zIndexNavbar: 100091;
+$zIndexContinueBar: 100090;
+
 .navbar {
 	position: relative;
 	align-items: center;
@@ -118,6 +121,7 @@
 		}
 		> .rc_switch {
 			margin-top: 13px;
+			margin-right: 15px;
 		}
 	}
 	@media screen and (max-width: $mobile-nav-max) {
@@ -263,6 +267,14 @@
 
 .navbar--setup {
 	background-color: #D6D6D6;
+	@media screen and (min-width: $mobile-nav-max + 1) {
+		z-index: $zIndexNavbar;
+		+ .rc_progress,
+		+ .rc_continue {
+			position: relative;
+			z-index: $zIndexContinueBar
+		}
+	}
 	.navbar__logo {
     	background-image: url(../images/logos/logo__icon__grey.svg);
     	@media screen and (max-width: $mobile-nav-max) {
@@ -406,5 +418,11 @@
 		&:active {
 			background-color: darken($primary, 15%);
 		}
+	}
+}
+
+.navbar__return {
+	@media screen and (min-width: $mobile-nav-max + 1) {
+		border-left: 1px solid #FFF;
 	}
 }

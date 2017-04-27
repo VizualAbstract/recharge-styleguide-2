@@ -56,3 +56,14 @@ fieldset + fieldset.form__actions {
 .form__placeholder {
     padding-top: 6px;
 }
+
+
+.form__group {
+    > .form__input,
+    > .form__color,
+    > .form__date {
+        + .button {
+            margin-top: 12px;
+        }
+    }
+}

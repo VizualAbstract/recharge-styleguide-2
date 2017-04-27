@@ -73,6 +73,58 @@
 	</div>
 </div>
 
+<h2>Cards</h2>
+<p>Place a margin between form groups will be removed.</p>
+<div class="rc_example">
+	<label class="form__label">Phone</label>
+	<div class="form__addons">
+		<div class="form__group">
+			<input type="number" placeholder="MM" class="form__input">
+		</div>
+		<div class="form__group">
+			<input type="text" value="000" class="form__input">
+		</div>
+		<div class="form__group">
+			<input type="text" value="0000" class="form__input">
+		</div>
+		<div class="form__actions">
+			<button class="button">Call</button>
+		</div>
+	</div>
+</div>
+<div class="rc_example">
+	<div class="form__addons">
+		<div class="form__group">
+			<label for="exp-month" class="form__label">Expiration Month/Year</label>
+			<div class="form__addons">
+				<div class="form__group">
+					<input type="text" id="exp-month" name="exp-month" data-stripe="exp-month" placeholder="MM" value="" class="form__input">
+				</div>
+				<div class="form__placeholder">
+					<p>/</p>
+				</div>
+				<div class="form__group">
+					<input type="text" id="exp-year" name="exp-year" data-stripe="exp-year" placeholder="YYYY" value="" class="form__input">
+				</div>
+			</div>
+		</div>
+		<div class="form__group">
+			<label for="cvc" class="form__label">CVV</label>
+			<div class="form__group">
+				<input type="text" id="cvc" name="cvc" autocomplete="off" value="" class="form__input">
+			</div>
+		</div>
+		<div class="form__placeholder text--right">
+			<p>
+				<img src="https://rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/credit-cards_mastercard.svg?t=1478027868" alt="Master Card icon" class="card-details__icon"> &nbsp;
+				<img src="https://rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/credit-cards_visa.svg?t=1478027868" alt="Visa Card icon" class="card-details__icon"> &nbsp;
+				<img src="https://rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/credit-cards_amex.svg?t=1478027868" alt="American Express Card icon" class="card-details__icon"> &nbsp;
+				<img src="https://rechargestatic-bootstrapheroes.netdna-ssl.com/static/images/credit-cards_discover.svg?t=1479752394" alt="Discover Card icon" class="card-details__icon hidden-xs">
+			</p>
+		</div>
+	</div>
+</div>
+
 <h2>Search</h2>
 <p>The search pattern is a more advanced feature that has additional elments, such as: a search results container, an active and in-active states</p>
 <div class="rc_example">

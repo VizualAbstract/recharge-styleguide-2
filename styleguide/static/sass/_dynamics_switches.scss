@@ -1,6 +1,7 @@
 $switch-height: 34px;
 $switch-large-height: 44px;
 $switch-small-height: 20px;
+$switch-off-background: #8C8C8C;
 $switch-on-background: #4dd6b7;
 
 .rc_switch {
@@ -46,6 +47,7 @@ $switch-on-background: #4dd6b7;
 		height: $switch-large-height;
 		border-radius: $switch-large-height / 2;
 		font-size: $font-size-base;
+		font-family: 'ralewaysemibold', arial, sans-serif;
 
 		.rc_switch__button {
 			height: $switch-large-height;
@@ -109,6 +111,9 @@ $switch-on-background: #4dd6b7;
 		background: $switch-on-background;
 		border-radius: $switch-height / 2;
 	}
+	&:checked + .rc_switch__button {
+		background-color: $switch-on-background;
+	}
 }
 
 .rc_switch {
@@ -117,6 +122,28 @@ $switch-on-background: #4dd6b7;
 		&:checked + .rc_switch__button {
 			left: 50%;
 			right: 0;
+		}
+	}
+}
+
+.rc_switch {
+	&--fade {
+		.rc_switch__button {
+			background-color: $switch-off-background;
+		}
+		.rc_switch__off {
+			color: #FFF;
+			transition: .3s color;
+		}
+		.rc_switch__input {
+			&:checked + .rc_switch__button {
+				+ .rc_switch__off {
+					color: #000;
+				}
+			}
+			&:checked + .rc_switch__button {
+				background-color: $switch-on-background;
+			}
 		}
 	}
 }

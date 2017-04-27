@@ -2,7 +2,6 @@ $button-background: #5C5C5C;
 $font-size-small: 14px;
 $button-color: #FFF;
 $button-hover-background: darken($button-background, 10%);
-
 .breadcrumbs {
 	list-style: none;
 	display: flex;
@@ -13,6 +12,7 @@ $button-hover-background: darken($button-background, 10%);
 	background-color: $button-background;
 	color: $button-color;
 	font-family: 'ralewaysemibold', arial, sans-serif;
+
 	.crumb {
 		list-style: none;
 		position: relative;

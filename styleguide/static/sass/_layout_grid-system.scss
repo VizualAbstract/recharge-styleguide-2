@@ -197,6 +197,34 @@
 	}
 }
 
+// Fix padding on columns outside of max scope of media-query width
+.flex__layout {
+	@media screen and (max-width: $screen-xs-max) {
+		[class^="flex__sm"] {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+	@media screen and (max-width: $screen-sm-max) {
+		[class^="flex__md"] {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+	@media screen and (max-width: $screen-md-max) {
+		[class^="flex__lg"] {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+	@media screen and (max-width: $screen-lg-max) {
+		[class^="flex__xl"] {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+}
+
 /* Fixing the first and last-column padding */
 .flex__layout {
 	@media screen and (max-width: $screen-xs-max) {
@@ -458,10 +486,12 @@
 	&[flex-order="reverse"] {
 		div[class^="flex__"] {
 			+ div[class^="flex__"] {
-				border-right: 1px solid #fff;
-				border-left: 0;
-				&:last-child {
-					border-left: 0 !important;
+				@media screen and (min-width: $screen-sm-min) {
+					border-right: 1px solid #fff;
+					border-left: 0;
+					&:last-child {
+						border-left: 0 !important;
+					}
 				}
 			}
 		}

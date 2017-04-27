@@ -43,7 +43,6 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 	display: block;
 	position: relative;
 	color: $pd-text-color;
-	background: $pd-picker-bg;
 	border: none;
 	font-family: $pd-font-family;
 
@@ -72,9 +71,13 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 }
 
 .pika-lendar {
+	background: $pd-picker-bg;
 	float: left;
 	width: 238px;
 	box-sizing: border-box;
+	+ .pika-lendar {
+		margin-left: 25px;
+	}
 }
 
 .pika-title {
@@ -248,7 +251,7 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 }
 
 .pika-button {
-	cursor: pointer;
+	cursor: default;
 	display: block;
 	box-sizing: border-box;
 	outline: none;
@@ -280,11 +283,16 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 		cursor: default;
 		color: $pd-day-disabled-color;
 	}
+}
 
-	&:hover {
-		color: $pd-day-hover-color;
-		background: $pd-day-hover-bg;
-		box-shadow: none;
+.pika-selectable {
+	.pika-button {
+		cursor: pointer;
+		&:hover {
+			color: $pd-day-hover-color;
+			background: $pd-day-hover-bg;
+			box-shadow: none;
+		}
 	}
 }
 
@@ -294,18 +302,26 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 }
 
 .is-inrange .pika-button {
-	background: #D5E9F7;
+	border-bottom: 1px solid #4dd6b7;
+	// background: #676767;
+	font-style: italic;
 }
 
 .is-startrange .pika-button {
 	color: #fff;
-	background: #6CB31D;
+	background: #4DD6B7;
 	box-shadow: none;
 }
 
 .is-endrange .pika-button {
 	color: #fff;
-	background: #33aaff;
+	background: #F6A623;
+	box-shadow: none;
+}
+
+.is-thirdrange .pika-button {
+	color: #fff;
+	background: #F6A623;
 	box-shadow: none;
 }
 

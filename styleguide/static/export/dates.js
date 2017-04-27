@@ -4420,6 +4420,14 @@
 
         startRange: null,
         endRange: null,
+        thirdRange: null,
+
+        chargeDates: null,
+        cutOffDates: null,
+        dayOfMonthDates: null,
+        highlightDates: null,
+
+        selectable: true,
 
         isRTL: false,
 
@@ -4495,15 +4503,29 @@
             arr.push('is-selected');
             ariaSelected = 'true';
         }
-        if (opts.isInRange) {
-            arr.push('is-inrange');
-        }
         if (opts.isStartRange) {
             arr.push('is-startrange');
         }
         if (opts.isEndRange) {
             arr.push('is-endrange');
         }
+        if (opts.isThirdRange) {
+            arr.push('is-thirdrange');
+        }
+        if (opts.isInRange) {
+            arr.push('is-inrange');
+        }
+
+        if (opts.isHighlighted && opts.hasLabel) {
+            if (opts.hasLabel.length) {
+                opts.hasLabel.forEach(function(label) {
+                    arr.push('is-' + label);
+                });
+            } else {
+                arr.push('is-' + opts.hasLabel);
+            }
+        }
+
         return '<td data-day="' + opts.day + '" class="' + arr.join(' ') + '" aria-selected="' + ariaSelected + '">' +
                  '<button class="pika-button pika-day" type="button" ' +
                     'data-pika-year="' + opts.year + '" data-pika-month="' + opts.month + '" data-pika-day="' + opts.day + '">' +
@@ -4541,11 +4563,14 @@
         return '<thead><tr>' + (opts.isRTL ? arr.reverse() : arr).join('') + '</tr></thead>';
     },
 
-    renderFooter = function()
+    renderFooter = function(opts)
     {
-
-        var html = '<span class="pika-clear">Clear</span><span class="pika-choose">Select</span>'
-        return '<div class="pika-footer">' + html + '</div>'
+        if (opts.bound === true) {
+            var html = '<span class="pika-clear">Clear</span><span class="pika-choose">Select</span>'
+            return '<div class="pika-footer">' + html + '</div>'
+        } else {
+            return '';
+        }
     },
 
     renderTitle = function(instance, c, year, month, refYear, randId)
@@ -4608,9 +4633,18 @@
         return html += '</div>';
     },
 
+    isSelectable = function(opts)
+    {
+        if (opts.selectable) {
+            return " pika-selectable";
+        } else {
+            return "";
+        }
+    },
+
     renderTable = function(opts, data, randId)
     {
-        return '<table cellpadding="0" cellspacing="0" class="pika-table" role="grid" aria-labelledby="' + randId + '">' + renderHead(opts) + renderBody(data) + '</table>';
+        return '<table cellpadding="0" cellspacing="0" class="pika-table' + isSelectable(opts) + '" role="grid" aria-labelledby="' + randId + '">' + renderHead(opts) + renderBody(data) + '</table>';
     },
 
 
@@ -4971,42 +5005,44 @@
          */
         setDate: function(date, preventOnSelect)
         {
-            if (!date) {
-                this._d = null;
+            if (this._o.selectable) {
+                if (!date) {
+                    this._d = null;
 
-                if (this._o.field) {
-                    this._o.field.value = '';
-                    fireEvent(this._o.field, 'change', { firedBy: this });
+                    if (this._o.field) {
+                        this._o.field.value = '';
+                        fireEvent(this._o.field, 'change', { firedBy: this });
+                    }
+
+                    return this.draw();
+                }
+                if (typeof date === 'string') {
+                    date = new Date(Date.parse(date));
+                }
+                if (!isDate(date)) {
+                    return;
                 }
 
-                return this.draw();
-            }
-            if (typeof date === 'string') {
-                date = new Date(Date.parse(date));
-            }
-            if (!isDate(date)) {
-                return;
-            }
+                var min = this._o.minDate,
+                    max = this._o.maxDate;
 
-            var min = this._o.minDate,
-                max = this._o.maxDate;
+                if (isDate(min) && date < min) {
+                    date = min;
+                } else if (isDate(max) && date > max) {
+                    date = max;
+                }
 
-            if (isDate(min) && date < min) {
-                date = min;
-            } else if (isDate(max) && date > max) {
-                date = max;
-            }
+                this._d = new Date(date.getTime());
+                setToStartOfDay(this._d);
+                this.gotoDate(this._d);
 
-            this._d = new Date(date.getTime());
-            setToStartOfDay(this._d);
-            this.gotoDate(this._d);
-
-            if (this._o.field) {
-                this._o.field.value = this.toString();
-                fireEvent(this._o.field, 'change', { firedBy: this });
-            }
-            if (!preventOnSelect && typeof this._o.onSelect === 'function') {
-                this._o.onSelect.call(this, this.getDate());
+                if (this._o.field) {
+                    this._o.field.value = this.toString();
+                    fireEvent(this._o.field, 'change', { firedBy: this });
+                }
+                if (!preventOnSelect && typeof this._o.onSelect === 'function') {
+                    this._o.onSelect.call(this, this.getDate());
+                }
             }
         },
 
@@ -5162,12 +5198,30 @@
         {
             this._o.startRange = value;
         },
-
         setEndRange: function(value)
         {
             this._o.endRange = value;
         },
-
+        setThirdRange: function(value)
+        {
+            this._o.thirdRange = value;
+        },
+        setChargeDates: function(value)
+        {
+            this._o.chargeDates = value;
+        },
+        setDayOfMonthDates: function(value)
+        {
+            this._o.dayOfMonthDates = value;
+        },
+        setCutOffDates: function(value)
+        {
+            this._o.cutOffDates = value;
+        },
+        highlightDates: function(value)
+        {
+            this._o.highlightDates = value;
+        },
         /**
          * refresh the HTML
          */
@@ -5200,7 +5254,7 @@
             randId = 'pika-title-' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2);
 
             for (var c = 0; c < opts.numberOfMonths; c++) {
-                html += '<div class="pika-lendar">' + renderTitle(this, c, this.calendars[c].year, this.calendars[c].month, this.calendars[0].year, randId) + this.render(this.calendars[c].year, this.calendars[c].month, randId) + renderFooter() + '</div>';
+                html += '<div class="pika-lendar">' + renderTitle(this, c, this.calendars[c].year, this.calendars[c].month, this.calendars[0].year, randId) + this.render(this.calendars[c].year, this.calendars[c].month, randId) + renderFooter(opts) + '</div>';
             }
 
             this.el.innerHTML = html;
@@ -5309,13 +5363,36 @@
                     dayNumber = 1 + (i - before),
                     monthNumber = month,
                     yearNumber = year,
+
                     isStartRange = opts.startRange && compareDates(opts.startRange, day),
                     isEndRange = opts.endRange && compareDates(opts.endRange, day),
-                    isInRange = opts.startRange && opts.endRange && opts.startRange < day && day < opts.endRange,
+                    isThirdRange = opts.thirdRange && compareDates(opts.thirdRange, day),
+                    isInRange = opts.startRange && (opts.endRange || opts.thirdRange) && opts.startRange < day && day < (opts.endRange || opts.thirdRange),
+
+                    isHighlighted = false,
+                    hasLabel = [],
+
                     isDisabled = (opts.minDate && day < opts.minDate) ||
                                  (opts.maxDate && day > opts.maxDate) ||
                                  (opts.disableWeekends && isWeekend(day)) ||
                                  (opts.disableDayFn && opts.disableDayFn(day));
+
+                if (opts.highlightDates && Object.keys(opts.highlightDates).length) {
+                    // Check for the highlight dat eobject and iterate over each labelgroup
+                    Object.keys(opts.highlightDates).forEach(function(key) {
+                        var label = key,
+                            dateList = opts.highlightDates[label];
+                        // For each group, store key as a label and compare the date (converted with Moment) to current day
+                        dateList.forEach(function(date) {
+                            var convertedDate = moment(date).toDate();
+                            if (compareDates(convertedDate, day)) {
+                                // Push label, for support of multiple labels per day
+                                isHighlighted = true;
+                                hasLabel.push(label);
+                            }
+                        });
+                    });
+                }
 
                 if (isEmpty) {
                     if (i < before) {
@@ -5337,9 +5414,15 @@
                         isToday: isToday,
                         isDisabled: isDisabled,
                         isEmpty: isEmpty,
+
                         isStartRange: isStartRange,
                         isEndRange: isEndRange,
+                        isThirdRange: isThirdRange,
                         isInRange: isInRange,
+
+                        hasLabel: hasLabel,
+                        isHighlighted: isHighlighted,
+
                         showDaysInNextAndPreviousMonths: opts.showDaysInNextAndPreviousMonths
                     };
 

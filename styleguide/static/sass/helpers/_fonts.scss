@@ -52,30 +52,51 @@
 	font-style: normal;
 }
 
-.font--regular,
-.font--400 {
+.rc_font--regular,
+.rc_font--400 {
 	font-family: 'ralewayregular';
 	font-weight: normal;
 	font-style: normal;
 }
 
-.font--medium,
-.font--500 {
+.rc_font--medium,
+.rc_font--500 {
 	font-family: 'ralewaymedium';
 	font-weight: normal;
 	font-style: normal;
 }
 
-.font--semibold,
-.font--600 {
+.rc_font--semibold,
+.rc_font--600 {
 	font-family: 'ralewaysemibold';
 	font-weight: normal;
 	font-style: normal;
 }
 
-.font--bold,
-.font--700 {
+.rc_font--bold,
+.rc_font--700 {
 	font-family: 'ralewaybold';
 	font-weight: normal;
 	font-style: normal;
+}
+
+.rc_text--info {
+	color: #676767;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.rc_text--large {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.rc_text--base {
+	font-size: 16px;
+    line-height: 25px;
+}
+
+.rc_text--small {
+	font-size: 14px;
+	line-height: 21px;
 }

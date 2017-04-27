@@ -15,6 +15,11 @@ def index():
     template_file = "index.html"
     return render_template(template_file)
 
+@app.route('/map')
+def map():
+    template_file = "map.html"
+    return render_template(template_file)
+
 # Buttons
 @app.route('/buttons')
 def buttons():
@@ -88,7 +93,7 @@ def headers():
     template_file = "headers.html"
     return render_template(template_file)
 
-# Dynamics
+# Dynamic
 @app.route('/dropdowns')
 def dropdowns():
     template_file = "dropdowns.html"
@@ -114,12 +119,22 @@ def switches():
     template_file = "switches.html"
     return render_template(template_file)
 
+@app.route('/banners')
+def banners():
+    template_file = "banners.html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
 @app.route('/grids')
 def grid_systems():
     template_file = "grid-systems.html"
+    return render_template(template_file)
+
+@app.route('/tabs')
+def tabs():
+    template_file = "tabs.html"
     return render_template(template_file)
 
 # Navigation
@@ -154,10 +169,10 @@ def tables():
     template_file = "tables.html"
     return render_template(template_file)
 
-# Dynamic
-@app.route('/banners')
-def banners():
-    template_file = "banners.html"
+# Components
+@app.route('/cards')
+def cards():
+    template_file = "cards.html"
     return render_template(template_file)
 
 # Utilities
@@ -168,8 +183,10 @@ def admin_class():
 
 @app.route('/generate-assets')
 def generate_assets():
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'fontawesome.scss')
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'main.scss')
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'admin.scss')
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'styleguide.scss')
     compile_js()
     rename_css()
     template_file = "generate-assets.html"
@@ -185,6 +202,16 @@ def rename_css():
         with open("styleguide/static/export/admin.css", "wt") as fout:
             for line in fin:
                 fout.write(line.replace('/*# sourceMappingURL=../css/admin.scss.css.map */', ''))
+
+    with open("styleguide/static/sass/styleguide/static/sass/fontawesome.scss.css", "rt") as fin:
+        with open("styleguide/static/export/fontawesome.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/fontawesome.scss.css.map */', ''))
+
+    with open("styleguide/static/sass/styleguide/static/sass/styleguide.scss.css", "rt") as fin:
+        with open("styleguide/static/export/styleguide.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/styleguide.scss.css.map */', ''))
 
     shutil.rmtree("styleguide/static/sass/styleguide")
 app.jinja_env.globals.update(rename_css = rename_css)
@@ -202,7 +229,6 @@ def compile_js():
         "styleguide/static/js/notifications.js",
         "styleguide/static/js/selects.js",
     ]
-
     final_script = ''
     for script_name in toLoad:
         with open(script_name, 'r') as f:
@@ -215,7 +241,6 @@ def compile_js():
     toLoad = [
         "styleguide/static/js/colorpicker.js",
     ]
-
     final_script = ''
     for script_name in toLoad:
         with open(script_name, 'r') as f:
@@ -229,7 +254,6 @@ def compile_js():
         "styleguide/static/js/moment.js",
         "styleguide/static/js/pikaday.js",
     ]
-
     final_script = ''
     for script_name in toLoad:
         with open(script_name, 'r') as f:

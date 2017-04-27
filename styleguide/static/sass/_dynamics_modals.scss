@@ -67,11 +67,11 @@ $zindex-modal-close: 100090;
 .rc_modal {
 	position: relative;
     width: 700px;
-    margin: 4% auto;
+    margin: 190px auto 30px;
 
 	@media (max-width: $mobile-nav-max) {
 		width: auto;
-		margin: 10px;
+		margin: 110px 10px 10px;
 	}
 }
 

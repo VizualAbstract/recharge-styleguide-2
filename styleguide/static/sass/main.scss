@@ -34,11 +34,14 @@
 
 @import '_layout_grid-system.scss';
 @import '_layout_tables.scss';
+@import '_layout_tabs.scss';
 
 @import '_navigation_sidebar.scss';
 @import '_navigation_navbars.scss';
 @import '_navigation_breadcrumbs.scss';
 @import '_navigation_progress.scss';
 @import '_navigation_continue.scss';
+
+@import '_components_cards.scss';
 
 @import '_utilities.scss';

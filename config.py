@@ -1,4 +1,5 @@
 # config.py
 
 # Enable Flask's debugging features. Should be False in production
-DEBUG = True
+debug = True
+TEMPLATES_AUTO_RELOAD = True

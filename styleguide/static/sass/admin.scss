@@ -21,6 +21,19 @@
 	}
 }
 
+a.admin-recharge {
+	color: $admin-color;;
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($admin-color, 15%);
+	}
+}
+
+img.admin-recharge {
+	box-shadow: 0px 0px 0px 1px $admin-color;
+}
+
 .hidden--mobile.admin-recharge {
 	text-transform: initial !important;
 }
@@ -332,4 +345,39 @@
 			}
 		}
 	}
+}
+
+
+.admin-recharge__container {
+    background-color: #54bad3;
+    padding: 25px;
+    > .admin-recharge {
+    	color: #FFF;
+    }
+    .admin-recharge {
+    	.form__label {
+		    color: #FFF;
+		}
+		.form__input,
+		.form__number,
+		.form__date,
+		.form__color,
+		.form__checkbox + .form__label:before,
+		.form__radio + .form__label:before {
+		    border-color: #FFF;
+		}
+		.form__checkbox + .form__label:before,
+		.form__radio + .form__label:before {
+		    background-color: #54bad3;
+		}
+		.button {
+			&.button--link {
+				color: #FFF;
+				&:hover,
+				&:active {
+					color: darken(#FFF, 5%);
+				}
+			}
+		}
+    }
 }

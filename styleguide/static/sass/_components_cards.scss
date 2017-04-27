@@ -1,0 +1,103 @@
+/* Card grid */
+.rc_card__container {
+	display: flex;
+	flex-wrap: wrap;
+
+	.rc_card {
+		float: left;
+		overflow: hidden;
+	}
+}
+
+/* Card sizing */
+.rc_card {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 23px;
+	vertical-align: top;
+
+	@media screen and (max-width: $screen-xs-max) {
+		width: 100%;
+
+		&:nth-child(4n + 4) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		width: 48%;
+		margin-right: 4%;
+		// height: 350px;
+
+		&:nth-child(2n + 2) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+		width: 31%;
+		margin-right: 3.5%;
+		// height: 375px;
+
+		&:nth-child(3n + 3) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: $screen-lg-min) {
+		width: 220px;
+		margin-right: 22px;
+
+		// &:nth-child(4n + 4) {
+		// 	margin-right: 0;
+		// }
+	}
+}
+
+/* Card media image */
+.rc_card {
+	&__media {
+		background-color: #FFF;
+		position: relative;
+		padding: 24px 24px 20px;
+		text-align: center;
+
+		&__image {
+			display: block;
+			margin: 0 auto 15px;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 0%;
+			display: block;
+			background-image: url('../images/card-arrow.png');
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: 38px 17px;
+			width: 38px;
+			height: 17px;
+		}
+	}
+}
+
+.rc_card {
+	background-color: #F8F8F8;
+	padding: 10px;
+	&__title {
+
+	}
+
+	&__body {
+		font-size: 14px;
+		line-height: 25px;
+		margin-top: 24px;
+		height: 100%;
+	}
+
+	&__footer {
+		margin-top: 15px;
+	}
+}

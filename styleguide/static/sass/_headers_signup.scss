@@ -1,6 +1,6 @@
 .header-signup {
 	text-align: center;
-	margin: 0 auto;
+    margin: 20px auto 40px;
 
 	h1,
 	.rc_h1 {
@@ -10,9 +10,12 @@
 	}
 
 	&__title {
-		color: $cyan;
+		color: #2C93AC;
 		line-height: 1;
-		margin-bottom: 20px;
+
+		+ &__description {
+			margin-top: 20px;
+		}
 	}
 
 	&__description {

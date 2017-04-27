@@ -9,8 +9,12 @@
 }
 // Standard colorizer for buttons
 @mixin button-color($color) {
-	background-color: $color;
-	color: text-color($color);
+	&,
+	&:link,
+	&:visited {
+		background-color: $color;
+		color: text-color($color);
+	}
 	&.active,
 	&:active {
 		background-color: darken($color, 10%);
@@ -99,6 +103,11 @@
 	padding-right: 0;
 	min-width: auto;
 }
+
+.button--underline {
+	text-decoration: underline;
+}
+
 // Button styles: Inline
 .button--inline {
 	display: inline;

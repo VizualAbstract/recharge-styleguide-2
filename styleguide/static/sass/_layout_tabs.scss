@@ -1,0 +1,43 @@
+$tab-height: 40px;
+$tab-padding: 20px;
+
+.rc_tabs {
+	&__header {
+		background-color: #FFF;
+		> a {
+			padding: 0 $tab-padding;
+			min-height: $tab-height;
+			line-height: $tab-height;
+			display: inline-block;
+		}
+		&__item {
+			font-family: "ralewayregular", arial, san-serif;
+			font-size: 16px;
+			color: #424242;
+			&:link,
+			&:visited {
+				color: #424242;
+			}
+			&:hover,
+			&:focus {
+				color: #000;
+			}
+			&.rc_active {
+				background-color: #EEE;
+			}
+		}
+	}
+
+	&__body {
+		background-color: #EEE;
+		padding: $tab-padding;
+	}
+}
+
+.rc_tabs {
+	&--cards {
+		.rc_tabs__body {
+
+		}
+	}
+}

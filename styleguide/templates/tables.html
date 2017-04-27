@@ -77,4 +77,178 @@
 	</table>
 </div>
 </div>
+<h2>Advanced tables (toggle)</h2>
+<h3>Discounts</h3>
+<p>This table is using an attribute to optimize the width of the first td element: <code>table-responsive="true"</code></p>
+<div class="rc_example">
+	<div class="rc_table__container">
+		<table class="rc_table rc_table--toggle" table-responsive="true">
+			<thead>
+				<tr>
+					<th>Details</th>
+					<th>Used</th>
+					<th>Start</th>
+					<th>End</th>
+					<th></th>
+					<th>
+						<div class="dropdown dropdown--right dropdown--settings">
+						    <h3 class="dropdown__trigger" data-toggle="dropdown__menu">
+						        <span class="fa fa-gear"></span>
+						    </h3>
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<label class="rc_text--base">KLEW_TEST_STRAWBERRY_FREE</label>
+						<p class="rc_text--info">
+							$20.0 off all orders and all products<br>
+							Applies to first charge only
+						</p>
+					</td>
+					<td>1</td>
+					<td>Apr 10, 2017</td>
+					<td>Never</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" checked class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+				</tr>
+				<tr>
+					<td>
+						<label class="rc_text--base">KLEW_TEST_STRAWBERRY_SUBSCRIPTION_ONLY</label>
+						<p class="rc_text--info">
+							$1.0 off one time orders and <a href="#">selected product</a><br>
+							Applies to first charge only
+						</p>
+					</td>
+					<td>n/a</td>
+					<td>Mar 09, 2017</td>
+					<td>Never</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" checked class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+				</tr>
+				<tr class="rc_disabled">
+					<td>
+						<label class="rc_text--base">20% OFF NEXT MONTH'S ORDER</label>
+						<p class="rc_text--info">
+							15.0% off all orders and selected <a href="#">collection</a><br>
+							Applies to first charge only
+						</p>
+					</td>
+					<td>n/a</td>
+					<td>Feb 15, 2017</td>
+					<td>Feb 28, 2017</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+					<td><a href="#"><span class="fa fa-trash"></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<h3>Notifications</h3>
+<p>This table is using an attribute to remove the border between table rows: <code>table-borderless="true"</code></p>
+<div class="rc_example">
+	<div class="rc_table__container">
+		<table class="rc_table rc_table--toggle" table-borderless="true">
+			<tbody>
+				<tr class="rc_disabled">
+					<td>
+						<label class="rc_font--semibold">
+							<a href="#">Recurring Charge Confirmation</a>
+						</label>
+						<div class="rc_text--info">
+							<p>Sent to customers when their recurring payment is processed</p>
+						</div>
+					</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="rc_font--semibold">
+							<a href="#">Upcoming Charge</a>
+						</label>
+						<div class="rc_text--info">
+							<p>Sent to customers 3 days before their card is charged for renewal</p>
+						</div>
+					</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" checked class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="rc_font--semibold">
+							<a href="#">Out of Stock</a>
+						</label>
+						<div class="rc_text--info">
+							<p>Sent to customers when purchase runs out of stock</p>
+						</div>
+					</td>
+					<td>
+						<label class="rc_switch rc_switch--small rc_switch--fade">
+							<div class="rc_switch__inner">
+								<input type="checkbox" checked class="rc_switch__input">
+								<span class="rc_switch__button"></span>
+								<span class="rc_switch__off"></span>
+								<span class="rc_switch__on"></span>
+							</div>
+						</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script>
+	$(document).on('change', '.rc_switch__input', function(evt) {
+		var jElem = $(evt.target),
+			tr = jElem.parents('tr');
+			tr.toggleClass('rc_disabled');
+	});
+</script>
 {% endblock %}
