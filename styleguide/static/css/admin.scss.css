@@ -12,13 +12,12 @@
   color: #2c94ad;
 }
 
-.admin-recharge img {
-  box-shadow: 0px 0px 0px 1px #53BAD3;
+.admin-recharge a.button:link, .admin-recharge a.button:hover, .admin-recharge a.button:focus, .admin-recharge a.button:active {
+  color: #FFF;
 }
 
 .admin-recharge input[type="submit"],
 .admin-recharge button {
-  background-color: #53BAD3;
   color: #FFF;
 }
 
@@ -39,24 +38,21 @@ img.admin-recharge {
 }
 
 /* Form elements */
-.admin-recharge.button,
 .admin-recharge .button {
+  color: #FFF;
+}
+
+.admin-recharge.button {
   color: #FFF;
   background-color: #53BAD3;
 }
 
-.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active,
-.admin-recharge .button:hover,
-.admin-recharge .button:active,
-.admin-recharge .button.active,
-.admin-recharge .button.rc_active {
+.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active {
+  color: #FFF;
   background-color: #2c94ad;
 }
 
-.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled,
-.admin-recharge .button.button--disabled,
-.admin-recharge .button.rc_disabled,
-.admin-recharge .button:disabled {
+.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled {
   background-color: #cdebf2 !important;
 }
 
@@ -306,8 +302,8 @@ img.admin-recharge {
 .admin-recharge .navbar__nav > li > a,
 .admin-recharge .navbar__nav > li > span, .admin-recharge.navbar__nav > li > a,
 .admin-recharge.navbar__nav > li > span {
-  background-color: #53BAD3;
   color: #FFF;
+  background-color: #53BAD3;
 }
 
 .admin-recharge .navbar__nav > li > a:hover, .admin-recharge .navbar__nav > li > a:active, .admin-recharge .navbar__nav > li > a.rc_active, .admin-recharge .navbar__nav > li > a.active,
@@ -320,6 +316,11 @@ img.admin-recharge {
 .admin-recharge.navbar__nav > li > span.rc_active,
 .admin-recharge.navbar__nav > li > span.active {
   background-color: #2d97b1;
+}
+
+.navbar__nav > li > a.active.admin-recharge,
+.navbar__nav > li > span.active.admin-recharge {
+  color: #FFF;
 }
 
 .admin-recharge .admin-recharge {

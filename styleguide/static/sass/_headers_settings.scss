@@ -9,6 +9,10 @@
 
     margin-bottom: 36px;
 
+    &:only-child {
+    	margin-bottom: 0;
+    }
+
 	&__title {
 		order: 1;
 		flex-grow: 1;

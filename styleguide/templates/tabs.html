@@ -20,4 +20,908 @@
 		</div>
 	</div>
 </div>
+<hr>
+<div class="rc_example">
+<ul class="accordion" id="integrations">
+
+                        <li class="accordion__header">
+                            <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__google_analytics" data-parent="#integrations">
+                                
+                                    
+                                
+                                <img src="http://shopifysubscriptions.com/static/images/integrations/google_analytics__off.png" alt="Google Analytics logo" class="integration__logo">
+                            </div><!-- .accordion__media -->
+                            <div class="accordion__description">
+                                <h5 data-toggle="collapse__menu" data-target="#accordion__google_analytics" data-parent="#integrations">
+                                    Google Analytics
+                                    <small class="integration__status pull--right">
+                                        
+                                    </small>
+                                </h5>
+                                <p class="rc_text--description">
+                                    Get the data you need for marketing and business decisions.
+                                    
+                                        <a href="/settings/integrations/google-analytics" class="admin-recharge">view page</a>
+                                    
+                                </p>
+                            </div><!-- .accordion__description -->
+                        </li><!-- .accordion__header -->
+                        <li class="accordion__details collapse" id="accordion__google_analytics">
+                            
+                                
+
+
+
+	<span class="new">
+        
+		<form id="integrations__google_analytics">
+			<div class="form__group">
+				<label for="google_analytics_id" class="form__label">Google Analytics ID</label>
+				<input type="text" id="google_analytics_id" name="google_analytics_id" value="" class="form__input" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label for="google_analytics_type" class="form__label">Google Analytics type</label>
+				<select type="text" id="google_analytics_type" name="google_analytics_type" class="form__select">
+					<option value="UNIVERSAL">Universal</option>
+					<option value="LEGACY">Legacy</option>
+				</select>
+			</div><!-- .form__group -->
+			
+				<button class="button button--primary google_analytics__activate">Activate</button>
+			
+			<a href="http://support.rechargepayments.com/article/94-google-analytics" target="_blank" class="button button--link button--primary">Help</a>
+			
+		</form><!-- #integrations__google_analytics -->
+        
+	</span><!-- .new -->
+	<script>
+		if (typeof(show_errors) == "undefined") {
+			function show_errors(response) {
+				var errors = JSON.parse(response);
+				for (i = 0; i < errors.length; i++) {
+					if (errors[i] == "existing_discount") {
+						showErrorNotification("Change reward description. Discount code already used.");
+						return;
+					}
+				}
+			}
+		}
+		if (typeof(save_integration_data) == "undefined") {
+			function save_integration_data(data, reload) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function(response) {
+						if (response != "Success" && typeof(JSON.parse(response)) == "object") {
+							show_errors(response);
+						} else {
+							if (reload == true) {
+								showNotificationAfterReload("Integration activated");
+								window.location.reload();
+							} else {
+								// Just save the integration settings
+								showNotification("Settings updated");
+							}
+						}
+					},
+					error: function() {
+						showErrorNotification("Could not save integration information. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		if (typeof(disable_integration) == "undefined") {
+			function disable_integration(integration) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				var data = {
+					store_id: 112,
+					add_on: integration,
+					status: "deactivate",
+				};
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function() {
+                        showNotificationAfterReload("Integration disabled.");
+                        window.location.reload();
+					},
+					error: function() {
+						showErrorNotification("Could not disable integration. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		function validate_google_analytics() {
+			var form = $('#integrations__google_analytics');
+			var google_analytics_id = $('#google_analytics_id').val();
+			var google_analytics_type = $('#google_analytics_type').val();
+			if (google_analytics_id == "" || google_analytics_type == "") {
+				showErrorNotification("Not valid account information");
+				return false;
+			}
+			var data = {
+				store_id: 112,
+				add_on: "google_analytics",
+				status: "save",
+				google_analytics_id: google_analytics_id,
+				google_analytics_type: google_analytics_type,
+			};
+			return data;
+		}
+		$(function() {
+			$(document).on("click", ".google_analytics__activate", function(e) {
+				e.preventDefault();
+				var data = validate_google_analytics();
+				if (data) {
+					save_integration_data(data, reload = true);
+				}
+			});
+			$(document).on("click", ".google_analytics__save", function(e) {
+				e.preventDefault();
+				var data = validate_google_analytics();
+				if (data) {
+					save_integration_data(data, reload = false);
+				}
+			});
+			$(document).on("click", ".google_analytics__disable", function(e) {
+				e.preventDefault();
+				disable_integration('google_analytics');
+			});
+		});
+	</script>
+
+                            
+                        </li><!-- .accordion__details -->
+
+                        <li class="accordion__header">
+                            <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__carthook" data-parent="#integrations">
+                                
+                                    
+                                
+                                <img src="http://shopifysubscriptions.com/static/images/integrations/carthook__on.png" alt="Carthook logo" class="integration__logo">
+                            </div><!-- .accordion__media -->
+                            <div class="accordion__description">
+                                <h5 data-toggle="collapse__menu" data-target="#accordion__carthook" data-parent="#integrations">
+                                    CartHook
+                                    <small class="integration__status pull--right">
+                                        
+                                            Active
+                                        
+                                    </small>
+                                </h5>
+                                <p class="rc_text--description">
+                                    Cart recovery to track abandoned customers.
+                                    
+                                        <a href="/settings/integrations/carthook" class="admin-recharge">view page</a>
+                                    
+                                </p>
+                            </div><!-- .accordion__description -->
+                        </li><!-- .accordion__header -->
+                        <li class="accordion__details collapse" id="accordion__carthook">
+                            
+                                
+
+
+
+    <span class="new">
+        
+        <form id="integrations__carthook">
+            <div class="form__group">
+                <label for="carthook_merchant_id" class="form__label">CartHook merchant id</label>
+                <input type="text" id="carthook_merchant_id" name="carthook_merchant_id" value="1234" class="form__input" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+            </div><!-- .form__group -->
+            
+                <button class="button button--primary carthook__save">Save</button>
+            
+            
+                <a href="/partners/app/2c40b144a0e7d58945b545b05231350a86dac0546269b4d722f43e3e/install" class="button button--primary admin-recharge">OAuth Install</a>
+            
+            <a href="http://recharge.helpscoutdocs.com/article/118-carthook" target="_blank" class="button button--link button--primary">Help</a>
+            
+                <button class="button button--link button--primary carthook__disable pull-right">Deactivate</button>
+            
+        </form><!-- #integrations__carthook -->
+        
+    </span><!-- .new -->
+    <script>
+        if (typeof(show_errors) == "undefined") {
+            function show_errors(response) {
+                var errors = JSON.parse(response);
+                for (i = 0; i < errors.length; i++) {
+                    if (errors[i] == "existing_discount") {
+                        showErrorNotification("Change reward description. Discount code already used.");
+                        return;
+                    }
+                }
+            }
+        }
+        if (typeof(save_integration_data) == "undefined") {
+            function save_integration_data(data, reload) {
+                if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+                $.ajax({
+                    type: "POST",
+                    url: "/settings/integrations/update",
+                    data: data,
+                    success: function(response) {
+                        if (response != "Success" && typeof(JSON.parse(response)) == "object") {
+                            show_errors(response);
+                        } else {
+                            if (reload == true) {
+                                showNotificationAfterReload("Integration activated");
+                                window.location.reload();
+                            } else {
+                                // Just save the integration settings
+                                showNotification("Settings updated");
+                            }
+                        }
+                    },
+                    error: function() {
+                        showErrorNotification("Could not save integration information. Contact support@rechargepayments.com");
+                    },
+                    complete: function() {
+                        window.lock = "open";
+                    }
+                });
+            }
+        }
+        if (typeof(disable_integration) == "undefined") {
+            function disable_integration(integration) {
+                if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+                var data = {
+                    store_id: 112,
+                    add_on: integration,
+                    status: "deactivate",
+                };
+                $.ajax({
+                    type: "POST",
+                    url: "/settings/integrations/update",
+                    data: data,
+                    success: function() {
+                        showNotificationAfterReload("Integration disabled.");
+                        window.location.reload();
+                    },
+                    error: function() {
+                        showErrorNotification("Could not disable integration. Contact support@rechargepayments.com");
+                    },
+                    complete: function() {
+                        window.lock = "open";
+                    }
+                });
+            }
+        }
+        function validate_carthook() {
+            var form = $('#integrations__google_analytics');
+            var carthook_merchant_id = $('#carthook_merchant_id').val();
+            if (carthook_merchant_id == "") {
+                showErrorNotification("Not valid account information");
+                return false;
+            }
+            var data = {
+                store_id: 112,
+                add_on: "cart_hook",
+                status: "save",
+                carthook_merchant_id: carthook_merchant_id
+            };
+            return data;
+        }
+        $(function() {
+            $(document).on("click", ".carthook__activate", function(e) {
+                e.preventDefault();
+                var data = validate_carthook();
+                if (data) {
+                    save_integration_data(data, reload = true);
+                }
+            });
+            $(document).on("click", ".carthook__save", function(e) {
+                e.preventDefault();
+                var data = validate_carthook();
+                if (data) {
+                    save_integration_data(data, reload = false);
+                }
+            });
+            $(document).on("click", ".carthook__disable", function(e) {
+                e.preventDefault();
+                disable_integration('cart_hook');
+            });
+        });
+    </script>
+
+                            
+                        </li><!-- .accordion__details -->
+
+                        <li class="accordion__header">
+                            <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__referralcandy" data-parent="#integrations">
+                                
+                                    
+                                
+                                <img src="http://shopifysubscriptions.com/static/images/integrations/referralcandy__on.png" alt="ReferralCandy logo" class="integration__logo">
+                            </div><!-- .accordion__media -->
+                            <div class="accordion__description">
+                                <h5 data-toggle="collapse__menu" data-target="#accordion__referralcandy" data-parent="#integrations">
+                                    ReferralCandy
+                                    <small class="pull--right">
+                                        
+                                            Active
+                                        
+                                    </small>
+                                </h5>
+                                <p class="rc_text--description">
+                                    Customers can refer a friend to your store.
+                                    
+                                        <a href="/settings/integrations/referralcandy" class="admin-recharge">view page</a>
+                                    
+                                </p>
+                            </div><!-- .accordion__description -->
+                        </li><!-- .accordion__header -->
+                        <li class="accordion__details collapse" id="accordion__referralcandy">
+                            
+                                
+
+
+
+	<span class="new">
+        
+		<form id="integrations__referralcandy">
+			
+				<p>
+					<a href="/candy/rewards_diagnostics">View all rewards</a>
+				</p>
+			
+			<div class="form__group">
+				<label for="referral_candy_access_id" class="form__label">ReferralCandy API key</label>
+				<input type="text" id="referral_candy_access_id" name="referral_candy_access_id" value="oykk7wiidb6gnppleh7cyzqtm" class="form__input" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label for="referral_candy_secret_key" class="form__label">ReferralCandy secret key</label>
+				<input type="text" id="referral_candy_secret_key" name="referral_candy_secret_key" value="24cde96629d0d4300ad1bb9e7c4711b1" class="form__input">
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label for="referral_candy_app_id" class="form__label">ReferralCandy app ID</label>
+				<input type="text" id="referral_candy_app_id" name="referral_candy_app_id" value="gsjy66d309nnfsine9182q6kt" class="form__input" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+			</div><!-- .form__group -->
+			<div class="form__group">
+                <input type="checkbox" id="referral_candy_show_post_purchase_popup" name="referral_candy_show_post_purchase_popup" class="form__checkbox">
+				<label for="referral_candy_show_post_purchase_popup" class="form__checkbox__label">Show purchase popup</label>
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label for="referral_candy_discount_code" class="form__label">Reward description</label>
+				<input type="text" id="referral_candy_discount_code" name="referral_candy_discount_code" value="20% off next month's order" class="form__input">
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label for="referral_candy_discount_amount" class="form__label">
+					Discount percentage off next purchase
+					<span class="tooltip-button" data-toggle="rc_tooltip" data-placement="right" title="Only needed if using a custom reward (e.g. not paypal payout)"></span>
+				</label>
+				<input type="number" id="referral_candy_discount_amount" name="referral_candy_discount_amount" value="20.0" min="0" max="100" class="form__number">
+			</div><!-- .form__group -->
+			
+				<button class="button button--primary referralcandy__save">Save</button>
+			
+			<a href="http://recharge.helpscoutdocs.com/article/117-referral-candy-integration" target="_blank" class="button button--link button--primary">Help</a>
+			
+				<button class="button button--link button--primary pull-right referralcandy__disable">Deactivate</button>
+			
+		</form><!-- #integrations__referralcandy -->
+        
+	</span><!-- .new -->
+	<script>
+		$(function() {
+			// Tooltip code
+			$('.tooltip-button').rc_tooltip().on('mouseenter', function() {
+				$(this).addClass('tooltip-button--active');
+			}).on('mouseleave', function() {
+				$(this).removeClass('tooltip-button--active');
+			});
+		});
+	</script>
+	<script>
+		if (typeof(show_errors) == "undefined") {
+			function show_errors(response) {
+				var errors = JSON.parse(response);
+				for (i = 0; i < errors.length; i++) {
+					if (errors[i] == "existing_discount") {
+						showErrorNotification("Change reward description. Discount code already used.");
+						return;
+					}
+				}
+			}
+		}
+		if (typeof(save_integration_data) == "undefined") {
+			function save_integration_data(data, reload) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function(response) {
+						if (response != "Success" && typeof(JSON.parse(response)) == "object") {
+							show_errors(response);
+						} else {
+							if (reload == true) {
+								showNotificationAfterReload("Integration activated");
+								window.location.reload();
+							} else {
+								// Just save the integration settings
+								showNotification("Settings updated");
+							}
+						}
+					},
+					error: function() {
+						showErrorNotification("Could not save integration information. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		if (typeof(disable_integration) == "undefined") {
+			function disable_integration(integration) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				var data = {
+					store_id: 112,
+					add_on: integration,
+					status: "deactivate",
+				};
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function() {
+                        showNotificationAfterReload("Integration disabled.");
+                        window.location.reload();
+					},
+					error: function() {
+						showErrorNotification("Could not disable integration. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		function validate_referralcandy() {
+			var referral_candy_access_id = $('#referral_candy_access_id').val();
+			var referral_candy_secret_key = $('#referral_candy_secret_key').val();
+			var referral_candy_app_id = $('#referral_candy_app_id').val();
+			if (referral_candy_access_id == "" || referral_candy_secret_key == "" || referral_candy_app_id == "") {
+				showErrorNotification("Please fill out all fields for Referral Candy.");
+				return false;
+			}
+			var referral_candy_show_post_purchase_popup = $('#referral_candy_show_post_purchase_popup:checked');
+			if (referral_candy_show_post_purchase_popup.length > 0) {
+				referral_candy_show_post_purchase_popup = 1;
+			} else {
+				referral_candy_show_post_purchase_popup = 0;
+			}
+			var referral_candy_discount_code = $('#referral_candy_discount_code').val();
+			if (referral_candy_discount_code == "") {
+				showErrorNotification("Please provide a reward description for Refferal Candy.");
+				return false;
+			}
+			var referral_candy_discount_amount = $('#referral_candy_discount_amount').val();
+			if (referral_candy_discount_amount < 0 || referral_candy_discount_amount > 100 || referral_candy_discount_amount == "") {
+				showErrorNotification("Please provide a valid discount amount, between 0-100");
+				return false;
+			}
+	        var data = {
+				store_id: 112,
+				add_on: 'referral_candy',
+				status: 'save',
+				referral_candy_access_id: referral_candy_access_id,
+				referral_candy_secret_key: referral_candy_secret_key,
+				referral_candy_app_id: referral_candy_app_id,
+				referral_candy_show_post_purchase_popup: referral_candy_show_post_purchase_popup,
+				discount_code: referral_candy_discount_code,
+				discount_amount: referral_candy_discount_amount
+		    }	
+			return data;
+		}
+		$(function() {
+			$(document).on("click", ".referralcandy__activate", function(e) {
+				e.preventDefault();
+				var data = validate_referralcandy();
+                if (data) {
+                    save_integration_data(data, reload = true);
+                }
+			});
+			$(document).on("click", ".referralcandy__save", function(e) {
+				e.preventDefault();
+				var data = validate_referralcandy();
+                if (data) {
+                    save_integration_data(data, reload = false);
+                }
+			});
+			$(document).on("click", ".referralcandy__disable", function(e) {
+				e.preventDefault();
+				disable_integration('referral_candy');
+			});
+		});
+	</script>
+
+                            
+                        </li><!-- .accordion__details -->
+
+                        <li class="accordion__header">
+                            <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__refersion" data-parent="#integrations">
+                                
+                                    
+                                
+                                <img src="http://shopifysubscriptions.com/static/images/integrations/refersion__off.png" alt="Refersion logo" class="integration__logo">
+                            </div><!-- .accordion__media -->
+                            <div class="accordion__description">
+                                <h5 data-toggle="collapse__menu" data-target="#accordion__refersion" data-parent="#integrations">
+                                    Refersion
+                                    <small class="integration__status pull--right">
+                                        
+                                    </small>
+                                </h5>
+                                <p class="rc_text--description">
+                                    Easily track sales commission to bloggers, influencers and ambassadors.
+                                    
+                                        <a href="/settings/integrations/refersion" class="admin-recharge">view page</a>
+                                    
+                                </p>
+                            </div><!-- .accordion__description -->
+                        </li><!-- .accordion__header -->
+                        <li class="accordion__details collapse" id="accordion__refersion">
+                            
+                                
+
+
+
+	<span class="new">
+        
+		<form id="integrations__refersion">
+			<div class="form__group">
+				<label>Refersion public key</label>
+				<input type="text" id="refersion_public_key" name="refersion_public_key" value="" class="form__input" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+			</div><!-- .form__group -->
+			<div class="form__group">
+				<label>Refersion secret key</label>
+				<input type="text" id="refersion_secret_key" name="refersion_secret_key" value="" class="form__input">
+			</div><!-- .form__group -->
+			
+				<button class="button button--primary refersion__activate">Activate</button>
+			
+			<a href="http://recharge.helpscoutdocs.com/article/59-refersion-integration" target="_blank" class="button button--link button--primary">Help</a>
+			
+		</form><!-- #integrations__refersion -->
+        
+	</span><!-- .new -->
+	<script>
+		if (typeof(show_errors) == "undefined") {
+			function show_errors(response) {
+				var errors = JSON.parse(response);
+				for (i = 0; i < errors.length; i++) {
+					if (errors[i] == "existing_discount") {
+						showErrorNotification("Change reward description. Discount code already used.");
+						return;
+					}
+				}
+			}
+		}
+		if (typeof(save_integration_data) == "undefined") {
+			function save_integration_data(data, reload) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function(response) {
+						if (response != "Success" && typeof(JSON.parse(response)) == "object") {
+							show_errors(response);
+						} else {
+							if (reload == true) {
+								showNotificationAfterReload("Integration activated");
+								window.location.reload();
+							} else {
+								// Just save the integration settings
+								showNotification("Settings updated");
+							}
+						}
+					},
+					error: function() {
+						showErrorNotification("Could not save integration information. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		if (typeof(disable_integration) == "undefined") {
+			function disable_integration(integration) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				var data = {
+					store_id: 112,
+					add_on: integration,
+					status: "deactivate",
+				};
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function() {
+                        showNotificationAfterReload("Integration disabled.");
+                        window.location.reload();
+					},
+					error: function() {
+						showErrorNotification("Could not disable integration. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		function validate_refersion() {
+			var refersion_public_key = $('#refersion_public_key').val();
+			var refersion_secret_key = $('#refersion_secret_key').val();
+			if (refersion_public_key == "" || refersion_secret_key == "") {
+				showErrorNotification("Not valid account information");
+				return false;
+			}
+	        var data = {
+				store_id: 112,
+				add_on: 'refersion',
+				status: 'save',
+				refersion_public_key: refersion_public_key,
+				refersion_secret_key: refersion_secret_key
+		    }	
+			return data;
+		}
+		$(function() {
+			$(document).on("click", ".refersion__activate", function(e) {
+				e.preventDefault();
+				var data = validate_refersion();
+                if (data) {
+                    save_integration_data(data, reload = true);
+                }
+			});
+			$(document).on("click", ".refersion__save", function(e) {
+				e.preventDefault();
+				var data = validate_refersion();
+                if (data) {
+                    save_integration_data(data, reload = false);
+                }
+			});
+			$(document).on("click", ".refersion__disable", function(e) {
+				e.preventDefault();
+				disable_integration('refersion');
+			});
+		});
+	</script>
+
+                            
+                        </li><!-- .accordion__details -->
+
+                        <li class="accordion__header">
+                            <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__sweet_tooth" data-parent="#integrations">
+                                
+                                    
+                                
+                                <img src="http://shopifysubscriptions.com/static/images/integrations/sweet_tooth__off.png" alt="Sweet Tooth logo" class="integration__logo">
+                            </div><!-- .accordion__media -->
+                            <div class="accordion__description">
+                                <h5 data-toggle="collapse__menu" data-target="#accordion__sweet_tooth" data-parent="#integrations">
+                                    Sweet Tooth
+                                    <span class="beta-tag"></span>
+                                    <small class="integration__status pull--right">
+                                        
+                                    </small>
+                                </h5>
+                                <p class="rc_text--description">
+                                    Boost your revenue and retention with loyalty.
+                                    
+                                        <a href="/settings/integrations/sweet-tooth" class="admin-recharge">view page</a>
+                                    
+                                </p>
+                            </div><!-- .accordion__description -->
+                        </li><!-- .accordion__header -->
+                        <li class="accordion__details collapse" id="accordion__sweet_tooth">
+                            
+                                
+
+
+
+	<span class="new">
+        
+		<form id="integrations__sweet-tooth">
+			<div class="rc_alert rc_alert--warning">
+				<p>Please note that this integration requires a Sweet Tooth Professional plan.</p>
+			</div><!-- .rc_notifications -->
+			<br>
+			<button class="button button--primary sweet-tooth__request">
+				Request
+			</button>
+			<a href="http://support.rechargepayments.com/article/433-sweet-tooth" target="_blank" class="button button--link button--primary">Help</a>
+			
+		</form><!-- #integrations__sweet-tooth -->
+        
+	</span><!-- .new -->
+	<script>
+		if (typeof(show_errors) == "undefined") {
+			function show_errors(response) {
+				var errors = JSON.parse(response);
+				for (i = 0; i < errors.length; i++) {
+					if (errors[i] == "existing_discount") {
+						showErrorNotification("Change reward description. Discount code already used.");
+						return;
+					}
+				}
+			}
+		}
+		if (typeof(save_integration_data) == "undefined") {
+			function save_integration_data(data, reload) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function(response) {
+						if (response != "Success" && typeof(JSON.parse(response)) == "object") {
+							show_errors(response);
+						} else {
+							if (reload == true) {
+								showNotificationAfterReload("Integration activated");
+								window.location.reload();
+							} else {
+								// Just save the integration settings
+								showNotification("Settings updated");
+							}
+						}
+					},
+					error: function() {
+						showErrorNotification("Could not save integration information. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		if (typeof(disable_integration) == "undefined") {
+			function disable_integration(integration) {
+				if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+				var data = {
+					store_id: 112,
+					add_on: integration,
+					status: "deactivate",
+				};
+				$.ajax({
+					type: "POST",
+					url: "/settings/integrations/update",
+					data: data,
+					success: function() {
+                        showNotificationAfterReload("Integration disabled.");
+                        window.location.reload();
+					},
+					error: function() {
+						showErrorNotification("Could not disable integration. Contact support@rechargepayments.com");
+					},
+					complete: function() {
+						window.lock = "open";
+					}
+				});
+			}
+		}
+		function request_sweet_tooth() {
+			console.log('request_sweet_tooth()');
+			if (window.lock == "locked") { showNotification("Still waiting..."); return false; } else { window.lock = "locked"; }
+			$.ajax({
+				type: "GET",
+				url: "/integrations/sweet-tooth/request",
+				success: function(response) {
+					if (response == "success") {
+						showNotification("Thanks! We'll contact you when you're accepted into the beta group.");
+					} else {
+						showErrorNotification(response);
+					}
+				},
+				error: function(response) {
+					showErrorNotification("Could not send request. Contact support@rechargepayments.com");
+				},
+				complete: function() {
+					window.lock = "open";
+					$('.sweet-tooth__request').attr('disabled', true);
+					$('.sweet-tooth__request').text('Request sent');
+				}
+			})
+		}
+		$(function() {
+			$(document).on("click", ".sweet-tooth__request", function(e) {
+				e.preventDefault();
+				request_sweet_tooth();
+			});
+		});
+	</script>
+
+                            
+                        </li><!-- .accordion__details -->
+
+                        
+                            <li class="accordion__header admin-recharge">
+                                <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__one_click_upsell" data-parent="#integrations">
+                                    
+                                        
+                                    
+                                    <img src="http://shopifysubscriptions.com/static/images/integrations/oneclickupsell_off.png" alt="One-Click Upsell logo" class="integration__logo">
+                                </div><!-- .accordion__media -->
+                                <div class="accordion__description">
+                                    <h5 data-toggle="collapse__menu" data-target="#accordion__one_click_upsell" data-parent="#integrations">
+                                        One-Click Upsell
+                                        <span class="beta-tag"></span>
+                                        <small class="integration__status pull--right">
+                                            
+                                        </small>
+                                    </h5>
+                                    <p class="rc_text--description">
+                                        Still in development
+                                        
+                                            <a href="/settings/integrations/one-click-upsell" class="admin-recharge">view page</a>
+                                        
+                                    </p>
+                                </div><!-- .accordion__description -->
+                            </li><!-- .accordion__header -->
+                            <li class="accordion__details collapse" id="accordion__one_click_upsell">
+                                
+                                    
+
+
+
+	<span class="new">
+        
+		<form id="integrations__one_click_upsell">
+			<!-- Begin integration code here -->
+			<div class="form__group">
+                <a href="/partners/app/5d2a4f806794f26bf78f0695365a44755612f43461752eed3de313cd/install" class="button button--primary">Install</a>
+			</div>
+		</form><!-- #integrations__zipify -->
+        
+	</span><!-- .new -->
+
+                                
+                            </li><!-- .accordion__details -->
+                        
+
+                        
+                            <li class="accordion__header admin-recharge">
+                                <div class="accordion__media" data-toggle="collapse__menu" data-target="#accordion__beta-app" data-parent="#integrations">
+                                    
+                                        
+                                    
+                                    <img src="http://shopifysubscriptions.com/static/images/integrations/beta-app__off.png" alt="Beta App logo">
+                                </div><!-- .accordion__media -->
+                                <div class="accordion__description">
+                                    <h5 data-toggle="collapse__menu" data-target="#accordion__beta-app" data-parent="#integrations">
+                                        Oren's Beta App
+                                        <small class="integration__status pull--right">
+                                            
+                                        </small>
+                                    </h5>
+                                    <p class="rc_text--description">
+                                        Test app installations
+                                    </p>
+                                </div><!-- .__item__content -->
+                            </li><!-- .accordion__header -->
+                            <li class="accordion__details collapse" id="accordion__beta-app">
+                                <p><a href="/partners/app/6c15ad4ac7fd68f656cb53b5320378ea64d488437c9764840b3fd650/install" class="button button--primary">Install</a></p>
+                            </li><!-- .accordion__details -->
+                        
+
+                        
+
+                    </ul>
+
+</div>
 {% endblock %}

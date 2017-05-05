@@ -4,19 +4,23 @@
 .admin-recharge {
 	color: $admin-color;
 	a {
-		color: $admin-color;;
+		color: $admin-color;
 		&:hover,
 		&:focus,
 		&:active {
 			color: darken($admin-color, 15%);
 		}
-	}
-	img {
-		box-shadow: 0px 0px 0px 1px $admin-color;
+		&.button {
+			&:link,
+			&:hover,
+			&:focus,
+			&:active {
+				color: #FFF;
+			}
+		}
 	}
 	input[type="submit"],
 	button {
-		background-color: $admin-color;
 		color: #FFF;
 	}
 }
@@ -40,14 +44,17 @@ img.admin-recharge {
 
 /* Form elements */
 .admin-recharge {
-	&.button,
 	.button {
+		color: #FFF;
+	}
+	&.button {
 		color: #FFF;
 		background-color: $admin-color;
 		&:hover,
 		&:active,
 		&.active,
 		&.rc_active {
+			color: #FFF;
 			background-color: darken($admin-color, 15%);
 		}
 		&.button--disabled,
@@ -300,8 +307,8 @@ img.admin-recharge {
 		> li {
 			> a,
 			> span {
-				background-color: $admin-color;
 				color: #FFF;
+				background-color: $admin-color;
 				&:hover,
 				&:active,
 				&.rc_active,
@@ -312,6 +319,20 @@ img.admin-recharge {
 		}
 	}
 }
+
+.navbar__nav {
+	> li {
+		> a,
+		> span {
+			&.active {
+				&.admin-recharge {
+					color: #FFF;
+				}
+			}
+		}
+	}
+}
+
 .admin-recharge {
 	.admin-recharge {
 		color: #FFF;
