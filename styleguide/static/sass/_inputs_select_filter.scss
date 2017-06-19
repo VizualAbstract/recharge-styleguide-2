@@ -1,0 +1,50 @@
+.rc_selectfilter__wrapper {
+	position: relative;
+
+	span.fa {
+		position: absolute;
+		//font-family: 'FontAwesome';
+		font-weight: normal;
+		font-size: 19px;
+		line-height: 40px;
+		color: $input-border;
+		float: right;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		top: 0;
+		right: 0;
+		margin: 0;
+	}
+
+	input[type="text"].form__input {
+	    padding-right: 35px;
+	}
+}
+
+.rc_selectfilter__options {
+	position: absolute;
+	background-color: $white;
+	border: 1px solid $aquamarine;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 10.5em;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: auto;
+	z-index: 100030;
+
+	.rc_selectfilter__option {
+		font-size: $font-size-base;
+		line-height: 1.5625;
+		padding: 7px 10px;
+		height: 40px;
+		white-space: nowrap;
+
+		&--highlight {
+		    background-color: $mint;
+		    color: $gray-darker;
+		}
+	}
+}

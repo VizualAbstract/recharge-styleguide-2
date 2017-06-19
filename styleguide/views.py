@@ -175,6 +175,11 @@ def cards():
     template_file = "cards.html"
     return render_template(template_file)
 
+@app.route('/select-filter')
+def selectFilter():
+    template_file = "select-filter.html"
+    return render_template(template_file)
+
 @app.route('/stats')
 def stats():
     template_file = "stats.html"
@@ -237,7 +242,9 @@ def compile_js():
         "styleguide/static/js/tooltip.js",
         "styleguide/static/js/popover.js",
         "styleguide/static/js/notifications.js",
+        "styleguide/static/js/notifications-stiky.js",
         "styleguide/static/js/selects.js",
+        "styleguide/static/js/select-filter.js",
     ]
     final_script = ''
     for script_name in toLoad:

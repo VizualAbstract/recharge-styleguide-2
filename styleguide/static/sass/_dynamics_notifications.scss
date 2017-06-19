@@ -140,3 +140,12 @@
 		}
 	}
 }
+
+.rc_notification__container {
+	width: 100%;
+
+	&--fixed {
+		position: fixed;
+		z-index: $z-index-notifications;
+	}
+}

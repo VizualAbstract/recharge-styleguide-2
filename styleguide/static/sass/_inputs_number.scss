@@ -2,7 +2,7 @@
 input.form__number {
 	@extend .form__input;
 
-	border: 1px solid #676767;
+	border: 1px solid $input-border;
 	width: auto;
 	min-width: 10px;
 	display: inline-block;

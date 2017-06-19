@@ -39,3 +39,182 @@ img.fluid-img {
 	display: block;
 	margin: 0 auto;
 }
+
+/* Attribute widths */
+[set-width="10"] {
+	width: 10%;
+}
+[set-width="20"] {
+	width: 20%;
+}
+[set-width="30"] {
+	width: 30%;
+}
+[set-width="40"] {
+	width: 40%;
+}
+[set-width="50"] {
+	width: 50%;
+}
+[set-width="60"] {
+	width: 60%;
+}
+[set-width="70"] {
+	width: 70%;
+}
+[set-width="80"] {
+	width: 80%;
+}
+[set-width="90"] {
+	width: 90%;
+}
+[set-width="100"] {
+	width: 100%;
+}
+
+/* Text colors */
+.color--cyan {
+	color: $cyan;
+}
+.color--blue {
+	color: $blue;
+}
+.color--green {
+	color: $green;
+}
+.color--aquamarine {
+	color: $aquamarine;
+}
+.color--mint {
+	color: $mint;
+}
+.color--yellow {
+	color: $yellow;
+}
+.color--orange {
+	color: $orange;
+}
+.color--red {
+	color: $red;
+}
+.color--magenta {
+	color: $magenta;
+}
+.color--pink {
+	color: $pink;
+}
+.color--magenta {
+	color: $magenta;
+}
+
+/* Link colors */
+a.link--cyan {
+	&:link,
+	&:visited {
+		color: $cyan;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($cyan, 10%);
+	}
+}
+a.link--blue {
+	&:link,
+	&:visited {
+		color: $blue;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($blue, 10%);
+	}
+}
+a.link--green {
+	&:link,
+	&:visited {
+		color: $green;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($green, 10%);
+	}
+}
+a.link--aquamarine {
+	&:link,
+	&:visited {
+		color: $aquamarine;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($aquamarine, 10%);
+	}
+}
+a.link--mint {
+	&:link,
+	&:visited {
+		color: $mint;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($mint, 10%);
+	}
+}
+a.link--yellow {
+	&:link,
+	&:visited {
+		color: $yellow;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($yellow, 10%);
+	}
+}
+a.link--orange {
+	&:link,
+	&:visited {
+		color: $orange;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($orange, 10%);
+	}
+}
+a.link--red {
+	&:link,
+	&:visited {
+		color: $red;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($red, 10%);
+	}
+}
+a.link--magenta {
+	&:link,
+	&:visited {
+		color: $magenta;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($magenta, 10%);
+	}
+}
+a.link--pink {
+	&:link,
+	&:visited {
+		color: $pink;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($pink, 10%);
+	}
+}

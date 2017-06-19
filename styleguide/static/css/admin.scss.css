@@ -381,4 +381,8 @@ img.admin-recharge {
   color: #f2f2f2;
 }
 
+.admin-recharge .rc_tooltip__button:after {
+  color: #54bad3;
+}
+
 /*# sourceMappingURL=../css/admin.scss.css.map */

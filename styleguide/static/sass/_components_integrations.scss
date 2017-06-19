@@ -1,0 +1,42 @@
+.integration {
+
+	&__link {
+		padding-bottom: 25px;
+		cursor: pointer;
+		display: flex;
+
+		&:link,
+		&:visited {
+			color: #424242;
+		}
+
+		&:hover,
+		&:active {
+			.integration__gear,
+			h5 {
+				color: #000;
+			}
+		}
+
+		+ .integration__link {
+			border-top: 1px solid #FFF;
+			padding-top: 25px;
+		}
+	}
+
+	&__gear {
+		font-size: 20px;
+		line-height: 24px;
+		padding-right: 25px;
+		line-height: 56px;
+	}
+
+	&__media {
+		text-align: left;
+		padding-right: 25px;
+	}
+
+	&__info {
+
+	}
+}

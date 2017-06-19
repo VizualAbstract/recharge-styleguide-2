@@ -402,3 +402,11 @@ img.admin-recharge {
 		}
     }
 }
+
+.admin-recharge {
+	.rc_tooltip__button {
+		&:after {
+			color: #54bad3;
+		}
+	}
+}

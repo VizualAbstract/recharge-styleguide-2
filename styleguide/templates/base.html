@@ -27,7 +27,9 @@
 		<script type="text/javascript" src=".{{ url_for('static', filename='js/tooltip.js') }}"></script>
 		<script type="text/javascript" src=".{{ url_for('static', filename='js/popover.js') }}"></script>
 		<script type="text/javascript" src=".{{ url_for('static', filename='js/notifications.js') }}"></script>
+		<script type="text/javascript" src=".{{ url_for('static', filename='js/notifications-stiky.js') }}"></script>
 		<script type="text/javascript" src=".{{ url_for('static', filename='js/selects.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/select-filter.js') }}"></script>
 		{# <script type="text/javascript" src=".{{ url_for('static', filename='export/main.js') }}"></script> #}
 		
 		{# <script type="text/javascript" src="{{ url_for('static', filename='js/alert.js') }}"></script> #}
@@ -103,7 +105,7 @@
 			// Flash banners
 			var banners = document.getElementsByClassName("rc_notification");
 			Array.prototype.slice.call(banners).forEach(function(banner) {
-				var notification = new rcNotification();
+				var notification = new rcNotificationV2();
 				notification.flash(banner);
 			});
 
@@ -129,6 +131,10 @@
 				new Pikaday({
 					field: elem,
 					format: 'YYYY-MM-DD',
+					onClose: function() {
+						// Resets navigation back to the prev selected date
+						this.gotoDate(this._d);
+					},
 					showDaysInNextAndPreviousMonths: true
 				});
 			});

@@ -18,7 +18,6 @@
 
 .admin-recharge input[type="submit"],
 .admin-recharge button {
-  background-color: #53BAD3;
   color: #FFF;
 }
 
@@ -39,25 +38,21 @@ img.admin-recharge {
 }
 
 /* Form elements */
-.admin-recharge.button,
 .admin-recharge .button {
+  color: #FFF;
+}
+
+.admin-recharge.button {
   color: #FFF;
   background-color: #53BAD3;
 }
 
-.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active,
-.admin-recharge .button:hover,
-.admin-recharge .button:active,
-.admin-recharge .button.active,
-.admin-recharge .button.rc_active {
+.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active {
   color: #FFF;
   background-color: #2c94ad;
 }
 
-.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled,
-.admin-recharge .button.button--disabled,
-.admin-recharge .button.rc_disabled,
-.admin-recharge .button:disabled {
+.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled {
   background-color: #cdebf2 !important;
 }
 
@@ -307,8 +302,8 @@ img.admin-recharge {
 .admin-recharge .navbar__nav > li > a,
 .admin-recharge .navbar__nav > li > span, .admin-recharge.navbar__nav > li > a,
 .admin-recharge.navbar__nav > li > span {
-  background-color: #53BAD3;
   color: #FFF;
+  background-color: #53BAD3;
 }
 
 .admin-recharge .navbar__nav > li > a:hover, .admin-recharge .navbar__nav > li > a:active, .admin-recharge .navbar__nav > li > a.rc_active, .admin-recharge .navbar__nav > li > a.active,
@@ -321,6 +316,11 @@ img.admin-recharge {
 .admin-recharge.navbar__nav > li > span.rc_active,
 .admin-recharge.navbar__nav > li > span.active {
   background-color: #2d97b1;
+}
+
+.navbar__nav > li > a.active.admin-recharge,
+.navbar__nav > li > span.active.admin-recharge {
+  color: #FFF;
 }
 
 .admin-recharge .admin-recharge {
@@ -379,4 +379,8 @@ img.admin-recharge {
 
 .admin-recharge__container .admin-recharge .button.button--link:hover, .admin-recharge__container .admin-recharge .button.button--link:active {
   color: #f2f2f2;
+}
+
+.admin-recharge .rc_tooltip__button:after {
+  color: #54bad3;
 }

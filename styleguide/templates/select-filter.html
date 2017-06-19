@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Select filter</h1>
+<p>this component works as a free type input field that shows a list of filtered items to be selected</p>
+
+<!-- js supplied list -->
+<h3>Default search</h3>
+<!-- <p>This autocomplete should be used if supplied with a predefined list of options on creation.</p> -->
+
+<div class="rc_example">
+	<label class="form__label">Color search:</label>
+	<span class="rc_text--info">
+		Start typing to search
+	</span>
+	<input type="text" class="form__input rc_selectfilter">
+</div>
+
+<div class="rc_example">
+	<label class="form__label">Short set of options:</label>
+	<span class="rc_text--info">
+		Start typing to search
+	</span>
+	<input type="text" class="form__input rc_selectfilter--short">
+	<br>
+
+	<label class="form__label">Medium set of options:</label>
+	<span class="rc_text--info">
+		Start typing to search
+	</span>
+	<input type="text" class="form__input rc_selectfilter--medium">
+	<br>
+
+	<label class="form__label">Long set of options:</label>
+	<span class="rc_text--info">
+		Start typing to search
+	</span>
+	<input type="text" class="form__input rc_selectfilter--long">
+</div>
+
+<div class="rc_example">
+	<style>
+		.rc_selectfilter__options .rc_selectfilter__option {
+			height: inherit;
+		}
+
+		.rc_selectfilter__options span {
+    		display: block;
+		}
+	</style>
+	<label class="form__label">Corey's Thorn:</label>
+	<span class="rc_text--info">
+		Start typing to search
+	</span>
+	<input type="text" style="width: 30%" class="form__input rc_selectfilter--tiny-input">
+</div>
+
+<!-- js supplied list -->
+<h3>Options Customization</h3>
+<p>It is also possible to define custom templates for the options of the autocomplete.</p>
+<div class="rc_example">
+	<label class="form__label">Color search:</label>
+	<span class="rc_text--info">
+		Start typing to search for colors
+	</span>
+	<input type="text" class="form__input rc_selectfilter--custom-options">
+	<!-- <span class="rc_text--info">
+		Selected option is: <span id="jsSuppliedExample2"></span>
+	</span> -->
+</div>
+
+<!-- server data fetch -->
+<!-- <h3>Ajax data fetch</h3>
+<p>This autocomplete uses AJAX as a way to update options displayed to the user.</p>
+<div class="rc_example">
+	<label class="form__label">Color search:</label>
+	<input type="text" class="form__input rc_selectfilter" disabled>
+</div>
+ -->
+<script>
+	function onSelectCallback(obj) {
+		console.info(obj);
+
+		//$('#jsSuppliedExample').html(obj['name']);
+
+		new rcNotification({
+			message: 'Open CONSOLE to check info on the selected option',
+			type: 'success'
+		}).show();
+	}
+
+	$(function() {
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter'),
+			data: [
+				{
+					name: 'green',
+					description: 'some description'
+				}, {
+					name: 'yellow',
+					description: 'some description'
+				}, {
+					name: 'blue',
+					description: 'some description'
+				}, {
+					name: 'magenta',
+					description: 'some description'
+				}, {
+					name: 'cyan',
+					description: 'some description'
+				}, {
+					name: 'red',
+					description: 'some description'
+				}, {
+					name: 'pink',
+					description: 'some description'
+				}, {
+					name: 'orange',
+					description: 'some description'
+				}, {
+					name: 'black',
+					description: 'some description'
+				}, {
+					name: 'white',
+					description: 'some description'
+				}
+			],
+			fieldLabel: 'name',
+			onSelect: onSelectCallback,
+		});
+
+
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter--custom-options'),
+			data: [
+				{
+					name: 'green',
+					description: 'some description'
+				}, {
+					name: 'yellow admin',
+					description: 'some description',
+					admin: true
+				}, {
+					name: 'blue',
+					description: 'some description'
+				}, {
+					name: 'cyan admin',
+					description: 'some description',
+					admin: true
+				}, {
+					name: 'magenta',
+					description: 'some description',
+					color: 'magenta',
+				}, {
+					name: 'red',
+					description: 'some description',
+					color: 'red',
+				}, {
+					name: 'white',
+					description: 'some description'
+				}, {
+					name: 'black',
+					description: 'some description'
+				}
+			],
+			fieldLabel: 'name',
+			templateFn: function(opt) {
+				if (opt.admin) {
+					return '<span class="admin-recharge">' + opt.name + '</span>'	
+				} else if (opt.color) {
+					return '<span class="color--' + opt.color + '">' + opt.name + '</span>'	
+				} else {
+					return '<h5>' + opt.name + '</h5>';
+				}
+				
+			},
+			onSelect: function(opt) {
+				$('#jsSuppliedExample2').html(opt['name']);
+			},
+		})
+
+
+
+
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter--short'),
+			data: [
+				{
+					name: 'green',
+					description: 'some description'
+				}, {
+					name: 'yellow',
+					description: 'some description'
+				}, {
+					name: 'blue',
+					description: 'some description'
+				}, {
+					name: 'magenta',
+					description: 'some description'
+				}
+			],
+			fieldLabel: 'name',
+			onSelect: onSelectCallback,
+		});
+
+		let data = [];
+		while (data.length < 35) {
+			data.push({
+				name: data.length + ' bag / ' + data.length + ' months / Whole Bean / Another big text hir ' + data.length,
+				description: 'some description',
+				active: true,
+				otherKey: data.length + 42,
+				otherProp: data.length + ' months / Whole Bean / Another big text hir ',
+			});
+		}
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter--medium'),
+			data: data,
+			fieldLabel: 'name',
+			onSelect: onSelectCallback,
+		});
+
+
+		let longData = []
+		while (longData.length < 800) {
+			longData.push({
+				name: longData.length + ' bag / ' + longData.length + ' months / Whole Bean / Another big text hir ' + longData.length,
+				description: 'some description',
+				active: true,
+				otherKey: longData.length + 42,
+				otherProp: longData.length + ' months / Whole Bean / Another big text hir ',
+			});
+		}
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter--long'),
+			data: longData,
+			fieldLabel: 'name',
+			onSelect: onSelectCallback,
+		});
+
+		new rcSelectFilter({
+			selector: $('.rc_selectfilter--tiny-input'),
+			data: longData,
+			fieldLabel: 'name',
+			onSelect: onSelectCallback,
+			templateFn: function(obj) {
+				let arr = obj['name'].split('/');
+
+				return arr.map(function(info){
+					return '<span>' + info + '</span>';
+				}).join('')
+			}
+		});
+
+
+
+	});
+</script>
+{% endblock %}

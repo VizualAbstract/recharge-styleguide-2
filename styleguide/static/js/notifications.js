@@ -19,6 +19,11 @@
 		if (arguments[0] && typeof(arguments[0]) == "object") {
 			this.options = extendDefaults(defaults, arguments[0]);
 		}
+
+		this._appendNotification = function() {
+			document.body.appendChild(this.notification);
+		}
+
 	}
 
 	/* Public methods */
@@ -52,7 +57,10 @@
 		this.notification = element;
 
 		// Add class that initiates the transition
-		this.notification.className = this.notification.className + " rc_flash rc_show";
+		//this.notification.className = this.notification.className + " rc_flash rc_show";
+		addClasses.call(this, this.notification.className + " rc_flash rc_show");
+
+		this._appendNotification();
 
 		// Trigger timeout listener listener
 		var type = this.notification.className.replace("rc_notification rc_notification--", "").replace(" rc_flash rc_show", "");
@@ -106,6 +114,29 @@
 
 			// Build default options
 			this.options.message = pending_message;
+			this.options.type = readCookie.call(this, 'rcNoticeType');
+			this.options.timeout = readCookie.call(this, 'rcNoticeTimeout');
+			this.options.static = readCookie.call(this, 'rcNoticeStatic');
+			
+			// Trigger the notification
+			this.show();
+
+			// Remove cookies
+			eraseCookie.call(this, 'rcNoticeMessage');
+			eraseCookie.call(this, 'rcNoticeType');
+			eraseCookie.call(this, 'rcNoticeTimeout');
+			eraseCookie.call(this, 'rcNoticeStatic');
+		}
+	}
+	/*rcNotification.prototype.pending = function() {
+		var pending_message = readCookie.call(this, 'rcNoticeMessage');
+
+		// Only run if rcNoticeMessage cookie is set
+		if (pending_message) {
+			this.options = {};
+
+			// Build default options
+			this.options.message = pending_message;
 			try {
 				this.options.type = readCookie.call(this, 'rcNoticeType');
 			}
@@ -128,7 +159,7 @@
 			eraseCookie.call(this, 'rcNoticeTimeout');
 			eraseCookie.call(this, 'rcNoticeStatic');
 		}
-	}
+	}*/
 
 	/* Private methods */
 	// Generic create cookie function
@@ -144,8 +175,28 @@
 		document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
 	}
 
+	// Generic read cookie function V2
+	// This one avoids the double quotes from appearing from cookie fetched messages e.g. ""message""
+	function readCookie(key) {
+		if (!key) { return null; }
+		
+		var cookie = decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(key).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+
+		if (cookie){
+			if (!isNaN(+cookie)) {
+				return +cookie;
+			} else if (cookie === "true" || cookie === 'false') {
+				return cookie === "true";
+			}
+
+			return cookie.replace(/"/g,"");
+		}
+
+		return cookie;
+	}
+
 	// Generic read cookie function
-	function readCookie(name) {
+	/*function readCookie(name) {
 		var nameEQ = encodeURIComponent(name) + "=";
 		var ca = document.cookie.split(';');
 		for (var i = 0; i < ca.length; i++) {
@@ -158,7 +209,7 @@
 			}
 		}
 		return null;
-	}
+	}*/
 
 	// Generic erase cookie function
 	function eraseCookie(name) {
@@ -167,12 +218,10 @@
 
 	// Build the notification element and append to document
 	function buildNotification() {
-		var html, docFramgent;
-		docFragment = document.createDocumentFragment();
-
 		// Build the notification container
 		this.notification = document.createElement("div");
-		this.notification.className = "rc_notification rc_notification--" + this.options.type;
+		//this.notification.className = "rc_notification rc_notification--" + this.options.type;
+		addClasses.call(this, "rc_notification rc_notification--" + this.options.type);
 
 		// If notification requires a close button
 		if (this.options.static === true || this.options.static === 'true') {
@@ -188,11 +237,29 @@
 		notificationContent.innerHTML = this.options.message;
 		this.notification.append(notificationContent)
 
-		// Append notification to document fragment
-		docFragment.append(this.notification);
-
 		// Append document fragment to the body
-		document.body.appendChild(docFragment);
+		//document.body.appendChild(docFragment);
+		this._appendNotification();
+	}
+
+	function addClasses(classNames) {
+		let elem = this.notification;
+
+		function checkAndAdd(clazz) {
+			if (!elem.classList.contains(clazz)) {
+				elem.classList.add(clazz);
+			}
+		}
+		
+		classNames
+			.split(' ')
+			.forEach(checkAndAdd)
+
+		if (this.customClasses) {
+			this.customClasses
+				.split(' ')
+				.forEach(checkAndAdd)
+		}
 	}
 
 	// Build the notification element and append to document

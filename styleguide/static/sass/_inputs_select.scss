@@ -32,7 +32,7 @@ $zindex-dropkick:		   $zindex-base + 30 !default;
 
 $color: #424242 !default;
 $color-aux: #BDF0E4 !default;
-$border-color: #424242 !default;
+$border-color: $input-border !default;
 $border-color-aux: #4DD6B7 !default;
 $border-radius: 0 !default;
 $disabled-color: #999 !default;

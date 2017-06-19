@@ -5,7 +5,7 @@ if (app.debug):
     app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
 
 # def application(environ, start_response):
 #     start_response('200 OK', [('Content-Type', 'text/html')])

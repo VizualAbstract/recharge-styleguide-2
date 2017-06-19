@@ -4240,6 +4240,11 @@ var Popover = function ($) {
 		if (arguments[0] && typeof(arguments[0]) == "object") {
 			this.options = extendDefaults(defaults, arguments[0]);
 		}
+
+		this._appendNotification = function() {
+			document.body.appendChild(this.notification);
+		}
+
 	}
 
 	/* Public methods */
@@ -4273,7 +4278,10 @@ var Popover = function ($) {
 		this.notification = element;
 
 		// Add class that initiates the transition
-		this.notification.className = this.notification.className + " rc_flash rc_show";
+		//this.notification.className = this.notification.className + " rc_flash rc_show";
+		addClasses.call(this, this.notification.className + " rc_flash rc_show");
+
+		this._appendNotification();
 
 		// Trigger timeout listener listener
 		var type = this.notification.className.replace("rc_notification rc_notification--", "").replace(" rc_flash rc_show", "");
@@ -4327,6 +4335,29 @@ var Popover = function ($) {
 
 			// Build default options
 			this.options.message = pending_message;
+			this.options.type = readCookie.call(this, 'rcNoticeType');
+			this.options.timeout = readCookie.call(this, 'rcNoticeTimeout');
+			this.options.static = readCookie.call(this, 'rcNoticeStatic');
+			
+			// Trigger the notification
+			this.show();
+
+			// Remove cookies
+			eraseCookie.call(this, 'rcNoticeMessage');
+			eraseCookie.call(this, 'rcNoticeType');
+			eraseCookie.call(this, 'rcNoticeTimeout');
+			eraseCookie.call(this, 'rcNoticeStatic');
+		}
+	}
+	/*rcNotification.prototype.pending = function() {
+		var pending_message = readCookie.call(this, 'rcNoticeMessage');
+
+		// Only run if rcNoticeMessage cookie is set
+		if (pending_message) {
+			this.options = {};
+
+			// Build default options
+			this.options.message = pending_message;
 			try {
 				this.options.type = readCookie.call(this, 'rcNoticeType');
 			}
@@ -4349,7 +4380,7 @@ var Popover = function ($) {
 			eraseCookie.call(this, 'rcNoticeTimeout');
 			eraseCookie.call(this, 'rcNoticeStatic');
 		}
-	}
+	}*/
 
 	/* Private methods */
 	// Generic create cookie function
@@ -4365,8 +4396,28 @@ var Popover = function ($) {
 		document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
 	}
 
+	// Generic read cookie function V2
+	// This one avoids the double quotes from appearing from cookie fetched messages e.g. ""message""
+	function readCookie(key) {
+		if (!key) { return null; }
+		
+		var cookie = decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(key).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+
+		if (cookie){
+			if (!isNaN(+cookie)) {
+				return +cookie;
+			} else if (cookie === "true" || cookie === 'false') {
+				return cookie === "true";
+			}
+
+			return cookie.replace(/"/g,"");
+		}
+
+		return cookie;
+	}
+
 	// Generic read cookie function
-	function readCookie(name) {
+	/*function readCookie(name) {
 		var nameEQ = encodeURIComponent(name) + "=";
 		var ca = document.cookie.split(';');
 		for (var i = 0; i < ca.length; i++) {
@@ -4379,7 +4430,7 @@ var Popover = function ($) {
 			}
 		}
 		return null;
-	}
+	}*/
 
 	// Generic erase cookie function
 	function eraseCookie(name) {
@@ -4388,12 +4439,10 @@ var Popover = function ($) {
 
 	// Build the notification element and append to document
 	function buildNotification() {
-		var html, docFramgent;
-		docFragment = document.createDocumentFragment();
-
 		// Build the notification container
 		this.notification = document.createElement("div");
-		this.notification.className = "rc_notification rc_notification--" + this.options.type;
+		//this.notification.className = "rc_notification rc_notification--" + this.options.type;
+		addClasses.call(this, "rc_notification rc_notification--" + this.options.type);
 
 		// If notification requires a close button
 		if (this.options.static === true || this.options.static === 'true') {
@@ -4409,11 +4458,29 @@ var Popover = function ($) {
 		notificationContent.innerHTML = this.options.message;
 		this.notification.append(notificationContent)
 
-		// Append notification to document fragment
-		docFragment.append(this.notification);
-
 		// Append document fragment to the body
-		document.body.appendChild(docFragment);
+		//document.body.appendChild(docFragment);
+		this._appendNotification();
+	}
+
+	function addClasses(classNames) {
+		let elem = this.notification;
+
+		function checkAndAdd(clazz) {
+			if (!elem.classList.contains(clazz)) {
+				elem.classList.add(clazz);
+			}
+		}
+		
+		classNames
+			.split(' ')
+			.forEach(checkAndAdd)
+
+		if (this.customClasses) {
+			this.customClasses
+				.split(' ')
+				.forEach(checkAndAdd)
+		}
 	}
 
 	// Build the notification element and append to document
@@ -4457,6 +4524,77 @@ var Popover = function ($) {
 		return "transitionend";
 	}
 }());
+(function($) {
+	/* Constructor */
+	this.rcNotificationV2 = function() {
+		rcNotification.call(this, arguments[0]);
+
+		//check/create container
+		this.container = document.querySelector('.rc_notification__container');
+
+		//custom classes to always be added
+		this.customClasses = 'rc_flash';
+
+		if (!this.container) {
+			//create container
+			this.container = document.createElement('div');
+			this.container.className = 'rc_notification__container';
+
+			/* check order for container placement
+				1. After Breadcrumbs
+				2. After Navbar
+				3. Prepend to body
+			*/
+			if (document.querySelector('ol.breadcrumbs')) {
+				//place after breadcrumb
+				insertAfter(this.container, document.querySelector('ol.breadcrumbs'));
+			} else if (document.querySelector('#rc_navbar')) {
+				//place after navbar
+				insertAfter(this.container, document.querySelector('#rc_navbar'));
+			} else {
+				//preprend to body
+				insertAfter(this.container, document.body.firstChild);
+			}
+
+			//attach listener only if creating container
+			let jContainer = $(this.container),
+				jSibling = $(this.container.nextSibling),
+				y_pos = jContainer.offset().top;
+
+			$(document).scroll(function() {
+				let scrollTop = $(this).scrollTop(),
+					height = jContainer.height();
+
+				if (scrollTop > y_pos + height) {
+					//ensure smooth roll of content when notification swiches position
+					jSibling.css('margin-top', height);
+
+					jContainer.addClass("rc_notification__container--fixed")
+						.animate({ top: 0 });
+				} else if (scrollTop <= y_pos) {
+					jSibling.css('margin-top', 0);
+
+					jContainer.removeClass("rc_notification__container--fixed")
+						.clearQueue()
+						.animate({ top: "-48px" }, 0);
+				}
+			});
+		}
+
+		this._appendNotification = function() {
+			this.container.appendChild(this.notification);
+		}
+
+	}
+
+	function insertAfter(newNode, refNode) {
+		refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
+	}
+
+	rcNotificationV2.prototype = Object.create(rcNotification.prototype);
+	rcNotificationV2.prototype.constructor = rcNotification;
+
+}(window.jQuery));
 /*
  * DropKick
  *
@@ -5863,3 +6001,294 @@ if ( jQuery !== undefined ) {
 return rcSelect;
 
 }));
+
+(function() {
+
+	function wrapElement(elem, wrapper) {
+		let parent = elem.parentNode;
+		parent.insertBefore(wrapper, elem);
+		wrapper.appendChild(elem);
+
+		//will have to add caret element instead of using pseudo-elements
+		//if input has predefined width, using :after blocks us from manipulating position later
+		let caret = document.createElement('span');
+		caret.setAttribute('aria-hidden', 'true');
+		caret.className = 'fa fa-caret-down';
+		wrapper.appendChild(caret);
+
+		//have to update caret position depending on elem width
+		let rect = elem.getBoundingClientRect();
+		let inputWidth = Math.round(rect.right - rect.left);
+		if (inputWidth) {
+			caret.style.setProperty('left', 'calc(' + inputWidth + 'px - 40px)');
+		} else {
+			caret.style.setProperty('left', 'calc(100% - 40px)');
+		}
+	}
+
+	function toggleCaret(wrapper, open) {
+		wrapper.className = 'rc_selectfilter__wrapper';
+		wrapper.classList.add(open ? 'rc_selectfilter__wrapper--opened' : 'rc_selectfilter__wrapper--closed');
+		
+		let caret = wrapper.querySelector('span.fa');
+		caret.className = 'fa';
+		caret.classList.add(open ? 'fa-caret-up' : 'fa-caret-down');
+	}
+
+	// default class selector will be .rc_selectfilter
+	function rcSelectFilter(config) {
+		let options = {
+			url: '',
+			selector: null,
+			delay: 366, // according to Mike this should be the delay time
+			keybindEvent: "keyup",
+			data: [],
+			fieldLabel: 'label',
+			fieldId: 'label',
+			templateFn: function(opt) {
+				return opt[options.fieldLabel];
+			},
+			onSelect: null,//function(obj) {},
+		};
+
+		for (let k in config) { 
+			if (options.hasOwnProperty(k)) {
+				options[k] = config[k];
+			}
+		}
+
+		if (config.fieldLabel && !config.fieldId) {
+			options.fieldId = options.fieldLabel;
+		}
+
+
+		//check if selector is cssSelector/jQueryElem/nodeElem and get the nodeElement ref
+		let elem = typeof options.selector === 'object' ? options.selector.jquery ? options.selector[0] : options.selector : document.querySelector(options.selector);
+		let self = this;
+		let currentValue = '';
+		let selectedId = null;
+
+
+		self.optionsContainer = document.createElement('ul');
+		self.optionsContainer.className = 'rc_selectfilter__options';
+
+		let wrapper = document.createElement('div');
+		wrapper.className = 'rc_selectfilter__wrapper rc_selectfilter__wrapper--closed';
+
+		//perform magic of wrapping elem
+		wrapElement(elem, wrapper);
+
+		//<i class="fa fa-caret-down" aria-hidden="true"></i>
+		//<i class="fa fa-caret-up" aria-hidden="true"></i>
+
+		//avoid browser autocomplete on autocomplete, HA!
+		elem.setAttribute('autocomplete', 'off');
+
+		let innerTemplateFn = function(opt) {
+			return '<li data-value="' + opt[options.fieldId] + '" class="rc_selectfilter__option">' + options.templateFn(opt) + '</li>';
+		}
+
+		//build query function specific for this element
+		self.queryFn = function(q) {
+			let keyProp = options.fieldLabel;
+
+			if (q !== '') {
+				let regX = new RegExp(q, 'i');
+				return options.data
+					.filter(function(opt) {
+						return regX.test(opt[keyProp]);
+					})
+					.map(innerTemplateFn);
+			} else {
+				return options.data.map(innerTemplateFn);
+			}
+		}
+
+		let updateSelectedModel = function(val, obj) {
+			elem.value = val;
+
+			if (val !== currentValue) {
+				currentValue = val;
+
+				if (obj) {
+					selectedId = obj[options.fieldId];	
+				} else {
+					selectedId = null;
+				}
+
+				if (options.onSelect) options.onSelect(obj);
+			}
+		}
+
+		self.showAll = function() {
+			let optsAsHTML = this.queryFn('');
+			if (optsAsHTML.length) {
+				this.optionsContainer.innerHTML = optsAsHTML.join('');
+
+				this.updateContainerPosition(null, optsAsHTML.length);
+			} else {
+				this.optionsContainer.style.display = 'none';
+				toggleCaret(wrapper, false);
+			}
+		}
+
+		self.search = function(q) {
+			let optsAsHTML = this.queryFn(q);
+			if (optsAsHTML.length) {
+				this.optionsContainer.innerHTML = optsAsHTML.join('');
+
+				this.updateContainerPosition(null, optsAsHTML.length);
+			} else {
+				this.optionsContainer.style.display = 'none';
+				toggleCaret(wrapper, false);
+			}
+		}
+
+		let fireSearchHandler = function(ev) {
+			let key = window.event ? ev.keyCode : ev.which;
+			if (!key || (key < 35 || key > 40) && key != 13 && key != 27) {
+				let val = ev.target.value;
+				//if (val) {
+				clearTimeout(self.timer);
+				// do logic here for building suggestions
+				self.timer = setTimeout(function() {
+					//query should be the function that performs the search action and comes up with the results to show as options
+					self.search(val);
+				}, options.delay)
+				//}
+			}
+		}
+
+		let blurHandler = function(ev) {
+			let isOverContainer = document.querySelector('.rc_selectfilter__options:hover');
+			if (!isOverContainer) {
+				self.optionsContainer.style.display = 'none';
+				toggleCaret(wrapper, false);
+
+				if (elem.value === '') {
+					//if field is completely cleared unselect option
+					updateSelectedModel('');
+				} else {
+					//if field is modified update only field value
+					if (currentValue && currentValue !== elem.value) {
+						updateSelectedModel(currentValue);	
+					}
+				}
+			} else if (document.activeElement !== elem) {
+				setTimeout(function() {
+					elem.focus();
+				}, 100);
+			}
+		}
+
+		let addHoverClass = function(ev) {
+			let selectedOpt = self.optionsContainer.querySelector('.rc_selectfilter__option--highlight');
+
+			if (selectedOpt)
+				selectedOpt.classList.remove('rc_selectfilter__option--highlight');
+
+			let target = ev.target;
+			while (target && !target.classList.contains('rc_selectfilter__option')) {
+				target = target.parentElement;
+			}
+
+			if (target) target.classList.add('rc_selectfilter__option--highlight');
+		}
+
+		let selectHandler = function(ev) {
+			let target = ev.target;
+			while (target && !target.classList.contains('rc_selectfilter__option')) {
+				target = target.parentElement;
+			}
+
+			let val = target.getAttribute('data-value');
+
+			let obj = options.data.filter(function (el) {
+				return el[options.fieldId] == val;
+			})[0];
+
+			updateSelectedModel(obj[options.fieldLabel], obj);
+
+			self.optionsContainer.style.display = 'none';
+			toggleCaret(wrapper, false);
+		}
+
+		let focusHandler = function(ev) {
+			let isOverContainer = document.querySelector('.rc_selectfilter__options:hover');
+			if (!isOverContainer) {
+				self.search(elem.value);
+			} else {
+				self.optionsContainer.style.display = 'none';
+				toggleCaret(wrapper, false);
+			}
+		}
+
+		elem.addEventListener('click', focusHandler);
+
+		elem.addEventListener('blur', blurHandler);
+		elem.addEventListener(options.keybindEvent, fireSearchHandler);
+		self.optionsContainer.addEventListener('mouseover', addHoverClass);
+		self.optionsContainer.addEventListener('click', selectHandler);
+
+
+		self.updateContainerPosition = function(ev, show){
+            let rect = elem.getBoundingClientRect();
+            self.optionsContainer.style.left = Math.round(rect.left + (window.pageXOffset || document.documentElement.scrollLeft) ) + 'px';
+            self.optionsContainer.style.top = Math.round(rect.bottom + (window.pageYOffset || document.documentElement.scrollTop) - 1) + 'px';
+            self.optionsContainer.style.width = Math.round(rect.right - rect.left) + 'px'; // outerWidth
+
+            if (show) {
+            	self.optionsContainer.style.display = 'block';
+            	toggleCaret(wrapper, show);
+            } else {
+            	self.optionsContainer.style.display = 'none';
+            	toggleCaret(wrapper, show);
+            }
+            
+        }
+
+        window.addEventListener('resize', self.updateContainerPosition);
+
+		document.body.appendChild(self.optionsContainer);
+
+		//PUBLIC METHODS
+		self.hasValue = function() {
+			return selectedId !== null;
+		}
+
+		self.getValue = function() {
+			return selectedId;
+		}
+
+		self.clear = function() {
+			updateSelectedModel('');
+		}
+
+		self.destroy = function() {
+			elem.value = '';
+			elem.removeEventListener('blur', blurHandler);
+			elem.removeEventListener(options.keybindEvent, fireSearchHandler);
+			elem.removeEventListener('click', focusHandler);
+			self.optionsContainer.removeEventListener('mouseover', addHoverClass);
+			self.optionsContainer.removeEventListener('click', selectHandler);
+			window.removeEventListener('resize', self.updateContainerPosition);
+			document.body.removeChild(self.optionsContainer);
+			delete elem.rcSelectFilter;
+		}
+
+		//for now let's not add it to the element since there is no point
+		elem.rcSelectFilter = {
+			hasValue: self.hasValue,
+			getValue: self.getValue,
+			clear: self.clear,
+			destroy: self.destroy,
+		};
+	}
+
+	if (window.ReCharge) {
+		window.ReCharge['rcSelectFilter'] = rcSelectFilter;
+	} else {
+		window.rcSelectFilter = rcSelectFilter;
+	}
+
+})();

@@ -90,6 +90,15 @@ $zIndexContinueBar: 100090;
 	}
 }
 
+.navbar .button {
+	background-color: $gray-darker;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: darken($gray-darker, 10%);
+	}
+}
+
 .navbar__nav {
 	list-style: none;
 	display: flex;
@@ -312,6 +321,14 @@ $zIndexContinueBar: 100090;
 			background-color: darken(#D6D6D6, 10%);
 		}
 	}
+	.rc_dropdown {
+		.rc_dropdown__toggle {
+			color: #424242;
+			.fa {
+				color: #424242;
+			}
+		}
+	}
 }
 
 .navbar--standalone {
@@ -422,7 +439,9 @@ $zIndexContinueBar: 100090;
 }
 
 .navbar__return {
+	border-top: 1px solid #8e8f8e;
 	@media screen and (min-width: $mobile-nav-max + 1) {
+		border-top-width: 0;
 		border-left: 1px solid #FFF;
 	}
 }
