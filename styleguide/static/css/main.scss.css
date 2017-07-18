@@ -4508,6 +4508,22 @@ input.form__date:focus, input.form__date.rc_focus {
   background-color: #4dd6b7;
 }
 
+/* Labeling */
+.rc_switch + strong, .rc_switch + b, .rc_switch + i, .rc_switch + em,
+.rc_switch + input, .rc_switch + button, .rc_switch + label,
+.rc_switch + h1, .rc_switch + h2, .rc_switch + h3, .rc_switch + h4, .rc_switch + h5, .rc_switch + h6 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  line-height: 1;
+}
+
+.rc_switch + label {
+  color: #8C8C8C;
+  font-size: 14px;
+  font-family: 'ralewaysemibold', arial, sans-serif;
+}
+
 .header-settings {
   width: 100%;
   min-height: 40px;
@@ -6113,33 +6129,36 @@ input.form__date:focus, input.form__date.rc_focus {
   margin-right: 0;
 }
 
-.rc_table--toggle th,
-.rc_table--toggle td {
+.rc_table--toggle tbody th,
+.rc_table--toggle tbody td {
   vertical-align: middle;
 }
 
-.rc_table--toggle th:first-child,
-.rc_table--toggle td:first-child {
+.rc_table--toggle tbody th:first-child,
+.rc_table--toggle tbody td:first-child {
   padding-left: 15px;
 }
 
-.rc_table--toggle th:first-child label,
-.rc_table--toggle td:first-child label {
+.rc_table--toggle tbody th:first-child label,
+.rc_table--toggle tbody td:first-child label {
   font-size: 16px;
 }
 
-.rc_table--toggle th:last-child,
-.rc_table--toggle td:last-child {
+.rc_table--toggle tbody th:last-child,
+.rc_table--toggle tbody td:last-child {
   padding-right: 15px;
   text-align: right;
 }
 
-.rc_table--toggle tr.rc_disabled {
-  background-color: #EEE;
-  color: #8E8E8E;
+.rc_table--toggle tbody tr {
+  background-color: #F2FCFA;
 }
 
-.rc_table--toggle tr.rc_disabled td:first-child label:after {
+.rc_table--toggle tbody tr.rc_disabled {
+  background-color: #FFF;
+}
+
+.rc_table--toggle tbody tr.rc_disabled td:first-child label:after {
   display: inline-block;
   content: "Disabled";
   font-weight: bold;
@@ -6147,10 +6166,6 @@ input.form__date:focus, input.form__date.rc_focus {
   line-height: 1;
   font-size: 14px;
   text-indent: 6px;
-}
-
-.rc_table--toggle tr.rc_disabled .rc_switch {
-  background-color: #FFF;
 }
 
 .rc_table[table-borderless="true"] tbody tr + tr td {

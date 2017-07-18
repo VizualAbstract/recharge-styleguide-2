@@ -410,3 +410,25 @@ img.admin-recharge {
 		}
 	}
 }
+
+/* Switches */
+.admin-recharge {
+	.rc_switch__input:checked + .rc_switch__button {
+		background-color: #54bad3;
+	}
+	.rc_text--base {
+		color: #54bad3;
+	}
+}
+
+/* Toggle table */
+.rc_table {
+	&--toggle {
+		tr.admin-recharge {
+			background-color: #EDF8FB;
+		}
+		tr.admin-recharge.rc_disabled {
+			background-color: #FFF;
+		}
+	}
+}

@@ -123,7 +123,7 @@
 					</td>
 					<td><a href="#"><span class="fa fa-trash"></span></a></td>
 				</tr>
-				<tr>
+				<tr class="admin-recharge">
 					<td>
 						<label class="rc_text--base">KLEW_TEST_STRAWBERRY_SUBSCRIPTION_ONLY</label>
 						<p class="rc_text--info">
@@ -175,7 +175,7 @@
 </div>
 <h3>Notifications</h3>
 <p>This table is using an attribute to remove the border between table rows: <code>table-borderless="true"</code></p>
-<div class="rc_example">
+<div class="rc_example" id="app-notifications">
 	<div class="rc_table__container">
 		<table class="rc_table rc_table--toggle" table-borderless="true">
 			<tbody>
@@ -219,7 +219,7 @@
 						</label>
 					</td>
 				</tr>
-				<tr>
+				<tr class="admin-recharge">
 					<td>
 						<label class="rc_font--semibold">
 							<a href="#">Out of Stock</a>
@@ -245,10 +245,38 @@
 </div>
 
 <script>
+/*
+	function _containsTag(element, queryTag) {
+		if (!element || typeof(queryTag) !== 'string') {
+			return false;
+		} else if () {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	function _findAncestorTag(element, queryElem) {
+		while ((element = element.parentElement) && !_containsTag(element, queryElem));
+		return element;
+	}
+	var table = document.querySelector('.rc_table--toggle'),
+		switches = table.querySelectorAll('.rc_switch__input');
+	switches.forEach(function(elem, i) {
+		elem.addEventListener('change', function(evt) {
+			var target = evt.target,
+				tr = _findAncestorTag(target, 'tr');
+			if (tr.className.indexOf('rc_disabled') > -1) {
+				tr.className = tr.className.replace('rc_disabled', '');
+			} else {
+				tr.className += ' rc_disabled';
+			}
+		});
+	});
+*/
 	$(document).on('change', '.rc_switch__input', function(evt) {
 		var jElem = $(evt.target),
 			tr = jElem.parents('tr');
-			tr.toggleClass('rc_disabled');
+		tr.toggleClass('rc_disabled');
 	});
 </script>
 {% endblock %}

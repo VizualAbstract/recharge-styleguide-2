@@ -87,8 +87,8 @@ $table-label-font-size: 16px;
 	}
 }
 
-.rc_table {
-	&--toggle {
+.rc_table--toggle {
+	tbody {
 		th,
 		td {
 			vertical-align: middle;
@@ -103,9 +103,11 @@ $table-label-font-size: 16px;
 				text-align: right;
 			}
 		}
+		tr {
+			background-color: #F2FCFA;
+		}
 		tr.rc_disabled {
-			background-color: #EEE;
-			color: #8E8E8E;
+			background-color: #FFF;
 			td {
 				&:first-child {
 					label {
@@ -120,9 +122,6 @@ $table-label-font-size: 16px;
 						}
 					}
 				}
-			}
-			.rc_switch {
-				background-color: #FFF;
 			}
 		}
 	}

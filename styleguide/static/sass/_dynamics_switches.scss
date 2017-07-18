@@ -147,3 +147,20 @@ $switch-on-background: #4dd6b7;
 		}
 	}
 }
+
+/* Labeling */
+.rc_switch + {
+	strong, b, i, em,
+	input, button, label,
+	h1, h2, h3, h4, h5, h6 {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0 0 10px;
+		line-height: 1;
+	}
+	label {
+		color: #8C8C8C;
+		font-size: $font-size-small;
+		font-family: 'ralewaysemibold', arial, sans-serif;
+	}
+}

@@ -385,4 +385,22 @@ img.admin-recharge {
   color: #54bad3;
 }
 
+/* Switches */
+.admin-recharge .rc_switch__input:checked + .rc_switch__button {
+  background-color: #54bad3;
+}
+
+.admin-recharge .rc_text--base {
+  color: #54bad3;
+}
+
+/* Toggle table */
+.rc_table--toggle tr.admin-recharge {
+  background-color: #EDF8FB;
+}
+
+.rc_table--toggle tr.admin-recharge.rc_disabled {
+  background-color: #FFF;
+}
+
 /*# sourceMappingURL=../css/admin.scss.css.map */
