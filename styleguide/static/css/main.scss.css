@@ -6006,8 +6006,8 @@ input.form__date:focus, input.form__date.rc_focus {
     z-index: 1;
   }
   .flex__full-height > .navbar + .flex__container {
-    margin-top: -81px;
-    padding-top: 81px;
+    margin-top: -61px;
+    padding-top: 61px;
     z-index: 0;
   }
   .flex__full-height > .flex__container {
@@ -6215,6 +6215,18 @@ input.form__date:focus, input.form__date.rc_focus {
   padding: 30px;
 }
 
+/* TEMP STYLES WHILE MIGRATING SIDE_NAV FROM PROXY PAGES */
+div#rc_sidenav .customer__name {
+  display: inline-block;
+  margin-left: -15px;
+}
+
+div#rc_sidenav .rc_sidebar__container {
+  height: 100%;
+  margin-left: -30px;
+}
+
+/* END OF TEMP STYLES */
 .sidebar {
   background-color: #EEE;
 }
