@@ -482,6 +482,66 @@
 	}
 }
 
+.flex__container[flex-max="sm"],
+.flex__container[flex-sm="true"],
+.flex__container[flex-max="md"],
+.flex__container[flex-md="true"],
+.flex__container[flex-max="lg"],
+.flex__container[flex-lg="true"] {
+	.flex__sidebar {
+		@media screen and (max-width: $mobile-nav-max) {
+			flex-basis: percentage(12 / 12);
+			max-width: percentage(12 / 12);
+		}
+		@media screen and (min-width: $mobile-nav-max + 1) {
+			flex-basis: percentage(3 / 12);
+			max-width: percentage(3 / 12);
+		}
+	}
+	.flex__content {
+		@media screen and (max-width: $mobile-nav-max) {
+			flex-basis: percentage(12 / 12);
+			max-width: percentage(12 / 12);
+		}
+		@media screen and (min-width: $mobile-nav-max + 1) {
+			flex-basis: percentage(8 / 12);
+			max-width: percentage(8 / 12);
+		}
+	}
+}
+.flex__container[flex-max="md"],
+.flex__container[flex-md="true"],
+.flex__container[flex-max="lg"],
+.flex__container[flex-lg="true"] {
+	.flex__sidebar {
+		@media screen and (min-width: $screen-md-min) {
+			flex-basis: percentage(4 / 12);
+			max-width: percentage(4 / 12);
+		}
+	}
+	.flex__content {
+		@media screen and (min-width: $screen-md-min) {
+			flex-basis: percentage(8 / 12);
+			max-width: percentage(8 / 12);
+		}
+	}
+}
+.flex__container[flex-max="lg"],
+.flex__container[flex-lg="true"] {
+	.flex__sidebar {
+		@media screen and (min-width: $screen-lg-min) {
+			flex-basis: percentage(3 / 12);
+			max-width: percentage(3 / 12);
+		}
+	}
+	.flex__content {
+		@media screen and (min-width: $screen-lg-min) {
+			flex-basis: percentage(9 / 12);
+			max-width: percentage(9 / 12);
+		}
+	}
+}
+
 .flex--visible {
 	&[flex-order="reverse"] {
 		div[class^="flex__"] {

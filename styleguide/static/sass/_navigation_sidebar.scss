@@ -19,11 +19,13 @@ div#rc_sidenav {
 }
 
 .flex__sidebar {
+
 	.sidebar {
 		height: 100%;
 		margin-left: -$gutter;
 		// margin-top: -($gutter - 5);
 		// margin-bottom: -$gutter;
+
 		@media screen and (max-width: $mobile-nav-max) {
 			margin-right: -$gutter;
 		}
@@ -34,8 +36,10 @@ div#rc_sidenav {
 	width: 100%;
 	padding: 0;
 	list-style: none;
+
 	.menu__item {
 		text-transform: uppercase;
+
 		> a {
 			width: 100%;
 			line-height: 1;
@@ -44,6 +48,7 @@ div#rc_sidenav {
 			padding: 14px 15px;
 			text-decoration: none;
 			color: #424242;
+
 			&:hover,
 			&:focus,
 			&:active,

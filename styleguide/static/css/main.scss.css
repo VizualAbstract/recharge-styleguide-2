@@ -5883,6 +5883,90 @@ input.form__date:focus, input.form__date.rc_focus {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .flex__container[flex-max="sm"] .flex__sidebar,
+  .flex__container[flex-sm="true"] .flex__sidebar,
+  .flex__container[flex-max="md"] .flex__sidebar,
+  .flex__container[flex-md="true"] .flex__sidebar,
+  .flex__container[flex-max="lg"] .flex__sidebar,
+  .flex__container[flex-lg="true"] .flex__sidebar {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex__container[flex-max="sm"] .flex__sidebar,
+  .flex__container[flex-sm="true"] .flex__sidebar,
+  .flex__container[flex-max="md"] .flex__sidebar,
+  .flex__container[flex-md="true"] .flex__sidebar,
+  .flex__container[flex-max="lg"] .flex__sidebar,
+  .flex__container[flex-lg="true"] .flex__sidebar {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .flex__container[flex-max="sm"] .flex__content,
+  .flex__container[flex-sm="true"] .flex__content,
+  .flex__container[flex-max="md"] .flex__content,
+  .flex__container[flex-md="true"] .flex__content,
+  .flex__container[flex-max="lg"] .flex__content,
+  .flex__container[flex-lg="true"] .flex__content {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex__container[flex-max="sm"] .flex__content,
+  .flex__container[flex-sm="true"] .flex__content,
+  .flex__container[flex-max="md"] .flex__content,
+  .flex__container[flex-md="true"] .flex__content,
+  .flex__container[flex-max="lg"] .flex__content,
+  .flex__container[flex-lg="true"] .flex__content {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex__container[flex-max="md"] .flex__sidebar,
+  .flex__container[flex-md="true"] .flex__sidebar,
+  .flex__container[flex-max="lg"] .flex__sidebar,
+  .flex__container[flex-lg="true"] .flex__sidebar {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex__container[flex-max="md"] .flex__content,
+  .flex__container[flex-md="true"] .flex__content,
+  .flex__container[flex-max="lg"] .flex__content,
+  .flex__container[flex-lg="true"] .flex__content {
+    flex-basis: 66.66667%;
+    max-width: 66.66667%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .flex__container[flex-max="lg"] .flex__sidebar,
+  .flex__container[flex-lg="true"] .flex__sidebar {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .flex__container[flex-max="lg"] .flex__content,
+  .flex__container[flex-lg="true"] .flex__content {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .flex--visible[flex-order="reverse"] div[class^="flex__"] + div[class^="flex__"] {
     border-right: 1px solid #fff;

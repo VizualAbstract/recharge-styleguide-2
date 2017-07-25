@@ -81,4 +81,75 @@
 		</div>
 	</div>
 </div>
+<h2>Customer portal sidebar</h2>
+<div class="rc_example" style="padding-left: 0; padding-right: 0;">
+	<div class="flex__container" flex-max="lg" style="margin-left: auto; margin-right: auto;">
+		<div class="flex__layout">
+			<div class="flex__sidebar">
+				<div class="sidebar">
+					<ul class="sidebar__menu">
+						<li class="menu_item">
+							Jimmy Charge
+							<span class="fa fa-link"></span>
+						</li>
+						<li class="menu__item">
+							<a href="#">SUBSCRIPTIONS</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">BILLING INFORMATION</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">PURCHASE HISTORY</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="active">Account</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex__content">
+				{{ ui_element("headers/settings", {'title': "Welcome James Erck"}) | safe }}
+				<div class="flex__container" flex-static="true" flex-seamless="true" flex-max="md" flex-anchor="left">
+					<div class="flex__layout">
+						<div class="flex__full">
+							{{ ui_element('headers/subtitle', {
+								'title': "Partner details",
+								'size': "3",
+								'links': [{
+									'icon': "pencil",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<br>
+							{{ ui_element('headers/subtitle', {
+								'title': "Email",
+								'size': "5",
+								'text': "james.erck@abovemarket.com"
+							}) | safe }}
+							<hr>
+							{{ ui_element('headers/subtitle', {
+								'title': "Partner details",
+								'size': "5",
+								'links': [{
+									'text': "http://shopifysubscriptions.com/affiliate/4",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<hr>
+							{{ ui_element('headers/subtitle', {
+								'title': "Paypal",
+								'size': "5",
+								'links': [{
+									'text': "paypal@abovemarket.com",
+									'color': "primary",
+								}]
+							}) | safe }}
+							<hr>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
