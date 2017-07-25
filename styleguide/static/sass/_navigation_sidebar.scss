@@ -15,7 +15,7 @@ div#rc_sidenav {
 /* END OF TEMP STYLES */
 
 .sidebar {
-	background-color: #EEE;
+	background-color: #FFF;
 }
 
 .flex__sidebar {
@@ -50,11 +50,34 @@ div#rc_sidenav {
 			color: #424242;
 
 			&:hover,
-			&:focus,
+			&:focus {
+				color: #424242;
+				background-color: #EEE;
+			}
 			&:active,
 			&.active {
-				background-color: #2C93AC;
 				color: #FFF;
+				background-color: #2C93AC;
+			}
+		}
+	}
+}
+
+/* Alt styling */
+.sidebar {
+	&--alt {
+		background-color: #EEE;
+		.sidebar__menu {
+			.menu__item {
+				> a {
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						background-color: #2C93AC;
+						color: #FFF;
+					}
+				}
 			}
 		}
 	}

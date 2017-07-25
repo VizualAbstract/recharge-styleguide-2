@@ -6327,7 +6327,7 @@ div#rc_sidenav .rc_sidebar__container {
 
 /* END OF TEMP STYLES */
 .sidebar {
-  background-color: #EEE;
+  background-color: #FFF;
 }
 
 .flex__sidebar .sidebar {
@@ -6361,7 +6361,22 @@ div#rc_sidenav .rc_sidebar__container {
   color: #424242;
 }
 
-.sidebar__menu .menu__item > a:hover, .sidebar__menu .menu__item > a:focus, .sidebar__menu .menu__item > a:active, .sidebar__menu .menu__item > a.active {
+.sidebar__menu .menu__item > a:hover, .sidebar__menu .menu__item > a:focus {
+  color: #424242;
+  background-color: #EEE;
+}
+
+.sidebar__menu .menu__item > a:active, .sidebar__menu .menu__item > a.active {
+  color: #FFF;
+  background-color: #2C93AC;
+}
+
+/* Alt styling */
+.sidebar--alt {
+  background-color: #EEE;
+}
+
+.sidebar--alt .sidebar__menu .menu__item > a:hover, .sidebar--alt .sidebar__menu .menu__item > a:focus, .sidebar--alt .sidebar__menu .menu__item > a:active, .sidebar--alt .sidebar__menu .menu__item > a.active {
   background-color: #2C93AC;
   color: #FFF;
 }
