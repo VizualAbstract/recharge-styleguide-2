@@ -1,74 +1,90 @@
 $gutter: 30px;
 
-/* TEMP STYLES WHILE MIGRATING SIDE_NAV FROM PROXY PAGES */
-div#rc_sidenav {
-	.customer__name {
-	    display: inline-block;
-	    margin-left: -15px;
-	}
-
-    .rc_sidebar__container {
-        height: 100%;
-        margin-left: -30px;
-    }
-}
-/* END OF TEMP STYLES */
-
-.sidebar {
+.sidebar,
+.rc_sidebar {
 	background-color: #FFF;
 }
 
 .flex__sidebar {
 
-	.sidebar {
+	.sidebar,
+	.rc_sidebar {
 		height: 100%;
 		margin-left: -$gutter;
-		// margin-top: -($gutter - 5);
-		// margin-bottom: -$gutter;
 
 		@media screen and (max-width: $mobile-nav-max) {
 			margin-right: -$gutter;
 		}
 	}
+
+	.sidebar--alt,
+	.rc_sidebar--alt {
+		@media screen and (max-width: $mobile-nav-max) {
+			margin-bottom: $gutter;
+		}
+	}
 }
 
-.sidebar__menu {
-	width: 100%;
-	padding: 0;
-	list-style: none;
+.sidebar,
+.rc_sidebar {
+	&__header {
+		padding: 0 30px 14px;
 
-	.menu__item {
-		text-transform: uppercase;
+		h2, h3 {
+			display: inline-block;
+		}
 
-		> a {
-			width: 100%;
-			line-height: 1;
-			font-size: $font-size-base;
-			display: block;
-			padding: 14px 15px;
-			text-decoration: none;
-			color: #424242;
+		@media screen and (min-width: $mobile-nav-max + 1) {
+			padding: 0 15px 14px;
+		}
+	}
 
-			&:hover,
-			&:focus {
+	&__menu {
+		width: 100%;
+		padding: 0;
+		list-style: none;
+
+		.menu__item {
+			text-transform: uppercase;
+
+			> a {
+				width: 100%;
+				line-height: 1;
+				font-size: $font-size-base;
+				display: block;
+				padding: 14px 15px;
+				text-decoration: none;
 				color: #424242;
-				background-color: #EEE;
-			}
-			&:active,
-			&.active {
-				color: #FFF;
-				background-color: #2C93AC;
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: #424242;
+					background-color: #EEE;
+				}
+				&.active {
+					color: #FFF;
+					background-color: #2C93AC;
+				}
 			}
 		}
 	}
 }
 
 /* Alt styling */
-.sidebar {
+.sidebar,
+.rc_sidebar {
 	&--alt {
 		background-color: #EEE;
-		.sidebar__menu {
+
+		.sidebar__menu,
+		.rc_sidebar__menu {
+			margin: 0;
+			padding: 0;
+			list-style: none;
 			.menu__item {
+				margin: 0;
+				padding: 0;
 				> a {
 					&:hover,
 					&:focus,

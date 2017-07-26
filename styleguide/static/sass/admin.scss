@@ -432,3 +432,28 @@ img.admin-recharge {
 		}
 	}
 }
+
+/* Cotextual menus */
+.admin-recharge {
+	.form__input__contextual {
+		background-color: #f2f9fb;
+	}
+}
+
+/* Table classes */
+.admin-recharge {
+	[class*="fa-"] {
+		color: #54bad3;
+		&:hover {
+			color: darken($admin-color, 14%);
+		}
+	}
+}
+
+/* Text */
+.admin-recharge {
+	.form__help,
+	.rc_text--info {
+		color: #83c7da
+	}
+}

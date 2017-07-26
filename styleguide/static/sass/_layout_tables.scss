@@ -24,6 +24,16 @@ $table-label-font-size: 16px;
 		text-align: left;
 		vertical-align: bottom;
 	}
+	[class*="fa-"] {
+		font-size: 20px;
+		color: #8c8c8c;
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: #474747;
+		}
+	}
 	thead {
 		td, th {
 			font-weight: normal;
@@ -45,14 +55,11 @@ $table-label-font-size: 16px;
 			border-top: 1px solid $table-border-color;
 		}
 	}
-	.fa-trash {
-		font-size: 20px;
-		color: #8c8c8c;
-		&:hover,
-		&:focus,
-		&:active,
-		&.active {
-			color: #474747;
+	thead {
+		th {
+			[class*="fa-"] {
+				font-size: inherit;
+			}
 		}
 	}
 }

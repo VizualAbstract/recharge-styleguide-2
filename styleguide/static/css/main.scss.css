@@ -5529,6 +5529,13 @@ input.form__date:focus, input.form__date.rc_focus {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .flex__layout [class^="flex__sm"] {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 /* Fixing the first and last-column padding */
 @media screen and (max-width: 575px) {
   .flex__layout .flex__xs__12 {
@@ -5565,6 +5572,14 @@ input.form__date:focus, input.form__date.rc_focus {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .flex__layout .flex__xs__12,
+  .flex__layout .flex__sm__12 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .flex__layout .flex__full {
   padding-top: 25px;
   padding-bottom: 30px;
@@ -5591,6 +5606,9 @@ input.form__date:focus, input.form__date.rc_focus {
   .flex__layout .flex__content {
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .flex__layout .flex__sidebar {
+    padding-bottom: 0;
   }
 }
 
@@ -6126,6 +6144,13 @@ input.form__date:focus, input.form__date.rc_focus {
   height: auto;
 }
 
+/* Form group patch */
+@media screen and (max-width: 767px) {
+  [class^="flex__sm"] + [class^="flex__sm"] .form__group {
+    margin-top: 30px;
+  }
+}
+
 .rc_table {
   width: 100%;
 }
@@ -6158,6 +6183,15 @@ input.form__date:focus, input.form__date.rc_focus {
   vertical-align: bottom;
 }
 
+.rc_table [class*="fa-"] {
+  font-size: 20px;
+  color: #8c8c8c;
+}
+
+.rc_table [class*="fa-"]:hover, .rc_table [class*="fa-"]:focus, .rc_table [class*="fa-"]:active, .rc_table [class*="fa-"].active {
+  color: #474747;
+}
+
 .rc_table thead td, .rc_table thead th {
   font-weight: normal;
   font-family: 'ralewaysemibold', arial, sans-serif;
@@ -6182,13 +6216,8 @@ input.form__date:focus, input.form__date.rc_focus {
   border-top: 1px solid #EEE;
 }
 
-.rc_table .fa-trash {
-  font-size: 20px;
-  color: #8c8c8c;
-}
-
-.rc_table .fa-trash:hover, .rc_table .fa-trash:focus, .rc_table .fa-trash:active, .rc_table .fa-trash.active {
-  color: #474747;
+.rc_table thead th [class*="fa-"] {
+  font-size: inherit;
 }
 
 .rc_table__container {
@@ -6314,44 +6343,63 @@ input.form__date:focus, input.form__date.rc_focus {
   padding: 30px;
 }
 
-/* TEMP STYLES WHILE MIGRATING SIDE_NAV FROM PROXY PAGES */
-div#rc_sidenav .customer__name {
-  display: inline-block;
-  margin-left: -15px;
-}
-
-div#rc_sidenav .rc_sidebar__container {
-  height: 100%;
-  margin-left: -30px;
-}
-
-/* END OF TEMP STYLES */
-.sidebar {
+.sidebar,
+.rc_sidebar {
   background-color: #FFF;
 }
 
-.flex__sidebar .sidebar {
+.flex__sidebar .sidebar,
+.flex__sidebar .rc_sidebar {
   height: 100%;
   margin-left: -30px;
 }
 
 @media screen and (max-width: 767px) {
-  .flex__sidebar .sidebar {
+  .flex__sidebar .sidebar,
+  .flex__sidebar .rc_sidebar {
     margin-right: -30px;
   }
 }
 
-.sidebar__menu {
+@media screen and (max-width: 767px) {
+  .flex__sidebar .sidebar--alt,
+  .flex__sidebar .rc_sidebar--alt {
+    margin-bottom: 30px;
+  }
+}
+
+.sidebar__header,
+.rc_sidebar__header {
+  padding: 0 30px 14px;
+}
+
+.sidebar__header h2, .sidebar__header h3,
+.rc_sidebar__header h2,
+.rc_sidebar__header h3 {
+  display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar__header,
+  .rc_sidebar__header {
+    padding: 0 15px 14px;
+  }
+}
+
+.sidebar__menu,
+.rc_sidebar__menu {
   width: 100%;
   padding: 0;
   list-style: none;
 }
 
-.sidebar__menu .menu__item {
+.sidebar__menu .menu__item,
+.rc_sidebar__menu .menu__item {
   text-transform: uppercase;
 }
 
-.sidebar__menu .menu__item > a {
+.sidebar__menu .menu__item > a,
+.rc_sidebar__menu .menu__item > a {
   width: 100%;
   line-height: 1;
   font-size: 16px;
@@ -6361,22 +6409,56 @@ div#rc_sidenav .rc_sidebar__container {
   color: #424242;
 }
 
-.sidebar__menu .menu__item > a:hover, .sidebar__menu .menu__item > a:focus {
+.sidebar__menu .menu__item > a:hover, .sidebar__menu .menu__item > a:focus, .sidebar__menu .menu__item > a:active,
+.rc_sidebar__menu .menu__item > a:hover,
+.rc_sidebar__menu .menu__item > a:focus,
+.rc_sidebar__menu .menu__item > a:active {
   color: #424242;
   background-color: #EEE;
 }
 
-.sidebar__menu .menu__item > a:active, .sidebar__menu .menu__item > a.active {
+.sidebar__menu .menu__item > a.active,
+.rc_sidebar__menu .menu__item > a.active {
   color: #FFF;
   background-color: #2C93AC;
 }
 
 /* Alt styling */
-.sidebar--alt {
+.sidebar--alt,
+.rc_sidebar--alt {
   background-color: #EEE;
 }
 
-.sidebar--alt .sidebar__menu .menu__item > a:hover, .sidebar--alt .sidebar__menu .menu__item > a:focus, .sidebar--alt .sidebar__menu .menu__item > a:active, .sidebar--alt .sidebar__menu .menu__item > a.active {
+.sidebar--alt .sidebar__menu,
+.sidebar--alt .rc_sidebar__menu,
+.rc_sidebar--alt .sidebar__menu,
+.rc_sidebar--alt .rc_sidebar__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar--alt .sidebar__menu .menu__item,
+.sidebar--alt .rc_sidebar__menu .menu__item,
+.rc_sidebar--alt .sidebar__menu .menu__item,
+.rc_sidebar--alt .rc_sidebar__menu .menu__item {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar--alt .sidebar__menu .menu__item > a:hover, .sidebar--alt .sidebar__menu .menu__item > a:focus, .sidebar--alt .sidebar__menu .menu__item > a:active, .sidebar--alt .sidebar__menu .menu__item > a.active,
+.sidebar--alt .rc_sidebar__menu .menu__item > a:hover,
+.sidebar--alt .rc_sidebar__menu .menu__item > a:focus,
+.sidebar--alt .rc_sidebar__menu .menu__item > a:active,
+.sidebar--alt .rc_sidebar__menu .menu__item > a.active,
+.rc_sidebar--alt .sidebar__menu .menu__item > a:hover,
+.rc_sidebar--alt .sidebar__menu .menu__item > a:focus,
+.rc_sidebar--alt .sidebar__menu .menu__item > a:active,
+.rc_sidebar--alt .sidebar__menu .menu__item > a.active,
+.rc_sidebar--alt .rc_sidebar__menu .menu__item > a:hover,
+.rc_sidebar--alt .rc_sidebar__menu .menu__item > a:focus,
+.rc_sidebar--alt .rc_sidebar__menu .menu__item > a:active,
+.rc_sidebar--alt .rc_sidebar__menu .menu__item > a.active {
   background-color: #2C93AC;
   color: #FFF;
 }

@@ -160,6 +160,74 @@
 			</div>
 		</div>
 	</div>
+	<br>
+	<fieldset class="admin-recharge">
+		<legend>
+			<h4>Cancellation and customer retention</h4>
+		</legend>
+		<div class="form__group">
+			<input type="radio" class="form__radio" id="cancelation_type_basic" name="cancelation_type" value="Basic">
+			<label for="cancelation_type_basic" class="form__label">
+				Basic cancellation
+				<button class="rc_tooltip__button" title="" data-content="<ul style='list-style: disc inside;'><li>Fill out an additional comments form</li><li>Select a reason for cancellation</li></ul>" data-original-title="Basic cancellation gives your
+			customers the option to:"></button>
+			</label>
+			<div class="form__help">
+				<p>Let your customers cancel their subscriptions through the customer portal.</p>
+			</div>
+		</div>
+		<div class="form__group">
+			<input type="radio" class="form__radio" id="cancelation_type_with_strategy" name="cancelation_type" checked="" data-rc-watcher="" value="Strategy">
+			<label for="cancelation_type_with_strategy" class="form__label">Cancellation with customer retention strategy</label>
+			<div class="form__help">
+				<p>Let your customers select a reason for cancelling their subscription, then offer a custom incentive to encourage them to continue their subscription.</p>
+			</div>
+			<div class="form__input__contextual">
+				<fieldset>
+					<legend>
+						<h4>Customer retention strategies</h4>
+					</legend>
+					<div class="form__group">
+						<table class="rc_table" table-borderless="true" table-responsive="true">
+							<tbody>
+								<tr>
+								    <td>
+								        <label class="rc_text--base">skip next charge</label>
+								        <p class="rc_text--info">Returns cancel and skip or pause options</p>
+								    </td>
+								    <td>
+								        <button type="button" class="button button--link" onclick="confirmDelete('skip next charge', 3);">
+								            <span class="fa fa-trash"></span>
+								        </button>
+								        <button type="button" class="button button--link" onclick="editStrategy(3);">
+								            <span class="fa fa-cog"></span>
+								        </button>
+								    </td>
+								</tr>
+								<tr>
+								    <td>
+								        <label class="rc_text--base">discount</label>
+								        <p class="rc_text--info">Returns cancel and apply discount options</p>
+								    </td>
+								    <td>
+								        <button type="button" class="button button--link" onclick="confirmDelete('discount', 21)">
+								            <span class="fa fa-trash"></span>
+								        </button>
+								        <button type="button" class="button button--link" onclick="editStrategy(21)">
+								            <span class="fa fa-cog"></span>
+								        </button>
+								    </td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</fieldset>
+				<fieldset>
+					<button type="button" class="button admin-recharge" onclick="addStrategy()">Add retention strategy</button>
+				</fieldset>
+			</div>
+		</div>
+	</fieldset>
 </div>
 
 <h2>Navivation elements</h2>

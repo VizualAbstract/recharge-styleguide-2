@@ -403,4 +403,24 @@ img.admin-recharge {
   background-color: #FFF;
 }
 
+/* Cotextual menus */
+.admin-recharge .form__input__contextual {
+  background-color: #f2f9fb;
+}
+
+/* Table classes */
+.admin-recharge [class*="fa-"] {
+  color: #54bad3;
+}
+
+.admin-recharge [class*="fa-"]:hover {
+  color: #2d97b1;
+}
+
+/* Text */
+.admin-recharge .form__help,
+.admin-recharge .rc_text--info {
+  color: #83c7da;
+}
+
 /*# sourceMappingURL=../css/admin.scss.css.map */

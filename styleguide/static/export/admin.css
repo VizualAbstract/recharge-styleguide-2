@@ -384,3 +384,41 @@ img.admin-recharge {
 .admin-recharge .rc_tooltip__button:after {
   color: #54bad3;
 }
+
+/* Switches */
+.admin-recharge .rc_switch__input:checked + .rc_switch__button {
+  background-color: #54bad3;
+}
+
+.admin-recharge .rc_text--base {
+  color: #54bad3;
+}
+
+/* Toggle table */
+.rc_table--toggle tr.admin-recharge {
+  background-color: #EDF8FB;
+}
+
+.rc_table--toggle tr.admin-recharge.rc_disabled {
+  background-color: #FFF;
+}
+
+/* Cotextual menus */
+.admin-recharge .form__input__contextual {
+  background-color: #f2f9fb;
+}
+
+/* Table classes */
+.admin-recharge [class*="fa-"] {
+  color: #54bad3;
+}
+
+.admin-recharge [class*="fa-"]:hover {
+  color: #2d97b1;
+}
+
+/* Text */
+.admin-recharge .form__help,
+.admin-recharge .rc_text--info {
+  color: #83c7da;
+}
