@@ -1,0 +1,45 @@
+legend {
+  width: 100%; }
+  legend h1, legend .rc_h1,
+  legend h2, legend .rc_h2,
+  legend h3, legend .rc_h3,
+  legend h4, legend .rc_h4,
+  legend h5, legend .rc_h5,
+  legend h6, legend .rc_h6 {
+    line-height: 1; }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0; }
+  fieldset + fieldset {
+    margin-top: 60px; }
+
+.form__group + .form__group {
+  margin-top: 34px; }
+
+legend + .form__group {
+  margin-top: 30px; }
+
+.form__actions {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .form__actions .button {
+    width: 100%; }
+
+fieldset + fieldset.form__actions {
+  margin-top: 60px;
+  margin-bottom: 30px; }
+
+.form__placeholder {
+  padding-top: 6px; }
+
+.form__group > .form__input + .button,
+.form__group > .form__color + .button,
+.form__group > .form__date + .button {
+  margin-top: 12px; }

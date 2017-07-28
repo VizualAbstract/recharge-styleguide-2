@@ -1,0 +1,73 @@
+/* Sidebar coloring */
+.sidebar,
+.rc_sidebar {
+	background-color: #FFF;
+
+	&__header {
+		padding: 0 30px 14px;
+
+		@media screen and (min-width: $mobile-nav-max + 1) {
+			padding: 0 15px 14px;
+		}
+	}
+	&__menu {
+
+		.menu__item,
+		.rc_menu__item {
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+
+			> a {
+				width: 100%;
+				line-height: 1;
+				font-size: $font-size-base;
+				display: block;
+				padding: 14px 15px;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.sidebar__menu,
+	.rc_sidebar__menu {
+		.menu__item,
+		.rc_menu__item {
+			> a {
+				color: #424242;
+
+				&:hover,
+				&:focus,
+				&:active {
+					color: #424242;
+					background-color: #EEE;
+				}
+
+				&.active {
+					color: #FFF;
+					background-color: #2C93AC;
+				}
+			}
+		}
+	}
+
+	&--alt {
+		background-color: #EEE;
+
+		.sidebar__menu,
+		.rc_sidebar__menu {
+			.menu__item,
+			.rc_menu__item {
+				> a {
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						background-color: #2C93AC;
+						color: #FFF;
+					}
+				}
+			}
+		}
+	}
+}

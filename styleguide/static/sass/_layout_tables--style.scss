@@ -4,55 +4,55 @@ $table-label-font-size: 16px;
 
 .rc_table {
 	width: 100%;
-	// th,
-	// td {
-	// 	padding: 10px;
-	// 	&:first-child {
-	// 		padding-left: 0;
-	// 	}
-	// 	&:last-child {
-	// 		padding-right: 0;
-	// 		text-align: right;
-	// 	}
-	// 	&:first-child:last-child {
-	// 		text-align: left;
-	// 		padding-left: 0;
-	// 		padding-right: 0;
-	// 	}
-	// }
-	// th {
-	// 	text-align: left;
-	// 	vertical-align: bottom;
-	// }
-	// [class*="fa-"] {
-	// 	font-size: 20px;
-	// 	color: #8c8c8c;
-	// 	&:hover,
-	// 	&:focus,
-	// 	&:active,
-	// 	&.active {
-	// 		color: #474747;
-	// 	}
-	// }
+	th,
+	td {
+		padding: 10px;
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+			text-align: right;
+		}
+		&:first-child:last-child {
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	th {
+		text-align: left;
+		vertical-align: bottom;
+	}
+	[class*="fa-"] {
+		font-size: 20px;
+		color: #8c8c8c;
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: #474747;
+		}
+	}
 	thead {
 		td, th {
-			// font-weight: normal;
-			// font-family: 'ralewaysemibold', arial, sans-serif;
-			// border-bottom: 1px solid $table-border-color;
-			// font-size: $table-label-font-size;
+			font-weight: normal;
+			font-family: 'ralewaysemibold', arial, sans-serif;
+			border-bottom: 1px solid $table-border-color;
+			font-size: $table-label-font-size;
 		}
 	}
 	tfoot {
-		// font-size: $table-label-font-size;
-		// font-family: 'ralewaysemibold', arial, sans-serif;
+		font-size: $table-label-font-size;
+		font-family: 'ralewaysemibold', arial, sans-serif;
 		td {
-			// border-top: 2px solid $table-border-color;
+			border-top: 2px solid $table-border-color;
 		}
 	}
 	tbody {
-		// font-size: $table-font-size;
+		font-size: $table-font-size;
 		tr + tr td {
-			// border-top: 1px solid $table-border-color;
+			border-top: 1px solid $table-border-color;
 		}
 	}
 	thead {

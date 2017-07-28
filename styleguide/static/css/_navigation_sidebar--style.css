@@ -1,0 +1,16 @@
+/* Sidebar coloring */
+.sidebar {
+  background-color: #FFF; }
+  .sidebar .sidebar__menu .menu__item > a {
+    color: #424242; }
+    .sidebar .sidebar__menu .menu__item > a:hover, .sidebar .sidebar__menu .menu__item > a:focus, .sidebar .sidebar__menu .menu__item > a:active {
+      color: #424242;
+      background-color: #EEE; }
+    .sidebar .sidebar__menu .menu__item > a.active {
+      color: #FFF;
+      background-color: #2C93AC; }
+  .sidebar--alt {
+    background-color: #EEE; }
+    .sidebar--alt .sidebar__menu .menu__item > a:hover, .sidebar--alt .sidebar__menu .menu__item > a:focus, .sidebar--alt .sidebar__menu .menu__item > a:active, .sidebar--alt .sidebar__menu .menu__item > a.active {
+      background-color: #2C93AC;
+      color: #FFF; }

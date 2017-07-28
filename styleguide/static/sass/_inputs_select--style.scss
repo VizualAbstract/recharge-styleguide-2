@@ -96,10 +96,10 @@ $arrow-color: #424242 !default;
 
 	@include textFlowFix(ellipsis);
 
-	// font-size: $font-size-base;
-	// line-height: $line-height-base;
-	// padding: $padding-base-vertical $padding-base-horizontal;
-	// height: ($line-height-computed + ($padding-base-vertical * 2) + 1);
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	padding: $padding-base-vertical $padding-base-horizontal;
+	height: ($line-height-computed + ($padding-base-vertical * 2) + 1);
 
 	&:before,
 	&:after {

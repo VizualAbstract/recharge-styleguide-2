@@ -1,0 +1,39 @@
+@import 'helpers/_variables.scss';
+
+/* Proxy reset */
+.recharge {
+	box-sizing: border-box;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	ul, ol {
+		list-style: none;
+	}
+}
+
+@import '_layout_grid-system.scss';
+@import '_layout_tables.scss';
+
+@import '_forms.scss';
+
+@import '_inputs_label.scss';
+@import '_inputs_text.scss';
+@import '_inputs_checkbox.scss';
+@import '_inputs_radio.scss';
+@import '_inputs_select.scss';
+@import '_inputs_select_filter.scss';
+@import '_inputs_number.scss';
+@import '_inputs_color.scss';
+@import '_inputs_date.scss';
+
+@import '_buttons.scss';
+// @import '_buttons--style.scss';
+
+@import '_headers_settings.scss';
+@import '_headers_signup.scss';
+@import '_headers_dropdown.scss';
+@import '_headers_subtitle.scss';
+
+@import '_navigation_sidebar.scss';

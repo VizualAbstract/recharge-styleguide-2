@@ -1,42 +1,25 @@
 @import 'helpers/_variables.scss';
 
-@import 'helpers/_reset.scss';
-@import 'helpers/_normalize.scss';
-@import 'helpers/_fonts.scss';
-
-* {
-    box-sizing: border-box;
-}
-
-@import '_layout_grid-system.scss';
-
-@import '_layout_tables.scss';
-@import '_layout_tables--style.scss';
-@import '_layout_tabs.scss';
-
 @import '_general.scss';
 
-@import '_buttons.scss';
-@import '_buttons--style.scss';
 @import '_forms.scss';
-@import '_forms--style.scss';
 
 @import '_form_help.scss';
 @import '_form_addons.scss';
 @import '_form_contextual.scss';
 
 @import '_inputs_label.scss';
-@import '_inputs_label--style.scss';
 @import '_inputs_text.scss';
-@import '_inputs_text--style.scss';
 @import '_inputs_checkbox.scss';
 @import '_inputs_radio.scss';
 @import '_inputs_select.scss';
-@import '_inputs_select--style.scss';
 @import '_inputs_select_filter.scss';
 @import '_inputs_number.scss';
 @import '_inputs_color.scss';
 @import '_inputs_date.scss';
+
+@import '_buttons.scss';
+@import '_buttons--style.scss';
 
 @import '_dynamics_dropdown.scss';
 @import '_dynamics_modals.scss';
@@ -45,14 +28,11 @@
 @import '_dynamics_switches.scss';
 
 @import '_headers_settings.scss';
-@import '_headers_settings--style.scss';
 @import '_headers_signup.scss';
 @import '_headers_dropdown.scss';
 @import '_headers_subtitle.scss';
 
 @import '_navigation_sidebar.scss';
-@import '_navigation_sidebar--style.scss';
-
 @import '_navigation_navbars.scss';
 @import '_navigation_breadcrumbs.scss';
 @import '_navigation_progress.scss';

@@ -1,9 +1,13 @@
-.flex__layout {
+.flex__layout,
+.rc_layout {
 	display: flex;
 	flex-wrap: wrap;
 	.flex__full,
 	.flex__sidebar,
 	.flex__content,
+	.rc_layout__full,
+	.rc_layout__sidebar,
+	.rc_layout__content,
 	[class^="flex__xs"],
 	[class^="flex__sm"],
 	[class^="flex__md"],
@@ -141,31 +145,36 @@
 
 [flex-reverse="true"],
 [flex-order="reverse"] {
-	.flex__layout {
+	.flex__layout,
+	.rc_layout {
 		flex-direction: row-reverse;
 	}
 }
 [flex-row="true"],
 [flex-order="false"],
 [flex-order="row"] {
-	.flex__layout {
+	.flex__layout,
+	.rc_layout {
 		flex-direction: row;
 	}
 }
 [flex-column="true"],
 [flex-order="column"] {
-	.flex__layout {
+	.flex__layout,
+	.rc_layout {
 		flex-direction: column;
 	}
 }
 [flex-unset="true"],
 [flex-order="unset"] {
-	.flex__layout {
+	.flex__layout,
+	.rc_layout {
 		flex-direction: unset;
 	}
 }
 
-.flex__layout {
+.flex__layout,
+.rc_layout {
 	&[flex-reverse="true"],
 	&[flex-order="reverse"] {
 		flex-direction: row-reverse;
@@ -185,20 +194,24 @@
 	}
 }
 
-.flex__container {
+.flex__container,
+.rc_layout__container {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: ($gutter / 2);
 	padding-right: ($gutter / 2);
-	.flex__layout {
+
+	.flex__layout,
+	.rc_layout {
 		margin-left: -($gutter / 2);
 		margin-right: -($gutter / 2);
 	}
 }
 
 // Fix padding on columns outside of max scope of media-query width
-.flex__layout {
+.flex__layout,
+.rc_layout {
 	@media screen and (max-width: $screen-xs-max) {
 		[class^="flex__sm"] {
 			padding-left: $gutter;
@@ -232,7 +245,8 @@
 }
 
 /* Fixing the first and last-column padding */
-.flex__layout {
+.flex__layout,
+.rc_layout {
 	@media screen and (max-width: $screen-xs-max) {
 		.flex__xs__12 {
 			padding-left: $gutter;
@@ -272,20 +286,24 @@
 	}
 }
 
-.flex__layout {
-	.flex__full {
+.flex__layout,
+.rc_layout {
+	.flex__full,
+	.rc_layout__full {
 		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
 		padding-bottom: $gutter;
 		padding-left: $gutter;
 		padding-right: $gutter;
 	}
-	.flex__sidebar {
+	.flex__sidebar,
+	.rc_layout__sidebar {
 		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
 		padding-bottom: $gutter;
 		padding-left: $gutter;
 		padding-right: ($gutter / 2);
 	}
-	.flex__content {
+	.flex__content,
+	.rc_layout__content {
 		padding-top: ($gutter - 5); // -5px to account for the header that will likely follow. This is a safe assumption
 		padding-bottom: $gutter;
 		padding-right: $gutter;
@@ -293,11 +311,15 @@
 	}
 	@media screen and (max-width: $mobile-nav-max) {
 		.flex__sidebar,
-		.flex__content {
+		.flex__content,
+		.rc_layout__sidebar,
+		.rc_layout__content {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
-		.flex__sidebar {
+		.flex__sidebar,
+		.rc_layout__sidebar,
+		.rc_layout__content {
 			padding-bottom: 0;
 		}
 	}
@@ -313,7 +335,8 @@
 			padding-right: $gutter;
 		}
 	}
-	.flex__layout {
+	.flex__layout,
+	.rc_layout {
 		[class^="flex__xs"],
 		[class^="flex__sm"],
 		[class^="flex__md"],
@@ -328,20 +351,28 @@
 		}
 	}
 }
+
 .flex__container[flex-reverse="true"],
-.flex__container[flex-order="reverse"] {
-	.flex__layout {
-		.flex__sidebar {
+.flex__container[flex-order="reverse"],
+.rc_layout__container[flex-reverse="true"],
+.rc_layout__container[flex-order="reverse"] {
+	.flex__layout,
+	.rc_layout {
+		.flex__sidebar,
+		.rc_layout__sidebar {
 			padding-left: ($gutter / 2);
 			padding-right: $gutter;
 		}
-		.flex__content {
+		.flex__content,
+		.rc_layout__content {
 			padding-right: ($gutter / 2);
 			padding-left: $gutter;
 		}
 		@media screen and (max-width: $mobile-nav-max) {
 			.flex__sidebar,
-			.flex__content {
+			.flex__content,
+			.rc_layout__sidebar,
+			.rc_layout__content {
 				padding-left: $gutter;
 				padding-right: $gutter;
 			}
@@ -358,7 +389,8 @@
 				padding-left: $gutter;
 			}
 		}
-		.flex__layout {
+		.flex__layout,
+		.rc_layout {
 			[class^="flex__xs"],
 			[class^="flex__sm"],
 			[class^="flex__md"],
@@ -376,7 +408,9 @@
 }
 
 .flex__container[flex-style="static"],
-.flex__container[flex-static="true"] {
+.flex__container[flex-static="true"],
+.rc_layout__container[flex-style="static"],
+.rc_layout__container[flex-static="true"] {
 	margin-left: auto;
 	margin-right: auto;
 	@media screen and (max-width: $screen-xs-max) {
@@ -397,15 +431,21 @@
 }
 
 .flex__container[flex-style="seamless"],
-.flex__container[flex-seamless="true"] {
+.flex__container[flex-seamless="true"],
+.rc_layout__container[flex-style="seamless"],
+.rc_layout__container[flex-seamless="true"] {
 	padding-left: 0;
 	padding-right: 0;
-	> .flex__layout {
+	> .flex__layout,
+	> .rc_layout {
 		margin-left: 0;
 		margin-right: 0;
 		> .flex__full,
 		> .flex__sidebar,
 		> .flex__content,
+		> .rc_layout__full,
+		> .rc_layout__sidebar,
+		> .rc_layout__content,
 		> div[class^="flex__xs"],
 		> div[class^="flex__sm"],
 		> div[class^="flex__md"],
@@ -418,41 +458,49 @@
 }
 
 .flex__container[flex-max="xs"],
-.flex__container[flex-xs="true"] {
+.rc_layout__container[flex-max="xs"] {
 	max-width: $screen-xs-max !important;
 }
 .flex__container[flex-max="sm"],
-.flex__container[flex-sm="true"] {
+.rc_layout__container[flex-max="sm"] {
 	max-width: $screen-sm-max !important;
 }
 .flex__container[flex-max="md"],
-.flex__container[flex-md="true"] {
+.rc_layout__container[flex-max="md"] {
 	max-width: $screen-md-max !important;
 }
 .flex__container[flex-max="lg"],
-.flex__container[flex-lg="true"] {
+.rc_layout__container[flex-max="lg"] {
 	max-width: $screen-lg-max !important;
 }
 
-.flex__container[flex-anchor="left"] {
+.flex__container[flex-anchor="left"],
+.rc_layout__container[flex-anchor="left"] {
 	margin-left: 0;
 }
-.flex__container[flex-anchor="right"] {
+.flex__container[flex-anchor="right"],
+.rc_layout__container[flex-anchor="right"] {
 	margin-right: 0;
 }
 
-.flex__layout {
+.flex__layout,
+.rc_layout {
 	.flex__full,
+	.rc_layout__full,
 	.flex__sidebar,
-	.flex__content {
+	.rc_layout__sidebar,
+	.flex__content,
+	.rc_layout__content {
 		flex-grow: 1;
 		flex-shrink: 0;
 	}
-	.flex__full {
+	.flex__full,
+	.rc_layout__full {
 		flex-basis: percentage(12 / 12);
 		max-width: percentage(12 / 12);
 	}
-	.flex__sidebar {
+	.flex__sidebar,
+	.rc_layout__sidebar {
 		@media screen and (max-width: $mobile-nav-max) {
 			flex-basis: percentage(12 / 12);
 			max-width: percentage(12 / 12);
@@ -474,7 +522,8 @@
 			max-width: percentage(2 / 12);
 		}
 	}
-	.flex__content {
+	.flex__content,
+	.rc_layout__content {
 		@media screen and (max-width: $mobile-nav-max) {
 			flex-basis: percentage(12 / 12);
 			max-width: percentage(12 / 12);
@@ -499,12 +548,13 @@
 }
 
 .flex__container[flex-max="sm"],
-.flex__container[flex-sm="true"],
 .flex__container[flex-max="md"],
-.flex__container[flex-md="true"],
 .flex__container[flex-max="lg"],
-.flex__container[flex-lg="true"] {
-	.flex__sidebar {
+.rc_layout__container[flex-max="sm"],
+.rc_layout__container[flex-max="md"],
+.rc_layout__container[flex-max="lg"] {
+	.flex__sidebar,
+	.rc_layout__sidebar {
 		@media screen and (max-width: $mobile-nav-max) {
 			flex-basis: percentage(12 / 12);
 			max-width: percentage(12 / 12);
@@ -514,7 +564,8 @@
 			max-width: percentage(3 / 12);
 		}
 	}
-	.flex__content {
+	.flex__content,
+	.rc_layout__content {
 		@media screen and (max-width: $mobile-nav-max) {
 			flex-basis: percentage(12 / 12);
 			max-width: percentage(12 / 12);
@@ -526,16 +577,18 @@
 	}
 }
 .flex__container[flex-max="md"],
-.flex__container[flex-md="true"],
 .flex__container[flex-max="lg"],
-.flex__container[flex-lg="true"] {
-	.flex__sidebar {
+.rc_layout__container[flex-max="md"],
+.rc_layout__container[flex-max="lg"] {
+	.flex__sidebar,
+	.rc_layout__sidebar {
 		@media screen and (min-width: $screen-md-min) {
 			flex-basis: percentage(4 / 12);
 			max-width: percentage(4 / 12);
 		}
 	}
-	.flex__content {
+	.flex__content,
+	.rc_layout__content {
 		@media screen and (min-width: $screen-md-min) {
 			flex-basis: percentage(8 / 12);
 			max-width: percentage(8 / 12);
@@ -543,14 +596,16 @@
 	}
 }
 .flex__container[flex-max="lg"],
-.flex__container[flex-lg="true"] {
-	.flex__sidebar {
+.rc_layout__container[flex-max="lg"] {
+	.flex__sidebar,
+	.rc_layout__sidebar {
 		@media screen and (min-width: $screen-lg-min) {
 			flex-basis: percentage(3 / 12);
 			max-width: percentage(3 / 12);
 		}
 	}
-	.flex__content {
+	.flex__content,
+	.rc_layout__content {
 		@media screen and (min-width: $screen-lg-min) {
 			flex-basis: percentage(9 / 12);
 			max-width: percentage(9 / 12);
@@ -612,8 +667,10 @@
 	}
 }
 
-.flex__content {
-	> .flex__container {
+.flex__content,
+.rc_layout__content {
+	> .flex__container,
+	> .rc_layout__container {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -631,8 +688,10 @@
 		}
 	}
 
-	.flex__layout {
-		+ .flex__layout {
+	.flex__layout,
+	.rc_layout {
+		+ .flex__layout,
+		+ .rc_layout {
 			@media screen and (min-width: $mobile-nav-max + 1) {
 				margin-top: $gutter;
 			}

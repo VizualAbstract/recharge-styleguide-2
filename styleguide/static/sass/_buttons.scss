@@ -56,90 +56,112 @@
 		color: darken($color, 15%);
 	}
 }
+
 /* Buttons */
 // Standard button apperance
-.button {
-	font-family: 'ralewaysemibold', arial, sans-serif;
+.button,
+.rc_button {
+	// font-family: 'ralewaysemibold', arial, sans-serif;
 	text-align: center;
 	text-decoration: none;
-	border-width: 0;
-	color: #FFF;
-	border-style: solid;
-	height: 40px;
-	line-height: 40px;
+	// border-width: 0;
+	// color: #FFF;
+	// border-style: solid;
+	// height: 40px;
+	// line-height: 40px;
 	box-sizing: border-box;
 	outline: 0;
-	min-width: 100px;
-	padding: 0 10px;
-	display: inline-block;
+	// min-width: 100px;
+	// padding: 0 10px;
+	// display: inline-block;
 	cursor: pointer;
 	touch-action: manipulation;
     white-space: nowrap;
     vertical-align: middle;
+
     &,
     &:link,
     &:visited {
-		background-color: $default;
-		color: #FFF;
+		// background-color: $default;
+		// color: #FFF;
     }
 }
+
 // Button sizes
-.button {
+.button,
+.rc_button {
 	&--base,
 	&--medium {
-		font-size: $font-size-base;
+		// font-size: $font-size-base;
 	}
+
 	&--large {
 		padding: 10px 15px;
 		height: auto;
 	}
 }
+
 // Button styles: Link
-.button--link {
+.button--link,
+.rc_button--link {
 	appearance: none;
 	background: transparent !important;
-	font-family: 'ralewayregular', arial, sans-serif;
+	// font-family: 'ralewayregular', arial, sans-serif;
 	padding-left: 0;
 	padding-right: 0;
 	min-width: auto;
 }
 
-.button--underline {
+.button--underline,
+.rc_button--underline {
 	text-decoration: underline;
 }
 
 // Button styles: Inline
-.button--inline {
+.button--inline,
+.rc_button--inline {
 	display: inline;
 	width: auto;
 	min-width: auto;
 }
+
 // Button styles: Block
-.button--block {
+.button--block,
+.rc_button--block {
 	display: block;
 	width: 100%;
 }
+
 // Button spacing fixes
-.button + .button--link {
+.button + .button--link,
+.rc_button + .rc_button--link {
 	margin-left: 10px;
 }
-.button--link + .button--link {
+.button--link + .button--link,
+.rc_button--link + .rc_button--link {
 	margin-left: 0;
 }
-.button + .button {
+.button + .button,
+.rc_button + .rc_button {
 	margin-left: 10px;
 }
-.button--block + .button--block {
+.button--block + .button--block,
+.rc_button--block + .rc_button--block {
 	margin-top: 10px;
 	margin-left: 0;
 }
+
 // Button: Disabled
-.button {
+.button,
+.rc_button {
 	&.button--disabled,
 	&.disabled,
+	&.rc_button--disabled,
+	&.rc_disabled,
 	&[disabled],
 	fieldset[disabled] & {
 		cursor: not-allowed !important;
+
 		&,
 		&:active,
 		&.active,
@@ -150,13 +172,17 @@
 		}
 	}
 }
+
 // Button link: Disabled
 .button--link {
 	&.button--disabled,
 	&.disabled,
+	&.rc_button--disabled,
+	&.rc_disabled,
 	&[disabled],
 	fieldset[disabled] & {
 		cursor: not-allowed !important;
+
 		&,
 		&:active,
 		&.active,
@@ -165,150 +191,6 @@
 		&.focus {
 			color: $disabled !important;
 			background-color: transparent !important;
-		}
-	}
-}
-// Button colors
-.button {
-	@include button-color($default);
-	// Patterns
-	&--primary {
-		@include button-color($primary);
-	}
-	&--danger {
-		@include button-color($danger);
-	}
-	&--disabled {
-		@include button-color($disabled);
-	}
-	// Contrast
-	&--black {
-		@include button-color($black);
-	}
-	&--white {
-		@include button-color($white);
-	}
-	// Shades
-	&--gray-lighter {
-		@include button-color($gray-lighter);
-	}
-	&--gray-light {
-		@include button-color($gray-light);
-	}
-	&--gray {
-		@include button-color($gray);
-	}
-	&--gray-dark {
-		@include button-color($gray-dark);
-	}
-	&--gray-darker {
-		@include button-color($gray-darker);
-	}
-	// Colors
-	&--cyan {
-		@include button-color($cyan);
-	}
-	&--blue {
-		@include button-color($blue);
-	}
-	&--green {
-		@include button-color($green);
-	}
-	&--aquamarine {
-		@include button-color($aquamarine);
-	}
-	&--mint {
-		@include button-color($mint);
-	}
-	&--yellow {
-		@include button-color($yellow);
-	}
-	&--orange {
-		@include button-color($orange);
-	}
-	&--red {
-		@include button-color($red);
-	}
-	&--magenta {
-		@include button-color($magenta);
-	}
-	&--pink {
-		@include button-color($pink);
-	}
-	&--red {
-		@include button-color($red);
-	}
-}
-// Button link colors
-.button--link {
-	&.button {
-		@include link-color($default);
-		// Patterns
-		&--primary {
-			@include link-color($primary);
-		}
-		&--danger {
-			@include link-color($danger);
-		}
-		&--disabled {
-			@include link-color($disabled);
-		}
-		// Contrast
-		&--black {
-			@include link-color($black);
-		}
-		&--white {
-			@include link-color($white);
-		}
-		// Shades
-		&--gray-lighter {
-			@include link-color($gray-lighter);
-		}
-		&--gray-light {
-			@include link-color($gray-light);
-		}
-		&--gray {
-			@include link-color($gray);
-		}
-		&--gray-dark {
-			@include link-color($gray-dark);
-		}
-		&--gray-darker {
-			@include link-color($gray-darker);
-		}
-		// Colors
-		&--cyan {
-			@include link-color($cyan);
-		}
-		&--blue {
-			@include link-color($blue);
-		}
-		&--green {
-			@include link-color($green);
-		}
-		&--aquamarine {
-			@include link-color($aquamarine);
-		}
-		&--mint {
-			@include link-color($mint);
-		}
-		&--yellow {
-			@include link-color($yellow);
-		}
-		&--orange {
-			@include link-color($orange);
-		}
-		&--red {
-			@include link-color($red);
-		}
-		&--magenta {
-			@include link-color($magenta);
-		}
-		&--pink {
-			@include link-color($pink);
-		}
-		&--red {
-			@include link-color($red);
 		}
 	}
 }

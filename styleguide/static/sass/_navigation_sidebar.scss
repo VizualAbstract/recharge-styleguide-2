@@ -2,11 +2,26 @@ $gutter: 30px;
 
 .sidebar,
 .rc_sidebar {
-	background-color: #FFF;
+	&__header {
+		// padding: 0 30px 14px;
+
+		h2, h3 {
+			display: inline-block;
+			line-height: inherit;
+		}
+	}
+
+	&__menu {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 }
 
-.flex__sidebar {
-
+/* Compatability */
+.flex__sidebar,
+.rc_layout__sidebar {
 	.sidebar,
 	.rc_sidebar {
 		height: 100%;
@@ -21,80 +36,6 @@ $gutter: 30px;
 	.rc_sidebar--alt {
 		@media screen and (max-width: $mobile-nav-max) {
 			margin-bottom: $gutter;
-		}
-	}
-}
-
-.sidebar,
-.rc_sidebar {
-	&__header {
-		padding: 0 30px 14px;
-
-		h2, h3 {
-			display: inline-block;
-		}
-
-		@media screen and (min-width: $mobile-nav-max + 1) {
-			padding: 0 15px 14px;
-		}
-	}
-
-	&__menu {
-		width: 100%;
-		padding: 0;
-		list-style: none;
-
-		.menu__item {
-			text-transform: uppercase;
-
-			> a {
-				width: 100%;
-				line-height: 1;
-				font-size: $font-size-base;
-				display: block;
-				padding: 14px 15px;
-				text-decoration: none;
-				color: #424242;
-
-				&:hover,
-				&:focus,
-				&:active {
-					color: #424242;
-					background-color: #EEE;
-				}
-				&.active {
-					color: #FFF;
-					background-color: #2C93AC;
-				}
-			}
-		}
-	}
-}
-
-/* Alt styling */
-.sidebar,
-.rc_sidebar {
-	&--alt {
-		background-color: #EEE;
-
-		.sidebar__menu,
-		.rc_sidebar__menu {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			.menu__item {
-				margin: 0;
-				padding: 0;
-				> a {
-					&:hover,
-					&:focus,
-					&:active,
-					&.active {
-						background-color: #2C93AC;
-						color: #FFF;
-					}
-				}
-			}
 		}
 	}
 }
