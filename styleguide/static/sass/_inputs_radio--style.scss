@@ -1,0 +1,117 @@
+$checkboxBackgroundColor: #424242;
+
+.form__radio {
+	display: none;
+
+	+ .form__label {
+		display: block;
+		margin-left: 0;
+
+		+ .form__radio + .form__label {
+			margin-top: 20px;
+		}
+
+		&:after {
+			// margin: 10px 0;
+		}
+
+		&:before {
+			width: 16px;
+			height: 16px;
+			content: "";
+			display: inline-block;
+			box-sizing: border-box;
+			background-color: #FFF;
+
+			margin-right: 9px;
+
+			line-height: 16px;
+			text-indent: 1px;
+			font-size: 11px;
+
+			color: #FFF;
+			font-family: fontawesome;
+
+			border: 1px solid $checkboxBackgroundColor;
+
+			vertical-align: middle;
+			position: relative;
+			top: -2px;
+		}
+	}
+}
+
+.form__radio {
+	+ label,
+	+ .form__radio__label {
+		&:before {
+			border-radius: 50%;
+		}
+	}
+}
+
+.form__radio {
+	&.error {
+		+ .form__label {
+			color: #EC3D10;
+			&:before {
+				border-color: #EC3D10;
+			}
+		}
+		&:checked,
+		&.checked {
+			+ .form__label {
+				&:before {
+					background-color: #EC3D10;
+				}
+			}
+		}
+	}
+}
+
+.form__group {
+	.form__radio:first-of-type {
+		+ .form__label {
+			// margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
+		}
+	}
+}
+
+.form__radio {
+	&:checked,
+	&.checked {
+
+		+ .form__label {
+			&:before {
+				content: "\f00c";
+				background-color: $checkboxBackgroundColor;
+			}
+		}
+	}
+}
+
+.form__radio {
+	&:disabled,
+	&.disabled {
+
+		+ .form__label {
+			&:before {
+				content: "\f068";
+				color: #999;
+				text-indent: 3px;
+				border-color: #CCC;
+			}
+		}
+		&:checked,
+		&.checked {
+			+ .form__label {
+				&:before {
+					content: "\f00c";
+					color: #999;
+					background-color: #f9f9f9;
+					text-indent: 1px;
+				}
+			}
+		}
+	}
+}

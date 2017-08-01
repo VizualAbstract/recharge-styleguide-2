@@ -102,8 +102,8 @@
 }
 
 // Button styles: Link
-.button--link,
-.rc_button--link {
+.button.button--link,
+.rc_button.rc_button--link {
 	appearance: none;
 	background: transparent !important;
 	// font-family: 'ralewayregular', arial, sans-serif;
@@ -112,22 +112,22 @@
 	min-width: auto;
 }
 
-.button--underline,
-.rc_button--underline {
+.button.button--underline,
+.rc_button.rc_button--underline {
 	text-decoration: underline;
 }
 
 // Button styles: Inline
-.button--inline,
-.rc_button--inline {
+.button.button--inline,
+.rc_button.rc_button--inline {
 	display: inline;
 	width: auto;
 	min-width: auto;
 }
 
 // Button styles: Block
-.button--block,
-.rc_button--block {
+.button.button--block,
+.rc_button.rc_button--block {
 	display: block;
 	width: 100%;
 }

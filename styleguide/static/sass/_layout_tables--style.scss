@@ -3,7 +3,6 @@ $table-font-size: 14px;
 $table-label-font-size: 16px;
 
 .rc_table {
-	width: 100%;
 	th,
 	td {
 		padding: 10px;
@@ -55,52 +54,15 @@ $table-label-font-size: 16px;
 			border-top: 1px solid $table-border-color;
 		}
 	}
-	thead {
-		th {
-			[class*="fa-"] {
-				font-size: inherit;
-			}
-		}
-	}
-}
-
-.rc_table__container {
-	overflow-x: auto;
-	.rc_table {
-		min-width: 240px;
-	}
-}
-
-.rc_table,
-.rc_table__container {
-	+ .rc_table,
-	+ .rc_table__container {
-		margin-top: 30px;
-	}
-}
-
-.rc_table {
-	th,
-	td {
-		&:first-child {
-		}
-		&:last-child {
-			.form__select {
-				max-width: 250px;
-				margin-left: auto;
-				margin-right: 0;
-			}
-		}
-	}
 }
 
 .rc_table--toggle {
 	tbody {
 		th,
 		td {
-			vertical-align: middle;
 			&:first-child {
 				padding-left: 15px;
+
 				label {
 					font-size: 16px;
 				}
@@ -115,49 +77,16 @@ $table-label-font-size: 16px;
 		}
 		tr.rc_disabled {
 			background-color: #FFF;
+
 			td {
 				&:first-child {
 					label {
 						&:after {
-							display: inline-block;
-							content: "Disabled";
 							font-weight: bold;
-							color: #676767;
-							line-height: 1;
-							font-size: 14px;
-							text-indent: 6px;
+							font-size: .8;
 						}
 					}
 				}
-			}
-		}
-	}
-}
-
-.rc_table[table-borderless="true"] {
-	tbody {
-		tr + tr {
-			td {
-				border-top: 0;
-			}
-		}
-	}
-}
-
-.rc_table[table-responsive="true"] {
-	tbody {
-		td:first-child {
-			@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-				width: 25%;
-			}
-			@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-				width: 40%;
-			}
-			@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
-				width: 55%;
-			}
-			@media screen and (min-width: $screen-xl-min) {
-				width: 70%;
 			}
 		}
 	}

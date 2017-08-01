@@ -48,6 +48,18 @@ $zIndexContinueBar: 100090;
 	}
 }
 
+.navbar__branding {
+	display: block;
+	min-height: 60px;
+	text-align: left;
+	margin: auto 15px;
+
+	h2 {
+		line-height: 60px;
+		margin-bottom: 0;
+	}
+}
+
 .navbar__toggle {
 	position: absolute;
 	top: 0;

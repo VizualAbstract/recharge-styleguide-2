@@ -1,21 +1,17 @@
 .form__input {
-	display: block;
-	width: 100%;
 	font-size: $font-size-base;
 	color: $gray-darker;
 	background-color: #FFFFFF;
 	background-image: none;
 	border-radius: 0;
-	outline: 0;
+
 	border: 1px solid $input-border;
 
 	height: 40px;
 	padding: 6px 10px 7px;
 	min-width: 100px;
-	max-width: 100%;
-	overflow: visible;
+
 	font-family: 'ralewayregular';
-	margin: 0;
 
 	+ .form__input {
 		margin-top: 10px;
@@ -29,7 +25,6 @@
 		background-color: $input-disabled-background !important;
 		border-color: $input-disabled-border !important;
 		color: $input-disabled-color !important;
-		cursor: $cursor-disabled;
 	}
 }
 
@@ -53,38 +48,5 @@
 	}
 	&:-ms-input-placeholder {
 		color: $gray-dark;
-	}
-}
-
-textarea.form__input {
-	line-height: 1.5625;
-	padding: 7px 10px;
-	height: auto;
-	min-height: 100px;
-	&--code {
-		font-family: 'pt-mono', monospace;
-		line-height: 21px;
-		min-height: 215px;
-	}
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="url"],
-input[type="tel"],
-input[type="color"],
-input[type="calendar"],
-textarea {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-}
-
-.form__input {
-	&.error {
-		border-color: $red;
 	}
 }
