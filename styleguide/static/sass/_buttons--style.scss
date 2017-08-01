@@ -164,7 +164,13 @@
 .rc_button--link {
 	&.button,
 	&.rc_button {
+		appearance: none;
+		background: transparent !important;
+		padding-left: 0;
+		padding-right: 0;
+
 		@include link-color($default);
+
 		// Patterns
 		&--primary {
 			@include link-color($primary);
