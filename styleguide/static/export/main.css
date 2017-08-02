@@ -7840,6 +7840,11 @@ input.form__date:focus, input.form__date.rc_focus {
 .rc_notification--review {
   text-align: center;
   padding: 25px 15px !important;
+  background-color: #3992ae;
+}
+
+.rc_notification--review.rc_flash {
+  text-align: center;
 }
 
 ul.review__rating {
