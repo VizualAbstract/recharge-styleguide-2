@@ -64,7 +64,7 @@
 
 		// Trigger timeout listener listener
 		var type = this.notification.className.replace("rc_notification rc_notification--", "").replace(" rc_flash rc_show", "");
-		if (type == 'error' || type == 'warning') {
+		if (type == 'error' || type == 'warning' || type == 'review') {
 			// Add a close button
 			buildCloseButton.call(this, this.notification);
 

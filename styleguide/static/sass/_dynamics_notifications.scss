@@ -71,6 +71,9 @@
 	&--success {
 		background-color: #2BAC8F;
 	}
+	&--review {
+		background-color: #3992AE;
+	}
 }
 
 .rc_flash {
@@ -150,54 +153,125 @@
 	}
 }
 
+// <<<<<<< Updated upstream
 
-.rc_notifications {
+// .rc_notifications {
 
+// 	&--review {
+// 		background-color: #3992ae;
+// 		text-align: center;
+// 		padding-bottom: 11.3333333333px;
+// 		@media screen and (min-width: $screen-sm-min) {
+// 			p {
+//     			vertical-align: middle;
+// 				height: 40px;
+//     			line-height: 40px;
+// 				display: inline-block;
+// 				+ * {
+// 					margin-left: 22px;
+// 				}
+// 			}
+// 		}
+// 		&.reviewed .rc__notifications__close {
+// 			display: none;
+// 		}
+// 		.button {
+// 			&,
+// 			&:hover,
+// 			&:active,
+// 			&:focus {
+// 				color: $blue;
+// 			}
+// 			@media screen and (max-width: $screen-xs-max) {
+// 				margin-top: 10px;
+// 				display: block;
+// 			}
+// 		}
+// 	}
+// }
+// .rating {
+// 	@extend .list;
+// 	@extend .list--inline;
+
+// 	display: inline-block;
+// 	position: relative;
+// 	top: 2px;
+
+// 	.rating__star {
+// 		cursor: pointer;
+// 		padding: 0 3px 0 1px;
+// 		position: relative;
+
+// =======
+/* Review notification bar */
+.rc_notification {
 	&--review {
-		background-color: #3992ae;
 		text-align: center;
-		padding-bottom: 11.3333333333px;
-		@media screen and (min-width: $screen-sm-min) {
-			p {
-    			vertical-align: middle;
-				height: 40px;
-    			line-height: 40px;
-				display: inline-block;
-				+ * {
-					margin-left: 22px;
-				}
-			}
+		padding: 25px 15px !important;
+		background-color: #3992ae;
+
+		&.rc_flash {
+			text-align: center;
 		}
-		&.reviewed .rc__notifications__close {
-			display: none;
-		}
-		.button {
-			&,
-			&:hover,
-			&:active,
-			&:focus {
-				color: $blue;
-			}
-			@media screen and (max-width: $screen-xs-max) {
-				margin-top: 10px;
-				display: block;
-			}
-		}
+		// @media screen and (min-width: $screen-sm-min) {
+		// 	p {
+  //   			vertical-align: middle;
+		// 		height: 40px;
+  //   			line-height: 40px;
+		// 		display: inline-block;
+		// 		+ * {
+		// 			margin-left: 22px;
+		// 		}
+		// 	}
+		// }
+		// &.reviewed .rc__notifications__close {
+		// 	display: none;
+		// }
+		// .button {
+		// 	&,
+		// 	&:hover,
+		// 	&:active,
+		// 	&:focus {
+		// 		color: $blue;
+		// 	}
+		// 	@media screen and (max-width: $screen-xs-max) {
+		// 		margin-top: 10px;
+		// 		display: block;
+		// 	}
+		// }
 	}
 }
-.rating {
-	@extend .list;
-	@extend .list--inline;
 
+// .rating {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+
+// 	li {
+// 		display: inline-block;
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+
+// 	display: inline-block;
+// 	position: relative;
+// 	top: 2px;
+
+ul.review__rating {
 	display: inline-block;
+	list-style: none;
+	cursor: pointer;
+	padding: 0 3px 0 1px;
 	position: relative;
-	top: 2px;
+	margin-left: 15px;
 
-	.rating__star {
-		cursor: pointer;
-		padding: 0 3px 0 1px;
-		position: relative;
-
+	li.rating__star {
+		display: inline-block;
+		+ li.rating__star {
+			padding-left: 5px;
+			margin-left: -5px;
+		}
+// >>>>>>> Stashed changes
 		&:before {
 			content: "\f006";
 			display: inline-block;
@@ -205,7 +279,11 @@
 			font-family: 'fontawesome';
 		}
 		&:hover,
-		&.active {
+// <<<<<<< Updated upstream
+// 		&.active {
+// =======
+		&.star--active {
+// >>>>>>> Stashed changes
 			&:before {
 				content: "\f005";
 			}
@@ -213,19 +291,41 @@
 	}
 }
 
-.error-list {
-	@extend .list;
-}
+// <<<<<<< Updated upstream
+// .error-list {
+// 	@extend .list;
+// }
 
-#rating__unrated {
-	position: absolute;
-	width: 100%;
-	left: -40px;
-	z-index: 30;
-	top: 50%;
-	transform: translateY(-45%);
-}
+// #rating__unrated {
+// 	position: absolute;
+// 	width: 100%;
+// 	left: -40px;
+// 	z-index: 30;
+// 	top: 50%;
+// 	transform: translateY(-45%);
+// }
 
-#rating__rated {
-	opacity: 0;
-}
+// #rating__rated {
+// 	opacity: 0;
+// }
+// =======
+// .error-list {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// 	li {
+// 		margin: 0;
+// 		padding: 0;
+// 	}
+// }
+
+// #rating__unrated {
+// 	position: relative;
+// 	width: 100%;
+// 	z-index: 30;
+// }
+
+// #rating__rated {
+// 	opacity: 0;
+// }
+// >>>>>>> Stashed changes
