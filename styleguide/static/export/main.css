@@ -5162,7 +5162,8 @@ fieldset {
   width: 100%;
 }
 
-.form__actions .button {
+.form__actions .button,
+.form__actions .rc_button {
   width: 100%;
 }
 
@@ -5214,7 +5215,8 @@ legend + .form__group {
   width: 100%;
 }
 
-.form__actions .button {
+.form__actions .button,
+.form__actions .rc_button {
   width: 100%;
 }
 
