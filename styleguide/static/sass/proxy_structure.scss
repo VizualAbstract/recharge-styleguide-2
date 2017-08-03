@@ -17,6 +17,7 @@
 @import '_layout_grid-system.scss';
 @import '_layout_tables.scss';
 
+@import '_buttons.scss';
 @import '_forms.scss';
 
 @import '_inputs_label.scss';
@@ -29,8 +30,8 @@
 @import '_inputs_color.scss';
 @import '_inputs_date.scss';
 
-@import '_buttons.scss';
-// @import '_buttons--style.scss';
+@import '_dynamics_notifications.scss';
+
 
 @import '_headers_settings.scss';
 @import '_headers_signup.scss';
