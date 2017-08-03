@@ -44,7 +44,9 @@ legend + .form__group {
     margin-top: 30px;
     display: flex;
     width: 100%;
-    .button {
+
+    .button,
+    .rc_button {
         width: 100%;
     }
 }
