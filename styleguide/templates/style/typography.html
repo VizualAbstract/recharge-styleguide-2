@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Typography</h1>
+
+<h2>Text styles</h2>
+<p>Useful classes used to format text throughout the app</p>
+<div class="rc_example">
+	<code>.rc_text--info</code>
+	<p class="rc_text--info">Info text - Useful for section descriptions, or as sub-text beneath labels</p>
+</div>
+
+<h2>Fonts</h2>
+<p>A sample of the fonts and weights we use on the site</p>
+<h3>Raleway Regular</h3>
+<div class="rc_example">
+	<div class="rc_font--400">
+		<p>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456790??!(%)[#]{@}'"_&ndash;&amp;&lt;-+=&gt;&copy;^$:;,.~*</p>
+		<br>
+		<p>
+			Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+		</p>
+	</div>
+</div>
+
+<h3>Raleway Medium</h3>
+<div class="rc_example">
+	<div class="rc_font--500">
+		<p>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456790??!(%)[#]{@}'"_&ndash;&amp;&lt;-+=&gt;&copy;^$:;,.~*</p>
+		<br>
+		<p>
+			Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+		</p>
+	</div>
+</div>
+
+<h3>Raleway Semibold</h3>
+<div class="rc_example">
+	<div class="rc_font--600">
+		<p>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456790??!(%)[#]{@}'"_&ndash;&amp;&lt;-+=&gt;&copy;^$:;,.~*</p>
+		<br>
+		<p>
+			Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+		</p>
+	</div>
+</div>
+
+<h3>Raleway Bold</h3>
+<div class="rc_example">
+	<div class="rc_font--700">
+		<p>
+			ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456790??!(%)[#]{@}'"_&ndash;&amp;&lt;-+=&gt;&copy;^$:;,.~*
+		</p>
+		<br>
+		<p>
+			Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle. By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver. Looking down into the dark gulf below, I could see a ruddy light streaming through a rift in the clouds.</p>
+		</p>
+	</div>
+</div>
+
+<h2>Overriding</h2>
+
+<h3>Font-family &amp; weight</h3>
+
+<div class="rc_example">
+	<code>.rc_font--400</code><br>
+	<code>.rc_font--regular</code>
+	<p><strong>You can use the helper class: <span class="rc_font--400">.rc_font--400</span> or <span class="rc_font--regular">.rc_font--regular</span>, to force the regular font-weight.</strong></p>
+	<br>
+	<code>.rc_font--500</code><br>
+	<code>.rc_font--medium</code>
+	<p>You can use the helper class: <span class="rc_font--500">.rc_font--500</span> or <span class="rc_font--medium">.rc_font--medium</span>, to force the medium font-weight.</p>
+	<br>
+	<code>.rc_font--600</code><br>
+	<code>.rc_font--semibold</code>
+	<p>You can use the helper class: <span class="rc_font--600">.rc_font--600</span> or <span class="rc_font--semibold">.rc_font--bold</span>, to force the semibold font-weight.</p>
+	<br>
+	<code>.rc_font--700</code><br>
+	<code>.rc_font--bold</code>
+	<p>You can use the helper class: <span class="rc_font--700">.rc_font--700</span> or <span class="rc_font--bold">.rc_font--bolder</span>, to force the bold font-weight.</p>
+</div>
+
+<h3>Font-size</h3>
+<div class="rc_example">
+	<code>.rc_text--large</code>
+	<p class="rc_text--large">Curabitur blandit tempus porttitor.</p>
+	<br>
+	<code>.rc_text--base</code>
+	<p class="rc_text--base">Donec id elit non mi porta gravida at eget metus.</p>
+	<br>
+	<code>.rc_text--small</code>
+	<p class="rc_text--small">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+</div>
+
+{% endblock %}

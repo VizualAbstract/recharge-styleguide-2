@@ -54,30 +54,26 @@
 
 .rc_font--regular,
 .rc_font--400 {
-	font-family: 'ralewayregular';
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'ralewayregular' !important;
+	font-weight: normal !important;
 }
 
 .rc_font--medium,
 .rc_font--500 {
-	font-family: 'ralewaymedium';
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'ralewaymedium' !important;
+	font-weight: normal !important;
 }
 
 .rc_font--semibold,
 .rc_font--600 {
-	font-family: 'ralewaysemibold';
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'ralewaysemibold' !important;
+	font-weight: normal !important;
 }
 
 .rc_font--bold,
 .rc_font--700 {
-	font-family: 'ralewaybold';
-	font-weight: normal;
-	font-style: normal;
+	font-family: 'ralewaybold' !important;
+	font-weight: normal !important;
 }
 
 .rc_text--info {

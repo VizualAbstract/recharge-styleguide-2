@@ -12,16 +12,15 @@
 </div>
 
 <h2>Using Radios</h2>
-<h3>Required ID</h3>
-<p>In order to use the label to trigger the checkbox, the input requires that both the <code>id</code> be set, as well as the proceeding label's <code>for</code> attribute. These must match.</p>
+<h3>Label triggering</h3>
+<p>You can click on the label to activate the radio option, but the <code>id</code> and <code>name</code> attributes must be used in conjunction with eachother.</p>
 <div class="rc_example">
 	{{ ui_element("form/field_radio", {'label': 'Group 1', 'id': 'radio_group_1'}) | safe }}
 	{{ ui_element("form/field_radio", {'label': 'Group 2', 'id': 'radio_group_2'}) | safe }}
 </div>
 
-<h3>Required name</h3>
-<p>And in order to be able to switch between related radio-options, they must all share the same name.</p>
-<p>Additionally, this makes only one radio option selectable at any given time within the group.</p>
+<h3>Grouping radios</h3>
+<p>To make only one radio option selectable at any given time, they must all have the same <code>name</code> attribute.</p>
 <div class="rc_example">
 	<div class="form__group">
 		{{ ui_element("form/field_radio", {'name': 'alignment', 'label': 'Left', 'id': 'alignment_left', 'checked': 'true'}) | safe }}

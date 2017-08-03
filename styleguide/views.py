@@ -190,6 +190,17 @@ def flags():
     template_file = "flags.html"
     return render_template(template_file)
 
+# Style
+@app.route('/style/typography')
+def style_typography():
+    template_file = "style/typography.html"
+    return render_template(template_file)
+
+@app.route('/style/colors')
+def style_colors():
+    template_file = "style/colors.html"
+    return render_template(template_file)
+
 # Utilities
 @app.route('/admin-class')
 def admin_class():
