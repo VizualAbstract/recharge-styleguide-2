@@ -25,12 +25,13 @@ $table-label-font-size: 16px;
 	}
 	[class*="fa-"] {
 		font-size: 20px;
-		color: #8c8c8c;
+		color: $gray-dark;
+
 		&:hover,
 		&:focus,
 		&:active,
 		&.active {
-			color: #474747;
+			color: $gray-darker;
 		}
 	}
 	thead {

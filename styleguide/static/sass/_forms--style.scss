@@ -41,7 +41,9 @@ fieldset + hr {
 .form__group,
 .form__addons {
     + .form__group,
-    + .form__addons {
+    + .form__addons,
+    + .form__label,
+    .form__group + & {
         margin-top: 34px;
     }
 }
@@ -89,6 +91,20 @@ fieldset + fieldset.form__actions {
     > .form__date {
         + .button {
             margin-top: 12px;
+        }
+    }
+}
+
+.rc_form {
+    &--compact {
+        .form__group,
+        .form__addons,
+        [class="rc_layout"] {
+            + .form__group,
+            + .form__addons,
+            + [class="rc_layout"] {
+                margin-top: 20px;
+            }
         }
     }
 }

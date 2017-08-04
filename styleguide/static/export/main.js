@@ -3558,56 +3558,55 @@ var Tooltip = function ($) {
           $(tip).addClass(ClassName.FADE);
         }
 
-
         // var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
         // Commenting out the original snippet above for this script which adds auto-calculation of position for attachment
-		function isWideEnough(availableSpace, elementWidth) {
-			return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
-		}
-		function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
-			if (isWideEnough(rightSpacing, popupWidth)) {
-				return "right";
-			} else if (isWideEnough(leftSpacing, popupWidth)) {
-				return "left";
-			} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
-				return "bottom";
-			}
-			return false;
-		}
+    		function isWideEnough(availableSpace, elementWidth) {
+    			return (availableSpace - elementWidth) >= 0 && (availableSpace - elementWidth);
+    		}
+    		function optimizeAlignment(rightSpacing, leftSpacing, popupWidth, iconWidth) {
+    			if (isWideEnough(rightSpacing, popupWidth)) {
+    				return "right";
+    			} else if (isWideEnough(leftSpacing, popupWidth)) {
+    				return "left";
+    			} else if (isWideEnough(leftSpacing - iconWidth, popupWidth / 2) && isWideEnough(rightSpacing - iconWidth, popupWidth / 2)) {
+    				return "bottom";
+    			}
+    			return false;
+    		}
         function calculateAutoPlacement(context, source) {
-			var icon = $(source).position(),
-				iconLeft = icon.left,
-				iconWidth = $(source).outerWidth() / 2,
-				winWidth = $(window).width(),
-				leftSpacing = iconLeft + iconWidth,
-				rightSpacing = winWidth - (iconWidth + iconLeft),
-				popupWidth = 350,
-				characterLength = $(source).data('content').length;
-			if (characterLength > 100) {
-				popupWidth = 500;
-				$(context).css('max-width', popupWidth);
-			} else if (popupWidth > winWidth) {
-				popupWidth = winWidth;
-			}
-			if (isWideEnough(rightSpacing, popupWidth)) {
-				return "right";
-			} else if (isWideEnough(leftSpacing, popupWidth)) {
-				return "left";
-			} else {
-				var calculatePopupWidth = (characterLength * 9) + 50, // (? * 9 = average character width) + (25 * 2 = horizontal padding)
-					iconWidth = iconWidth / 2,
-					reductionAmount = 30;
-				if (calculatePopupWidth >= popupWidth) {
-					calculatePopupWidth = popupWidth;
-				}
-				for (var i = 0; i <= popupWidth; i += reductionAmount) {
-					var alignment = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
-					if (alignment) {
-						$(context).width(calculatePopupWidth - i);
-						return alignment;
-					}
-				}
-			}
+    			var icon = $(source).position(),
+    				iconLeft = icon.left,
+    				iconWidth = $(source).outerWidth() / 2,
+    				winWidth = $(window).width(),
+    				leftSpacing = iconLeft + iconWidth,
+    				rightSpacing = winWidth - (iconWidth + iconLeft),
+    				popupWidth = 350,
+    				characterLength = $(source).data('content').length;
+    			if (characterLength > 100) {
+    				popupWidth = 500;
+    				$(context).css('max-width', popupWidth);
+    			} else if (popupWidth > winWidth) {
+    				popupWidth = winWidth;
+    			}
+    			if (isWideEnough(rightSpacing, popupWidth)) {
+    				return "right";
+    			} else if (isWideEnough(leftSpacing, popupWidth)) {
+    				return "left";
+    			} else {
+    				var calculatePopupWidth = (characterLength * 9) + 50, // (? * 9 = average character width) + (25 * 2 = horizontal padding)
+    					iconWidth = iconWidth / 2,
+    					reductionAmount = 30;
+    				if (calculatePopupWidth >= popupWidth) {
+    					calculatePopupWidth = popupWidth;
+    				}
+    				for (var i = 0; i <= popupWidth; i += reductionAmount) {
+    					var alignment = optimizeAlignment(rightSpacing, leftSpacing, popupWidth - i, iconWidth, winWidth);
+    					if (alignment) {
+    						$(context).width(calculatePopupWidth - i);
+    						return alignment;
+    					}
+    				}
+    			}
         }
 
         var placement;

@@ -100,16 +100,6 @@
     }
 }
 
-// Adds vertical margin between form groups and form addons (which act as group wrappers)
-.form__addons {
-    + .form__group,
-    + .form__addons,
-    + .form__label,
-    .form__group + & {
-        margin-top: 34px;
-    }
-}
-
 // Form search has all the bells and whistles and an additional "active" class for live search UI changes
 .form__search {
     @extend .form__addons--full;

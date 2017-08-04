@@ -137,6 +137,10 @@
   top: 120px;
 }
 
+.rc_example .admin-recharge .rc_tooltip__button {
+  position: relative;
+}
+
 .page__banners .rc_example {
   position: relative;
   min-height: 200px;

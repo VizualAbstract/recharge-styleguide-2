@@ -148,6 +148,12 @@
 	margin-top: 10px;
 	margin-left: 0;
 }
+.rc_dropdown + .rc_button {
+	margin-left: 10px;
+}
+.form__placeholder + .rc_button {
+	margin-left: 10px;
+}
 
 // Button: Disabled
 .button,
@@ -194,10 +200,6 @@
 }
 
 /* Button icons */
-.button,
-.rc_button {
-	&--fa-plus-circle:before {
-		content: '\f055';
-		font-family: FontAwesome;
-	}
+[class*="rc_button--fa-"]:before {
+	line-height: 20px;
 }

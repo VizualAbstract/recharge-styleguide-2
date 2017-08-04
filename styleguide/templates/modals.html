@@ -83,18 +83,28 @@
 						Energy Drink of the Month (1 Month) 
 						&nbsp;<a href="#"><span class="fa fa-external-link-square rc_text--base"></span></a>
 						<p class="rc_text--info admin-recharge">
-							<a href="#">Sync product</a> &nbsp;|&nbsp; <a href="#">Sync non-threaded</a> &nbsp;|&nbsp; <a href="#">Admin ID: 111155996</a> &nbsp;|&nbsp; <a href="#">go to 535049155...</a>
+							<a href="#">Sync product</a> &nbsp;|&nbsp; 
+							<a href="#">Sync non-threaded</a> &nbsp;|&nbsp; 
+							<a href="#">Admin ID: 111155996</a> &nbsp;|&nbsp; 
+							<a href="#">go to 535049155...</a>
 						</p>
 					</td>
 					<td>
-						<button class="rc_button rc_button--link" onclick="console.log('delete');"><span class="fa fa-gear"></span></button>
-						<button class="rc_button rc_button--link" onclick="console.log('delete');"><span class="fa fa-trash"></span></button>
+						<div class="rc_dropdown rc_dropdown--settings">
+							<button class="rc_button rc_button--link rc_dropdown__toggle rc_button--fa-gear" id="dropdownMenuButton" data-toggle="dropdown"></button>
+							<div class="rc_dropdown__menu">
+								<a href="/link-1" class="rc_item">Link 1</a>
+								<a href="/link-2" class="rc_item">Link 2</a>
+								<a href="/link-3" class="rc_item">Link 3</a>
+							</div>
+						</div>
+						<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
 					</td>
 				</tr>
 				<tr>
 					<td class="rc_text--base">
 						Energy Drink of the Month (1 Month) 
-						&nbsp;<a href="#"><span class="fa fa-external-link-square rc_text--base"></span></a>
+						&nbsp;<a href="#" class="fa fa-external-link-square rc_text--base"></a>
 						<p class="rc_text--info admin-recharge">
 							<a href="#">Sync product</a> &nbsp;|&nbsp; <a href="#">Sync non-threaded</a> &nbsp;|&nbsp; <a href="#">Admin ID: 111155996</a> &nbsp;|&nbsp; <a href="#">go to 535049155...</a>
 						</p>
@@ -102,8 +112,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" class="rc_text--base">
-						<button class="rc_button rc_button--primary rc_button--link">
-							<span class="fa fa-plus-circle rc_color--aquamarine"></span>
+						<button class="rc_button rc_button--primary rc_button--link rc_button--fa-plus-circle">
 							Add products
 						</button>
 					</td>
@@ -119,8 +128,8 @@
 		<label class="form__label">Charge customer and ship product every</label>
 		<div class="form__addons form__addons--auto">
 			<div class="form__group">
-				<input type="checkbox" id="juojxxbfwv" name="" checked="" class="form__checkbox">
-				<label for="juojxxbfwv" class="form__label"></label>
+				<input type="checkbox" id="" name="" checked="" class="form__checkbox">
+				<label for="" class="form__label"></label>
 			</div>
 			<div class="form__group">
 				<input type="number" value="1" class="form__number">
@@ -129,9 +138,7 @@
 		</div>
 		<label class="form__label">Charge customer and ship product every</label>
 		<div class="form__addons form__addons--auto">
-			<div class="form__group">
-				<input type="number" value="1" class="form__number">
-			</div>
+			<input type="number" value="1" class="form__number">
 			<div class="form__group">
 				<select class="form__select">
 					<option>month</option>
@@ -143,22 +150,35 @@
 				<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
 			</label>
 		</div>
-		<div class="form__addons form__addons--auto">
-			<div class="form__group">
-				<input type="number" value="1" class="form__number">
-			</div>
-			<div class="form__group">
+		<ul class="form__list">
+			<li class="form__list__item">
+				<input type="number" value="2" class="form__number">
 				<p class="form__placeholder">month</p>
-			</div>
-		</div>
-		<div class="form__group">
-			<button class="rc_button rc_button--primary rc_button--link">
-				<span class="fa fa-plus-circle rc_color--aquamarine"></span>
-				Add a frequency
-			</button>
-		</div>
+				<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+			</li>
+			<li class="form__list__item">
+				<input type="number" value="3" class="form__number">
+				<p class="form__placeholder">month</p>
+				<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+			</li>
+			<li class="form__list__item">
+				<input type="number" value="4" class="form__number">
+				<p class="form__placeholder">month</p>
+				<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+			</li>
+		</ul>
+		<br>
+		<button class="rc_button rc_button--primary rc_button--link rc_button--fa-plus-circle">
+			Add a frequency
+		</button>
 	</fieldset>
 	<hr>
+	<fieldset>
+		<legend>
+			<h4>Advanced settings</h4>
+		</legend>
+
+	</fieldset>
 </form>
 
 {% endblock %}

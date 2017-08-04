@@ -1,0 +1,32 @@
+.form__list {
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        width: auto;
+        margin-top: 20px;
+
+        .form__label,
+        .form__group,
+        .form__actions,
+        .form__placeholder {
+            padding-right: 7px;
+            padding-left: 8px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+/* Form-group spacing fix */
+.form__group {
+    > .form__list {
+        .form__list__item:first-child {
+            margin-top: 0;
+        }
+    }
+}

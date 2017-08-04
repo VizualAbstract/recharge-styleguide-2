@@ -12,7 +12,8 @@
   color: #2c94ad;
 }
 
-.admin-recharge a.button:link, .admin-recharge a.button:hover, .admin-recharge a.button:focus, .admin-recharge a.button:active {
+.admin-recharge a.rc_button:link, .admin-recharge a.rc_button:hover, .admin-recharge a.rc_button:focus, .admin-recharge a.rc_button:active, .admin-recharge a.button:link, .admin-recharge a.button:hover, .admin-recharge a.button:focus, .admin-recharge a.button:active {
+  background-color: #53BAD3;
   color: #FFF;
 }
 
@@ -38,33 +39,46 @@ img.admin-recharge {
 }
 
 /* Form elements */
-.admin-recharge .button {
-  color: #FFF;
-}
-
-.admin-recharge.button {
+.admin-recharge .button,
+.admin-recharge .rc_button {
   color: #FFF;
   background-color: #53BAD3;
 }
 
-.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active {
+.admin-recharge .button [class*="fa-"],
+.admin-recharge .rc_button [class*="fa-"] {
+  color: #FFF;
+}
+
+.admin-recharge.button, .admin-recharge.rc_button {
+  color: #FFF;
+  background-color: #53BAD3;
+}
+
+.admin-recharge.button:hover, .admin-recharge.button:active, .admin-recharge.button.active, .admin-recharge.button.rc_active, .admin-recharge.rc_button:hover, .admin-recharge.rc_button:active, .admin-recharge.rc_button.active, .admin-recharge.rc_button.rc_active {
   color: #FFF;
   background-color: #2c94ad;
 }
 
-.admin-recharge.button.button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled {
+.admin-recharge.button.button--disabled, .admin-recharge.button.rc_button--disabled, .admin-recharge.button.rc_disabled, .admin-recharge.button:disabled, .admin-recharge.rc_button.button--disabled, .admin-recharge.rc_button.rc_button--disabled, .admin-recharge.rc_button.rc_disabled, .admin-recharge.rc_button:disabled {
   background-color: #cdebf2 !important;
 }
 
 .admin-recharge.button.button--link,
-.admin-recharge .button.button--link {
+.admin-recharge .button.button--link, .admin-recharge.rc_button.rc_button--link,
+.admin-recharge .rc_button.rc_button--link {
   color: #53BAD3;
 }
 
-.admin-recharge.button.button--link.button--disabled, .admin-recharge.button.button--link.rc_disabled, .admin-recharge.button.button--link:disabled,
+.admin-recharge.button.button--link.button--disabled, .admin-recharge.button.button--link.rc_button--disabled, .admin-recharge.button.button--link.rc_disabled, .admin-recharge.button.button--link:disabled,
 .admin-recharge .button.button--link.button--disabled,
+.admin-recharge .button.button--link.rc_button--disabled,
 .admin-recharge .button.button--link.rc_disabled,
-.admin-recharge .button.button--link:disabled {
+.admin-recharge .button.button--link:disabled, .admin-recharge.rc_button.rc_button--link.button--disabled, .admin-recharge.rc_button.rc_button--link.rc_button--disabled, .admin-recharge.rc_button.rc_button--link.rc_disabled, .admin-recharge.rc_button.rc_button--link:disabled,
+.admin-recharge .rc_button.rc_button--link.button--disabled,
+.admin-recharge .rc_button.rc_button--link.rc_button--disabled,
+.admin-recharge .rc_button.rc_button--link.rc_disabled,
+.admin-recharge .rc_button.rc_button--link:disabled {
   color: #a4dbe8 !important;
   background-color: transparent !important;
 }
@@ -73,7 +87,11 @@ img.admin-recharge {
 .admin-recharge .button.button--link:hover,
 .admin-recharge .button.button--link:active,
 .admin-recharge .button.button--link.active,
-.admin-recharge .button.button--link.rc_active {
+.admin-recharge .button.button--link.rc_active, .admin-recharge.rc_button.rc_button--link:hover, .admin-recharge.rc_button.rc_button--link:active, .admin-recharge.rc_button.rc_button--link.active, .admin-recharge.rc_button.rc_button--link.rc_active,
+.admin-recharge .rc_button.rc_button--link:hover,
+.admin-recharge .rc_button.rc_button--link:active,
+.admin-recharge .rc_button.rc_button--link.active,
+.admin-recharge .rc_button.rc_button--link.rc_active {
   color: #2c94ad;
 }
 
@@ -274,7 +292,15 @@ img.admin-recharge {
   background-color: #53BAD3;
 }
 
-.admin-recharge .rc_dropdown .button:hover, .admin-recharge .rc_dropdown .button:active, .admin-recharge .rc_dropdown .button:focus, .admin-recharge .rc_dropdown .button.rc_active, .admin-recharge.rc_dropdown .button:hover, .admin-recharge.rc_dropdown .button:active, .admin-recharge.rc_dropdown .button:focus, .admin-recharge.rc_dropdown .button.rc_active {
+.admin-recharge .rc_dropdown .button:hover, .admin-recharge .rc_dropdown .button:active, .admin-recharge .rc_dropdown .button:focus, .admin-recharge .rc_dropdown .button.rc_active,
+.admin-recharge .rc_dropdown .rc_button:hover,
+.admin-recharge .rc_dropdown .rc_button:active,
+.admin-recharge .rc_dropdown .rc_button:focus,
+.admin-recharge .rc_dropdown .rc_button.rc_active, .admin-recharge.rc_dropdown .button:hover, .admin-recharge.rc_dropdown .button:active, .admin-recharge.rc_dropdown .button:focus, .admin-recharge.rc_dropdown .button.rc_active,
+.admin-recharge.rc_dropdown .rc_button:hover,
+.admin-recharge.rc_dropdown .rc_button:active,
+.admin-recharge.rc_dropdown .rc_button:focus,
+.admin-recharge.rc_dropdown .rc_button.rc_active {
   background-color: #2c94ad;
 }
 
@@ -373,11 +399,17 @@ img.admin-recharge {
   background-color: #54bad3;
 }
 
-.admin-recharge__container .admin-recharge .button.button--link {
+.admin-recharge__container .admin-recharge .button.button--link, .admin-recharge__container .admin-recharge .button.rc_button--link,
+.admin-recharge__container .admin-recharge .rc_button.button--link,
+.admin-recharge__container .admin-recharge .rc_button.rc_button--link {
   color: #FFF;
 }
 
-.admin-recharge__container .admin-recharge .button.button--link:hover, .admin-recharge__container .admin-recharge .button.button--link:active {
+.admin-recharge__container .admin-recharge .button.button--link:hover, .admin-recharge__container .admin-recharge .button.button--link:active, .admin-recharge__container .admin-recharge .button.rc_button--link:hover, .admin-recharge__container .admin-recharge .button.rc_button--link:active,
+.admin-recharge__container .admin-recharge .rc_button.button--link:hover,
+.admin-recharge__container .admin-recharge .rc_button.button--link:active,
+.admin-recharge__container .admin-recharge .rc_button.rc_button--link:hover,
+.admin-recharge__container .admin-recharge .rc_button.rc_button--link:active {
   color: #f2f2f2;
 }
 
