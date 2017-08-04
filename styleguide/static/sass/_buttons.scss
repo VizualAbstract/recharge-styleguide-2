@@ -192,3 +192,12 @@
 		}
 	}
 }
+
+/* Button icons */
+.button,
+.rc_button {
+	&--fa-plus-circle:before {
+		content: '\f055';
+		font-family: FontAwesome;
+	}
+}
