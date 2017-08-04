@@ -49,11 +49,13 @@ img.admin-recharge {
 	.button,
 	.rc_button {
 		color: #FFF;
+		background-color: $admin-color;
 	}
 	&.button,
 	&.rc_button {
 		color: #FFF;
 		background-color: $admin-color;
+
 		&:hover,
 		&:active,
 		&.active,
