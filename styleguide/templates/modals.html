@@ -53,4 +53,112 @@
 	</div>
 </div>
 
+<br>
+<p> </p>
+<br>
+<form>
+	<fieldset>
+		<div class="form__group">
+			<label class="form__label">Type of product</label>
+			<select class="form__select">
+				<option>One time &amp; subscription</option>
+				<option>Subscription only</option>
+			</select>
+		</div>
+		<div class="form__group">
+			<label class="form__label">Ruleset name</label>
+			<input type="text" class="form__input" placeholder="My subscription" value="My subscription">
+		</div>
+	</fieldset>
+	<hr>
+	<fieldset>
+		<legend>
+			<h4>Products included</h4>
+			<p class="rc_text--info">Save ruleset to preview subscriptions.</p>
+		</legend>
+		<table class="rc_table" table-borderless="true">
+			<tbody>
+				<tr>
+					<td class="rc_text--base">
+						Energy Drink of the Month (1 Month) 
+						&nbsp;<a href="#"><span class="fa fa-external-link-square rc_text--base"></span></a>
+						<p class="rc_text--info admin-recharge">
+							<a href="#">Sync product</a> &nbsp;|&nbsp; <a href="#">Sync non-threaded</a> &nbsp;|&nbsp; <a href="#">Admin ID: 111155996</a> &nbsp;|&nbsp; <a href="#">go to 535049155...</a>
+						</p>
+					</td>
+					<td>
+						<button class="rc_button rc_button--link" onclick="console.log('delete');"><span class="fa fa-gear"></span></button>
+						<button class="rc_button rc_button--link" onclick="console.log('delete');"><span class="fa fa-trash"></span></button>
+					</td>
+				</tr>
+				<tr>
+					<td class="rc_text--base">
+						Energy Drink of the Month (1 Month) 
+						&nbsp;<a href="#"><span class="fa fa-external-link-square rc_text--base"></span></a>
+						<p class="rc_text--info admin-recharge">
+							<a href="#">Sync product</a> &nbsp;|&nbsp; <a href="#">Sync non-threaded</a> &nbsp;|&nbsp; <a href="#">Admin ID: 111155996</a> &nbsp;|&nbsp; <a href="#">go to 535049155...</a>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="rc_text--base">
+						<button class="rc_button rc_button--primary rc_button--link">
+							<span class="fa fa-plus-circle rc_color--aquamarine"></span>
+							Add products
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+	<hr>
+	<fieldset>
+		<legend>
+			<h4>Settings</h4>
+		</legend>
+		<label class="form__label">Charge customer and ship product every</label>
+		<div class="form__addons form__addons--auto">
+			<div class="form__group">
+				<input type="checkbox" id="juojxxbfwv" name="" checked="" class="form__checkbox">
+				<label for="juojxxbfwv" class="form__label"></label>
+			</div>
+			<div class="form__group">
+				<input type="number" value="1" class="form__number">
+			</div>
+			<label class="form__label">%</label>
+		</div>
+		<label class="form__label">Charge customer and ship product every</label>
+		<div class="form__addons form__addons--auto">
+			<div class="form__group">
+				<input type="number" value="1" class="form__number">
+			</div>
+			<div class="form__group">
+				<select class="form__select">
+					<option>month</option>
+					<option>week</option>
+					<option>days</option>
+				</select>
+			</div>
+			<label class="form__label">
+				<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+			</label>
+		</div>
+		<div class="form__addons form__addons--auto">
+			<div class="form__group">
+				<input type="number" value="1" class="form__number">
+			</div>
+			<div class="form__group">
+				<p class="form__placeholder">month</p>
+			</div>
+		</div>
+		<div class="form__group">
+			<button class="rc_button rc_button--primary rc_button--link">
+				<span class="fa fa-plus-circle rc_color--aquamarine"></span>
+				Add a frequency
+			</button>
+		</div>
+	</fieldset>
+	<hr>
+</form>
+
 {% endblock %}

@@ -11,7 +11,10 @@ legend {
     h4, .rc_h4,
     h5, .rc_h5,
     h6, .rc_h6 {
-        line-height: 1;
+        margin-bottom: 0;
+        + p {
+            margin-top: 5px;
+        }
     }
 	+ fieldset {
 
@@ -29,13 +32,23 @@ fieldset {
     }
 }
 
+hr + fieldset,
+fieldset + hr {
+    margin-top: 25px;
+}
+
 // Form groups
-.form__group {
-    + .form__group {
+.form__group,
+.form__addons {
+    + .form__group,
+    + .form__addons{
         margin-top: 34px;
     }
 }
-legend + .form__group {
+
+legend + .form__group,
+legend + .form__addons,
+legend + .form__label {
     margin-top: 30px;
 }
 

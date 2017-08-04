@@ -533,17 +533,17 @@ textarea {
 }
 
 .rc_text--large {
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 28px;
 }
 
 .rc_text--base {
-  font-size: 16px;
+  font-size: 16px !important;
   line-height: 25px;
 }
 
 .rc_text--small {
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 21px;
 }
 
@@ -5319,7 +5319,16 @@ legend h3, legend .rc_h3,
 legend h4, legend .rc_h4,
 legend h5, legend .rc_h5,
 legend h6, legend .rc_h6 {
-  line-height: 1;
+  margin-bottom: 0;
+}
+
+legend h1 + p, legend .rc_h1 + p,
+legend h2 + p, legend .rc_h2 + p,
+legend h3 + p, legend .rc_h3 + p,
+legend h4 + p, legend .rc_h4 + p,
+legend h5 + p, legend .rc_h5 + p,
+legend h6 + p, legend .rc_h6 + p {
+  margin-top: 5px;
 }
 
 fieldset {
@@ -5333,11 +5342,21 @@ fieldset + fieldset {
   margin-top: 60px;
 }
 
-.form__group + .form__group {
+hr + fieldset,
+fieldset + hr {
+  margin-top: 25px;
+}
+
+.form__group + .form__group,
+.form__group + .form__addons,
+.form__addons + .form__group,
+.form__addons + .form__addons {
   margin-top: 34px;
 }
 
-legend + .form__group {
+legend + .form__group,
+legend + .form__addons,
+legend + .form__label {
   margin-top: 30px;
 }
 
@@ -5477,6 +5496,10 @@ fieldset > .form__help:last-child {
   white-space: nowrap;
 }
 
+.form__addons .form__group > .form__checkbox + .form__label {
+  line-height: 40px;
+}
+
 .form__addons .form__label + .form__label,
 .form__addons .form__label + .form__group,
 .form__addons .form__label + .form__actions,
@@ -5559,6 +5582,7 @@ fieldset > .form__help:last-child {
 
 .form__addons + .form__group,
 .form__addons + .form__addons,
+.form__addons + .form__label,
 .form__group + .form__addons {
   margin-top: 34px;
 }
