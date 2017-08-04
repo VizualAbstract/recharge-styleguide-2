@@ -10,18 +10,21 @@
 // Standard colorizer for buttons
 @mixin button-color($color) {
 	& {
-		background-color: $color;
 		color: text-color($color);
+		background-color: $color;
 	}
 	&.active,
 	&:active {
+		color: text-color($color);
 		background-color: darken($color, 10%);
 	}
 	&:hover {
+		color: text-color($color);
 		background-color: darken($color, 10%);
 	}
 	&.focus,
 	&:focus {
+		color: text-color($color);
 		background-color: darken($color, 10%);
 	}
 	&--disabled,

@@ -10,11 +10,13 @@
 		&:active {
 			color: darken($admin-color, 15%);
 		}
+		&.rc_button,
 		&.button {
 			&:link,
 			&:hover,
 			&:focus,
 			&:active {
+				background-color: $admin-color;
 				color: #FFF;
 			}
 		}
@@ -44,10 +46,12 @@ img.admin-recharge {
 
 /* Form elements */
 .admin-recharge {
-	.button {
+	.button,
+	.rc_button {
 		color: #FFF;
 	}
-	&.button {
+	&.button,
+	&.rc_button {
 		color: #FFF;
 		background-color: $admin-color;
 		&:hover,
@@ -58,15 +62,19 @@ img.admin-recharge {
 			background-color: darken($admin-color, 15%);
 		}
 		&.button--disabled,
+		&.rc_button--disabled,
 		&.rc_disabled,
 		&:disabled {
 			background-color: lighten($admin-color, 30%) !important;
 		}
 	}
 	&.button.button--link,
-	.button.button--link {
+	.button.button--link,
+	&.rc_button.rc_button--link,
+	.rc_button.rc_button--link {
 		color: $admin-color;
 		&.button--disabled,
+		&.rc_button--disabled,
 		&.rc_disabled,
 		&:disabled {
 			color: lighten($admin-color, 20%) !important;
@@ -271,7 +279,8 @@ img.admin-recharge {
 .admin-recharge {
 	.rc_dropdown,
 	&.rc_dropdown {
-		.button {
+		.button,
+		.rc_button {
 			&:hover,
 			&:active,
 			&:focus,
@@ -391,8 +400,10 @@ img.admin-recharge {
 		.form__radio + .form__label:before {
 		    background-color: #54bad3;
 		}
-		.button {
-			&.button--link {
+		.button,
+		.rc_button {
+			&.button--link,
+			&.rc_button--link {
 				color: #FFF;
 				&:hover,
 				&:active {
