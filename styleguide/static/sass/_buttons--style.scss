@@ -9,9 +9,7 @@
 }
 // Standard colorizer for buttons
 @mixin button-color($color) {
-	&,
-	&:link,
-	&:visited {
+	& {
 		background-color: $color;
 		color: text-color($color);
 	}
@@ -79,9 +77,7 @@
     white-space: nowrap;
     vertical-align: middle;
 
-    &,
-    &:link,
-    &:visited {
+    & {
 		// background-color: $default;
 		// color: #FFF;
     }
