@@ -23,11 +23,6 @@ $gutter: 30px;
 	.sidebar,
 	.rc_sidebar {
 		height: 100%;
-		margin-left: -$gutter;
-
-		@media screen and (max-width: $mobile-nav-max) {
-			margin-right: -$gutter;
-		}
 	}
 
 	.sidebar--alt,
