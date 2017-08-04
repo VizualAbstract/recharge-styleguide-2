@@ -738,14 +738,3 @@
 .flex__full-height > .rc_notification + .flex__container {
     height: auto;
 }
-
-/* Form group patch */
-[class^="flex__sm"] {
-	+ [class^="flex__sm"] {
-		@media screen and (max-width: $mobile-nav-max) {
-			.form__group {
-				margin-top: $gutter;
-			}
-		}
-	}
-}

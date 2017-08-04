@@ -73,10 +73,7 @@ h5, .rc_h5 {
 
 a {
     text-decoration: none;
-    &:link,
-    &:visited {
-        color: $primary;
-    }
+    color: $primary;
     &:hover,
     &:active,
     &.active {
@@ -95,6 +92,7 @@ fieldset {
     margin: 0;
     border: 0;
     min-width: 0;
+
     + fieldset {
     	margin-top: 30px;
     }

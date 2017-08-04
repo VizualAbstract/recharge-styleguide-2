@@ -41,10 +41,20 @@ fieldset + hr {
 .form__group,
 .form__addons {
     + .form__group,
-    + .form__addons{
+    + .form__addons {
         margin-top: 34px;
     }
 }
+
+[class="rc_layout"] + .form__group,
+.form__group + [class="rc_layout"],
+[class="flex__layout"] + .form__group,
+.form__group + [class="flex__layout"],
+form  [class="flex__layout"] + [class="flex__layout"] ,
+form  [class="rc_layout"] + [class="rc_layout"] {
+    margin-top: 34px;
+}
+
 
 legend + .form__group,
 legend + .form__addons,
@@ -74,13 +84,23 @@ fieldset + fieldset.form__actions {
     padding-top: 6px;
 }
 
-
 .form__group {
     > .form__input,
     > .form__color,
     > .form__date {
         + .button {
             margin-top: 12px;
+        }
+    }
+}
+
+/* Form group patch */
+[class^="flex__sm"] {
+    + [class^="flex__sm"] {
+        @media screen and (max-width: $mobile-nav-max) {
+            .form__group {
+                margin-top: $gutter;
+            }
         }
     }
 }
