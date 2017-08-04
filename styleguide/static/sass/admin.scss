@@ -50,6 +50,9 @@ img.admin-recharge {
 	.rc_button {
 		color: #FFF;
 		background-color: $admin-color;
+		[class*="fa-"] {
+			background-color: #FFF;
+		}
 	}
 	&.button,
 	&.rc_button {
