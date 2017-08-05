@@ -6,7 +6,7 @@ from styleguide import app
 import random, string
 
 # Global variables
-site_name = "website"
+site_name = "Pattern library"
 
 list_swatch_defaults = ["black", "white"]
 list_swatch_colors = ["cyan", "blue", "green", "aquamarine", "mint", "yellow", "orange", "red", "magenta", "pink"]

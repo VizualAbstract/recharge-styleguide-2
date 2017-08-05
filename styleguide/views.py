@@ -87,12 +87,6 @@ def dates():
     template_file = "dates.html"
     return render_template(template_file)
 
-# Headers
-@app.route('/headers')
-def headers():
-    template_file = "headers.html"
-    return render_template(template_file)
-
 # Dynamic
 @app.route('/dropdowns')
 def dropdowns():
@@ -130,6 +124,16 @@ def banners():
 @app.route('/grids')
 def grid_systems():
     template_file = "grid-systems.html"
+    return render_template(template_file)
+
+@app.route('/headers')
+def headers():
+    template_file = "headers.html"
+    return render_template(template_file)
+
+@app.route('/text')
+def text():
+    template_file = "text.html"
     return render_template(template_file)
 
 @app.route('/tabs')
