@@ -13,4 +13,31 @@
 	<button class="rc_tooltip__button" title="Popover title" data-content="Morbi leo risus, porta ac consectetur ac, vestibulum at eros."></button>
 	<button class="rc_tooltip__button" title="This is a tool tip header" data-content="<p>This is body copy for a tool tip. It can be up to 3 sentences.  More than that and no one will read it.</p><p><a href='#'>This is a tool tip link...</a></p>"></button>
 </div>
+<style>
+	.rc_example .rc_tooltip__button {
+		position: absolute;
+		top: 0;
+		left: 0%;
+	}
+	.rc_example .rc_tooltip__button + .rc_tooltip__button {
+		left: 20%;
+		top: 30px;
+	}
+	.rc_example .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button {
+		left: 45%;
+		top: 60px;
+	}
+	.rc_example .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button {
+		left: 70%;
+		top: 90px;
+	}
+	.rc_example .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button + .rc_tooltip__button {
+		right: 0%;
+		left: auto;
+		top: 120px;
+	}
+	.rc_example .admin-recharge .rc_tooltip__button {
+		position: relative;
+	}
+</style>
 {% endblock %}

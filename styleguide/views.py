@@ -37,6 +37,11 @@ def form_addons():
     template_file = "form-addons.html"
     return render_template(template_file)
 
+@app.route('/form-lists')
+def form_lists():
+    template_file = "form-lists.html"
+    return render_template(template_file)
+
 @app.route('/form-help')
 def form_help():
     template_file = "form-help.html"
@@ -203,6 +208,11 @@ def style_typography():
 @app.route('/style/colors')
 def style_colors():
     template_file = "style/colors.html"
+    return render_template(template_file)
+
+@app.route('/icons')
+def icons():
+    template_file = "icons.html"
     return render_template(template_file)
 
 # Utilities

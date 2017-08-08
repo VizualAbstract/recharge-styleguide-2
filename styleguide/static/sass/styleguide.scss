@@ -118,31 +118,6 @@
 	position: relative;
 	min-height: 147px;
 }
-.rc_example .rc_tooltip__button {
-	position: absolute;
-	top: 0;
-	left: 0%;
-	+ .rc_tooltip__button {
-		left: 20%;
-		top: 30px;
-		+ .rc_tooltip__button {
-			left: 45%;
-			top: 60px;
-			+ .rc_tooltip__button {
-				left: 70%;
-				top: 90px;
-				+ .rc_tooltip__button {
-					right: 0%;
-					left: auto;
-					top: 120px;
-				}
-			}
-		}
-	}
-}
-.rc_example .admin-recharge .rc_tooltip__button {
-	position: relative;
-}
 
 .page__banners {
 	.rc_example {

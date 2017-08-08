@@ -10,6 +10,12 @@
         width: auto;
     }
 
+    > .form__group {
+        display: flex;
+        flex-wrap: nowrap;
+        width: auto;
+    }
+
     .form__label {
         white-space: nowrap;
     }

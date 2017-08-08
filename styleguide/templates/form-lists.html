@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<h1>Form list</h1>
+	<p>Use a <code>.form__list</code> to hold repetitive form patterns. Ideal when a user is able to add or remove additional iterations of options.</p>
+	<div class="rc_example">
+		<form>
+			<label class="form__label">Charge customer and ship product every</label>
+			<div class="form__addons form__addons--auto">
+				<div class="form__group">
+					<input type="number" value="1" class="form__number">
+					<select class="form__select">
+						<option>month</option>
+						<option>week</option>
+						<option>days</option>
+					</select>
+					<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+				</div>
+			</div>
+			<ul class="form__list">
+				<li class="form__list__item">
+					<input type="number" value="2" class="form__number">
+					<p class="form__placeholder">month</p>
+					<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+				</li>
+				<li class="form__list__item">
+					<input type="number" value="3" class="form__number">
+					<p class="form__placeholder">month</p>
+					<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+				</li>
+				<li class="form__list__item">
+					<input type="number" value="4" class="form__number">
+					<p class="form__placeholder">month</p>
+					<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
+				</li>
+			</ul>
+		</form>
+	</div>
+{% endblock %}

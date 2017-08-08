@@ -5584,6 +5584,12 @@ fieldset > .form__help:last-child {
   width: auto;
 }
 
+.form__addons > .form__group {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+}
+
 .form__addons .form__label {
   white-space: nowrap;
 }
