@@ -46,6 +46,10 @@
         }
     }
 
+    > .rc_tooltip__button {
+        margin-top: 7px;
+    }
+
     & + & {
         margin-left: 15px;
     }

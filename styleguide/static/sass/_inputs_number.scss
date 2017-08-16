@@ -13,6 +13,22 @@ input.form__number {
 		border-color: #4DD6B7;
 		outline: none;
 	}
+
+	&[input-width="xs"] {
+		max-width: 40px;
+	}
+
+	&[input-width="sm"] {
+		max-width: 60px;
+	}
+
+	&[input-width="md"] {
+		max-width: 80px;
+	}
+
+	&[input-width="lg"] {
+		max-width: 100px;
+	}
 }
 
 // Number input, using the select stylizer

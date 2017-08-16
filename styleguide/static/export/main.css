@@ -6395,6 +6395,13 @@ select[data-dkcacheid] {
   display: none;
 }
 
+/* Auto-width options */
+.rc_select.form__select--auto,
+.rc_select--multi.form__select--auto {
+  width: auto;
+  display: inline-block;
+}
+
 .rc_select__selected {
   font-size: 16px;
   line-height: 1.5625;

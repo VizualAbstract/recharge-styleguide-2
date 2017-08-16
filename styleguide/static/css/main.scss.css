@@ -5630,6 +5630,10 @@ fieldset > .form__help:last-child {
   padding-right: 0;
 }
 
+.form__addons > .rc_tooltip__button {
+  margin-top: 7px;
+}
+
 .form__addons + .form__addons {
   margin-left: 15px;
 }
@@ -6470,6 +6474,22 @@ input.form__number {
 input.form__number:focus, input.form__number.form__input--focus {
   border-color: #4DD6B7;
   outline: none;
+}
+
+input.form__number[input-width="xs"] {
+  max-width: 40px;
+}
+
+input.form__number[input-width="sm"] {
+  max-width: 60px;
+}
+
+input.form__number[input-width="md"] {
+  max-width: 80px;
+}
+
+input.form__number[input-width="lg"] {
+  max-width: 100px;
 }
 
 .rc_select.form__number {
