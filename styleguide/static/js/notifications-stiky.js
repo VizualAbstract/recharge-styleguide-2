@@ -31,12 +31,12 @@
 			}
 
 			//attach listener only if creating container
-			let jContainer = $(this.container),
+			var jContainer = $(this.container),
 				jSibling = $(this.container.nextSibling),
 				y_pos = jContainer.offset().top;
 
 			$(document).scroll(function() {
-				let scrollTop = $(this).scrollTop(),
+				var scrollTop = $(this).scrollTop(),
 					height = jContainer.height();
 
 				if (scrollTop > y_pos + height) {

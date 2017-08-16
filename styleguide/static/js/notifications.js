@@ -235,7 +235,7 @@
 		// Place message within a <p></p> tag
 		notificationContent = document.createElement("p");
 		notificationContent.innerHTML = this.options.message;
-		this.notification.append(notificationContent)
+		this.notification.appendChild(notificationContent)
 
 		// Append document fragment to the body
 		//document.body.appendChild(docFragment);
@@ -243,7 +243,7 @@
 	}
 
 	function addClasses(classNames) {
-		let elem = this.notification;
+		var elem = this.notification;
 
 		function checkAndAdd(clazz) {
 			if (!elem.classList.contains(clazz)) {

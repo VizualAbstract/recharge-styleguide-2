@@ -5582,12 +5582,7 @@ fieldset > .form__help:last-child {
 .form__addons > .form__actions,
 .form__addons > .form__placeholder {
   width: auto;
-}
-
-.form__addons > .form__group {
-  display: flex;
-  flex-wrap: nowrap;
-  width: auto;
+  flex-shrink: 1;
 }
 
 .form__addons .form__label {
@@ -5635,6 +5630,10 @@ fieldset > .form__help:last-child {
   padding-right: 0;
 }
 
+.form__addons + .form__addons {
+  margin-left: 15px;
+}
+
 .form__addons .form__group .form__number,
 .form__addons .form__group .form__input,
 .form__addons .form__group input.form__number,
@@ -5645,11 +5644,70 @@ fieldset > .form__help:last-child {
   width: 100%;
 }
 
+.form__addons--wrap {
+  flex-wrap: wrap;
+}
+
+.form__addons--wrap > .form__label,
+.form__addons--wrap > .form__group,
+.form__addons--wrap > .form__actions,
+.form__addons--wrap > .form__placeholder {
+  flex-shrink: 0;
+}
+
 .form__addons > .form__label {
   line-height: 40px;
   margin-bottom: 0;
   padding-right: 15px;
   white-space: nowrap;
+}
+
+.form__cards {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  margin-top: 34px;
+}
+
+.form__cards > .form__group,
+.form__cards .form__addons {
+  margin-top: 0;
+}
+
+.form__cards .form__label,
+.form__cards .form__group,
+.form__cards .form__placeholder {
+  padding-right: 7px;
+  padding-left: 8px;
+}
+
+.form__cards .form__label:first-child,
+.form__cards .form__group:first-child,
+.form__cards .form__placeholder:first-child {
+  padding-left: 0;
+}
+
+.form__cards .form__label:last-child,
+.form__cards .form__group:last-child,
+.form__cards .form__placeholder:last-child {
+  padding-right: 0;
+}
+
+.form__cards .responsive-images {
+  text-align: right;
+}
+
+.form__cards .responsive-images img {
+  padding-top: 30px;
+  line-height: 1;
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  max-width: 57px;
+}
+
+.form__cards .responsive-images img + img {
+  margin-left: 15px;
 }
 
 .form__addons--seamless .form__group, .form__search .form__group {
@@ -5668,6 +5726,20 @@ fieldset > .form__help:last-child {
 .form__addons--seamless .form__group .form__input:focus, .form__search .form__group .form__input:focus, .form__addons--seamless .form__group input.form__number:focus, .form__search .form__group input.form__number:focus, .form__addons--seamless .form__group input.form__color:focus, .form__search .form__group input.form__color:focus, .form__addons--seamless .form__group input.form__date:focus, .form__search .form__group input.form__date:focus, .form__addons--seamless .form__group .form__input:active, .form__search .form__group .form__input:active, .form__addons--seamless .form__group input.form__number:active, .form__search .form__group input.form__number:active, .form__addons--seamless .form__group input.form__color:active, .form__search .form__group input.form__color:active, .form__addons--seamless .form__group input.form__date:active, .form__search .form__group input.form__date:active, .form__addons--seamless .form__group .form__input.rc_active, .form__search .form__group .form__input.rc_active, .form__addons--seamless .form__group input.rc_active.form__number, .form__search .form__group input.rc_active.form__number, .form__addons--seamless .form__group input.rc_active.form__color, .form__search .form__group input.rc_active.form__color, .form__addons--seamless .form__group input.rc_active.form__date, .form__search .form__group input.rc_active.form__date {
   border-right-width: 1px;
   margin-right: -1px;
+}
+
+.form__cards,
+.form__cards .form__addons {
+  width: 100%;
+  align-items: stretch;
+}
+
+input[name="cvv"] {
+  max-width: 100px;
+}
+
+.form__group.responsive-images {
+  width: 100% !important;
 }
 
 .form__addons--full, .form__search {
@@ -5742,21 +5814,6 @@ fieldset > .form__help:last-child {
   line-height: 24px;
   color: #2C93AC;
   text-align: center;
-}
-
-.card-details__icon {
-  width: 20%;
-  margin-left: 10%;
-  max-width: 57px;
-  vertical-align: middle;
-}
-
-@media screen and (min-width: 768px) {
-  .card-details__icon {
-    margin-top: 24px;
-    width: 16.42%;
-    margin-left: 20px;
-  }
 }
 
 .form__input__contextual {
@@ -6336,6 +6393,13 @@ textarea {
 
 select[data-dkcacheid] {
   display: none;
+}
+
+/* Auto-width options */
+.rc_select.form__select--auto,
+.rc_select--multi.form__select--auto {
+  width: auto;
+  display: inline-block;
 }
 
 .rc_select__selected {

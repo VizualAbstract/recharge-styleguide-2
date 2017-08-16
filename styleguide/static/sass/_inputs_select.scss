@@ -302,3 +302,12 @@ $arrow-color: #424242 !default;
 select[data-dkcacheid]{
 	display: none;
 }
+
+/* Auto-width options */
+.rc_select,
+.rc_select--multi {
+	&.form__select--auto {
+		width: auto;
+		display: inline-block;
+	}
+}
