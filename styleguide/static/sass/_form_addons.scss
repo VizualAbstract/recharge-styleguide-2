@@ -56,7 +56,7 @@
     .form__group {
         .form__number,
         .form__input {
-            min-width: auto;
+            min-width: 55px;
             margin-right: 0;
             width: 100%;
         }
@@ -86,46 +86,6 @@
     }
 }
 
-.form__cards {
-    display: flex;
-    flex-wrap: nowrap;
-    width: auto;
-
-    margin-top: 34px;
-
-    > .form__group,
-    .form__addons {
-        margin-top: 0;
-    }
-
-    .form__label,
-    .form__group,
-    .form__placeholder {
-        padding-right: 7px;
-        padding-left: 8px;
-        &:first-child {
-            padding-left: 0;
-        }
-        &:last-child {
-            padding-right: 0;
-        }
-    }
-    .responsive-images {
-        text-align: right;
-        img {
-            padding-top: 30px;
-            line-height: 1;
-            display: inline-block;
-            text-align: right;
-            width: 100%;
-            max-width: 57px;
-            + img {
-                margin-left: 15px;
-            }
-        }
-    }
-}
-
 // Removes margin between input groups, adjusts borders to prevent thick veritcal borders
 .form__addons {
     &--seamless {
@@ -150,24 +110,6 @@
             }
         }
     }
-}
-
-.form__cards {
-    &,
-    .form__addons {
-        .form__group {
-        }
-        width: 100%;
-        align-items: stretch;
-    }
-}
-
-input[name="cvv"] {
-    max-width: 100px;
-}
-
-.form__group.responsive-images {
-    width: 100% !important;
 }
 
 // Enables full-width addon groups
@@ -242,14 +184,82 @@ input[name="cvv"] {
     }
 }
 
-// .card-details__icon {
-//     width: 20%;
-//     margin-left: 10%;
-//     max-width: 57px;
-//     vertical-align: middle;
-//     @media screen and (min-width: $mobile-nav-max + 1) {
-//         margin-top: 24px;
-//         width: 16.42%;
-//         margin-left: 20px;
-//     }
-// }
+/* Pattern for credit/debit cards */
+.form__cards {
+    width: auto;
+
+    .form__group,
+    .form__addons,
+    .form__number,
+    .form__input {
+        max-width: 100%;
+        width: 100%;
+    }
+    .form__addon,
+    > .form__group {
+        margin-top: 34px;
+    }
+
+    @media screen and (max-width: $mobile-nav-max + 250) {
+        .form__addons + .form__addons {
+            margin-left: 0;
+        }
+    }
+    .form__cards__details {
+        margin-top: 34px;
+
+        @media screen and (min-width: $mobile-nav-max + 250 + 1) {
+            display: flex;
+            flex-wrap: nowrap;
+
+            > .form__addons {
+                margin-top: 0;
+            }
+        }
+    }
+    .form__cards__zipcode {
+        .form__input {
+            min-width: 125px;
+        }
+
+        @media screen and (max-width: $mobile-nav-max) {
+            display: block;
+
+            .form__group {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+    }
+    .form__cards__images {
+        align-items: stretch;
+        max-width: 100%;
+        width: auto;
+        min-width: 280px;
+        text-align: right;
+
+        img {
+            padding-top: 30px;
+            line-height: 1;
+            display: inline-block;
+            text-align: right;
+            width: 100%;
+            max-width: 55px;
+
+            + img {
+                margin-left: 10px;
+            }
+        }
+        @media screen and (max-width: $mobile-nav-max) {
+            text-align: center;
+
+            img {
+                width: 35px;
+
+                + img {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}

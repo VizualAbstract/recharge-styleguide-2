@@ -13,21 +13,28 @@ input.form__number {
 		border-color: #4DD6B7;
 		outline: none;
 	}
+}
+
+/* Control input width */
+.form__number {
+	&[input-width="xs"],
+	&[input-width="sm"],
+	&[input-width="md"],
+	&[input-width="lg"] {
+		width: 100%;
+	}
 
 	&[input-width="xs"] {
-		max-width: 40px;
+		max-width: 50px;
 	}
-
 	&[input-width="sm"] {
-		max-width: 60px;
+		max-width: 70px;
 	}
-
 	&[input-width="md"] {
-		max-width: 80px;
+		max-width: 90px;
 	}
-
 	&[input-width="lg"] {
-		max-width: 100px;
+		max-width: 110px;
 	}
 }
 

@@ -5630,6 +5630,10 @@ fieldset > .form__help:last-child {
   padding-right: 0;
 }
 
+.form__addons > .rc_tooltip__button {
+  margin-top: 7px;
+}
+
 .form__addons + .form__addons {
   margin-left: 15px;
 }
@@ -5662,54 +5666,6 @@ fieldset > .form__help:last-child {
   white-space: nowrap;
 }
 
-.form__cards {
-  display: flex;
-  flex-wrap: nowrap;
-  width: auto;
-  margin-top: 34px;
-}
-
-.form__cards > .form__group,
-.form__cards .form__addons {
-  margin-top: 0;
-}
-
-.form__cards .form__label,
-.form__cards .form__group,
-.form__cards .form__placeholder {
-  padding-right: 7px;
-  padding-left: 8px;
-}
-
-.form__cards .form__label:first-child,
-.form__cards .form__group:first-child,
-.form__cards .form__placeholder:first-child {
-  padding-left: 0;
-}
-
-.form__cards .form__label:last-child,
-.form__cards .form__group:last-child,
-.form__cards .form__placeholder:last-child {
-  padding-right: 0;
-}
-
-.form__cards .responsive-images {
-  text-align: right;
-}
-
-.form__cards .responsive-images img {
-  padding-top: 30px;
-  line-height: 1;
-  display: inline-block;
-  text-align: right;
-  width: 100%;
-  max-width: 57px;
-}
-
-.form__cards .responsive-images img + img {
-  margin-left: 15px;
-}
-
 .form__addons--seamless .form__group, .form__search .form__group {
   padding-right: 0;
 }
@@ -5726,20 +5682,6 @@ fieldset > .form__help:last-child {
 .form__addons--seamless .form__group .form__input:focus, .form__search .form__group .form__input:focus, .form__addons--seamless .form__group input.form__number:focus, .form__search .form__group input.form__number:focus, .form__addons--seamless .form__group input.form__color:focus, .form__search .form__group input.form__color:focus, .form__addons--seamless .form__group input.form__date:focus, .form__search .form__group input.form__date:focus, .form__addons--seamless .form__group .form__input:active, .form__search .form__group .form__input:active, .form__addons--seamless .form__group input.form__number:active, .form__search .form__group input.form__number:active, .form__addons--seamless .form__group input.form__color:active, .form__search .form__group input.form__color:active, .form__addons--seamless .form__group input.form__date:active, .form__search .form__group input.form__date:active, .form__addons--seamless .form__group .form__input.rc_active, .form__search .form__group .form__input.rc_active, .form__addons--seamless .form__group input.rc_active.form__number, .form__search .form__group input.rc_active.form__number, .form__addons--seamless .form__group input.rc_active.form__color, .form__search .form__group input.rc_active.form__color, .form__addons--seamless .form__group input.rc_active.form__date, .form__search .form__group input.rc_active.form__date {
   border-right-width: 1px;
   margin-right: -1px;
-}
-
-.form__cards,
-.form__cards .form__addons {
-  width: 100%;
-  align-items: stretch;
-}
-
-input[name="cvv"] {
-  max-width: 100px;
-}
-
-.form__group.responsive-images {
-  width: 100% !important;
 }
 
 .form__addons--full, .form__search {
@@ -5814,6 +5756,94 @@ input[name="cvv"] {
   line-height: 24px;
   color: #2C93AC;
   text-align: center;
+}
+
+/* Pattern for credit/debit cards */
+.form__cards {
+  width: auto;
+}
+
+.form__cards .form__group,
+.form__cards .form__addons,
+.form__cards .form__number,
+.form__cards .form__input,
+.form__cards input.form__number,
+.form__cards input.form__color,
+.form__cards input.form__date {
+  max-width: 100%;
+  width: 100%;
+}
+
+.form__cards .form__addon,
+.form__cards > .form__group {
+  margin-top: 34px;
+}
+
+@media screen and (max-width: 1017px) {
+  .form__cards .form__addons + .form__addons {
+    margin-left: 0;
+  }
+}
+
+.form__cards .form__cards__details {
+  margin-top: 34px;
+}
+
+@media screen and (min-width: 1018px) {
+  .form__cards .form__cards__details {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .form__cards .form__cards__details > .form__addons {
+    margin-top: 0;
+  }
+}
+
+.form__cards .form__cards__zipcode .form__input, .form__cards .form__cards__zipcode input.form__number, .form__cards .form__cards__zipcode input.form__color, .form__cards .form__cards__zipcode input.form__date {
+  min-width: 125px;
+}
+
+@media screen and (max-width: 767px) {
+  .form__cards .form__cards__zipcode {
+    display: block;
+  }
+  .form__cards .form__cards__zipcode .form__group {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.form__cards .form__cards__images {
+  align-items: stretch;
+  max-width: 100%;
+  width: auto;
+  min-width: 280px;
+  text-align: right;
+}
+
+.form__cards .form__cards__images img {
+  padding-top: 30px;
+  line-height: 1;
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  max-width: 55px;
+}
+
+.form__cards .form__cards__images img + img {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .form__cards .form__cards__images {
+    text-align: center;
+  }
+  .form__cards .form__cards__images img {
+    width: 35px;
+  }
+  .form__cards .form__cards__images img + img {
+    margin-left: 15px;
+  }
 }
 
 .form__input__contextual {
@@ -6470,6 +6500,27 @@ input.form__number {
 input.form__number:focus, input.form__number.form__input--focus {
   border-color: #4DD6B7;
   outline: none;
+}
+
+/* Control input width */
+.form__number[input-width="xs"], .form__number[input-width="sm"], .form__number[input-width="md"], .form__number[input-width="lg"] {
+  width: 100%;
+}
+
+.form__number[input-width="xs"] {
+  max-width: 50px;
+}
+
+.form__number[input-width="sm"] {
+  max-width: 70px;
+}
+
+.form__number[input-width="md"] {
+  max-width: 90px;
+}
+
+.form__number[input-width="lg"] {
+  max-width: 110px;
 }
 
 .rc_select.form__number {
