@@ -1,18 +1,37 @@
 $card-margin: 30px;
 
-/* Card grid */
-.rc_card__container {
+/* Card sizing */
+.rc_card {
+	border: 1px solid #CCC;
+    padding: 30px;
+
+    @media screen and (max-width: $screen-sm-max) {
+    	margin: 0 30px;
+    }
+}
+
+/* Addon grid */
+.rc_addon__container {
 	display: flex;
 	flex-wrap: wrap;
 
-	.rc_card {
+	.rc_addon {
 		float: left;
 		overflow: hidden;
 	}
 }
 
-/* Card sizing */
-.rc_card {
+/* card with other components */
+[class^="flex__"] .rc_card {
+    margin: 0;
+}
+
+[class^="flex__"] .rc_card + .rc_card {
+    margin-left: 30px;
+}
+
+/* Addon sizing */
+.rc_addon {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: $card-margin;
@@ -56,8 +75,8 @@ $card-margin: 30px;
 	}
 }
 
-/* Card media image */
-.rc_card {
+/* Addon media image */
+.rc_addon {
 	&__media {
 		background-color: #FFF;
 		position: relative;
@@ -85,7 +104,7 @@ $card-margin: 30px;
 	}
 }
 
-.rc_card {
+.rc_addon {
 	background-color: #F8F8F8;
 	padding: 10px;
 	&__title {

@@ -5643,7 +5643,7 @@ fieldset > .form__help:last-child {
 .form__addons .form__group input.form__number,
 .form__addons .form__group input.form__color,
 .form__addons .form__group input.form__date {
-  min-width: auto;
+  min-width: 55px;
   margin-right: 0;
   width: 100%;
 }
@@ -9615,19 +9615,40 @@ ul.review__rating li.rating__star:hover:before, ul.review__rating li.rating__sta
   }
 }
 
-/* Card grid */
-.rc_card__container {
+/* Card sizing */
+.rc_card {
+  border: 1px solid #CCC;
+  padding: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .rc_card {
+    margin: 0 30px;
+  }
+}
+
+/* Addon grid */
+.rc_addon__container {
   display: flex;
   flex-wrap: wrap;
 }
 
-.rc_card__container .rc_card {
+.rc_addon__container .rc_addon {
   float: left;
   overflow: hidden;
 }
 
-/* Card sizing */
-.rc_card {
+/* card with other components */
+[class^="flex__"] .rc_card {
+  margin: 0;
+}
+
+[class^="flex__"] .rc_card + .rc_card {
+  margin-left: 30px;
+}
+
+/* Addon sizing */
+.rc_addon {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
@@ -9635,55 +9656,55 @@ ul.review__rating li.rating__star:hover:before, ul.review__rating li.rating__sta
 }
 
 @media screen and (max-width: 575px) {
-  .rc_card {
+  .rc_addon {
     width: 100%;
   }
-  .rc_card:nth-child(4n + 4) {
+  .rc_addon:nth-child(4n + 4) {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .rc_card {
+  .rc_addon {
     width: 48%;
     margin-right: 4%;
   }
-  .rc_card:nth-child(2n + 2) {
+  .rc_addon:nth-child(2n + 2) {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .rc_card {
+  .rc_addon {
     width: 31%;
     margin-right: 3.5%;
   }
-  .rc_card:nth-child(3n + 3) {
+  .rc_addon:nth-child(3n + 3) {
     margin-right: 0;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .rc_card {
+  .rc_addon {
     width: 220px;
     margin-right: 30px;
   }
 }
 
-/* Card media image */
-.rc_card__media {
+/* Addon media image */
+.rc_addon__media {
   background-color: #FFF;
   position: relative;
   padding: 24px 24px 20px;
   text-align: center;
 }
 
-.rc_card__media__image {
+.rc_addon__media__image {
   display: block;
   margin: 0 auto 15px;
 }
 
-.rc_card__media:after {
+.rc_addon__media:after {
   content: "";
   position: absolute;
   top: 100%;
@@ -9697,19 +9718,19 @@ ul.review__rating li.rating__star:hover:before, ul.review__rating li.rating__sta
   height: 17px;
 }
 
-.rc_card {
+.rc_addon {
   background-color: #F8F8F8;
   padding: 10px;
 }
 
-.rc_card__body {
+.rc_addon__body {
   font-size: 14px;
   line-height: 25px;
   margin-top: 24px;
   flex: 1;
 }
 
-.rc_card__footer {
+.rc_addon__footer {
   margin-top: 15px;
 }
 
