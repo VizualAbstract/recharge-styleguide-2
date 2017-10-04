@@ -85,10 +85,12 @@
 			margin-top: 23px;
 			text-align: center;
 
-			.button {
+			.button,
+			.rc_button {
 				width: 100%;
 
-				+ .button.button--link {
+				+ .button.button--link,
+				+ .rc_button.rc_button--link, {
 					width: auto;
 				}
 			}

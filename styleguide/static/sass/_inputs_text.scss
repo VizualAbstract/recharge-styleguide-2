@@ -54,3 +54,28 @@ textarea {
 		border-color: $red;
 	}
 }
+
+/* Control input width */
+.form__number,
+.form__input {
+	&[input-width="xs"],
+	&[input-width="sm"],
+	&[input-width="md"],
+	&[input-width="lg"] {
+		min-width: 50px;
+		width: 100%;
+	}
+
+	&[input-width="xs"] {
+		max-width: 50px;
+	}
+	&[input-width="sm"] {
+		max-width: 70px;
+	}
+	&[input-width="md"] {
+		max-width: 90px;
+	}
+	&[input-width="lg"] {
+		max-width: 110px;
+	}
+}

@@ -47,6 +47,12 @@ fieldset + hr {
         margin-top: 34px;
     }
 }
+,
+.form__list {
+    + .form__list {
+        margin-top: 34px;
+    }
+}
 
 [class="rc_layout"] + .form__group,
 .form__group + [class="rc_layout"],

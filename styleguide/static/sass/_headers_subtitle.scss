@@ -25,12 +25,14 @@
 		p,
 		a,
 		span,
-		.button {
+		.button,
+		.rc_button {
 			margin: 0 0 0 auto;
 			+ p,
 			+ a,
 			+ span,
-			+ .button {
+			+ .button,
+			+ .rc_button {
 				margin-left: 12px;
 			}
 		}

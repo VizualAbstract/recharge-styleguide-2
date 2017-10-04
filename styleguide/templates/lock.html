@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<div class="rc_lock__window">
+		<div class="rc_lock__window__message">
+			<div class="rc_lock__window__message__title">Processing Request</div>
+			<div class="rc_lock__window__message__logo rc_animation--rotate"></div>
+			<div class="rc_lock__window__message__warning">Please don't close this screen</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			setTimeout(function() {
+				$('body').addClass('rc_lock--transition');
+			}, 0)
+			setTimeout(function() {
+				$('body').addClass('rc_lock--on');
+			}, 200);
+			setTimeout(function() {
+				$('body').removeClass('rc_lock--on');
+			}, 3000);
+			setTimeout(function() {
+				$('body').removeClass('rc_lock--transition');
+			}, 3200);
+		});
+	</script>
+{% endblock %}

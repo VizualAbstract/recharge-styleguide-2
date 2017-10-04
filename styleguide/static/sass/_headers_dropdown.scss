@@ -8,7 +8,8 @@
 		order: 1;
 		flex-grow: 1;
 
-		.rc_dropdown > .button {
+		.rc_dropdown > .button
+		.rc_dropdown > .rc_button {
 			padding-right: 10px;
 			min-height: 40px;
 			height: auto;
@@ -26,10 +27,12 @@
 		order: 2;
 		flex-grow: 1;
 
-		.button {
+		.button,
+		.rc_button {
 			margin: 0 0 0 auto;
 
-			+ .button {
+			+ .button,
+			+ .rc_button {
 				margin-left: 12px;
 			}
 		}
@@ -54,7 +57,8 @@
 			width: 100%;
 
 			.rc_dropdown {
-				 > .button {
+				 > .button,
+				 > .rc_button {
 					white-space: normal;
 					text-align: left;
 					line-height: 1;
@@ -82,7 +86,8 @@
 			margin-top: 12px;
 			text-align: center;
 
-			.button {
+			.button,
+			.rc_button {
 				width: 100%;
 			}
 		}

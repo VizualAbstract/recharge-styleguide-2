@@ -6,7 +6,6 @@ input.form__number {
 	width: auto;
 	min-width: 10px;
 	display: inline-block;
-	margin-right: 5px;
 
 	&:focus,
 	&.form__input--focus {
@@ -15,34 +14,15 @@ input.form__number {
 	}
 }
 
-/* Control input width */
-.form__number {
-	&[input-width="xs"],
-	&[input-width="sm"],
-	&[input-width="md"],
-	&[input-width="lg"] {
-		width: 100%;
-	}
-
-	&[input-width="xs"] {
-		max-width: 50px;
-	}
-	&[input-width="sm"] {
-		max-width: 70px;
-	}
-	&[input-width="md"] {
-		max-width: 90px;
-	}
-	&[input-width="lg"] {
-		max-width: 110px;
-	}
-}
-
 // Number input, using the select stylizer
 .rc_select.form__number {
 	width: auto;
 	display: inline-block;
-	margin-right: 5px;
+}
+
+.rc_select.form__number,
+input.form__number {
+	margin-right: 7px;
 }
 
 .form__radio,

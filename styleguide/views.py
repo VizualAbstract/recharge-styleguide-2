@@ -123,6 +123,16 @@ def banners():
     template_file = "banners.html"
     return render_template(template_file)
 
+@app.route('/lock')
+def lock():
+    template_file = "lock.html"
+    return render_template(template_file)
+
+@app.route('/<file_name>')
+def filename(file_name):
+    template_file = str(file_name) + ".html"
+    return render_template(template_file)
+
 # Layouts
 @app.route('/grid-system')
 @app.route('/grid-layouts')
@@ -276,7 +286,7 @@ def compile_js():
         with open(script_name, 'r') as f:
             final_script += ('\n' + f.read())
 
-    with open('styleguide/static/export/main.js', 'w') as f:
+    with open('styleguide/static/export/app.js', 'w') as f:
         f.write(final_script)
 
 

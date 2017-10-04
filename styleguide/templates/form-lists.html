@@ -38,6 +38,43 @@
 					<button class="rc_button rc_button--link rc_button--fa-trash" onclick="console.log('delete');"></button>
 				</li>
 			</ul>
-		</form>
+			<ul class="form__list">
+	            <li class="form__list__item">
+	                <label class="form__label region__name">Acre</label>
+	                <input type="hidden" name="country[provinces][Acre][tax_id]" value="880401">
+	                <input type="number" min="0" input-width="sm" class="form__number" name="country[provinces][Acre][tax]" value="0.0">
+	                <p class="form__placeholder">%</p>
+	                <input type="text" class="form__input" input-width="sm" name="country[provinces][Acre][tax_name]" value="ICMS">
+	                <select name="country[provinces][Acre][tax_type]" class="form__select">
+	                    <option value="normal"  selected >Added to 0% federal tax</option>
+	                    <option value="harmonized" >Instead of 0% federal tax</option>
+	                    <option value="compounded" >Compounded on top of 0% federal tax</option>
+	                </select>
+	            </li>
+	            <li class="form__list__item">
+	                <label class="form__label region__name">Alagoas</label>
+	                <input type="hidden" name="country[provinces][Alagoas][tax_id]" value="880404">
+	                <input type="number" min="0" input-width="sm" class="form__number" name="country[provinces][Alagoas][tax]" value="0.0">
+	                <p class="form__placeholder">%</p>
+	                <input type="text" class="form__input" input-width="sm" name="country[provinces][Alagoas][tax_name]" value="ICMS">
+	                <select name="country[provinces][Alagoas][tax_type]" input-width="sm" class="form__select">
+	                    <option value="normal"  selected >Added to 0% federal tax</option>
+	                    <option value="harmonized" >Instead of 0% federal tax</option>
+	                    <option value="compounded" >Compounded on top of 0% federal tax</option>
+	                </select>
+	            </li>
+	            <li class="form__list__item">
+	                <label class="form__label region__name">AmapÃ¡</label>
+	                <input type="number" min="0" input-width="sm" class="form__number" name="country[provinces][AmapÃ¡][tax]" value="0">
+	                <p class="form__placeholder">%</p>
+	                <input type="text" class="form__input" input-width="sm" name="country[provinces][AmapÃ¡][tax_name]" value="PST">
+	                <select name="country[provinces][AmapÃ¡][tax_type]" class="form__select">
+	                    <option value="normal"  selected >Added to 0% federal tax</option>
+	                    <option value="harmonized" >Instead of 0% federal tax</option>
+	                    <option value="compounded" >Compounded on top of 0% federal tax</option>
+	                </select>
+	            </li>
+	        </ul>
+	    </form>
 	</div>
 {% endblock %}
