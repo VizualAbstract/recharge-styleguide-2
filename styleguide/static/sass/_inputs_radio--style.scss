@@ -1,13 +1,16 @@
 $checkboxBackgroundColor: #424242;
 
-.form__radio {
+.form__radio,
+.rc_form__radio {
 	display: none;
 
-	+ .form__label {
+	+ .form__label,
+	+ .rc_form__label {
 		display: block;
 		margin-left: 0;
 
-		+ .form__radio + .form__label {
+		+ .form__radio + .form__label,
+		+ .rc_form__radio + .rc_form__label {
 			margin-top: 20px;
 		}
 
@@ -41,26 +44,33 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__radio {
+.form__radio,
+.rc_form__radio {
 	+ label,
-	+ .form__radio__label {
+	+ .form__radio__label,
+	+ .rc_form__radio__label {
 		&:before {
 			border-radius: 50%;
 		}
 	}
 }
 
-.form__radio {
-	&.error {
-		+ .form__label {
+.form__radio,
+.rc_form__radio {
+	&.error,
+	&.rc_error {
+		+ .form__label,
+		+ .rc_form__label {
 			color: #EC3D10;
 			&:before {
 				border-color: #EC3D10;
 			}
 		}
 		&:checked,
-		&.checked {
-			+ .form__label {
+		&.checked,
+		&.rc_checked {
+			+ .form__label,
+			+ .rc_form__label {
 				&:before {
 					background-color: #EC3D10;
 				}
@@ -69,19 +79,24 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__group {
-	.form__radio:first-of-type {
-		+ .form__label {
+.form__group,
+.rc_form__group {
+	.form__radio:first-of-type,
+	.rc_form__radio:first-of-type {
+		+ .form__label,
+		+ .rc_form__label {
 			// margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
 		}
 	}
 }
 
-.form__radio {
+.form__radio,
+.rc_form__radio {
 	&:checked,
 	&.checked {
 
-		+ .form__label {
+		+ .form__label,
+		+ .rc_form__label {
 			&:before {
 				content: "\f00c";
 				background-color: $checkboxBackgroundColor;
@@ -90,11 +105,13 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__radio {
+.form__radio,
+.rc_form__radio {
 	&:disabled,
-	&.disabled {
-
-		+ .form__label {
+	&.disabled,
+	&.rc_disabled {
+		+ .form__label,
+		+ .rc_form__label {
 			&:before {
 				content: "\f068";
 				color: #999;
@@ -103,8 +120,10 @@ $checkboxBackgroundColor: #424242;
 			}
 		}
 		&:checked,
-		&.checked {
-			+ .form__label {
+		&.checked,
+		&.rc_checked {
+			+ .form__label,
+			+ .rc_form__label {
 				&:before {
 					content: "\f00c";
 					color: #999;

@@ -75,7 +75,8 @@ $arrow-color: #424242 !default;
 	}
 }
 
-.form__select {
+.form__select,
+.rc_form__select {
 	+ .rc_select,
 	+ .rc_select--multi {
 		margin-top: 12px;
@@ -209,18 +210,22 @@ $arrow-color: #424242 !default;
 	border-width: 1px 0;
 	padding: 0.25em 0;
 	margin-top: 0.25em;
+
 	+ .rc_select__option {
 		margin-top: 0.25em;
 	}
+
 	+ .rc_select__optgroup {
 		border-top-width: 0;
 		margin-top: 0;
 	}
+
 	&:nth-child(2) {
 		padding-top: 0;
 		border-top: none;
 		margin-top: 0;
 	}
+
 	&:last-child {
 		border-bottom-width: 0;
 		margin-bottom: 0;
@@ -287,11 +292,14 @@ $arrow-color: #424242 !default;
 	background-color: $disabled-background;
 	border-color: $disabled-border;
 	cursor: not-allowed;
+
 	.rc_select__selected {
 		background-color: $disabled-background;
 		border-color: $disabled-border;
+
 		&:active, &:hover, &:focus {
 			border-color: $disabled-border !important;
+
 			&:before {
 				border-color: $disabled-border !important;
 			}
@@ -306,7 +314,9 @@ select[data-dkcacheid]{
 /* Auto-width options */
 .rc_select,
 .rc_select--multi {
-	&.form__select--auto {
+
+	&.form__select--auto,
+	&.rc_form__select--auto {
 		width: auto;
 		display: inline-block;
 	}

@@ -5,6 +5,9 @@ $card-margin: 30px;
 	border: 1px solid #CCC;
     padding: 30px;
 
+	+ .rc_card {
+		margin-top: 30px;
+	}
     @media screen and (max-width: $screen-sm-max) {
     	margin: 0 30px;
     }

@@ -1,4 +1,5 @@
-.form__input {
+.form__input,
+.rc_form__input {
 	display: block;
 	width: 100%;
 
@@ -9,20 +10,24 @@
 
 	margin: 0;
 
-	+ .form__input {
+	+ .form__input,
+	+ .rc_form__input {
 		margin-top: 10px;
 	}
 }
 
-.form__input {
+.form__input,
+.rc_form__input {
 	&.button--disabled,
+	&.rc_button--disabled,
 	&:disabled,
 	&[disabled] {
 		cursor: $cursor-disabled;
 	}
 }
 
-textarea.form__input {
+textarea.form__input,
+textarea.rc_form__input {
 	line-height: 1.5625;
 	padding: 7px 10px;
 	height: auto;
@@ -49,15 +54,19 @@ textarea {
 	appearance: none;
 }
 
-.form__input {
-	&.error {
+.form__input,
+.rc_form__input {
+	&.error,
+	&.rc_error {
 		border-color: $red;
 	}
 }
 
 /* Control input width */
 .form__number,
-.form__input {
+.form__input,
+.rc_form__number,
+.rc_form__input {
 	&[input-width="xs"],
 	&[input-width="sm"],
 	&[input-width="md"],

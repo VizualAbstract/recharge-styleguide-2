@@ -650,8 +650,9 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 
 // Color input
-input.form__color {
-	@extend .form__input;
+input.form__color,
+input.rc_form__color {
+	@extend .rc_form__input;
 
 	display: inline;
 	width: 100px;

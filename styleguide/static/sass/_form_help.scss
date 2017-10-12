@@ -1,66 +1,90 @@
-.form__help {
+.form__help,
+.rc_form__help {
 	color: #676767;
 	line-height: 25px;
 	font-size: 14px;
 }
 
-
-.form__label {
-	+ .form__help {
+.form__label,
+.rc_form__label {
+	+ .form__help,
+	+ .rc_form__help {
 		margin-top: -11px;
 		margin-bottom: 10px;
 	}
 }
 
-.form__input {
-	+ .form__help {
+.form__input,
+.rc_form__input {
+	+ .form__help,
+	+ .rc_form__help {
 		margin-top: 7px;
 	}
 }
 
-.form__help {
-	+ .form__label {
+.form__help,
+.rc_form__help {
+	+ .form__label,
+	+ .rc_form__label {
 		margin-top: 34px - 8;
 	}
 }
 
 .form__group,
-.form__addons {
-	+ .form__help {
+.form__addons,
+.rc_form__group,
+.rc_form__addons {
+	+ .form__help,
+	+ .rc_form__help {
 		margin-top: 7px;
+
 		+ .form__addons,
 		+ .form__group,
-		+ .form__placeholder {
+		+ .form__placeholder,
+		+ .rc_form__addons,
+		+ .rc_form__group,
+		+ .rc_form__placeholder {
 			margin-top: 34px - 8;
 		}
 	}
 }
 
-.form__addons {
+.form__addons,
+.rc_form__addons {
 	.form__group,
-	.form__placeholder {
-		+ .form__help {
+	.form__placeholder,
+	.rc_form__group,
+	.rc_form__placeholder {
+		+ .form__help,
+		+ .rc_form__help {
 			padding-left: 8px;
 		}
 	}
 }
 
-.form__addons {
-	.form__help {
+.form__addons,
+.rc_form__addons {
+	.form__help,
+	.rc_form__help {
 		margin-top: 0;
 		white-space: nowrap;
 	}
-	> .form__help {
+	> .form__help,
+	> .rc_form__help {
 		padding-top: 7px;
 	}
 }
 
-
-.form__input__contextual {
+.form__input__contextual
+.rc_form__input__contextual {
 	.form__group,
 	.form__addons,
-	.form__placeholder {
-		+ .form__help {
+	.form__placeholder,
+	.rc_form__group,
+	.rc_form__addons,
+	.rc_form__placeholder {
+		+ .form__help,
+		+ .rc_form__help {
 			&:last-child {
 				margin-bottom: -8px;
 			}
@@ -69,9 +93,13 @@
 }
 
 .form__radio,
-.form__checkbox {
-	+ .form__label {
-		+ .form__help {
+.form__checkbox,
+.rc_form__radio,
+.rc_form__checkbox {
+	+ .form__label,
+	+ .rc_form__label {
+		+ .form__help,
+		+ .rc_form__help {
 			margin-top: 3px;
 			padding-left: 25px;
 		}
@@ -79,52 +107,69 @@
 }
 
 .form__radio,
-.form__checkbox {
+.form__checkbox,
+.rc_form__radio,
+.rc_form__checkbox {
 	&:checked {
-		+ .form__label {
-			+ .form__help {
-				+ .form__input__contextual {
+		+ .form__label,
+		+ .rc_form__label {
+			+ .form__help,
+			+ .rc_form__help {
+				+ .form__input__contextual,
+				+ .rc_form__input__contextual {
 					display: block;
 					margin-left: 25px;
 				}
 			}
 		}
 	}
-	+ .form__label {
-		+ .form__input__contextual {
-			+ .form__help {
+	+ .form__label,
+	+ .rc_form__label {
+		+ .form__input__contextual,
+		+ .rc_form__input__contextual {
+			+ .form__help,
+			+ .rc_form__help {
 				margin-top: 7px;
 				margin-left: 25px;
 			}
-			+ .form__radio {
+			+ .form__radio,
+			+ .rc_form__radio {
 				margin-top: 25px;
 			}
 		}
 	}
 }
 
-.form__select {
-	+ .form__help {
+.form__select,
+.rc_form__select {
+	+ .form__help,
+	+ .rc_form__help {
 		margin-top: 7px;
 	}
 }
-.form__help {
-	+ .form__select {
+.form__help,
+.rc_form__help {
+	+ .form__select,
+	+ .rc_form__select {
 		margin-top: 7px;
 	}
 }
 
 fieldset {
 	> .form__group > .form__help,
-	> .form__help {
+	> .form__help,
+	> .rc_form__group > .rc_form__help,
+	> .rc_form__help {
 		&:last-child {
 			margin-bottom: -8px;
 		}
 	}
 }
 
-.dates__container {
-	+ .form__help {
+.dates__container,
+.rc_dates__container {
+	+ .form__help,
+	+ .rc_form__help {
 		margin-top: 7px;
 	}
 }

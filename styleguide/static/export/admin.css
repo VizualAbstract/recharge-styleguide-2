@@ -308,6 +308,10 @@ img.admin-recharge {
   background-color: #53BAD3;
 }
 
+.admin-recharge .rc_dropdown .rc_dropdown__menu:before, .admin-recharge.rc_dropdown .rc_dropdown__menu:before {
+  border-bottom-color: #34acca;
+}
+
 .admin-recharge .rc_dropdown .rc_dropdown__menu a, .admin-recharge.rc_dropdown .rc_dropdown__menu a {
   background-color: #34acca;
 }

@@ -295,6 +295,9 @@ img.admin-recharge {
 		}
 		.rc_dropdown__menu {
 			background-color: $admin-color;
+			&:before {
+				border-bottom-color: darken($admin-color, 8%);
+			}
 			a {
 				background-color: darken($admin-color, 8%);
 				&.rc_active,

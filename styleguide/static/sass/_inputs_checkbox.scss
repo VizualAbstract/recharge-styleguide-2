@@ -1,13 +1,16 @@
 $checkboxBackgroundColor: #424242;
 
-.form__checkbox {
+.form__checkbox,
+.rc_form__checkbox {
 	display: none;
 
-	+ .form__label {
+	+ .form__label,
+	+ .rc_form__label {
 		cursor: pointer;
 		margin-bottom: 0;
 
-		+ .form__checkbox + .form__label {
+		+ .form__checkbox + .form__label,
+		+ .rc_form__checkbox + .rc_form__label {
 			margin-top: 20px;
 		}
 
@@ -43,17 +46,22 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__checkbox {
-	&.error {
-		+ .form__label {
+.form__checkbox,
+.rc_form__checkbox {
+	&.error,
+	&.rc_error {
+		+ .form__label,
+		+ .rc_form__label {
 			color: #EC3D10;
 			&:before {
 				border-color: #EC3D10;
 			}
 		}
 		&:checked,
-		&.checked {
-			+ .form__label {
+		&.checked,
+		&.rc_checked {
+			+ .form__label,
+			+ .rc_form__label {
 				&:before {
 					background-color: #EC3D10;
 				}
@@ -62,19 +70,24 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__group {
-	.form__checkbox:first-of-type {
-		+ .form__label {
+.form__group,
+.rc_form__group {
+	.form__checkbox:first-of-type,
+	.rc_form__checkbox:first-of-type {
+		+ .form__label,
+		+ .rc_form__label {
 			// margin-top: 6px; // Make adjustments to spacing above radio and checkbox buttons in form groups, so it matches better with other elements in form groups
 		}
 	}
 }
 
-.form__checkbox {
+.form__checkbox,
+.rc_form__checkbox {
 	&:checked,
-	&.checked {
-
-		+ .form__label {
+	&.checked,
+	&.rc_checked {
+		+ .form__label,
+		+ .rc_form__label {
 			&:before {
 				content: "\f00c";
 				background-color: $checkboxBackgroundColor;
@@ -83,11 +96,13 @@ $checkboxBackgroundColor: #424242;
 	}
 }
 
-.form__checkbox {
+.form__checkbox
+.rc_form__checkbox {
 	&:disabled,
-	&.disabled {
-
-		+ .form__label {
+	&.disabled,
+	&.rc_disabled {
+		+ .form__label,
+		+ .rc_form__label {
 			&:before {
 				content: "\f068";
 				color: #999;
@@ -96,8 +111,10 @@ $checkboxBackgroundColor: #424242;
 			}
 		}
 		&:checked,
-		&.checked {
-			+ .form__label {
+		&.checked,
+		&.rc_checked {
+			+ .form__label,
+			+ .rc_form__label {
 				&:before {
 					content: "\f00c";
 					color: #999;

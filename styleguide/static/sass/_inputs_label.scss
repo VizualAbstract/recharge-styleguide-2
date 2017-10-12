@@ -1,8 +1,10 @@
-.form__label {
+.form__label,
+.rc_form__label {
 	display: block;
 	max-width: 100%; // Force IE8 to wrap long content
 
-	> .button {
+	> .button,
+	> .rc_button {
 		height: auto;
 		line-height: 1;
 	}

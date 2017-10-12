@@ -17,7 +17,8 @@
 		margin: 0;
 	}
 
-	input[type="text"].form__input {
+	input[type="text"].form__input,
+	input[type="text"].rc_form__input {
 	    padding-right: 35px;
 	}
 }

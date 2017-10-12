@@ -23,7 +23,8 @@ $spacer-y: 0;
 $dropdown-item-padding-y: 12px;
 $dropdown-item-padding-x: 15px;
 
-$zindex-dropdown: 90;
+//zindex needs to be higher than tooltip's to avoid visual issues
+$zindex-dropdown: 999 + 10;
 
 
 $enable-hover-media-query: true;
@@ -282,7 +283,9 @@ $zindex-dropdown-backdrop: 30;
 		margin-top: 0;
 		min-width: 305px;
 		left: auto;
-		right: 0;
+		//right: 0;
+		right: 100%;
+		margin-right: -17px;
 
 		a {
 			&.active,

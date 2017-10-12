@@ -1,5 +1,6 @@
 $tab-height: 40px;
 $tab-padding: 30px;
+$tab-margin: 30px;
 
 .rc_tabs {
 	&__header {
@@ -20,6 +21,7 @@ $tab-padding: 30px;
 			}
 			&:hover,
 			&:focus {
+				background-color: #EEE;
 				color: #000;
 			}
 			&.rc_active {
@@ -31,6 +33,18 @@ $tab-padding: 30px;
 	&__body {
 		background-color: #EEE;
 		padding: $tab-padding;
+	}
+}
+
+.rc_tabs {
+	&--white {
+		background-color: #EEE;
+
+		.rc_tabs__body {
+			background-color: #FFF;
+	        margin-top: $tab-margin;
+	        padding: 0 $tab-padding;
+		}
 	}
 }
 

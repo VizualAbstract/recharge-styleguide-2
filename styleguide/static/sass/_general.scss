@@ -76,7 +76,8 @@ a {
     color: $primary;
     &:hover,
     &:active,
-    &.active {
+    &.active,
+    &.rc_active {
         color: darken($primary, 10%);
     }
 }
@@ -98,6 +99,7 @@ fieldset {
     }
 }
 
-.form__actions {
+.form__actions,
+.rc_form__actions {
 	margin-top: 30px;
 }

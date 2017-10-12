@@ -39,17 +39,26 @@ fieldset + hr {
 
 // Form groups
 .form__group,
-.form__addons {
+.form__addons,
+.rc_form__group,
+.rc_form__addons,
+input[type="hidden"] {
     + .form__group,
     + .form__addons,
     + .form__label,
-    .form__group + & {
+    .form__group + &,
+    + .rc_form__group,
+    + .rc_form__addons,
+    + .rc_form__label,
+    .rc_form__group + & {
         margin-top: 34px;
     }
 }
 ,
-.form__list {
-    + .form__list {
+.form__list,
+.rc_form__list {
+    + .form__list,
+    + .rc_form__list {
         margin-top: 34px;
     }
 }
@@ -58,19 +67,27 @@ fieldset + hr {
 .form__group + [class="rc_layout"],
 [class="flex__layout"] + .form__group,
 .form__group + [class="flex__layout"],
-form  [class="flex__layout"] + [class="flex__layout"] ,
-form  [class="rc_layout"] + [class="rc_layout"] {
+form [class="flex__layout"] + [class="flex__layout"] ,
+[class="rc_layout"] + .rc_form__group,
+.rc_form__group + [class="rc_layout"],
+[class="flex__layout"] + .rc_form__group,
+.rc_form__group + [class="rc_layout"],
+form [class="rc_layout"] + [class="rc_layout"] {
     margin-top: 34px;
 }
 
 legend + .form__group,
 legend + .form__addons,
-legend + .form__label {
+legend + .form__label,
+legend + .rc_form__group,
+legend + .rc_form__addons,
+legend + .rc_form__label {
     margin-top: 30px;
 }
 
 // Form actions
-.form__actions {
+.form__actions,
+.rc_form__actions {
     margin-top: 30px;
     display: flex;
     width: 100%;
@@ -81,21 +98,28 @@ legend + .form__label {
     }
 }
 
-fieldset + fieldset.form__actions {
+fieldset + fieldset.form__actions,
+fieldset + fieldset.rc_form__actions {
     margin-top: 60px;
     margin-bottom: 30px;
 }
 
 // For Placeholder
-.form__placeholder {
+.form__placeholder,
+.rc_form__placeholder {
     padding-top: 6px;
 }
 
-.form__group {
+.form__group,
+ .rc_form__group {
     > .form__input,
     > .form__color,
-    > .form__date {
-        + .button {
+    > .form__date,
+    > .rc_form__input,
+    > .rc_form__color,
+    > .rc_form__date {
+        + .button,
+        + .rc_button {
             margin-top: 12px;
         }
     }
@@ -105,9 +129,13 @@ fieldset + fieldset.form__actions {
     &--compact {
         .form__group,
         .form__addons,
+        .rc_form__group,
+        .rc_form__addons,
         [class="rc_layout"] {
             + .form__group,
             + .form__addons,
+            + .rc_form__group,
+            + .rc_form__addons,
             + [class="rc_layout"] {
                 margin-top: 20px;
             }
@@ -116,10 +144,13 @@ fieldset + fieldset.form__actions {
 }
 
 /* Form group patch */
-[class^="flex__sm"] {
-    + [class^="flex__sm"] {
+[class^="flex__sm"],
+[class^="rc_layout__sm"] {
+    + [class^="flex__sm"],
+    + [class^="rc_layout__sm"] {
         @media screen and (max-width: $mobile-nav-max) {
-            .form__group {
+            .rc_form__group,
+            .rc_form__group {
                 margin-top: $gutter;
             }
         }

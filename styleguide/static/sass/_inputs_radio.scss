@@ -1,5 +1,7 @@
-.form__radio {
-	+ .form__label {
+.form__radio,
+.rc_form__radio {
+	+ .form__label,
+	+ .rc_form__label {
 		cursor: pointer;
 		margin-bottom: 0;
 

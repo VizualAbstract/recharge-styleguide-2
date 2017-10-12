@@ -1,34 +1,41 @@
-.visible--xs {
+.visible--xs,
+.rc_visible--xs {
 	@media screen and (min-width: $screen-xs-max + 1) {
 		display: none;
 	}
 }
 
-.visible--mobile {
+.visible--mobile,
+.rc_visible--mobile {
 	@media screen and (min-width: $mobile-nav-max + 1) {
 		display: none;
 	}
 }
 
-.hidden--mobile {
+.hidden--mobile,
+.rc_hidden--mobile {
 	@media screen and (max-width: $mobile-nav-max) {
 		display: none;
 	}
 }
 
-.pull--right {
+.pull--right,
+.rc_pull--right {
 	float: right;
 }
 
-.text--center {
+.text--center,
+.rc_text--center {
 	text-align: center !important;
 }
 
-.text--right {
+.text--right,
+.rc_text--right {
 	text-align: right !important;
 }
 
-.text--left {
+.text--left,
+.rc_text--left {
 	text-align: left !important;
 }
 

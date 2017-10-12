@@ -30,17 +30,21 @@ fieldset {
 }
 
 // Form groups
-.form__group {
-    + .form__group {
+.form__group,
+.rc_form__group {
+    + .form__group,
+    + .rc_form__group {
         // margin-top: 34px;
     }
 }
-legend + .form__group {
+legend + .form__group,
+legend + .rc_form__group {
     // margin-top: 30px;
 }
 
 // Form actions
-.form__actions {
+.form__actions,
+.rc_form__actions {
     // margin-top: 30px;
     display: flex;
     width: 100%;
@@ -51,21 +55,28 @@ legend + .form__group {
     }
 }
 
-fieldset + fieldset.form__actions {
+fieldset + fieldset.form__actions,
+fieldset + fieldset.rc_form__actions {
     // margin-top: 60px;
     // margin-bottom: 30px;
 }
 
 // For Placeholder
-.form__placeholder {
+.form__placeholder,
+.rc_form__placeholder {
     padding-top: 6px;
 }
 
-.form__group {
+.form__group,
+.rc_form__group {
     > .form__input,
+    > .rc_form__input,
     > .form__color,
-    > .form__date {
-        + .button {
+    > .rc_form__color,
+    > .form__date,
+    > .rc_form__date {
+        + .button,
+        + .rc_button {
             margin-top: 12px;
         }
     }

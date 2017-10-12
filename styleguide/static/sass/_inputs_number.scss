@@ -1,6 +1,7 @@
 // Number input, using the default input
-input.form__number {
-	@extend .form__input;
+input.form__number,
+input.rc_form__number {
+	@extend .rc_form__input;
 
 	border: 1px solid $input-border;
 	width: auto;
@@ -8,28 +9,37 @@ input.form__number {
 	display: inline-block;
 
 	&:focus,
-	&.form__input--focus {
+	&.form__input--focus,
+	&.rc_form__input--focus {
 		border-color: #4DD6B7;
 		outline: none;
 	}
 }
 
 // Number input, using the select stylizer
-.rc_select.form__number {
+.rc_select.form__number,
+.rc_select.rc_form__number {
 	width: auto;
 	display: inline-block;
 }
 
 .rc_select.form__number,
-input.form__number {
+input.form__number,
+.rc_select.rc_form__number,
+input.rc_form__number {
 	margin-right: 7px;
 }
 
 .form__radio,
-.form__checkbox {
+.form__checkbox,
+.rc_form__radio,
+.rc_form__checkbox {
 	+ .form__radio__label,
-	+ .form__checkbox__label {
-		.form__number {
+	+ .form__checkbox__label,
+	+ .rc_form__radio__label,
+	+ .rc_form__checkbox__label {
+		.form__number,
+		.rc_form__number {
 			margin-left: -5px;
 			margin-top: 0;
 		}

@@ -1,4 +1,5 @@
-.form__addons {
+.form__addons,
+.rc_form__addons {
     display: flex;
     flex-wrap: nowrap;
     width: auto;
@@ -6,28 +7,42 @@
     > .form__label,
     > .form__group,
     > .form__actions,
-    > .form__placeholder {
+    > .form__placeholder,
+    > .rc_form__label,
+    > .rc_form__group,
+    > .rc_form__actions,
+    > .rc_form__placeholder {
         width: auto;
         flex-shrink: 1;
     }
 
-    .form__label {
+    .form__label,
+    .rc_form__label {
         white-space: nowrap;
     }
 
-    .form__group {
-        > .form__checkbox + .form__label {
+    .form__group,
+    .rc_form__group {
+        > .form__checkbox + .form__label,
+        > .rc_form__checkbox + .rc_form__label {
             line-height: 40px;
         }
     }
 
     .form__label,
     .form__group,
-    .form__placeholder {
+    .form__placeholder,
+    .rc_form__label,
+    .rc_form__group,
+    .rc_form__placeholder {
         + .form__label,
         + .form__group,
         + .form__actions,
-        + .form__placeholder {
+        + .form__placeholder,
+        + .rc_form__label,
+        + .rc_form__group,
+        + .rc_form__actions,
+        + .rc_form__placeholder {
             margin-top: 0;
         }
     }
@@ -35,27 +50,39 @@
     .form__label,
     .form__group,
     .form__actions,
-    .form__placeholder {
+    .form__placeholder,
+    .rc_form__label,
+    .rc_form__group,
+    .rc_form__actions,
+    .rc_form__placeholder {
         padding-right: 7px;
         padding-left: 8px;
+
         &:first-child {
             padding-left: 0;
         }
+
         &:last-child {
             padding-right: 0;
         }
     }
 
+    > .rc_tooltip__button,
     > .rc_tooltip__button {
         margin-top: 7px;
     }
 
-    .form__addons + .form__addons {
+    .form__addons + .form__addons,
+    .rc_form__addons + .rc_form__addons {
         margin-left: 15px;
     }
-    .form__group {
+
+    .form__group,
+    .rc_form__group {
         .form__number,
-        .form__input {
+        .form__input,
+        .rc_form__number,
+        .rc_form__input {
             min-width: 55px;
             margin-right: 0;
             width: 100%;
@@ -63,22 +90,29 @@
     }
 }
 
-
-.form__addons {
+.form__addons,
+.rc_form__addons {
     &--wrap {
         flex-wrap: wrap;
+
         > .form__label,
         > .form__group,
         > .form__actions,
-        > .form__placeholder {
+        > .form__placeholder,
+        > .rc_form__label,
+        > .rc_form__group,
+        > .rc_form__actions,
+        > .rc_form__placeholder {
             flex-shrink: 0;
         }
     }
 }
 
 // Allows true inline input fields, if form groups are preceeded by a .form__label element
-.form__addons {
-    > .form__label {
+.form__addons,
+.rc_form__addons {
+    > .form__label,
+    > .rc_form__label {
         line-height: 40px;
         margin-bottom: 0;
         padding-right: 15px;
@@ -87,20 +121,28 @@
 }
 
 // Removes margin between input groups, adjusts borders to prevent thick veritcal borders
-.form__addons {
+.form__addons,
+.rc_form__addons {
     &--seamless {
         // Remove padding
-        .form__group {
+        .form__group,
+        .rc_form__group {
             padding-right: 0;
+
             + .form__group,
-            + .form__actions {
+            + .form__actions,
+            + .rc_form__group,
+            + .rc_form__actions {
                 padding-left: 0;
             }
         }
         // Prevent double-border edges
-        .form__group {
-            .form__input {
+        .form__group,
+        .rc_form__group {
+            .form__input,
+            .rc_form__input {
                 border-right-width: 0;
+
                 &:focus,
                 &:active,
                 &.rc_active {
@@ -113,26 +155,34 @@
 }
 
 // Enables full-width addon groups
-.form__addons--full {
+.form__addons--full,
+.rc_form__addons--full {
     width: 100%;
-    > .form__group {
+
+    > .form__group,
+    > .rc_form__group {
         // width: 100%;
         flex-grow: 1;
     }
 }
 
 // Form search has all the bells and whistles and an additional "active" class for live search UI changes
-.form__search {
-    @extend .form__addons--full;
-    @extend .form__addons--seamless;
-    .form__input {
+.form__search,
+.rc_form__search {
+    @extend .rc_form__addons--full;
+    @extend .rc_form__addons--seamless;
+    .form__input
+    .rc_form__input {
         border-right-width: 1px !important;
     }
-    .form__group + .form__actions {
+    .form__group + .form__actions,
+    .rc_form__group + .rc_form__actions {
         padding-top: 0;
     }
-    .form__actions {
-        .button {
+    .form__actions,
+    .rc_form__actions {
+        .button,
+        .rc_button {
             min-width: 40px;
             @media screen and (min-width: $mobile-nav-max + 1) {
                 max-width: 40px;
@@ -152,11 +202,14 @@
         }
     }
     &--active {
-        .form__input {
+        .form__input,
+        .rc_form__input {
             border-color: $primary;
         }
-        .form__actions {
-            .button {
+        .form__actions,
+        .rc_form__actions {
+            .button,
+            .rc_button {
                 background-color: $primary;
                 > span {
                     &:before {
@@ -185,53 +238,67 @@
 }
 
 /* Pattern for credit/debit cards */
-.form__cards {
+.form__cards,
+.rc_form__cards {
     width: auto;
 
     .form__group,
     .form__addons,
     .form__number,
-    .form__input {
+    .form__input,
+    .rc_form__group,
+    .rc_form__addons,
+    .rc_form__number,
+    .rc_form__input {
         max-width: 100%;
         width: 100%;
     }
     .form__addon,
-    > .form__group {
+    > .form__group,
+    .rc_form__addon,
+    > .rc_form__group {
         margin-top: 34px;
     }
 
     @media screen and (max-width: $mobile-nav-max + 250) {
-        .form__addons + .form__addons {
+        .form__addons + .form__addons,
+        .rc_form__addons + .rc_form__addons {
             margin-left: 0;
         }
     }
-    .form__cards__details {
+    .form__cards__details,
+    .rc_form__cards__details {
         margin-top: 34px;
 
         @media screen and (min-width: $mobile-nav-max + 250 + 1) {
             display: flex;
             flex-wrap: nowrap;
 
-            > .form__addons {
+            > .form__addons,
+            > .rc_form__addons {
                 margin-top: 0;
             }
         }
     }
-    .form__cards__zipcode {
-        .form__input {
+    .form__cards__zipcode,
+    .rc_form__cards__zipcode {
+        .form__input,
+        .rc_form__input {
             min-width: 125px;
         }
 
         @media screen and (max-width: $mobile-nav-max) {
             display: block;
 
-            .form__group {
+            .form__group,
+            .rc_form__group {
                 padding-right: 0;
                 padding-left: 0;
             }
         }
     }
-    .form__cards__images {
+    .form__cards__images,
+    .rc_form__cards__images {
         align-items: stretch;
         max-width: 100%;
         width: auto;

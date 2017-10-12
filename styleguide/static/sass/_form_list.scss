@@ -1,4 +1,5 @@
-.form__list {
+.form__list,
+.rc_form__list {
     &__item {
         display: flex;
         flex-wrap: nowrap;
@@ -8,7 +9,11 @@
         .form__label,
         .form__placeholder,
         .form__group,
-        .form__actions {
+        .form__actions,
+        .rc_form__label,
+        .rc_form__placeholder,
+        .rc_form__group,
+        .rc_form__actions {
             padding-right: 7px;
             padding-left: 8px;
 
@@ -19,18 +24,24 @@
                 padding-right: 0;
             }
 
-            + .form__group {
+            + .form__group,
+            + .rc_form__group {
                 margin-top: 0;
             }
         }
 
         // Fix margin for label and placeholder offsets
         .form__label,
-        .form__placeholder {
+        .form__placeholder,
+        .rc_form__label,
+        .rc_form__placeholder {
 
             + .form__input,
             + .form__select,
-            + .form__number {
+            + .form__number,
+            + .rc_form__input,
+            + .rc_form__select,
+            + .rc_form__number  {
                 margin-left: 8px;
             }
         }
@@ -38,21 +49,29 @@
         // If not using form groups, give elements the correct margin
         .form__input,
         .form__select,
-        .form__number {
+        .form__number,
+        .rc_form__input,
+        .rc_form__select,
+        .rc_form__number {
 
             + .form__input,
             + .form__select,
-            + .form__number {
+            + .form__number,
+            + .rc_form__input,
+            + .rc_form__select,
+            + .rc_form__number {
                 margin-left: 15px;
             }
         }
 
         // Form selects should have a more fluid width
-        > .form__select {
+        > .form__select,
+        > .rc_form__select {
             width: auto;
         }
 
-        > .form__label {
+        > .form__label,
+        > .rc_form__label {
             line-height: 40px;
             margin-bottom: 0;
             white-space: nowrap;
@@ -61,9 +80,12 @@
 }
 
 /* Form-group spacing fix */
-.form__group {
-    > .form__list {
-        .form__list__item:first-child {
+.form__group,
+.rc_form__group {
+    > .form__list,
+    > .rc_form__list {
+        .form__list__item:first-child,
+        .rc_form__list__item:first-child {
             margin-top: 0;
         }
     }

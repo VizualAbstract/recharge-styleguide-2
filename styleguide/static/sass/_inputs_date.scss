@@ -326,8 +326,9 @@ $pd-font-family: "raleway-semibold", Helvetica, Arial, sans-serif !default;
 }
 
 // Date input
-input.form__date {
-	@extend .form__input;
+input.form__date,
+input.rc_form__date {
+	@extend .rc_form__input;
 	
 	max-width: 238px;
 	background-image: url('../images/form__caret.png');
@@ -354,7 +355,8 @@ input.form__date {
 	}
 }
 
-.dates {
+.dates,
+.rc_dates {
 	&__container {
 		display: flex;
 		max-width: 510px;

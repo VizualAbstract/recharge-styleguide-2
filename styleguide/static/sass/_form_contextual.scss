@@ -1,26 +1,36 @@
 // The basic mechanics. Normally hidden, only reveal if besides a checked input
-.form__input__contextual {
+.form__input__contextual,
+.rc_form__input__contextual {
 	display: none;
 }
 input:checked {
-	+ .form__input__contextual {
+	+ .form__input__contextual,
+	+ .rc_form__input__contextual {
 		display: block;
 	}
-	+ .form__label {
-		+ .form__input__contextual {
+	+ .form__label,
+	+ .rc_form__label {
+		+ .form__input__contextual,
+		+ .rc_form__input__contextual {
 			display: block;
 		}
 	}
 }
 
 // Styling the contextual input container
-.form__input__contextual {
+.form__input__contextual,
+.rc_form__input__contextual {
 	background-color: #f3f3f3;
 	padding: 20px;
+
 	.form__group,
 	.form__actions,
 	.form__placeholder,
-	.form__addons {
+	.form__addons,
+	.rc_form__group,
+	.rc_form__actions,
+	.rc_form__placeholder,
+	.rc_form__addons {
 		&:first-child {
 			margin-top: -2px;
 		}
@@ -28,23 +38,32 @@ input:checked {
 }
 
 // Vertical spacing corrections
-.form__input__contextual {
+.form__input__contextual,
+.rc_form__input__contextual {
 	+ .form__group,
-	+ .form__actions {
+	+ .form__actions,
+	+ .rc_form__group,
+	+ .rc_form__actions {
 		margin-top: 31px;
 	}
 	+ .form__radio + .form__label,
-	+ .form__checkbox + .form__label {
+	+ .form__checkbox + .form__label,
+	+ .rc_form__radio + .rc_form__label,
+	+ .rc_form__checkbox + .rc_form__label {
 		margin-top: 21px;
 	}
 }
 
 .form__radio,
-.form__checkbox {
-	+ .form__label {
-		+ .form__input__contextual {
+.form__checkbox,
+.rc_form__radio,
+.rc_form__checkbox {
+	+ .form__label,
+	+ .rc_form__label {
+		+ .form__input__contextual,
+		+ .rc_form__input__contextual {
 			margin-top: 14px;
 			margin-left: 25px;
 		}
-	}	
+	}
 }
