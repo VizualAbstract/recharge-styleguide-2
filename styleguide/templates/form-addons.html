@@ -147,4 +147,46 @@
 		<p>No search results. Try again.</p>
 	</div>
 </div>
+
+
+<h2>.rc_form__group interaction</h2>
+<p>Place `.rc_form__addons` within `.form__group`, especially if also labeling the group.</p>
+<div class="rc_example">
+	<div class="rc_form__group">
+		<label class="rc_form__label">Checkbox</label>
+		<div class="rc_form__addons">
+			<input type="checkbox" id="" name="" checked="" class="rc_form__checkbox">
+			<label for="" class="form__label"></label>
+			<input type="number" value="1" class="rc_form__number">
+			<label class="rc_form__label">%</label>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="rc_form__group">
+		<label class="rc_form__label">Default</label>
+		<div class="rc_form__addons">
+			<input type="number" value="1" input-width="sm" class="rc_form__number">
+			<select class="rc_select">
+				<option>month</option>
+				<option>week</option>
+				<option>days</option>
+			</select>
+			<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+		</div>
+	</div>
+	<div class="rc_form__group">
+		<label class="rc_form__label">Auto-width</label>
+		<div class="rc_form__addons rc_form__addons--auto">
+			<input type="number" value="1" input-width="sm" class="rc_form__number">
+			<select class="rc_select">
+				<option>month</option>
+				<option>week</option>
+				<option>days</option>
+			</select>
+			<button class="rc_tooltip__button" data-content="<a href='#'>Go to setup instructions...</a>"></button>
+		</div>
+	</div>
+</div>
 {% endblock %}

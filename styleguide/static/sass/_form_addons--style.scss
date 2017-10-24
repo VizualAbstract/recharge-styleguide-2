@@ -55,8 +55,8 @@
     .rc_form__group,
     .rc_form__actions,
     .rc_form__placeholder {
-        padding-right: 7px;
         padding-left: 8px;
+        padding-right: 7px;
 
         &:first-child {
             padding-left: 0;
@@ -64,6 +64,17 @@
 
         &:last-child {
             padding-right: 0;
+        }
+    }
+    > .rc_input,
+    > .rc_select {
+        margin-left: 8px;
+        margin-right: 7px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
         }
     }
 
@@ -139,13 +150,13 @@
         // Prevent double-border edges
         .form__input,
         .rc_form__input {
-            // border-right-width: 0;
+            border-right-width: 0;
 
             &:focus,
             &:active,
             &.rc_active {
-                // border-right-width: 1px;
-                // margin-right: -1px;
+                border-right-width: 1px;
+                margin-right: -1px;
             }
         }
     }
@@ -168,9 +179,6 @@
 .rc_form__search {
     @extend .rc_form__addons--full;
     @extend .rc_form__addons--seamless;
-    .rc_form__label {
-        padding-right: 0;
-    }
     .form__input
     .rc_form__input {
         border-right-width: 1px !important;
@@ -282,15 +290,12 @@
     }
     .form__cards__zipcode,
     .rc_form__cards__zipcode {
-        margin-left: 15px;
-
         .form__input,
         .rc_form__input {
             min-width: 125px;
         }
 
         @media screen and (max-width: $mobile-nav-max) {
-            margin-left: 0;
             display: block;
 
             .form__group,
@@ -330,30 +335,6 @@
                     margin-left: 15px;
                 }
             }
-        }
-    }
-}
-
-.rc_form__addons {
-    .rc_form__group {
-        input[type="text"] {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.rc_form__addons--auto {
-    .rc_select {
-        width: auto;
-    }
-}
-
-.rc_form__addons {
-    .form__select,
-    .rc_form__select {
-        + .rc_select,
-        + .rc_select--multi {
-            margin-top: 0;
         }
     }
 }

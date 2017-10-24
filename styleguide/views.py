@@ -235,6 +235,8 @@ def admin_class():
 def generate_assets():
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'fontawesome.scss')
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'main.scss')
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'proxy_reset.scss')
+    sassutils.builder.Manifest('static/sass').build_one('styleguide', 'proxy_structure.scss')
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'admin.scss')
     sassutils.builder.Manifest('static/sass').build_one('styleguide', 'styleguide.scss')
     compile_js()
@@ -247,6 +249,16 @@ def rename_css():
         with open("styleguide/static/export/main.css", "wt") as fout:
             for line in fin:
                 fout.write(line.replace('/*# sourceMappingURL=../css/main.scss.css.map */', ''))
+
+    with open("styleguide/static/sass/styleguide/static/sass/proxy_reset.scss.css", "rt") as fin:
+        with open("styleguide/static/export/proxy_reset.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/proxy_reset.scss.css.map */', ''))
+
+    with open("styleguide/static/sass/styleguide/static/sass/proxy_structure.scss.css", "rt") as fin:
+        with open("styleguide/static/export/proxy_structure.css", "wt") as fout:
+            for line in fin:
+                fout.write(line.replace('/*# sourceMappingURL=../css/proxy_structure.scss.css.map */', ''))
 
     with open("styleguide/static/sass/styleguide/static/sass/admin.scss.css", "rt") as fin:
         with open("styleguide/static/export/admin.css", "wt") as fout:

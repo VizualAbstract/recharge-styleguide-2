@@ -554,22 +554,22 @@
 }
 
 .flex__container[flex-max="xs"],
-.rc_layout__container[flex-max="xs"]
+.rc_layout__container[flex-max="xs"],
 .rc_layout__container[rc_layout-max="xs"] {
 	max-width: $screen-xs-max !important;
 }
 .flex__container[flex-max="sm"],
-.rc_layout__container[flex-max="sm"]
+.rc_layout__container[flex-max="sm"],
 .rc_layout__container[rc_layout-max="sm"] {
 	max-width: $screen-sm-max !important;
 }
 .flex__container[flex-max="md"],
-.rc_layout__container[flex-max="md"]
+.rc_layout__container[flex-max="md"],
 .rc_layout__container[rc_layout-max="md"] {
 	max-width: $screen-md-max !important;
 }
 .flex__container[flex-max="lg"],
-.rc_layout__container[flex-max="lg"]
+.rc_layout__container[flex-max="lg"],
 .rc_layout__container[rc_layout-max="lg"] {
 	max-width: $screen-lg-max !important;
 }
