@@ -3,7 +3,7 @@ form {
 }
 
 legend {
-    width: 100%;
+    // width: 100%;
 
     h1, .rc_h1,
     h2, .rc_h2,
@@ -11,6 +11,7 @@ legend {
     h4, .rc_h4,
     h5, .rc_h5,
     h6, .rc_h6 {
+        // line-height: 1;
         margin-bottom: 0;
         + p {
             margin-top: 5px;
@@ -22,10 +23,10 @@ legend {
 }
 
 fieldset {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    min-width: 0;
+    // padding: 0;
+    // margin: 0;
+    // border: 0;
+    // min-width: 0;
 
     + fieldset {
     	margin-top: 60px;
@@ -54,7 +55,7 @@ input[type="hidden"] {
         margin-top: 34px;
     }
 }
-,
+
 .form__list,
 .rc_form__list {
     + .form__list,
@@ -88,9 +89,10 @@ legend + .rc_form__label {
 // Form actions
 .form__actions,
 .rc_form__actions {
+    // margin-top: 10px;
     margin-top: 30px;
-    display: flex;
-    width: 100%;
+    // display: flex;
+    // width: 100%;
 
     .button,
     .rc_button {

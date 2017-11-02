@@ -29,6 +29,7 @@ $product-padding: 20px;
 
 
 .rc_product-item {
+	box-sizing: border-box;
 	display: block;
 	float: left;
 	width: 100%;

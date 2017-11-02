@@ -11,6 +11,11 @@ $card-margin: 30px;
     @media screen and (max-width: $screen-sm-max) {
     	margin: 0 30px;
     }
+
+    &--reverse {
+    	background-color: #F5F5F5;
+		border-width: 0;
+    }
 }
 
 /* Addon grid */

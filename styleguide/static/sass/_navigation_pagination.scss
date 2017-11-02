@@ -2,7 +2,7 @@
 	display: block;
 	width: 100%;
 	margin: 34px 0;
-    font-family: 'ralewayregular';
+    // font-family: 'ralewayregular';
 }
 
 .rc_pagination {
@@ -12,22 +12,22 @@
 
 	&__page {
 		display: inline-block;
-		padding: 2px 3px;
-		line-height: 15px;
+		// padding: 2px 3px;
+		// line-height: 15px;
 	}
 }
 
 a.rc_pagination__page {
-	color: $gray-darker;
+	// color: $gray-darker;
 
 	&:hover {
-		color: darken($gray-darker, 15%);
+		// color: darken($gray-darker, 15%);
 	}
 }
 
 span.rc_pagination__page {
-	color: darken($gray-darker, 10%);
-	font-family: 'ralewaysemibold';
+	// color: darken($gray-darker, 10%);
+	// font-family: 'ralewaysemibold';
 }
 
 /* Alignment */

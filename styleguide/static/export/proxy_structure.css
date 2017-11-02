@@ -2,8 +2,9 @@
 /* Variables */
 /* Proxy reset */
 .recharge {
-  clear: both;
+  text-align: left;
   box-sizing: border-box;
+  clear: both;
 }
 
 .recharge ul, .recharge ol {
@@ -1094,6 +1095,10 @@
     flex-basis: 0;
     flex-grow: 1;
   }
+}
+
+[class^="rc_layout"] {
+  box-sizing: border-box;
 }
 
 [flex-reverse="true"] .flex__layout,
@@ -4473,14 +4478,8 @@ fieldset {
 
 .form__actions,
 .rc_form__actions {
+  margin-top: 10px;
   display: flex;
-  width: 100%;
-}
-
-.form__actions .button,
-.form__actions .rc_button,
-.rc_form__actions .button,
-.rc_form__actions .rc_button {
   width: 100%;
 }
 
@@ -4552,6 +4551,7 @@ input.rc_form__date + .rc_button,
   margin-top: 12px;
 }
 
+/* Form group patch */
 .form__list__item,
 .rc_form__list__item {
   display: flex;
@@ -5239,6 +5239,554 @@ input.rc_form__date,
   margin-top: 0;
 }
 
+.form__addons,
+.rc_form__addons {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  align-items: center;
+}
+
+.form__addons > .form__label,
+.form__addons > .form__group,
+.form__addons > .form__actions,
+.form__addons > .form__placeholder,
+.form__addons > .rc_form__label,
+.form__addons > .rc_form__group,
+.form__addons > .rc_form__actions,
+.form__addons > .rc_form__placeholder,
+.rc_form__addons > .form__label,
+.rc_form__addons > .form__group,
+.rc_form__addons > .form__actions,
+.rc_form__addons > .form__placeholder,
+.rc_form__addons > .rc_form__label,
+.rc_form__addons > .rc_form__group,
+.rc_form__addons > .rc_form__actions,
+.rc_form__addons > .rc_form__placeholder {
+  width: auto;
+  flex-shrink: 1;
+}
+
+.form__addons .form__label,
+.form__addons .rc_form__label,
+.rc_form__addons .form__label,
+.rc_form__addons .rc_form__label {
+  white-space: nowrap;
+}
+
+.form__addons > label,
+.rc_form__addons > label {
+  line-height: 1;
+}
+
+.form__addons .form__label + .form__label,
+.form__addons .form__label + .form__group,
+.form__addons .form__label + .form__actions,
+.form__addons .form__label + .form__placeholder,
+.form__addons .form__label + .rc_form__label,
+.form__addons .form__label + .rc_form__group,
+.form__addons .form__label + .rc_form__actions,
+.form__addons .form__label + .rc_form__placeholder,
+.form__addons .form__group + .form__label,
+.form__addons .form__group + .form__group,
+.form__addons .form__group + .form__actions,
+.form__addons .form__group + .form__placeholder,
+.form__addons .form__group + .rc_form__label,
+.form__addons .form__group + .rc_form__group,
+.form__addons .form__group + .rc_form__actions,
+.form__addons .form__group + .rc_form__placeholder,
+.form__addons .form__placeholder + .form__label,
+.form__addons .form__placeholder + .form__group,
+.form__addons .form__placeholder + .form__actions,
+.form__addons .form__placeholder + .form__placeholder,
+.form__addons .form__placeholder + .rc_form__label,
+.form__addons .form__placeholder + .rc_form__group,
+.form__addons .form__placeholder + .rc_form__actions,
+.form__addons .form__placeholder + .rc_form__placeholder,
+.form__addons .rc_form__label + .form__label,
+.form__addons .rc_form__label + .form__group,
+.form__addons .rc_form__label + .form__actions,
+.form__addons .rc_form__label + .form__placeholder,
+.form__addons .rc_form__label + .rc_form__label,
+.form__addons .rc_form__label + .rc_form__group,
+.form__addons .rc_form__label + .rc_form__actions,
+.form__addons .rc_form__label + .rc_form__placeholder,
+.form__addons .rc_form__group + .form__label,
+.form__addons .rc_form__group + .form__group,
+.form__addons .rc_form__group + .form__actions,
+.form__addons .rc_form__group + .form__placeholder,
+.form__addons .rc_form__group + .rc_form__label,
+.form__addons .rc_form__group + .rc_form__group,
+.form__addons .rc_form__group + .rc_form__actions,
+.form__addons .rc_form__group + .rc_form__placeholder,
+.form__addons .rc_form__placeholder + .form__label,
+.form__addons .rc_form__placeholder + .form__group,
+.form__addons .rc_form__placeholder + .form__actions,
+.form__addons .rc_form__placeholder + .form__placeholder,
+.form__addons .rc_form__placeholder + .rc_form__label,
+.form__addons .rc_form__placeholder + .rc_form__group,
+.form__addons .rc_form__placeholder + .rc_form__actions,
+.form__addons .rc_form__placeholder + .rc_form__placeholder,
+.rc_form__addons .form__label + .form__label,
+.rc_form__addons .form__label + .form__group,
+.rc_form__addons .form__label + .form__actions,
+.rc_form__addons .form__label + .form__placeholder,
+.rc_form__addons .form__label + .rc_form__label,
+.rc_form__addons .form__label + .rc_form__group,
+.rc_form__addons .form__label + .rc_form__actions,
+.rc_form__addons .form__label + .rc_form__placeholder,
+.rc_form__addons .form__group + .form__label,
+.rc_form__addons .form__group + .form__group,
+.rc_form__addons .form__group + .form__actions,
+.rc_form__addons .form__group + .form__placeholder,
+.rc_form__addons .form__group + .rc_form__label,
+.rc_form__addons .form__group + .rc_form__group,
+.rc_form__addons .form__group + .rc_form__actions,
+.rc_form__addons .form__group + .rc_form__placeholder,
+.rc_form__addons .form__placeholder + .form__label,
+.rc_form__addons .form__placeholder + .form__group,
+.rc_form__addons .form__placeholder + .form__actions,
+.rc_form__addons .form__placeholder + .form__placeholder,
+.rc_form__addons .form__placeholder + .rc_form__label,
+.rc_form__addons .form__placeholder + .rc_form__group,
+.rc_form__addons .form__placeholder + .rc_form__actions,
+.rc_form__addons .form__placeholder + .rc_form__placeholder,
+.rc_form__addons .rc_form__label + .form__label,
+.rc_form__addons .rc_form__label + .form__group,
+.rc_form__addons .rc_form__label + .form__actions,
+.rc_form__addons .rc_form__label + .form__placeholder,
+.rc_form__addons .rc_form__label + .rc_form__label,
+.rc_form__addons .rc_form__label + .rc_form__group,
+.rc_form__addons .rc_form__label + .rc_form__actions,
+.rc_form__addons .rc_form__label + .rc_form__placeholder,
+.rc_form__addons .rc_form__group + .form__label,
+.rc_form__addons .rc_form__group + .form__group,
+.rc_form__addons .rc_form__group + .form__actions,
+.rc_form__addons .rc_form__group + .form__placeholder,
+.rc_form__addons .rc_form__group + .rc_form__label,
+.rc_form__addons .rc_form__group + .rc_form__group,
+.rc_form__addons .rc_form__group + .rc_form__actions,
+.rc_form__addons .rc_form__group + .rc_form__placeholder,
+.rc_form__addons .rc_form__placeholder + .form__label,
+.rc_form__addons .rc_form__placeholder + .form__group,
+.rc_form__addons .rc_form__placeholder + .form__actions,
+.rc_form__addons .rc_form__placeholder + .form__placeholder,
+.rc_form__addons .rc_form__placeholder + .rc_form__label,
+.rc_form__addons .rc_form__placeholder + .rc_form__group,
+.rc_form__addons .rc_form__placeholder + .rc_form__actions,
+.rc_form__addons .rc_form__placeholder + .rc_form__placeholder {
+  margin-top: 0;
+}
+
+.form__addons .form__label,
+.form__addons .form__group,
+.form__addons .form__actions,
+.form__addons .form__placeholder,
+.form__addons .rc_form__label,
+.form__addons .rc_form__group,
+.form__addons .rc_form__actions,
+.form__addons .rc_form__placeholder,
+.rc_form__addons .form__label,
+.rc_form__addons .form__group,
+.rc_form__addons .form__actions,
+.rc_form__addons .form__placeholder,
+.rc_form__addons .rc_form__label,
+.rc_form__addons .rc_form__group,
+.rc_form__addons .rc_form__actions,
+.rc_form__addons .rc_form__placeholder {
+  padding-right: 7px;
+  padding-left: 8px;
+}
+
+.form__addons .form__label:first-child,
+.form__addons .form__group:first-child,
+.form__addons .form__actions:first-child,
+.form__addons .form__placeholder:first-child,
+.form__addons .rc_form__label:first-child,
+.form__addons .rc_form__group:first-child,
+.form__addons .rc_form__actions:first-child,
+.form__addons .rc_form__placeholder:first-child,
+.rc_form__addons .form__label:first-child,
+.rc_form__addons .form__group:first-child,
+.rc_form__addons .form__actions:first-child,
+.rc_form__addons .form__placeholder:first-child,
+.rc_form__addons .rc_form__label:first-child,
+.rc_form__addons .rc_form__group:first-child,
+.rc_form__addons .rc_form__actions:first-child,
+.rc_form__addons .rc_form__placeholder:first-child {
+  padding-left: 0;
+}
+
+.form__addons .form__label:last-child,
+.form__addons .form__group:last-child,
+.form__addons .form__actions:last-child,
+.form__addons .form__placeholder:last-child,
+.form__addons .rc_form__label:last-child,
+.form__addons .rc_form__group:last-child,
+.form__addons .rc_form__actions:last-child,
+.form__addons .rc_form__placeholder:last-child,
+.rc_form__addons .form__label:last-child,
+.rc_form__addons .form__group:last-child,
+.rc_form__addons .form__actions:last-child,
+.rc_form__addons .form__placeholder:last-child,
+.rc_form__addons .rc_form__label:last-child,
+.rc_form__addons .rc_form__group:last-child,
+.rc_form__addons .rc_form__actions:last-child,
+.rc_form__addons .rc_form__placeholder:last-child {
+  padding-right: 0;
+}
+
+.form__addons > .rc_input,
+.form__addons > .rc_select,
+.form__addons > .rc_form__select,
+.rc_form__addons > .rc_input,
+.rc_form__addons > .rc_select,
+.rc_form__addons > .rc_form__select {
+  margin-left: 8px;
+  margin-right: 7px;
+}
+
+.form__addons > .rc_input:first-child,
+.form__addons > .rc_select:first-child,
+.form__addons > .rc_form__select:first-child,
+.rc_form__addons > .rc_input:first-child,
+.rc_form__addons > .rc_select:first-child,
+.rc_form__addons > .rc_form__select:first-child {
+  margin-left: 0;
+}
+
+.form__addons > .rc_input:last-child,
+.form__addons > .rc_select:last-child,
+.form__addons > .rc_form__select:last-child,
+.rc_form__addons > .rc_input:last-child,
+.rc_form__addons > .rc_select:last-child,
+.rc_form__addons > .rc_form__select:last-child {
+  margin-right: 0;
+}
+
+.form__addons > select,
+.rc_form__addons > select {
+  margin-bottom: 0;
+}
+
+.form__addons > select + select,
+.rc_form__addons > select + select {
+  margin-left: 8px;
+}
+
+.form__addons > .rc_tooltip__button,
+.form__addons > .rc_tooltip__button,
+.rc_form__addons > .rc_tooltip__button,
+.rc_form__addons > .rc_tooltip__button {
+  margin-top: 7px;
+}
+
+.form__addons .form__addons + .form__addons,
+.form__addons .rc_form__addons + .rc_form__addons,
+.rc_form__addons .form__addons + .form__addons,
+.rc_form__addons .rc_form__addons + .rc_form__addons {
+  margin-left: 15px;
+}
+
+.form__addons .form__group .form__number,
+.form__addons .form__group .form__input,
+.form__addons .form__group .rc_form__number,
+.form__addons .form__group .rc_form__input,
+.form__addons .form__group input.form__number,
+.form__addons .form__group
+input.rc_form__number,
+.form__addons .form__group input.form__color,
+.form__addons .form__group
+input.rc_form__color,
+.form__addons .form__group input.form__date,
+.form__addons .form__group
+input.rc_form__date,
+.form__addons .rc_form__group .form__number,
+.form__addons .rc_form__group .form__input,
+.form__addons .rc_form__group .rc_form__number,
+.form__addons .rc_form__group .rc_form__input,
+.form__addons .rc_form__group input.form__number,
+.form__addons .rc_form__group
+input.rc_form__number,
+.form__addons .rc_form__group input.form__color,
+.form__addons .rc_form__group
+input.rc_form__color,
+.form__addons .rc_form__group input.form__date,
+.form__addons .rc_form__group
+input.rc_form__date,
+.rc_form__addons .form__group .form__number,
+.rc_form__addons .form__group .form__input,
+.rc_form__addons .form__group .rc_form__number,
+.rc_form__addons .form__group .rc_form__input,
+.rc_form__addons .form__group input.form__number,
+.rc_form__addons .form__group
+input.rc_form__number,
+.rc_form__addons .form__group input.form__color,
+.rc_form__addons .form__group
+input.rc_form__color,
+.rc_form__addons .form__group input.form__date,
+.rc_form__addons .form__group
+input.rc_form__date,
+.rc_form__addons .rc_form__group .form__number,
+.rc_form__addons .rc_form__group .form__input,
+.rc_form__addons .rc_form__group .rc_form__number,
+.rc_form__addons .rc_form__group .rc_form__input,
+.rc_form__addons .rc_form__group input.form__number,
+.rc_form__addons .rc_form__group
+input.rc_form__number,
+.rc_form__addons .rc_form__group input.form__color,
+.rc_form__addons .rc_form__group
+input.rc_form__color,
+.rc_form__addons .rc_form__group input.form__date,
+.rc_form__addons .rc_form__group
+input.rc_form__date {
+  min-width: 55px;
+  margin-right: 0;
+  width: 100%;
+}
+
+.form__addons--wrap,
+.rc_form__addons--wrap {
+  flex-wrap: wrap;
+}
+
+.form__addons--wrap > .form__label,
+.form__addons--wrap > .form__group,
+.form__addons--wrap > .form__actions,
+.form__addons--wrap > .form__placeholder,
+.form__addons--wrap > .rc_form__label,
+.form__addons--wrap > .rc_form__group,
+.form__addons--wrap > .rc_form__actions,
+.form__addons--wrap > .rc_form__placeholder,
+.rc_form__addons--wrap > .form__label,
+.rc_form__addons--wrap > .form__group,
+.rc_form__addons--wrap > .form__actions,
+.rc_form__addons--wrap > .form__placeholder,
+.rc_form__addons--wrap > .rc_form__label,
+.rc_form__addons--wrap > .rc_form__group,
+.rc_form__addons--wrap > .rc_form__actions,
+.rc_form__addons--wrap > .rc_form__placeholder {
+  flex-shrink: 0;
+}
+
+.form__addons > label,
+.rc_form__addons > label {
+  margin-bottom: 0;
+}
+
+.form__addons > .form__label,
+.form__addons > .rc_form__label,
+.rc_form__addons > .form__label,
+.rc_form__addons > .rc_form__label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.form__addons--seamless .form__group,
+.form__addons--seamless .rc_form__group,
+.rc_form__addons--seamless .form__group, .form__search .form__group,
+.rc_form__search .form__group,
+.rc_form__addons--seamless .rc_form__group, .form__search .rc_form__group,
+.rc_form__search .rc_form__group {
+  padding-right: 0;
+}
+
+.form__addons--full,
+.rc_form__addons--full,
+.form__search,
+.rc_form__search {
+  width: 100%;
+}
+
+.form__addons--full > .form__group,
+.form__addons--full > .rc_form__group,
+.rc_form__addons--full > .form__group, .form__search > .form__group,
+.rc_form__search > .form__group,
+.rc_form__addons--full > .rc_form__group, .form__search > .rc_form__group,
+.rc_form__search > .rc_form__group {
+  flex-grow: 1;
+}
+
+.form__search .rc_form__label,
+.rc_form__search .rc_form__label {
+  padding-right: 0;
+}
+
+.form__search .form__group + .form__actions,
+.form__search .rc_form__group + .rc_form__actions,
+.rc_form__search .form__group + .form__actions,
+.rc_form__search .rc_form__group + .rc_form__actions {
+  padding-top: 0;
+}
+
+/* Pattern for credit/debit cards */
+.form__cards,
+.rc_form__cards {
+  width: auto;
+}
+
+.form__cards .form__group,
+.form__cards .form__addons,
+.form__cards .form__number,
+.form__cards .form__input,
+.form__cards .rc_form__group,
+.form__cards .rc_form__addons,
+.form__cards .rc_form__number,
+.form__cards .rc_form__input,
+.form__cards input.form__number,
+.form__cards
+input.rc_form__number,
+.form__cards input.form__color,
+.form__cards
+input.rc_form__color,
+.form__cards input.form__date,
+.form__cards
+input.rc_form__date,
+.rc_form__cards .form__group,
+.rc_form__cards .form__addons,
+.rc_form__cards .form__number,
+.rc_form__cards .form__input,
+.rc_form__cards .rc_form__group,
+.rc_form__cards .rc_form__addons,
+.rc_form__cards .rc_form__number,
+.rc_form__cards .rc_form__input,
+.rc_form__cards input.form__number,
+.rc_form__cards
+input.rc_form__number,
+.rc_form__cards input.form__color,
+.rc_form__cards
+input.rc_form__color,
+.rc_form__cards input.form__date,
+.rc_form__cards
+input.rc_form__date {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1017px) {
+  .form__cards .form__addons + .form__addons,
+  .form__cards .rc_form__addons + .rc_form__addons,
+  .rc_form__cards .form__addons + .form__addons,
+  .rc_form__cards .rc_form__addons + .rc_form__addons {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1018px) {
+  .form__cards .form__cards__details,
+  .form__cards .rc_form__cards__details,
+  .rc_form__cards .form__cards__details,
+  .rc_form__cards .rc_form__cards__details {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .form__cards .form__cards__details > .form__addons,
+  .form__cards .form__cards__details > .rc_form__addons,
+  .form__cards .rc_form__cards__details > .form__addons,
+  .form__cards .rc_form__cards__details > .rc_form__addons,
+  .rc_form__cards .form__cards__details > .form__addons,
+  .rc_form__cards .form__cards__details > .rc_form__addons,
+  .rc_form__cards .rc_form__cards__details > .form__addons,
+  .rc_form__cards .rc_form__cards__details > .rc_form__addons {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form__cards .form__cards__zipcode,
+  .form__cards .rc_form__cards__zipcode,
+  .rc_form__cards .form__cards__zipcode,
+  .rc_form__cards .rc_form__cards__zipcode {
+    margin-left: 0;
+    display: block;
+  }
+  .form__cards .form__cards__zipcode .form__group,
+  .form__cards .form__cards__zipcode .rc_form__group,
+  .form__cards .rc_form__cards__zipcode .form__group,
+  .form__cards .rc_form__cards__zipcode .rc_form__group,
+  .rc_form__cards .form__cards__zipcode .form__group,
+  .rc_form__cards .form__cards__zipcode .rc_form__group,
+  .rc_form__cards .rc_form__cards__zipcode .form__group,
+  .rc_form__cards .rc_form__cards__zipcode .rc_form__group {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.form__cards .form__cards__images,
+.form__cards .rc_form__cards__images,
+.rc_form__cards .form__cards__images,
+.rc_form__cards .rc_form__cards__images {
+  align-items: stretch;
+  max-width: 100%;
+  width: auto;
+  min-width: 280px;
+  text-align: right;
+}
+
+.form__cards .form__cards__images img,
+.form__cards .rc_form__cards__images img,
+.rc_form__cards .form__cards__images img,
+.rc_form__cards .rc_form__cards__images img {
+  line-height: 1;
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  max-width: 55px;
+}
+
+.form__cards .form__cards__images img + img,
+.form__cards .rc_form__cards__images img + img,
+.rc_form__cards .form__cards__images img + img,
+.rc_form__cards .rc_form__cards__images img + img {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .form__cards .form__cards__images,
+  .form__cards .rc_form__cards__images,
+  .rc_form__cards .form__cards__images,
+  .rc_form__cards .rc_form__cards__images {
+    text-align: center;
+  }
+  .form__cards .form__cards__images img,
+  .form__cards .rc_form__cards__images img,
+  .rc_form__cards .form__cards__images img,
+  .rc_form__cards .rc_form__cards__images img {
+    width: 35px;
+  }
+  .form__cards .form__cards__images img + img,
+  .form__cards .rc_form__cards__images img + img,
+  .rc_form__cards .form__cards__images img + img,
+  .rc_form__cards .rc_form__cards__images img + img {
+    margin-left: 15px;
+  }
+}
+
+.rc_form__addons .rc_form__group input[type="text"] {
+  margin-bottom: 0;
+}
+
+.rc_form__addons--auto .rc_form__select,
+.rc_form__addons--auto .rc_select {
+  width: auto;
+}
+
+.rc_form__addons > select + select {
+  margin-left: 8px;
+}
+
+.rc_form__addons .form__select + .rc_select,
+.rc_form__addons .form__select + .rc_select--multi,
+.rc_form__addons .form__select + .rc_form__select,
+.rc_form__addons .form__select + .rc_form__select--multi,
+.rc_form__addons .rc_form__select + .rc_select,
+.rc_form__addons .rc_form__select + .rc_select--multi,
+.rc_form__addons .rc_form__select + .rc_form__select,
+.rc_form__addons .rc_form__select + .rc_form__select--multi {
+  margin-top: 0;
+}
+
 .form__label,
 .rc_form__label {
   display: block;
@@ -5508,6 +6056,22 @@ input[input-width="lg"].rc_form__color,
 input[input-width="lg"].form__date,
 input[input-width="lg"].rc_form__date {
   max-width: 110px;
+}
+
+[class^="rc_form__"][input-width="25"] {
+  max-width: 50%;
+}
+
+[class^="rc_form__"][input-width="50"] {
+  max-width: 50%;
+}
+
+[class^="rc_form__"][input-width="75"] {
+  max-width: 50%;
+}
+
+[class^="rc_form__"][input-width="100"] {
+  max-width: 50%;
 }
 
 .form__checkbox,
@@ -7724,6 +8288,42 @@ ul.review__rating li.rating__star:hover:before, ul.review__rating li.rating__sta
   }
 }
 
+.rc_pagination__container {
+  display: block;
+  width: 100%;
+  margin: 34px 0;
+}
+
+.rc_pagination {
+  display: block;
+  text-align: right;
+  margin: 0 0 0 auto;
+}
+
+.rc_pagination__page {
+  display: inline-block;
+}
+
+/* Alignment */
+.rc_pagination {
+  /* Default option */
+}
+
+.rc_pagination--left {
+  text-align: left;
+  margin: 0 auto 0 0;
+}
+
+.rc_pagination--center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.rc_pagination--right {
+  text-align: right;
+  margin: 0 0 0 auto;
+}
+
 /* Helpers */
 .rc_product-item__list {
   margin-left: -20px;
@@ -7745,6 +8345,7 @@ ul.review__rating li.rating__star:hover:before, ul.review__rating li.rating__sta
 }
 
 .rc_product-item {
+  box-sizing: border-box;
   display: block;
   float: left;
   width: 100%;

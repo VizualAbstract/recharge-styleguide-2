@@ -1,0 +1,87 @@
+/* Flags */
+.rc_tag {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+
+    box-sizing: content-box;
+
+    font-size: 12px;
+    font-family: 'ralewayregular';
+
+    background-color: #CCC;
+}
+
+/* Default tag chip */
+.rc_tag {
+	color: #FFF;
+
+    padding-right: 20px;
+    padding-left: 10px;
+
+    margin-left: 5px;
+
+    &:before {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        border: 10px solid transparent;
+        border-right-color: #FFF;
+    }
+}
+
+/* Reversed flags */
+.rc_tag--reverse {
+    padding-left: 20px;
+    padding-right: 10px;
+
+    margin-right: 5px;
+
+    &:before {
+        left: 0;
+        right: auto;
+
+        border-right-color: transparent;
+        border-left-color: #FFF;
+    }
+}
+
+/* Flag colors */
+.rc_tag {
+    &--magenta {
+        background-color: #C00399;
+    }
+    &--aquamarine {
+        background-color: #4ED5B7;
+    }
+    &--cyan {
+        background-color: #53BAD3;
+    }
+}
+
+/* Fixing pattern conflicts overwrites */
+.rc_tabs__body {
+    .rc_tag {
+        &:before {
+            border-left-color: transparent;
+            border-right-color: #EEE;
+        }
+    }
+    .rc_tag--reverse {
+        &:before {
+            border-left-color: #EEE;
+            border-right-color: transparent;
+        }
+    }
+}
+
+.rc_tag {
+    .rc_text--small {
+        font-size: 85% !important;
+    }
+}

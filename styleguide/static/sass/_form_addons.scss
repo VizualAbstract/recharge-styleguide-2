@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: nowrap;
     width: auto;
+    align-items: center;
 
     > .form__label,
     > .form__group,
@@ -21,11 +22,15 @@
         white-space: nowrap;
     }
 
+    > label {
+        line-height: 1;
+    }
+
     .form__group,
     .rc_form__group {
         > .form__checkbox + .form__label,
         > .rc_form__checkbox + .rc_form__label {
-            line-height: 40px;
+            // line-height: 40px;
         }
     }
 
@@ -65,6 +70,29 @@
         &:last-child {
             padding-right: 0;
         }
+    }
+
+    > .rc_input,
+    > .rc_select,
+    > .rc_form__select {
+        margin-left: 8px;
+        margin-right: 7px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    > select {
+        margin-bottom: 0;
+    }
+
+    > select + select {
+        margin-left: 8px;
     }
 
     > .rc_tooltip__button,
@@ -111,11 +139,14 @@
 // Allows true inline input fields, if form groups are preceeded by a .form__label element
 .form__addons,
 .rc_form__addons {
+    > label {
+        margin-bottom: 0;
+    }
     > .form__label,
     > .rc_form__label {
-        line-height: 40px;
+        // line-height: 40px;
         margin-bottom: 0;
-        padding-right: 15px;
+        // padding-right: 15px;
         white-space: nowrap;
     }
 }
@@ -133,7 +164,7 @@
             + .form__actions,
             + .rc_form__group,
             + .rc_form__actions {
-                padding-left: 0;
+                // padding-left: 0;
             }
         }
         // Prevent double-border edges
@@ -158,7 +189,6 @@
 
     > .form__group,
     > .rc_form__group {
-        // width: 100%;
         flex-grow: 1;
     }
 }
@@ -171,9 +201,9 @@
     .rc_form__label {
         padding-right: 0;
     }
-    .form__input
+    .form__input,
     .rc_form__input {
-        border-right-width: 1px !important;
+        // border-right-width: 1px !important;
     }
     .form__group + .form__actions,
     .rc_form__group + .rc_form__actions {
@@ -183,19 +213,23 @@
     .rc_form__actions {
         .button,
         .rc_button {
-            min-width: 40px;
+            // min-width: 40px;
+
             @media screen and (min-width: $mobile-nav-max + 1) {
-                max-width: 40px;
-                width: 40px;
+                // max-width: 40px;
+                // width: 40px;
             }
+
             > span {
-                font-size: 0;
+                // font-size: 0;
+
                 &:before {
-                    font-size: 18px;
-                    content: "Search";
+                    // font-size: 18px;
+                    // content: "Search";
+
                     @media screen and (min-width: $mobile-nav-max + 1) {
-                        content: "\f002";
-                        font-family: 'fontawesome';
+                        // content: "\f002";
+                        // font-family: 'fontawesome';
                     }
                 }
             }
@@ -204,36 +238,36 @@
     &--active {
         .form__input,
         .rc_form__input {
-            border-color: $primary;
+            // border-color: $primary;
         }
         .form__actions,
         .rc_form__actions {
             .button,
             .rc_button {
-                background-color: $primary;
+                // background-color: $primary;
                 > span {
                     &:before {
                         @media screen and (max-width: $mobile-nav-max) {
-                            content: "Clear";
+                            // content: "Clear";
                         }
                         @media screen and (min-width: $mobile-nav-max + 1) {
-                            content: "\f00d";
+                            // content: "\f00d";
                         }
                     }
                 }
                 &:hover,
                 &:focus,
                 &:active {
-                    background-color: darken($primary, 15%);
+                    // background-color: darken($primary, 15%);
                 }
             }
         }
     }
     &__no-results {
-        font-size: 20px;
-        line-height: 24px;
-        color: $blue;
-        text-align: center;
+        // font-size: 20px;
+        // line-height: 24px;
+        // color: $blue;
+        // text-align: center;
     }
 }
 
@@ -257,7 +291,7 @@
     > .form__group,
     .rc_form__addon,
     > .rc_form__group {
-        margin-top: 34px;
+        // margin-top: 34px;
     }
 
     @media screen and (max-width: $mobile-nav-max + 250) {
@@ -268,7 +302,7 @@
     }
     .form__cards__details,
     .rc_form__cards__details {
-        margin-top: 34px;
+        // margin-top: 34px;
 
         @media screen and (min-width: $mobile-nav-max + 250 + 1) {
             display: flex;
@@ -282,11 +316,11 @@
     }
     .form__cards__zipcode,
     .rc_form__cards__zipcode {
-        margin-left: 15px;
+        // margin-left: 15px;
 
         .form__input,
         .rc_form__input {
-            min-width: 125px;
+            // min-width: 125px;
         }
 
         @media screen and (max-width: $mobile-nav-max) {
@@ -309,7 +343,7 @@
         text-align: right;
 
         img {
-            padding-top: 30px;
+            // padding-top: 30px;
             line-height: 1;
             display: inline-block;
             text-align: right;
@@ -343,16 +377,22 @@
 }
 
 .rc_form__addons--auto {
+    .rc_form__select,
     .rc_select {
         width: auto;
     }
 }
 
 .rc_form__addons {
+    > select + select {
+        margin-left: 8px;
+    }
     .form__select,
     .rc_form__select {
         + .rc_select,
-        + .rc_select--multi {
+        + .rc_select--multi,
+        + .rc_form__select,
+        + .rc_form__select--multi {
             margin-top: 0;
         }
     }

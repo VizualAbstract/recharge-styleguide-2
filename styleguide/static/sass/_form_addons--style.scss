@@ -1,8 +1,9 @@
 .form__addons,
 .rc_form__addons {
-    display: flex;
-    flex-wrap: nowrap;
-    width: auto;
+    // display: flex;
+    // flex-wrap: nowrap;
+    // width: auto;
+    // align-items: center;
 
     > .form__label,
     > .form__group,
@@ -12,13 +13,17 @@
     > .rc_form__group,
     > .rc_form__actions,
     > .rc_form__placeholder {
-        width: auto;
-        flex-shrink: 1;
+        // width: auto;
+        // flex-shrink: 1;
     }
 
     .form__label,
     .rc_form__label {
-        white-space: nowrap;
+        // white-space: nowrap;
+    }
+
+    > label {
+        line-height: 1;
     }
 
     .form__group,
@@ -43,7 +48,7 @@
         + .rc_form__group,
         + .rc_form__actions,
         + .rc_form__placeholder {
-            margin-top: 0;
+            // margin-top: 0;
         }
     }
 
@@ -55,37 +60,48 @@
     .rc_form__group,
     .rc_form__actions,
     .rc_form__placeholder {
-        padding-left: 8px;
-        padding-right: 7px;
+        // padding-right: 7px;
+        // padding-left: 8px;
 
         &:first-child {
-            padding-left: 0;
+            // padding-left: 0;
         }
 
         &:last-child {
-            padding-right: 0;
+            // padding-right: 0;
         }
     }
+
     > .rc_input,
     > .rc_select {
-        margin-left: 8px;
-        margin-right: 7px;
+        // margin-left: 8px;
+        // margin-right: 7px;
+
         &:first-child {
-            margin-left: 0;
+            // margin-left: 0;
         }
+
         &:last-child {
-            margin-right: 0;
+            // margin-right: 0;
         }
+    }
+
+    > select {
+        // margin-bottom: 0;
+    }
+
+    > select + select {
+        // margin-left: 8px;
     }
 
     > .rc_tooltip__button,
     > .rc_tooltip__button {
-        margin-top: 7px;
+        // margin-top: 7px;
     }
 
     .form__addons + .form__addons,
     .rc_form__addons + .rc_form__addons {
-        margin-left: 15px;
+        // margin-left: 15px;
     }
 
     .form__group,
@@ -94,9 +110,9 @@
         .form__input,
         .rc_form__number,
         .rc_form__input {
-            min-width: 55px;
-            margin-right: 0;
-            width: 100%;
+            // min-width: 55px;
+            // margin-right: 0;
+            // width: 100%;
         }
     }
 }
@@ -104,7 +120,7 @@
 .form__addons,
 .rc_form__addons {
     &--wrap {
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
 
         > .form__label,
         > .form__group,
@@ -114,7 +130,7 @@
         > .rc_form__group,
         > .rc_form__actions,
         > .rc_form__placeholder {
-            flex-shrink: 0;
+            // flex-shrink: 0;
         }
     }
 }
@@ -122,12 +138,15 @@
 // Allows true inline input fields, if form groups are preceeded by a .form__label element
 .form__addons,
 .rc_form__addons {
+    > label {
+        // margin-bottom: 0;
+    }
     > .form__label,
     > .rc_form__label {
         line-height: 40px;
-        margin-bottom: 0;
+        // margin-bottom: 0;
         padding-right: 15px;
-        white-space: nowrap;
+        // white-space: nowrap;
     }
 }
 
@@ -138,7 +157,7 @@
         // Remove padding
         .form__group,
         .rc_form__group {
-            padding-right: 0;
+            // padding-right: 0;
 
             + .form__group,
             + .form__actions,
@@ -165,12 +184,11 @@
 // Enables full-width addon groups
 .form__addons--full,
 .rc_form__addons--full {
-    width: 100%;
+    // width: 100%;
 
     > .form__group,
     > .rc_form__group {
-        // width: 100%;
-        flex-grow: 1;
+        // flex-grow: 1;
     }
 }
 
@@ -179,28 +197,35 @@
 .rc_form__search {
     @extend .rc_form__addons--full;
     @extend .rc_form__addons--seamless;
-    .form__input
+    .rc_form__label {
+        // padding-right: 0;
+    }
+    .form__input,
     .rc_form__input {
         border-right-width: 1px !important;
     }
     .form__group + .form__actions,
     .rc_form__group + .rc_form__actions {
-        padding-top: 0;
+        // padding-top: 0;
     }
     .form__actions,
     .rc_form__actions {
         .button,
         .rc_button {
             min-width: 40px;
+
             @media screen and (min-width: $mobile-nav-max + 1) {
                 max-width: 40px;
                 width: 40px;
             }
+
             > span {
                 font-size: 0;
+
                 &:before {
                     font-size: 18px;
                     content: "Search";
+
                     @media screen and (min-width: $mobile-nav-max + 1) {
                         content: "\f002";
                         font-family: 'fontawesome';
@@ -248,7 +273,7 @@
 /* Pattern for credit/debit cards */
 .form__cards,
 .rc_form__cards {
-    width: auto;
+    // width: auto;
 
     .form__group,
     .form__addons,
@@ -258,8 +283,8 @@
     .rc_form__addons,
     .rc_form__number,
     .rc_form__input {
-        max-width: 100%;
-        width: 100%;
+        // max-width: 100%;
+        // width: 100%;
     }
     .form__addon,
     > .form__group,
@@ -271,7 +296,7 @@
     @media screen and (max-width: $mobile-nav-max + 250) {
         .form__addons + .form__addons,
         .rc_form__addons + .rc_form__addons {
-            margin-left: 0;
+            // margin-left: 0;
         }
     }
     .form__cards__details,
@@ -279,62 +304,90 @@
         margin-top: 34px;
 
         @media screen and (min-width: $mobile-nav-max + 250 + 1) {
-            display: flex;
-            flex-wrap: nowrap;
+            // display: flex;
+            // flex-wrap: nowrap;
 
             > .form__addons,
             > .rc_form__addons {
-                margin-top: 0;
+                // margin-top: 0;
             }
         }
     }
     .form__cards__zipcode,
     .rc_form__cards__zipcode {
+        margin-left: 15px;
+
         .form__input,
         .rc_form__input {
             min-width: 125px;
         }
 
         @media screen and (max-width: $mobile-nav-max) {
-            display: block;
+            // margin-left: 0;
+            // display: block;
 
             .form__group,
             .rc_form__group {
-                padding-right: 0;
-                padding-left: 0;
+                // padding-right: 0;
+                // padding-left: 0;
             }
         }
     }
     .form__cards__images,
     .rc_form__cards__images {
-        align-items: stretch;
-        max-width: 100%;
-        width: auto;
-        min-width: 280px;
-        text-align: right;
+        // align-items: stretch;
+        // max-width: 100%;
+        // width: auto;
+        // min-width: 280px;
+        // text-align: right;
 
         img {
             padding-top: 30px;
-            line-height: 1;
-            display: inline-block;
-            text-align: right;
-            width: 100%;
-            max-width: 55px;
+            // line-height: 1;
+            // display: inline-block;
+            // text-align: right;
+            // width: 100%;
+            // max-width: 55px;
 
             + img {
-                margin-left: 10px;
+                // margin-left: 10px;
             }
         }
         @media screen and (max-width: $mobile-nav-max) {
-            text-align: center;
+            // text-align: center;
 
             img {
-                width: 35px;
+                // width: 35px;
 
                 + img {
-                    margin-left: 15px;
+                    // margin-left: 15px;
                 }
             }
+        }
+    }
+}
+
+.rc_form__addons {
+    .rc_form__group {
+        input[type="text"] {
+            // margin-bottom: 0;
+        }
+    }
+}
+
+.rc_form__addons--auto {
+    .rc_select,
+    .rc_form__select {
+        // width: auto;
+    }
+}
+
+.rc_form__addons {
+    .form__select,
+    .rc_form__select {
+        + .rc_select,
+        + .rc_select--multi {
+            // margin-top: 0;
         }
     }
 }

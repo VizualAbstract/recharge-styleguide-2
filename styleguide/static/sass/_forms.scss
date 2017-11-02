@@ -12,6 +12,10 @@ legend {
     h5, .rc_h5,
     h6, .rc_h6 {
         line-height: 1;
+        // margin-bottom: 0;
+        + p {
+            // margin-top: 5px;
+        }
     }
 	+ fieldset {
 
@@ -29,29 +33,75 @@ fieldset {
     }
 }
 
+hr + fieldset,
+fieldset + hr {
+    // margin-top: 25px;
+}
+
 // Form groups
 .form__group,
-.rc_form__group {
+.form__addons,
+.rc_form__group,
+.rc_form__addons,
+input[type="hidden"] {
     + .form__group,
-    + .rc_form__group {
+    + .form__addons,
+    + .form__label,
+    .form__group + &,
+    + .rc_form__group,
+    + .rc_form__addons,
+    + .rc_form__label,
+    .rc_form__group + & {
         // margin-top: 34px;
     }
 }
+
+.form__list,
+.rc_form__list {
+    + .form__list,
+    + .rc_form__list {
+        // margin-top: 34px;
+    }
+}
+
 legend + .form__group,
 legend + .rc_form__group {
+    // margin-top: 30px;
+}
+
+[class="rc_layout"] + .form__group,
+.form__group + [class="rc_layout"],
+[class="flex__layout"] + .form__group,
+.form__group + [class="flex__layout"],
+form [class="flex__layout"] + [class="flex__layout"] ,
+[class="rc_layout"] + .rc_form__group,
+.rc_form__group + [class="rc_layout"],
+[class="flex__layout"] + .rc_form__group,
+.rc_form__group + [class="rc_layout"],
+form [class="rc_layout"] + [class="rc_layout"] {
+    // margin-top: 34px;
+}
+
+legend + .form__group,
+legend + .form__addons,
+legend + .form__label,
+legend + .rc_form__group,
+legend + .rc_form__addons,
+legend + .rc_form__label {
     // margin-top: 30px;
 }
 
 // Form actions
 .form__actions,
 .rc_form__actions {
+    margin-top: 10px;
     // margin-top: 30px;
     display: flex;
     width: 100%;
 
     .button,
     .rc_button {
-        width: 100%;
+        // width: 100%;
     }
 }
 
@@ -78,6 +128,38 @@ fieldset + fieldset.rc_form__actions {
         + .button,
         + .rc_button {
             margin-top: 12px;
+        }
+    }
+}
+
+.rc_form {
+    &--compact {
+        .form__group,
+        .form__addons,
+        .rc_form__group,
+        .rc_form__addons,
+        [class="rc_layout"] {
+            + .form__group,
+            + .form__addons,
+            + .rc_form__group,
+            + .rc_form__addons,
+            + [class="rc_layout"] {
+                // margin-top: 20px;
+            }
+        }
+    }
+}
+
+/* Form group patch */
+[class^="flex__sm"],
+[class^="rc_layout__sm"] {
+    + [class^="flex__sm"],
+    + [class^="rc_layout__sm"] {
+        @media screen and (max-width: $mobile-nav-max) {
+            .rc_form__group,
+            .rc_form__group {
+                // margin-top: $gutter;
+            }
         }
     }
 }

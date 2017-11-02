@@ -62,6 +62,7 @@
 @import '_navigation_progress.scss';
 @import '_navigation_continue.scss';
 @import '_navigation_pagination.scss';
+@import '_navigation_pagination--style.scss';
 
 @import '_components_cards.scss';
 @import '_components_stats.scss';
@@ -69,5 +70,7 @@
 @import '_components_integrations.scss';
 @import '_components_products.scss';
 @import '_components_products--style.scss';
+
+@import '_tags.scss';
 
 @import '_utilities.scss';

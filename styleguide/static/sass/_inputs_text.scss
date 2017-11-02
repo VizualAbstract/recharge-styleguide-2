@@ -74,7 +74,6 @@ textarea {
 		min-width: 50px;
 		width: 100%;
 	}
-
 	&[input-width="xs"] {
 		max-width: 50px;
 	}
@@ -86,5 +85,20 @@ textarea {
 	}
 	&[input-width="lg"] {
 		max-width: 110px;
+	}
+}
+
+[class^="rc_form__"] {
+	&[input-width="25"] {
+		max-width: 50%;
+	}
+	&[input-width="50"] {
+		max-width: 50%;
+	}
+	&[input-width="75"] {
+		max-width: 50%;
+	}
+	&[input-width="100"] {
+		max-width: 50%;
 	}
 }

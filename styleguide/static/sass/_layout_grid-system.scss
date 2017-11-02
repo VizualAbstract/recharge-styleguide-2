@@ -176,6 +176,10 @@
 	}
 }
 
+[class^="rc_layout"] {
+	box-sizing: border-box;
+}
+
 [flex-reverse="true"],
 [flex-order="reverse"],
 [rc_layout-reverse="true"],

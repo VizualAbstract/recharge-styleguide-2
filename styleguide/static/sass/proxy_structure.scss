@@ -2,8 +2,9 @@
 
 /* Proxy reset */
 .recharge {
-	clear: both;
+	text-align: left;
 	box-sizing: border-box;
+	clear: both;
 
 	ul, ol {
 		list-style: none;
@@ -16,6 +17,7 @@
 @import '_buttons.scss';
 @import '_forms.scss';
 @import '_form_list.scss';
+@import '_form_addons.scss';
 
 @import '_inputs_label.scss';
 @import '_inputs_text.scss';
@@ -35,6 +37,7 @@
 @import '_headers_subtitle.scss';
 
 @import '_navigation_sidebar.scss';
+@import '_navigation_pagination.scss';
 
 @import '_components_products.scss';
 

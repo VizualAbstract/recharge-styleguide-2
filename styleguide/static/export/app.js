@@ -6028,7 +6028,7 @@ return rcSelect;
 	function toggleCaret(wrapper, open) {
 		wrapper.className = 'rc_selectfilter__wrapper';
 		wrapper.classList.add(open ? 'rc_selectfilter__wrapper--opened' : 'rc_selectfilter__wrapper--closed');
-		
+
 		var caret = wrapper.querySelector('span.fa');
 		caret.className = 'fa';
 		caret.classList.add(open ? 'fa-caret-up' : 'fa-caret-down');
@@ -6050,7 +6050,7 @@ return rcSelect;
 			onSelect: null,//function(obj) {},
 		};
 
-		for (var k in config) { 
+		for (var k in config) {
 			if (options.hasOwnProperty(k)) {
 				options[k] = config[k];
 			}
@@ -6110,7 +6110,7 @@ return rcSelect;
 				currentValue = val;
 
 				if (obj) {
-					selectedId = obj[options.fieldId];	
+					selectedId = obj[options.fieldId];
 				} else {
 					selectedId = null;
 				}
@@ -6170,7 +6170,7 @@ return rcSelect;
 				} else {
 					//if field is modified update only field value
 					if (currentValue && currentValue !== elem.value) {
-						updateSelectedModel(currentValue);	
+						updateSelectedModel(currentValue);
 					}
 				}
 			} else if (document.activeElement !== elem) {
@@ -6243,7 +6243,7 @@ return rcSelect;
             	self.optionsContainer.style.display = 'none';
             	toggleCaret(wrapper, show);
             }
-            
+
         }
 
         window.addEventListener('resize', self.updateContainerPosition);
@@ -6257,6 +6257,18 @@ return rcSelect;
 
 		self.getValue = function() {
 			return selectedId;
+		}
+
+		self.setData = function(newData) {
+			options.data = newData;
+		}
+
+		self.setValue = function(dataValue) {
+			var obj = options.data.filter(function (el) {
+				return el[options.fieldId] == dataValue;
+			})[0];
+
+			updateSelectedModel(obj[options.fieldLabel], obj);
 		}
 
 		self.clear = function() {
@@ -6279,6 +6291,8 @@ return rcSelect;
 		elem.rcSelectFilter = {
 			hasValue: self.hasValue,
 			getValue: self.getValue,
+			setValue : self.setValue,
+			setData: self.setData,
 			clear: self.clear,
 			destroy: self.destroy,
 		};
