@@ -27,20 +27,6 @@
 		color: text-color($color);
 		background-color: darken($color, 10%);
 	}
-	&--disabled,
-	&.disabled,
-	&[disabled],
-	fieldset[disabled] & {
-		&,
-		&:active,
-		&.active,
-		&:hover,
-		&:focus,
-		&.focus {
-			color: text-color($color) !important;
-			background-color: lighten($color, 50%) !important;
-		}
-	}
 }
 // Standard colorizer for links
 @mixin link-color($color) {
@@ -63,27 +49,53 @@
 .button,
 .rc_button {
 	font-family: 'ralewaysemibold', arial, sans-serif;
-	text-align: center;
-	text-decoration: none;
+	// text-align: center;
+	// text-decoration: none;
 	border-width: 0;
 	color: #FFF;
 	border-style: solid;
 	height: 40px;
 	line-height: 40px;
-	box-sizing: border-box;
-	outline: 0;
+	// box-sizing: border-box;
+	// outline: 0;
 	min-width: 100px;
+	border-radius: 0;
 	padding: 0 10px;
 	display: inline-block;
-	cursor: pointer;
-	touch-action: manipulation;
-    white-space: nowrap;
-    vertical-align: middle;
+	// cursor: pointer;
+	// touch-action: manipulation;
+ //    white-space: nowrap;
+ //    vertical-align: middle;
 
     & {
-		// background-color: $default;
-		// color: #FFF;
+		background-color: $default;
+		color: #FFF;
     }
+}
+
+// Button sizes
+.button,
+.rc_button {
+	&--base,
+	&--medium {
+		font-size: $font-size-base;
+	}
+
+	&--large {
+		padding: 10px 15px;
+		height: auto;
+	}
+}
+
+// Button styles: Link
+.button.button--link,
+.rc_button.rc_button--link {
+	// appearance: none;
+	background: transparent !important;
+	font-family: 'ralewayregular', arial, sans-serif;
+	// padding-left: 0;
+	// padding-right: 0;
+	// min-width: auto;
 }
 
 // Button colors
@@ -237,5 +249,31 @@
 		&--red {
 			@include link-color($red);
 		}
+	}
+}
+
+// Button: Disabled
+.button,
+.rc_button {
+	&.button--disabled,
+	&.rc_button--disabled,
+	&.rc_disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		color: $white !important;
+		background-color: $disabled !important;
+	}
+}
+
+// Button link: Disabled
+.button--link,
+.rc_button--link {
+	&.button--disabled,
+	&.rc_button--disabled,
+	&.rc_disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		color: $disabled !important;
+		background-color: transparent !important;
 	}
 }

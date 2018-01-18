@@ -17,9 +17,9 @@ legend {
             margin-top: 5px;
         }
     }
-	+ fieldset {
+    + fieldset {
 
-	}
+    }
 }
 
 fieldset {
@@ -29,7 +29,7 @@ fieldset {
     // min-width: 0;
 
     + fieldset {
-    	margin-top: 60px;
+        margin-top: 60px;
     }
 }
 
@@ -97,6 +97,27 @@ legend + .rc_form__label {
     .button,
     .rc_button {
         width: 100%;
+    }
+}
+.rc_form__actions {
+    &--stacked {
+        // display: block;
+
+        .rc_button {
+            width: auto;
+            // display: block;
+            // clear: both;
+            min-width: 230px;
+
+            &--link {
+                min-width: auto;
+            }
+
+            + .rc_button {
+                // margin-top: 10px;
+                // margin-left: 0;
+            }
+        }
     }
 }
 

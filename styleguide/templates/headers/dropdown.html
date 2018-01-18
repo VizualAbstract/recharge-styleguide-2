@@ -1,5 +1,5 @@
-<div class="header-dropdown">
-	<div class="header-dropdown__title">
+<div class="rc_header-dropdown">
+	<div class="rc_header-dropdown__title">
 		{% if parameters['dropdown'] %}
 			{% with parameters = parameters['dropdown'] %}
 				{{ ui_element("dynamic/dropdown", parameters) | safe }}
@@ -7,12 +7,12 @@
 		{% endif %}
 	</div>
 	{% if parameters['description'] %}
-		<div class="header-dropdown__description">
+		<div class="rc_header-dropdown__description">
 			<p>{{ parameters['description'] }}</p>
 		</div>
 	{% endif %}
 	{% if parameters['buttons'] %}
-		<div class="header-dropdown__actions">
+		<div class="rc_header-dropdown__actions">
 			{% for button in parameters['buttons'] %}
 				{% with parameters = button %}
 					{{ ui_element("buttons/button", parameters) | safe }}

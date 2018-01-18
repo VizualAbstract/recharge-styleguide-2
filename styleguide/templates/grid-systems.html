@@ -1,159 +1,289 @@
 {% extends "base.html" %}
 {% block body %}
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 <h1>Grid system</h1>
+<p>Compatible with <span class="rc_tag rc_tag--cyan">ReCharge app</span> <span class="rc_tag rc_tag--magenta">Marketing site</span></p>
 
-<h2>Flex grid</h2>
-
-<h3>Regular columns</h3>
-<div class="flex__container flex--visible">
-	<div class="flex__layout">
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-		<div class="flex__xs__1"><p>1</p></div>
-	</div>
-	<div class="flex__layout">
-		<div class="flex__xs__2"><p>2/12</p></div>
-		<div class="flex__xs__2"><p>2/12</p></div>
-		<div class="flex__xs__2"><p>2/12</p></div>
-		<div class="flex__xs__2"><p>2/12</p></div>
-		<div class="flex__xs__2"><p>2/12</p></div>
-		<div class="flex__xs__2"><p>2/12</p></div>
-	</div>
-	<div class="flex__layout">
-		<div class="flex__xs__8"><p>8/12</p></div>
-		<div class="flex__xs__4"><p>4/12</p></div>
-	</div>
-	<div class="flex__layout">
-		<div class="flex__xs__4"><p>4/12</p></div>
-		<div class="flex__xs__4"><p>4/12</p></div>
-		<div class="flex__xs__4"><p>4/12</p></div>
-	</div>
-	<div class="flex__layout">
-		<div class="flex__xs__6"><p>6/12</p></div>
-		<div class="flex__xs__6"><p>6/12</p></div>
-	</div>
-</div>
-
-<h3>Mix-and-match sizes</h3>
-<div class="flex__container flex--visible">
-	<div class="flex__layout">
-		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>1</p></div>
-		<div class="flex__xs__12 flex__sm__4 flex__lg__4"><p>2</p></div>
-		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>3</p></div>
-		<div class="flex__xs__12 flex__sm__4 flex__lg__1"><p>4</p></div>
-		<div class="flex__xs__12 flex__sm__4 flex__lg__2"><p>5</p></div>
-		<div class="flex__xs__12 flex__sm__4 flex__lg__1"><p>6</p></div>
-	</div>
-	<div class="flex__layout">
-		<div class="flex__xs__2 flex__md__1 flex__lg__6 flex__xl__3"><p>a</p></div>
-		<div class="flex__xs__4 flex__md__6 flex__lg__6 flex__xl__3"><p>b</p></div>
-		<div class="flex__xs__4 flex__md__3 flex__lg__6 flex__xl__3"><p>c</p></div>
-		<div class="flex__xs__2 flex__md__2 flex__lg__6 flex__xl__3"><p>d</p></div>
-	</div>
-</div>
-
-<h3>Nested Columns</h3>
-<div class="flex__container flex--visible">
-	<div class="flex__layout">
-		<div class="flex__xs__4">
-			<p>4/12</p>
+<h2>A 12-column grid</h2>
+<p>The 12-column grid built for ReCharge is using the flex-box approach, as opposed to floated <code>&lt;div></code> elements. This allows for improved flexibility and tools, such as reversing and sorting</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__xs__1"><p>1</p></div>
+			<div class="rc_layout__xs__1"><p>2</p></div>
+			<div class="rc_layout__xs__1"><p>3</p></div>
+			<div class="rc_layout__xs__1"><p>4</p></div>
+			<div class="rc_layout__xs__1"><p>5</p></div>
+			<div class="rc_layout__xs__1"><p>6</p></div>
+			<div class="rc_layout__xs__1"><p>7</p></div>
+			<div class="rc_layout__xs__1"><p>8</p></div>
+			<div class="rc_layout__xs__1"><p>9</p></div>
+			<div class="rc_layout__xs__1"><p>10</p></div>
+			<div class="rc_layout__xs__1"><p>11</p></div>
+			<div class="rc_layout__xs__1"><p>12</p></div>
 		</div>
-		<div class="flex__xs__8">
-			<div class="flex__layout">
-				<div class="flex__xs__4"><p>4/12</p></div>
-				<div class="flex__xs__4"><p>4/12</p></div>
-				<div class="flex__xs__4"><p>4/12</p></div>
+	</div>
+</div>
+
+<h3>Think of Bootstrap</h3>
+<p>Although we don't use the same class names as Bootstrap, we do have a very similair break down of the structure of their grid system</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__sm__4"><p>1 of three columns</p></div>
+			<div class="rc_layout__sm__4"><p>2 of three columns</p></div>
+			<div class="rc_layout__sm__4"><p>3 of three columns</p></div>
+		</div>
+	</div>
+</div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sm__4&#x22;&#x3E;
+&#x9;&#x9;&#x9;1 of three columns
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sm__4&#x22;&#x3E;
+&#x9;&#x9;&#x9;2 of three columns
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sm__4&#x22;&#x3E;
+&#x9;&#x9;&#x9;3 of three columns
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x3C;/div&#x3E;&#x3C;!-- .rc_layout__container --&#x3E;</code></pre>
+
+<h3>Mixing and matching</h3>
+<p>You can stack multiple rc_layouts on top of eachother, to get the custom layout you need</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__xs__6"><p>6/12</p></div>
+			<div class="rc_layout__xs__6"><p>6/12</p></div>
+		</div>
+		<div class="rc_layout">
+			<div class="rc_layout__xs__4"><p>4/12</p></div>
+			<div class="rc_layout__xs__4"><p>4/12</p></div>
+			<div class="rc_layout__xs__4"><p>4/12</p></div>
+		</div>
+		<div class="rc_layout">
+			<div class="rc_layout__xs__2"><p>2/12</p></div>
+			<div class="rc_layout__xs__7"><p>7/12</p></div>
+			<div class="rc_layout__xs__3"><p>3/12</p></div>
+		</div>
+	</div>
+</div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__6&#x22;&#x3E;6/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__6&#x22;&#x3E;6/12&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__2&#x22;&#x3E;2/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__7&#x22;&#x3E;7/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__3&#x22;&#x3E;3/12&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x3C;/div&#x3E;&#x3C;!-- .rc_layout__container --&#x3E;</code></pre>
+
+<h3>Responsive columns</h3>
+<p>We can even control the grid layout based on screen width (resize browser)</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 1</p></div>
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 2</p></div>
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 3</p></div>
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 4</p></div>
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 5</p></div>
+			<div class="rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2"><p>Col 6</p></div>
+		</div>
+	</div>
+</div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 1&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 2&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 3&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 4&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 5&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__md__6 rc_layout__lg__4 rc_layout__xl__2&#x22;&#x3E;Col 6&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+
+<h3>Nested columns</h3>
+<p>You can place <code>.rc_layout</code> within another column to build an even more complex grid layout</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__xs__6">
+				<p>6/12</p>
 			</div>
-			<div class="flex__layout">
-				<div class="flex__xs__4"><p>4/12</p></div>
-				<div class="flex__xs__8">
-					<div class="flex__layout">
-						<div class="flex__xs__2"><p>2/12</p></div>
-						<div class="flex__xs__8"><p>8/12</p></div>
-						<div class="flex__xs__2"><p>2/12</p></div>
-					</div>
+			<div class="rc_layout__xs__6">
+				<div class="rc_layout">
+					<div class="rc_layout__xs__4"><p>4/12</p></div>
+					<div class="rc_layout__xs__4"><p>4/12</p></div>
+					<div class="rc_layout__xs__4"><p>4/12</p></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__6&#x22;&#x3E;6/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__6&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__xs__4&#x22;&#x3E;4/12&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;&#x3C;!-- .rc_layout --&#x3E;
+&#x3C;/div&#x3E;&#x3C;!-- .rc_layout__container --&#x3E;</code></pre>
 
+{#
 <h3>Window-width dependant</h3>
-<div class="flex__container flex--visible">
-	<div class="flex__layout">
-		<div class="flex__xs"><p>.flex__xs</p></div>
-		<div class="flex__xs"><p>.flex__xs</p></div>
-		<div class="flex__xs"><p>.flex__xs</p></div>
+<div class="rc_layout__container rc_layout--visible">
+	<div class="rc_layout">
+		<div class="rc_layout__xs"><p>.rc_layout__xs</p></div>
+		<div class="rc_layout__xs"><p>.rc_layout__xs</p></div>
+		<div class="rc_layout__xs"><p>.rc_layout__xs</p></div>
 	</div>
-	<div class="flex__layout">
-		<div class="flex__sm"><p>.flex__sm</p></div>
-		<div class="flex__sm"><p>.flex__sm</p></div>
-		<div class="flex__sm"><p>.flex__sm</p></div>
+	<div class="rc_layout">
+		<div class="rc_layout__sm"><p>.rc_layout__sm</p></div>
+		<div class="rc_layout__sm"><p>.rc_layout__sm</p></div>
+		<div class="rc_layout__sm"><p>.rc_layout__sm</p></div>
 	</div>
-	<div class="flex__layout">
-		<div class="flex__md"><p>.flex__md</p></div>
-		<div class="flex__md"><p>.flex__md</p></div>
-		<div class="flex__md"><p>.flex__md</p></div>
+	<div class="rc_layout">
+		<div class="rc_layout__md"><p>.rc_layout__md</p></div>
+		<div class="rc_layout__md"><p>.rc_layout__md</p></div>
+		<div class="rc_layout__md"><p>.rc_layout__md</p></div>
 	</div>
-	<div class="flex__layout">
-		<div class="flex__lg"><p>.flex__lg</p></div>
-		<div class="flex__lg"><p>.flex__lg</p></div>
-		<div class="flex__lg"><p>.flex__lg</p></div>
+	<div class="rc_layout">
+		<div class="rc_layout__lg"><p>.rc_layout__lg</p></div>
+		<div class="rc_layout__lg"><p>.rc_layout__lg</p></div>
+		<div class="rc_layout__lg"><p>.rc_layout__lg</p></div>
 	</div>
-	<div class="flex__layout">
-		<div class="flex__xl"><p>.flex__xl</p></div>
-		<div class="flex__xl"><p>.flex__xl</p></div>
-		<div class="flex__xl"><p>.flex__xl</p></div>
+	<div class="rc_layout">
+		<div class="rc_layout__xl"><p>.rc_layout__xl</p></div>
+		<div class="rc_layout__xl"><p>.rc_layout__xl</p></div>
+		<div class="rc_layout__xl"><p>.rc_layout__xl</p></div>
 	</div>
 </div>
+#}
 
 <h2>Layouts</h2>
-<p>Use layouts as an alternative to setting the flex-column sizing manually per screen-size. Pre-optimized for different secreen resolutions.</p>
-<div class="flex__container flex--visible">
-	<div class="flex__layout">
-		<div class="flex__full"><p>.flex__full</p></div>
-	</div>
-	<br>
-	<div class="flex__layout">
-		<div class="flex__sidebar"><p>.flex__sidebar</p></div>
-		<div class="flex__content"><p>.flex__content</p></div>
+<p>Use either the <strong>Full</strong> or the <strong>Sidebar &amp; Content</strong> layouts whenever possible. They've been carefully optimized for all screen sizes.</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible">
+		<div class="rc_layout">
+			<div class="rc_layout__full"><p>Full layout</p></div>
+		</div>
+		<br>
+		<div class="rc_layout">
+			<div class="rc_layout__sidebar"><p>Sidebar</p></div>
+			<div class="rc_layout__content"><p>Content</p></div>
+		</div>
 	</div>
 </div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__full&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__full
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sidebar&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__sidebar
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__content&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__content
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
 
 <h2>Style Attributes</h2>
-<p>Attributes are added to the container to give an additional layer of control to the grid system, such as reversing it, giving it a fixed-width, or removing horizontal padding</p>
+<p>Attributes are added to the grid container element to give an additional layer of control to the grid system, such as reversing order or setting the max width<p>
+<p>See examples below. To use them, add the HTML them to the <code>&lt;div class="rc_layout__container"></code> element, such as: <code>&lt;div class="rc_layout__container" rc_layout-order="reverse"></code></p>
+
 <h3>Reverse</h3>
-<div class="flex__container flex--visible" flex-order="reverse">
-	<div class="flex__layout">
-		<div class="flex__sidebar"><p>.flex__sidebar</p></div>
-		<div class="flex__content"><p>.flex__content</p></div>
+<p>Activated by using <code>rc_layout-order="reverse"</code>. This will reverse the order of the columns</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible" rc_layout-order="reverse">
+		<div class="rc_layout">
+			<div class="rc_layout__sidebar"><p>.rc_layout__sidebar</p></div>
+			<div class="rc_layout__content"><p>.rc_layout__content</p></div>
+		</div>
 	</div>
 </div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22; rc_layout-order=&#x22;reverse&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sidebar&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__sidebar
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__content&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__content
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+
 <h3>Seamless</h3>
-<div class="flex__container flex--visible" flex-style="seamless">
-	<div class="flex__layout">
-		<div class="flex__sidebar" style="background-color: #6bddc3; border-right: 1px solid #bef0e5;"><p>.flex__sidebar seamless</p></div>
-		<div class="flex__content" style="background-color: #6bddc3;"><p>.flex__content seamless</p></div>
+<p>Activated by using <code>rc_layout-style="seamless"</code>. This will remove the horizontal padding gaps</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible" rc_layout-style="seamless">
+		<div class="rc_layout">
+			<div class="rc_layout__sidebar"><p>.rc_layout__sidebar</p></div>
+			<div class="rc_layout__content"><p>.rc_layout__content</p></div>
+		</div>
 	</div>
 </div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22; rc_layout-style=&#x22;seamless&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__sidebar&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__sidebar
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__content&#x22;&#x3E;
+&#x9;&#x9;&#x9;.rc_layout__content
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+
 <h3>Static</h3>
-<div class="flex__container flex--visible" flex-style="static">
-	<div class="flex__layout">
-		<div class="flex__full"><p>.flex__full static</p></div>
-	</div>
-	<br>
-	<div class="flex__layout">
-		<div class="flex__sidebar"><p>.flex__sidebar static</p></div>
-		<div class="flex__content"><p>.flex__content static</p></div>
+<p>Activated by using <code>.rc_layout-style="static"</code>. This will center the grid</p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible" rc_layout-style="static">
+		<div class="rc_layout">
+			<div class="rc_layout__full"><p>rc_layout-style="static"</p></div>
+		</div>
 	</div>
 </div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22; rc_layout-style=&#x22;static&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__full&#x22;&#x3E;
+&#x9;&#x9;&#x9;rc_layout-style=&#x22;static&#x22;
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+
+<h3>Max-sizing</h3>
+<p>Activated by using <code>rc_layout-max="lg"</code>. This will limit the max-width of the grid layout and center-align it. Works with <code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code></p>
+<div class="rc_example">
+	<div class="rc_layout__container rc_layout--visible" rc_layout-max="sm">
+		<div class="rc_layout">
+			<div class="rc_layout__full"><p>rc_layout-max="sm"</p></div>
+		</div>
+	</div>
+</div>
+<pre><code class="html">&#x3C;div class=&#x22;rc_layout__container&#x22; rc_layout-max=&#x22;sm&#x22;&#x3E;
+&#x9;&#x3C;div class=&#x22;rc_layout&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;rc_layout__full&#x22;&#x3E;
+&#x9;&#x9;&#x9;rc_layout-max=&#x22;sm&#x22;
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
 {% endblock %}

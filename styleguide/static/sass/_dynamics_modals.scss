@@ -53,6 +53,21 @@ $zindex-modal-close: 100090;
 	&.rc_show .rc_modal {
 		transform: translate(0, 0);
 	}
+
+	&--warning {
+
+		.rc_modal__title{
+			color: $orange;
+
+			&:before {
+				color: $orange;
+				font-family: 'fontawesome';
+				content: '\f071';
+				margin-right: 5px;
+				font-size: 0.9em;
+		    }
+		}
+	}
 }
 
 .rc_modal__open {
@@ -147,7 +162,8 @@ $zindex-modal-close: 100090;
 	align-items: center;
 	padding: 30px;
 
-	.button {
+	.button,
+	.rc_button {
 		width: 100%;
 	}
 }

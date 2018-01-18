@@ -1,4 +1,3 @@
-.header-settings,
 .rc_header-settings {
 	width: 100%;
 
@@ -63,28 +62,23 @@
 	}
 
 	@media screen and (max-width: $mobile-nav-max) {
-		.header-settings__media,
 		.rc_header-settings__media {
 			width: 25%;
 			flex-grow: 0;
 			margin-right: 0;
 
-			+ .header-settings__title,
 			+ .rc_header-settings__title {
 				width: 75%;
 				flex-grow: 0;
 			}
 		}
-		.header-settings__title,
 		.rc_header-settings__title {
 			order: 1;
 			width: 100%;
 		}
-		.header-settings__description,
 		.rc_header-settings__description {
 			order: 2;
 		}
-		.header-settings__actions,
 		.rc_header-settings__actions {
 			order: 3;
 			width: 100%;

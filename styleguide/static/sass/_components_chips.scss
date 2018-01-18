@@ -1,0 +1,31 @@
+.rc_chip {
+	padding: 0 13px;
+	border-radius: 16px;
+	white-space: nowrap;
+	margin-left: 10px;
+	background-color: #EEE;
+	height: 25px;
+	line-height: 25px;
+	display: inline-block;
+	color: #8E8F8E;
+	font-family: 'ralewaysemibold';
+}
+
+.rc_text--right {
+	.rc_chip {
+		margin-left: 0;
+		margin-right: 10px;
+	}
+}
+
+.rc_chip--small {
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	padding: 0 12px;
+}
+
+.rc_chip--primary {
+	background-color: $primary;
+	color: #FFF;
+}

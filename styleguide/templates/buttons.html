@@ -52,4 +52,11 @@
 		Add products
 	</button>
 </div>
+<h2>Disabled buttons</h2>
+<div class="rc_example">
+	{{ ui_element("buttons/button", {'text': 'Default', 'color': 'default', 'disabled': True}) | safe }}
+	{{ ui_element("buttons/button", {'text': 'Primary', 'color': 'primary', 'disabled': True}) | safe }}
+	{{ ui_element("buttons/button", {'text': 'Danger', 'color': 'danger', 'disabled': True}) | safe }}
+	{{ ui_element("buttons/button", {'text': 'Disabled', 'color': 'disabled'}) | safe }}
+</div>
 {% endblock %}

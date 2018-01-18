@@ -12,7 +12,6 @@
 		}
 		&.rc_button,
 		&.button {
-			&:link,
 			&:hover,
 			&:focus,
 			&:active {
@@ -350,11 +349,16 @@ img.admin-recharge {
 	}
 }
 
-.admin-recharge {
-	.admin-recharge {
+div.admin-recharge,
+span.admin-recharge,
+p.admin-recharge {
+	div.admin-recharge,
+	span.admin-recharge,
+	p.admin-recharge {
 		color: #FFF;
 	}
 }
+
 .navbar__nav {
 	> li {
 		> a,

@@ -104,6 +104,22 @@ legend + .rc_form__label {
         // width: 100%;
     }
 }
+.rc_form__actions {
+    &--stacked {
+        display: block;
+
+        .rc_button {
+            // width: auto;
+            display: block;
+            clear: both;
+
+            + .rc_button {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+}
 
 fieldset + fieldset.form__actions,
 fieldset + fieldset.rc_form__actions {

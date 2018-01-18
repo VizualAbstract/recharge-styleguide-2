@@ -1,4 +1,4 @@
-.header-dropdown {
+.rc_header-dropdown {
 	width: 100%;
 	min-height: 40px;
 	display: flex;
@@ -52,7 +52,7 @@
 	}
 
 	@media screen and (max-width: $mobile-nav-max) {
-		.header-dropdown__title {
+		.rc_header-dropdown__title {
 			order: 1;
 			width: 100%;
 
@@ -77,10 +77,10 @@
 				}
 			}
 		}
-		.header-dropdown__description {
+		.rc_header-dropdown__description {
 			order: 2;
 		}
-		.header-dropdown__actions {
+		.rc_header-dropdown__actions {
 			order: 3;
 			width: 100%;
 			margin-top: 12px;

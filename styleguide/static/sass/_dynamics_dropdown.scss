@@ -90,8 +90,8 @@ $zindex-dropdown-backdrop: 30;
 		font-size: $caret-width;
 		line-height: 1;
 		display: inline-block;
-		top: 0;
-		margin-left: 10px;
+		top: 1px;
+		margin-left: 5px;
 	}
 
 	.fa {
@@ -159,37 +159,41 @@ $zindex-dropdown-backdrop: 30;
 // Links, buttons, and more within the dropdown menu
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
-.rc_dropdown .rc_item {
-	display: block;
-	width: 100%; // For `<button>`s
-	padding: $dropdown-item-padding-y $dropdown-item-padding-x;
-	clear: both;
-	line-height: 1;
-	font-weight: $dropdown-link-font-weight;
-	color: $dropdown-link-color;
-	text-align: inherit; // For `<button>`s
-	white-space: nowrap; // prevent links from randomly breaking onto new lines
-	background: none; // For `<button>`s
-	border: 0; // For `<button>`s
-	text-decoration: none;
-
-	@include hover-focus {
-		color: $dropdown-link-hover-color;
-		background-color: $dropdown-link-hover-bg;
-	}
-
-	&.active,
-	&:active {
-		color: $dropdown-link-active-color;
+.rc_dropdown {
+	.rc_item {
+		display: block;
+		width: 100%; // For `<button>`s
+		padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+		clear: both;
+		line-height: 1;
+		font-weight: $dropdown-link-font-weight;
+		color: $dropdown-link-color;
+		text-align: inherit; // For `<button>`s
+		white-space: nowrap; // prevent links from randomly breaking onto new lines
+		background: none; // For `<button>`s
+		border: 0; // For `<button>`s
 		text-decoration: none;
-		background-color: $dropdown-link-active-bg;
-	}
+		outline: none;
+		cursor: pointer;
 
-	&.disabled,
-	&:disabled {
-		color: $dropdown-link-disabled-color;
-		cursor: $cursor-disabled;
-		background-color: transparent;
+		@include hover-focus {
+			color: $dropdown-link-hover-color;
+			background-color: $dropdown-link-hover-bg;
+		}
+
+		&.active,
+		&:active {
+			color: $dropdown-link-active-color;
+			text-decoration: none;
+			background-color: $dropdown-link-active-bg;
+		}
+
+		&.disabled,
+		&:disabled {
+			color: $dropdown-link-disabled-color;
+			cursor: $cursor-disabled;
+			background-color: transparent;
+		}
 	}
 }
 
@@ -203,7 +207,7 @@ $zindex-dropdown-backdrop: 30;
 	> .rc_dropdown__toggle {
 		&:after {
 			content: "\f0d8";
-			top: -1px;
+			top: 1px;
 		}
 	}
 
@@ -274,9 +278,20 @@ $zindex-dropdown-backdrop: 30;
 		&:hover {
 			color: $gray-darker;
 		}
+		/* Hide dropdown arrow if no label is found */
 		&:after {
 			display: none;
 		}
+		// &:empty {
+		// 	+ .rc_dropdown__menu {
+		// 		margin-right: -39px;
+		// 	}
+
+		// 	&:after {
+		// 		display: inline-block;
+		// 		margin-left: 5px;
+		// 	}
+		// }
 	}
 	.rc_dropdown__menu {
 		background-color: $gray-darker;
@@ -289,9 +304,7 @@ $zindex-dropdown-backdrop: 30;
 
 		a {
 			&.active,
-			&.rc_active,
-			&:hover,
-			&:active {
+			&.rc_active {
 				background-color: $primary;
 				display: block;
 			}

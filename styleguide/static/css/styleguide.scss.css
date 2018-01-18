@@ -70,16 +70,16 @@
   color: #333;
 }
 
-.force-mobile .header-settings__title {
+.force-mobile .rc_header-settings__title {
   order: 1;
   width: 100%;
 }
 
-.force-mobile .header-settings__description {
+.force-mobile .rc_header-settings__description {
   order: 2;
 }
 
-.force-mobile .header-settings__actions {
+.force-mobile .rc_header-settings__actions {
   order: 3;
   width: 100%;
   display: flex;
@@ -87,13 +87,8 @@
   margin-top: 19px;
 }
 
-.force-mobile .header-settings__actions .button {
+.force-mobile .rc_header-settings__actions .button {
   width: 100%;
-}
-
-.rc_container .flex--visible {
-  margin-left: -20px;
-  margin-right: -20px;
 }
 
 .rc_example .navbar {
@@ -202,6 +197,83 @@
   width: 100%;
   text-align: center;
   margin-top: 3px;
+}
+
+@media screen and (min-width: 576px) {
+  .rc_layout--visible[rc_layout-order="reverse"] div[class^="rc_layout__"] + div[class^="rc_layout__"] {
+    border-right: 1px solid #fff;
+    border-left: 0;
+  }
+  .rc_layout--visible[rc_layout-order="reverse"] div[class^="rc_layout__"] + div[class^="rc_layout__"]:last-child {
+    border-left: 0 !important;
+  }
+}
+
+.rc_layout--visible .rc_layout {
+  background-color: #6bddc3;
+}
+
+.rc_layout--visible .rc_layout div[class^="rc_layout__"] {
+  border-bottom: 1px solid #FFF;
+}
+
+.rc_layout--visible .rc_layout div[class^="rc_layout__"] div[class^="rc_layout__"] {
+  border-bottom: 0px solid #FFF;
+}
+
+.rc_layout--visible .rc_layout div {
+  overflow: hidden;
+}
+
+.rc_layout--visible .rc_layout > .rc_layout__full p,
+.rc_layout--visible .rc_layout > .rc_layout__sidebar p,
+.rc_layout--visible .rc_layout > .rc_layout__content p,
+.rc_layout--visible .rc_layout > div[class^="rc_layout__xs"] p,
+.rc_layout--visible .rc_layout > div[class^="rc_layout__sm"] p,
+.rc_layout--visible .rc_layout > div[class^="rc_layout__md"] p,
+.rc_layout--visible .rc_layout > div[class^="rc_layout__lg"] p,
+.rc_layout--visible .rc_layout > div[class^="rc_layout__xl"] p {
+  text-align: center;
+  background-color: #bef0e5;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.rc_layout--visible .rc_layout .rc_layout {
+  border-bottom: none !important;
+}
+
+code.html.hljs.xml {
+  background-color: #f5f5f5;
+  margin-bottom: 50px;
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+span.hljs-name,
+span.hljs-tag {
+  color: #2f6f9f;
+  color: #009BC4;
+}
+
+span.hljs-attr {
+  color: #4f9fcf;
+  color: #20AD8F;
+}
+
+span.hljs-string {
+  color: #d44950;
+  color: #C2009A;
+}
+
+code.html.hljs.xml {
+  color: #212529;
+  color: #424242;
+}
+
+span.hljs-comment {
+  color: #8E8F8E;
 }
 
 /*# sourceMappingURL=../css/styleguide.scss.css.map */

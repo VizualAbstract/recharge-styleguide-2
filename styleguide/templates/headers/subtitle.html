@@ -1,16 +1,16 @@
-<div class="header-subtitle">
+<div class="rc_header-subtitle">
 	{% if parameters['title'] %}
-		<div class="header-subtitle__title">
+		<div class="rc_header-subtitle__title">
 			{% if parameters['size'] %}<h{{ parameters['size'] }}>{% endif %}{{ parameters['title'] }}{% if parameters['size'] %}</h{{ parameters['size'] }}>{% endif %}
 		</div>
 	{% endif %}
 	{% if parameters['description'] %}
-		<div class="header-subtitle__description">
+		<div class="rc_header-subtitle__description">
 			<p>{{ parameters['description'] }}</p>
 		</div>
 	{% endif %}
 	{% if parameters['buttons'] or parameters['links'] or parameters['text'] %}
-		<div class="header-subtitle__actions">
+		<div class="rc_header-subtitle__actions">
 			{% for button in parameters['buttons'] %}
 				{% with parameters = button %}
 					{{ ui_element("buttons/button", parameters) | safe }}
@@ -26,4 +26,4 @@
 			{% endif %}
 		</div>
 	{% endif %}
-</div><!-- .header-settings -->
+</div><!-- .rc_header-settings -->

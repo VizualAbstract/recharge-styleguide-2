@@ -10,6 +10,7 @@
 	text-align: center;
 	font-family: 'ralewaysemibold', arial, sans-serif;
 	max-height: 0;
+	z-index: $z-index-notifications;
 	
 	> ul,
 	> p {

@@ -12,7 +12,7 @@
   color: #2c94ad;
 }
 
-.admin-recharge a.rc_button:link, .admin-recharge a.rc_button:hover, .admin-recharge a.rc_button:focus, .admin-recharge a.rc_button:active, .admin-recharge a.button:link, .admin-recharge a.button:hover, .admin-recharge a.button:focus, .admin-recharge a.button:active {
+.admin-recharge a.rc_button:hover, .admin-recharge a.rc_button:focus, .admin-recharge a.rc_button:active, .admin-recharge a.button:hover, .admin-recharge a.button:focus, .admin-recharge a.button:active {
   background-color: #53BAD3;
   color: #FFF;
 }
@@ -353,7 +353,15 @@ img.admin-recharge {
   color: #FFF;
 }
 
-.admin-recharge .admin-recharge {
+div.admin-recharge div.admin-recharge,
+div.admin-recharge span.admin-recharge,
+div.admin-recharge p.admin-recharge,
+span.admin-recharge div.admin-recharge,
+span.admin-recharge span.admin-recharge,
+span.admin-recharge p.admin-recharge,
+p.admin-recharge div.admin-recharge,
+p.admin-recharge span.admin-recharge,
+p.admin-recharge p.admin-recharge {
   color: #FFF;
 }
 

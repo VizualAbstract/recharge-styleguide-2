@@ -26,6 +26,10 @@ html.rc_sticky {
 
 html.rc_sticky body {
     margin-bottom: 58px;
+
+    @media screen and (max-width: $screen-xs-max) {
+        margin-bottom: 86px;
+    }
 }
 
 html.rc_sticky #rc_footer {
@@ -33,6 +37,10 @@ html.rc_sticky #rc_footer {
     bottom: 0;
     width: 100%;
     height: 58px;
+
+    @media screen and (max-width: $screen-xs-max) {
+        height: 86px;
+    }
 }
 
 h1, .rc_h1 {
@@ -97,6 +105,10 @@ fieldset {
     + fieldset {
     	margin-top: 30px;
     }
+}
+
+p + p {
+    margin-top: 10px;
 }
 
 .form__actions,

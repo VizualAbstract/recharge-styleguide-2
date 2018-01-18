@@ -545,3 +545,19 @@ textarea {
   font-size: 14px !important;
   line-height: 21px;
 }
+
+.rc_text--right {
+  text-align: right;
+}
+
+.rc_text--left {
+  text-align: left;
+}
+
+.rc_text--center {
+  text-align: center;
+}
+
+.rc_text--justify {
+  text-align: justify;
+}

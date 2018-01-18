@@ -24,20 +24,6 @@
 	&:focus {
 		background-color: darken($color, 10%);
 	}
-	&--disabled,
-	&.disabled,
-	&[disabled],
-	fieldset[disabled] & {
-		&,
-		&:active,
-		&.active,
-		&:hover,
-		&:focus,
-		&.focus {
-			color: text-color($color) !important;
-			background-color: lighten($color, 50%) !important;
-		}
-	}
 }
 // Standard colorizer for links
 @mixin link-color($color) {
@@ -94,8 +80,8 @@
 	}
 
 	&--large {
-		padding: 10px 15px;
-		height: auto;
+		// padding: 10px 15px;
+		// height: auto;
 	}
 }
 
@@ -155,51 +141,23 @@
 	margin-left: 10px;
 }
 
-// Button: Disabled
-.button,
-.rc_button {
-	&.button--disabled,
-	&.disabled,
-	&.rc_button--disabled,
-	&.rc_disabled,
-	&[disabled],
-	fieldset[disabled] & {
-		cursor: not-allowed !important;
-
-		&,
-		&:active,
-		&.active,
-		&:hover,
-		&:focus,
-		&.focus {
-			background-color: $disabled !important;
-		}
-	}
-}
-
-// Button link: Disabled
-.button--link {
-	&.button--disabled,
-	&.disabled,
-	&.rc_button--disabled,
-	&.rc_disabled,
-	&[disabled],
-	fieldset[disabled] & {
-		cursor: not-allowed !important;
-
-		&,
-		&:active,
-		&.active,
-		&:hover,
-		&:focus,
-		&.focus {
-			color: $disabled !important;
-			background-color: transparent !important;
-		}
-	}
-}
-
 /* Button icons */
 [class*="rc_button--fa-"]:before {
 	line-height: 20px;
+	margin-right: 5px;
+}
+
+// Disabled
+.button,
+.rc_button,
+.button--link,
+.rc_button--link {
+	&.button--disabled,
+	&.disabled,
+	&.rc_button--disabled,
+	&.rc_disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: not-allowed !important;
+	}
 }
