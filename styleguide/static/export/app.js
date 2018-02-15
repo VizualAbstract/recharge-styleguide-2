@@ -1,13 +1,15 @@
 
 /*! Tether 1.4.0 */
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+  /* Avoid using amd or exports since we don't want to scramble on other store's structure */
+  /*if (typeof define === 'function' && define.amd) {
     define(factory);
   } else if (typeof exports === 'object') {
     module.exports = factory(require, exports, module);
   } else {
     root.Tether = factory();
-  }
+  }*/
+  root.Tether = factory();
 }(this, function(require, exports, module) {
 
 'use strict';
@@ -4604,7 +4606,8 @@ var Popover = function ($) {
 (function(factory) {
 	var jQuery;
 
-	if ( typeof exports === "object" ) {
+	/* Avoid using amd or exports since we don't want to scramble on other store's structure */
+	/*if ( typeof exports === "object" ) {
 		// Node. Does not work with strict CommonJS, but
 		// only CommonJS-like environments that support module.exports,
 		// like Node.
@@ -4618,8 +4621,9 @@ var Popover = function ($) {
 	} else {
 		// Browser globals (root is window)
 		window.rcSelect = factory( window, document, window.jQuery );
-	}
+	}*/
 
+	window.rcSelect = factory( window, document, window.jQuery );
 }(function( window, document, jQuery, undefined ) {
 
 
@@ -5727,8 +5731,8 @@ rcSelect.prototype = {
 			event.preventDefault();
 			lastSelected = selected[ selected.length - 1 ];
 
-			if ( _.hasClass( this.data.elem.lastChild, "rc_select--options-highlight" ) ) {
-				_.removeClass( this.data.elem.lastChild, "rc_select--options-highlight" );
+			if ( _.hasClass( this.data.elem.lastChild, "rc_select--options--highlight" ) ) {
+				_.removeClass( this.data.elem.lastChild, "rc_select--options--highlight" );
 				for ( j = 0; j < options.length; j++ ) {
 					if ( _.hasClass( options[ j ], "rc_select__option--highlight" ) ) {
 						_.removeClass( options[ j ], "rc_select__option--highlight" );

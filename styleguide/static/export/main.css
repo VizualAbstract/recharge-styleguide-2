@@ -703,39 +703,14 @@ textarea {
   box-sizing: border-box;
 }
 
-.flex__layout,
 .rc_layout {
   display: flex;
   flex-wrap: wrap;
 }
 
-.flex__layout .flex__full,
-.flex__layout .flex__sidebar,
-.flex__layout .flex__content,
-.flex__layout .rc_layout__full,
-.flex__layout .rc_layout__sidebar,
-.flex__layout .rc_layout__content,
-.flex__layout [class^="flex__xs"],
-.flex__layout [class^="flex__sm"],
-.flex__layout [class^="flex__md"],
-.flex__layout [class^="flex__lg"],
-.flex__layout [class^="flex__xl"],
-.flex__layout [class^="rc_layout__xs"],
-.flex__layout [class^="rc_layout__sm"],
-.flex__layout [class^="rc_layout__md"],
-.flex__layout [class^="rc_layout__lg"],
-.flex__layout [class^="rc_layout__xl"],
-.rc_layout .flex__full,
-.rc_layout .flex__sidebar,
-.rc_layout .flex__content,
 .rc_layout .rc_layout__full,
 .rc_layout .rc_layout__sidebar,
 .rc_layout .rc_layout__content,
-.rc_layout [class^="flex__xs"],
-.rc_layout [class^="flex__sm"],
-.rc_layout [class^="flex__md"],
-.rc_layout [class^="flex__lg"],
-.rc_layout [class^="flex__xl"],
 .rc_layout [class^="rc_layout__xs"],
 .rc_layout [class^="rc_layout__sm"],
 .rc_layout [class^="rc_layout__md"],
@@ -744,21 +719,6 @@ textarea {
   min-height: 1px;
 }
 
-.flex__layout [class^="flex__xs"],
-.flex__layout [class^="flex__sm"],
-.flex__layout [class^="flex__md"],
-.flex__layout [class^="flex__lg"],
-.flex__layout [class^="flex__xl"],
-.flex__layout [class^="rc_layout__xs"],
-.flex__layout [class^="rc_layout__sm"],
-.flex__layout [class^="rc_layout__md"],
-.flex__layout [class^="rc_layout__lg"],
-.flex__layout [class^="rc_layout__xl"],
-.rc_layout [class^="flex__xs"],
-.rc_layout [class^="flex__sm"],
-.rc_layout [class^="flex__md"],
-.rc_layout [class^="flex__lg"],
-.rc_layout [class^="flex__xl"],
 .rc_layout [class^="rc_layout__xs"],
 .rc_layout [class^="rc_layout__sm"],
 .rc_layout [class^="rc_layout__md"],
@@ -769,9 +729,6 @@ textarea {
   width: 100%;
 }
 
-.flex__layout .flex__xs__1,
-.flex__layout .rc_layout__xs__1,
-.rc_layout .flex__xs__1,
 .rc_layout .rc_layout__xs__1 {
   flex-basis: 8.33333%;
   flex-grow: 1;
@@ -779,25 +736,16 @@ textarea {
 }
 
 @media screen and (max-width: 575px) {
-  .flex__layout .flex__xs__1,
-  .flex__layout .rc_layout__xs__1,
-  .rc_layout .flex__xs__1,
   .rc_layout .rc_layout__xs__1 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-.flex__layout .flex__xs__offset__1,
-.flex__layout .rc_layout__xs__offset__1,
-.rc_layout .flex__xs__offset__1,
 .rc_layout .rc_layout__xs__offset__1 {
   margin-left: 8.33333%;
 }
 
-.flex__layout .flex__xs__2,
-.flex__layout .rc_layout__xs__2,
-.rc_layout .flex__xs__2,
 .rc_layout .rc_layout__xs__2 {
   flex-basis: 16.66667%;
   flex-grow: 1;
@@ -805,16 +753,10 @@ textarea {
   max-width: 16.66667%;
 }
 
-.flex__layout .flex__xs__offset__2,
-.flex__layout .rc_layout__xs__offset__2,
-.rc_layout .flex__xs__offset__2,
 .rc_layout .rc_layout__xs__offset__2 {
   margin-left: 16.66667%;
 }
 
-.flex__layout .flex__xs__3,
-.flex__layout .rc_layout__xs__3,
-.rc_layout .flex__xs__3,
 .rc_layout .rc_layout__xs__3 {
   flex-basis: 25%;
   flex-grow: 1;
@@ -822,16 +764,10 @@ textarea {
   max-width: 25%;
 }
 
-.flex__layout .flex__xs__offset__3,
-.flex__layout .rc_layout__xs__offset__3,
-.rc_layout .flex__xs__offset__3,
 .rc_layout .rc_layout__xs__offset__3 {
   margin-left: 25%;
 }
 
-.flex__layout .flex__xs__4,
-.flex__layout .rc_layout__xs__4,
-.rc_layout .flex__xs__4,
 .rc_layout .rc_layout__xs__4 {
   flex-basis: 33.33333%;
   flex-grow: 1;
@@ -839,16 +775,10 @@ textarea {
   max-width: 33.33333%;
 }
 
-.flex__layout .flex__xs__offset__4,
-.flex__layout .rc_layout__xs__offset__4,
-.rc_layout .flex__xs__offset__4,
 .rc_layout .rc_layout__xs__offset__4 {
   margin-left: 33.33333%;
 }
 
-.flex__layout .flex__xs__5,
-.flex__layout .rc_layout__xs__5,
-.rc_layout .flex__xs__5,
 .rc_layout .rc_layout__xs__5 {
   flex-basis: 41.66667%;
   flex-grow: 1;
@@ -856,16 +786,10 @@ textarea {
   max-width: 41.66667%;
 }
 
-.flex__layout .flex__xs__offset__5,
-.flex__layout .rc_layout__xs__offset__5,
-.rc_layout .flex__xs__offset__5,
 .rc_layout .rc_layout__xs__offset__5 {
   margin-left: 41.66667%;
 }
 
-.flex__layout .flex__xs__6,
-.flex__layout .rc_layout__xs__6,
-.rc_layout .flex__xs__6,
 .rc_layout .rc_layout__xs__6 {
   flex-basis: 50%;
   flex-grow: 1;
@@ -873,16 +797,10 @@ textarea {
   max-width: 50%;
 }
 
-.flex__layout .flex__xs__offset__6,
-.flex__layout .rc_layout__xs__offset__6,
-.rc_layout .flex__xs__offset__6,
 .rc_layout .rc_layout__xs__offset__6 {
   margin-left: 50%;
 }
 
-.flex__layout .flex__xs__7,
-.flex__layout .rc_layout__xs__7,
-.rc_layout .flex__xs__7,
 .rc_layout .rc_layout__xs__7 {
   flex-basis: 58.33333%;
   flex-grow: 1;
@@ -890,16 +808,10 @@ textarea {
   max-width: 58.33333%;
 }
 
-.flex__layout .flex__xs__offset__7,
-.flex__layout .rc_layout__xs__offset__7,
-.rc_layout .flex__xs__offset__7,
 .rc_layout .rc_layout__xs__offset__7 {
   margin-left: 58.33333%;
 }
 
-.flex__layout .flex__xs__8,
-.flex__layout .rc_layout__xs__8,
-.rc_layout .flex__xs__8,
 .rc_layout .rc_layout__xs__8 {
   flex-basis: 66.66667%;
   flex-grow: 1;
@@ -907,16 +819,10 @@ textarea {
   max-width: 66.66667%;
 }
 
-.flex__layout .flex__xs__offset__8,
-.flex__layout .rc_layout__xs__offset__8,
-.rc_layout .flex__xs__offset__8,
 .rc_layout .rc_layout__xs__offset__8 {
   margin-left: 66.66667%;
 }
 
-.flex__layout .flex__xs__9,
-.flex__layout .rc_layout__xs__9,
-.rc_layout .flex__xs__9,
 .rc_layout .rc_layout__xs__9 {
   flex-basis: 75%;
   flex-grow: 1;
@@ -924,16 +830,10 @@ textarea {
   max-width: 75%;
 }
 
-.flex__layout .flex__xs__offset__9,
-.flex__layout .rc_layout__xs__offset__9,
-.rc_layout .flex__xs__offset__9,
 .rc_layout .rc_layout__xs__offset__9 {
   margin-left: 75%;
 }
 
-.flex__layout .flex__xs__10,
-.flex__layout .rc_layout__xs__10,
-.rc_layout .flex__xs__10,
 .rc_layout .rc_layout__xs__10 {
   flex-basis: 83.33333%;
   flex-grow: 1;
@@ -941,16 +841,10 @@ textarea {
   max-width: 83.33333%;
 }
 
-.flex__layout .flex__xs__offset__10,
-.flex__layout .rc_layout__xs__offset__10,
-.rc_layout .flex__xs__offset__10,
 .rc_layout .rc_layout__xs__offset__10 {
   margin-left: 83.33333%;
 }
 
-.flex__layout .flex__xs__11,
-.flex__layout .rc_layout__xs__11,
-.rc_layout .flex__xs__11,
 .rc_layout .rc_layout__xs__11 {
   flex-basis: 91.66667%;
   flex-grow: 1;
@@ -958,16 +852,10 @@ textarea {
   max-width: 91.66667%;
 }
 
-.flex__layout .flex__xs__offset__11,
-.flex__layout .rc_layout__xs__offset__11,
-.rc_layout .flex__xs__offset__11,
 .rc_layout .rc_layout__xs__offset__11 {
   margin-left: 91.66667%;
 }
 
-.flex__layout .flex__xs__12,
-.flex__layout .rc_layout__xs__12,
-.rc_layout .flex__xs__12,
 .rc_layout .rc_layout__xs__12 {
   flex-basis: 100%;
   flex-grow: 1;
@@ -975,784 +863,472 @@ textarea {
   max-width: 100%;
 }
 
-.flex__layout .flex__xs__offset__12,
-.flex__layout .rc_layout__xs__offset__12,
-.rc_layout .flex__xs__offset__12,
 .rc_layout .rc_layout__xs__offset__12 {
   margin-left: 100%;
 }
 
 @media screen and (max-width: 575px) {
-  .flex__layout .flex__xs__offset__0,
-  .flex__layout .rc_layout__xs__offset__0,
-  .rc_layout .flex__xs__offset__0,
   .rc_layout .rc_layout__xs__offset__0 {
     margin-left: 0;
   }
 }
 
 @media screen and (min-width: 576px) {
-  .flex__layout .flex__sm__1,
-  .flex__layout .rc_layout__sm__1,
-  .rc_layout .flex__sm__1,
   .rc_layout .rc_layout__sm__1 {
     flex-basis: 8.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 8.33333%;
   }
-  .flex__layout .flex__sm__offset__1,
-  .flex__layout .rc_layout__sm__offset__1,
-  .rc_layout .flex__sm__offset__1,
   .rc_layout .rc_layout__sm__offset__1 {
     margin-left: 8.33333%;
   }
-  .flex__layout .flex__sm__2,
-  .flex__layout .rc_layout__sm__2,
-  .rc_layout .flex__sm__2,
   .rc_layout .rc_layout__sm__2 {
     flex-basis: 16.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 16.66667%;
   }
-  .flex__layout .flex__sm__offset__2,
-  .flex__layout .rc_layout__sm__offset__2,
-  .rc_layout .flex__sm__offset__2,
   .rc_layout .rc_layout__sm__offset__2 {
     margin-left: 16.66667%;
   }
-  .flex__layout .flex__sm__3,
-  .flex__layout .rc_layout__sm__3,
-  .rc_layout .flex__sm__3,
   .rc_layout .rc_layout__sm__3 {
     flex-basis: 25%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 25%;
   }
-  .flex__layout .flex__sm__offset__3,
-  .flex__layout .rc_layout__sm__offset__3,
-  .rc_layout .flex__sm__offset__3,
   .rc_layout .rc_layout__sm__offset__3 {
     margin-left: 25%;
   }
-  .flex__layout .flex__sm__4,
-  .flex__layout .rc_layout__sm__4,
-  .rc_layout .flex__sm__4,
   .rc_layout .rc_layout__sm__4 {
     flex-basis: 33.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 33.33333%;
   }
-  .flex__layout .flex__sm__offset__4,
-  .flex__layout .rc_layout__sm__offset__4,
-  .rc_layout .flex__sm__offset__4,
   .rc_layout .rc_layout__sm__offset__4 {
     margin-left: 33.33333%;
   }
-  .flex__layout .flex__sm__5,
-  .flex__layout .rc_layout__sm__5,
-  .rc_layout .flex__sm__5,
   .rc_layout .rc_layout__sm__5 {
     flex-basis: 41.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 41.66667%;
   }
-  .flex__layout .flex__sm__offset__5,
-  .flex__layout .rc_layout__sm__offset__5,
-  .rc_layout .flex__sm__offset__5,
   .rc_layout .rc_layout__sm__offset__5 {
     margin-left: 41.66667%;
   }
-  .flex__layout .flex__sm__6,
-  .flex__layout .rc_layout__sm__6,
-  .rc_layout .flex__sm__6,
   .rc_layout .rc_layout__sm__6 {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 50%;
   }
-  .flex__layout .flex__sm__offset__6,
-  .flex__layout .rc_layout__sm__offset__6,
-  .rc_layout .flex__sm__offset__6,
   .rc_layout .rc_layout__sm__offset__6 {
     margin-left: 50%;
   }
-  .flex__layout .flex__sm__7,
-  .flex__layout .rc_layout__sm__7,
-  .rc_layout .flex__sm__7,
   .rc_layout .rc_layout__sm__7 {
     flex-basis: 58.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 58.33333%;
   }
-  .flex__layout .flex__sm__offset__7,
-  .flex__layout .rc_layout__sm__offset__7,
-  .rc_layout .flex__sm__offset__7,
   .rc_layout .rc_layout__sm__offset__7 {
     margin-left: 58.33333%;
   }
-  .flex__layout .flex__sm__8,
-  .flex__layout .rc_layout__sm__8,
-  .rc_layout .flex__sm__8,
   .rc_layout .rc_layout__sm__8 {
     flex-basis: 66.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 66.66667%;
   }
-  .flex__layout .flex__sm__offset__8,
-  .flex__layout .rc_layout__sm__offset__8,
-  .rc_layout .flex__sm__offset__8,
   .rc_layout .rc_layout__sm__offset__8 {
     margin-left: 66.66667%;
   }
-  .flex__layout .flex__sm__9,
-  .flex__layout .rc_layout__sm__9,
-  .rc_layout .flex__sm__9,
   .rc_layout .rc_layout__sm__9 {
     flex-basis: 75%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 75%;
   }
-  .flex__layout .flex__sm__offset__9,
-  .flex__layout .rc_layout__sm__offset__9,
-  .rc_layout .flex__sm__offset__9,
   .rc_layout .rc_layout__sm__offset__9 {
     margin-left: 75%;
   }
-  .flex__layout .flex__sm__10,
-  .flex__layout .rc_layout__sm__10,
-  .rc_layout .flex__sm__10,
   .rc_layout .rc_layout__sm__10 {
     flex-basis: 83.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 83.33333%;
   }
-  .flex__layout .flex__sm__offset__10,
-  .flex__layout .rc_layout__sm__offset__10,
-  .rc_layout .flex__sm__offset__10,
   .rc_layout .rc_layout__sm__offset__10 {
     margin-left: 83.33333%;
   }
-  .flex__layout .flex__sm__11,
-  .flex__layout .rc_layout__sm__11,
-  .rc_layout .flex__sm__11,
   .rc_layout .rc_layout__sm__11 {
     flex-basis: 91.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 91.66667%;
   }
-  .flex__layout .flex__sm__offset__11,
-  .flex__layout .rc_layout__sm__offset__11,
-  .rc_layout .flex__sm__offset__11,
   .rc_layout .rc_layout__sm__offset__11 {
     margin-left: 91.66667%;
   }
-  .flex__layout .flex__sm__12,
-  .flex__layout .rc_layout__sm__12,
-  .rc_layout .flex__sm__12,
   .rc_layout .rc_layout__sm__12 {
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 100%;
   }
-  .flex__layout .flex__sm__offset__12,
-  .flex__layout .rc_layout__sm__offset__12,
-  .rc_layout .flex__sm__offset__12,
   .rc_layout .rc_layout__sm__offset__12 {
     margin-left: 100%;
   }
-  .flex__layout .flex__sm__offset__0,
-  .flex__layout .rc_layout__sm__offset__0,
-  .rc_layout .flex__sm__offset__0,
   .rc_layout .rc_layout__sm__offset__0 {
     margin-left: 0;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .flex__layout .flex__md__1,
-  .flex__layout .rc_layout__md__1,
-  .rc_layout .flex__md__1,
   .rc_layout .rc_layout__md__1 {
     flex-basis: 8.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 8.33333%;
   }
-  .flex__layout .flex__md__offset__1,
-  .flex__layout .rc_layout_md__offset__1,
-  .rc_layout .flex__md__offset__1,
   .rc_layout .rc_layout_md__offset__1 {
     margin-left: 8.33333%;
   }
-  .flex__layout .flex__md__2,
-  .flex__layout .rc_layout__md__2,
-  .rc_layout .flex__md__2,
   .rc_layout .rc_layout__md__2 {
     flex-basis: 16.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 16.66667%;
   }
-  .flex__layout .flex__md__offset__2,
-  .flex__layout .rc_layout_md__offset__2,
-  .rc_layout .flex__md__offset__2,
   .rc_layout .rc_layout_md__offset__2 {
     margin-left: 16.66667%;
   }
-  .flex__layout .flex__md__3,
-  .flex__layout .rc_layout__md__3,
-  .rc_layout .flex__md__3,
   .rc_layout .rc_layout__md__3 {
     flex-basis: 25%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 25%;
   }
-  .flex__layout .flex__md__offset__3,
-  .flex__layout .rc_layout_md__offset__3,
-  .rc_layout .flex__md__offset__3,
   .rc_layout .rc_layout_md__offset__3 {
     margin-left: 25%;
   }
-  .flex__layout .flex__md__4,
-  .flex__layout .rc_layout__md__4,
-  .rc_layout .flex__md__4,
   .rc_layout .rc_layout__md__4 {
     flex-basis: 33.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 33.33333%;
   }
-  .flex__layout .flex__md__offset__4,
-  .flex__layout .rc_layout_md__offset__4,
-  .rc_layout .flex__md__offset__4,
   .rc_layout .rc_layout_md__offset__4 {
     margin-left: 33.33333%;
   }
-  .flex__layout .flex__md__5,
-  .flex__layout .rc_layout__md__5,
-  .rc_layout .flex__md__5,
   .rc_layout .rc_layout__md__5 {
     flex-basis: 41.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 41.66667%;
   }
-  .flex__layout .flex__md__offset__5,
-  .flex__layout .rc_layout_md__offset__5,
-  .rc_layout .flex__md__offset__5,
   .rc_layout .rc_layout_md__offset__5 {
     margin-left: 41.66667%;
   }
-  .flex__layout .flex__md__6,
-  .flex__layout .rc_layout__md__6,
-  .rc_layout .flex__md__6,
   .rc_layout .rc_layout__md__6 {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 50%;
   }
-  .flex__layout .flex__md__offset__6,
-  .flex__layout .rc_layout_md__offset__6,
-  .rc_layout .flex__md__offset__6,
   .rc_layout .rc_layout_md__offset__6 {
     margin-left: 50%;
   }
-  .flex__layout .flex__md__7,
-  .flex__layout .rc_layout__md__7,
-  .rc_layout .flex__md__7,
   .rc_layout .rc_layout__md__7 {
     flex-basis: 58.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 58.33333%;
   }
-  .flex__layout .flex__md__offset__7,
-  .flex__layout .rc_layout_md__offset__7,
-  .rc_layout .flex__md__offset__7,
   .rc_layout .rc_layout_md__offset__7 {
     margin-left: 58.33333%;
   }
-  .flex__layout .flex__md__8,
-  .flex__layout .rc_layout__md__8,
-  .rc_layout .flex__md__8,
   .rc_layout .rc_layout__md__8 {
     flex-basis: 66.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 66.66667%;
   }
-  .flex__layout .flex__md__offset__8,
-  .flex__layout .rc_layout_md__offset__8,
-  .rc_layout .flex__md__offset__8,
   .rc_layout .rc_layout_md__offset__8 {
     margin-left: 66.66667%;
   }
-  .flex__layout .flex__md__9,
-  .flex__layout .rc_layout__md__9,
-  .rc_layout .flex__md__9,
   .rc_layout .rc_layout__md__9 {
     flex-basis: 75%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 75%;
   }
-  .flex__layout .flex__md__offset__9,
-  .flex__layout .rc_layout_md__offset__9,
-  .rc_layout .flex__md__offset__9,
   .rc_layout .rc_layout_md__offset__9 {
     margin-left: 75%;
   }
-  .flex__layout .flex__md__10,
-  .flex__layout .rc_layout__md__10,
-  .rc_layout .flex__md__10,
   .rc_layout .rc_layout__md__10 {
     flex-basis: 83.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 83.33333%;
   }
-  .flex__layout .flex__md__offset__10,
-  .flex__layout .rc_layout_md__offset__10,
-  .rc_layout .flex__md__offset__10,
   .rc_layout .rc_layout_md__offset__10 {
     margin-left: 83.33333%;
   }
-  .flex__layout .flex__md__11,
-  .flex__layout .rc_layout__md__11,
-  .rc_layout .flex__md__11,
   .rc_layout .rc_layout__md__11 {
     flex-basis: 91.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 91.66667%;
   }
-  .flex__layout .flex__md__offset__11,
-  .flex__layout .rc_layout_md__offset__11,
-  .rc_layout .flex__md__offset__11,
   .rc_layout .rc_layout_md__offset__11 {
     margin-left: 91.66667%;
   }
-  .flex__layout .flex__md__12,
-  .flex__layout .rc_layout__md__12,
-  .rc_layout .flex__md__12,
   .rc_layout .rc_layout__md__12 {
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 100%;
   }
-  .flex__layout .flex__md__offset__12,
-  .flex__layout .rc_layout_md__offset__12,
-  .rc_layout .flex__md__offset__12,
   .rc_layout .rc_layout_md__offset__12 {
     margin-left: 100%;
   }
-  .flex__layout .flex__md__offset__0,
-  .flex__layout .rc_layout__md__offset__0,
-  .rc_layout .flex__md__offset__0,
   .rc_layout .rc_layout__md__offset__0 {
     margin-left: 0;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .flex__layout .flex__lg__1,
-  .flex__layout .rc_layout__lg__1,
-  .rc_layout .flex__lg__1,
   .rc_layout .rc_layout__lg__1 {
     flex-basis: 8.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 8.33333%;
   }
-  .flex__layout .flex__lg__offset__1,
-  .flex__layout .rc_layout__lg__offset__1,
-  .rc_layout .flex__lg__offset__1,
   .rc_layout .rc_layout__lg__offset__1 {
     margin-left: 8.33333%;
   }
-  .flex__layout .flex__lg__2,
-  .flex__layout .rc_layout__lg__2,
-  .rc_layout .flex__lg__2,
   .rc_layout .rc_layout__lg__2 {
     flex-basis: 16.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 16.66667%;
   }
-  .flex__layout .flex__lg__offset__2,
-  .flex__layout .rc_layout__lg__offset__2,
-  .rc_layout .flex__lg__offset__2,
   .rc_layout .rc_layout__lg__offset__2 {
     margin-left: 16.66667%;
   }
-  .flex__layout .flex__lg__3,
-  .flex__layout .rc_layout__lg__3,
-  .rc_layout .flex__lg__3,
   .rc_layout .rc_layout__lg__3 {
     flex-basis: 25%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 25%;
   }
-  .flex__layout .flex__lg__offset__3,
-  .flex__layout .rc_layout__lg__offset__3,
-  .rc_layout .flex__lg__offset__3,
   .rc_layout .rc_layout__lg__offset__3 {
     margin-left: 25%;
   }
-  .flex__layout .flex__lg__4,
-  .flex__layout .rc_layout__lg__4,
-  .rc_layout .flex__lg__4,
   .rc_layout .rc_layout__lg__4 {
     flex-basis: 33.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 33.33333%;
   }
-  .flex__layout .flex__lg__offset__4,
-  .flex__layout .rc_layout__lg__offset__4,
-  .rc_layout .flex__lg__offset__4,
   .rc_layout .rc_layout__lg__offset__4 {
     margin-left: 33.33333%;
   }
-  .flex__layout .flex__lg__5,
-  .flex__layout .rc_layout__lg__5,
-  .rc_layout .flex__lg__5,
   .rc_layout .rc_layout__lg__5 {
     flex-basis: 41.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 41.66667%;
   }
-  .flex__layout .flex__lg__offset__5,
-  .flex__layout .rc_layout__lg__offset__5,
-  .rc_layout .flex__lg__offset__5,
   .rc_layout .rc_layout__lg__offset__5 {
     margin-left: 41.66667%;
   }
-  .flex__layout .flex__lg__6,
-  .flex__layout .rc_layout__lg__6,
-  .rc_layout .flex__lg__6,
   .rc_layout .rc_layout__lg__6 {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 50%;
   }
-  .flex__layout .flex__lg__offset__6,
-  .flex__layout .rc_layout__lg__offset__6,
-  .rc_layout .flex__lg__offset__6,
   .rc_layout .rc_layout__lg__offset__6 {
     margin-left: 50%;
   }
-  .flex__layout .flex__lg__7,
-  .flex__layout .rc_layout__lg__7,
-  .rc_layout .flex__lg__7,
   .rc_layout .rc_layout__lg__7 {
     flex-basis: 58.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 58.33333%;
   }
-  .flex__layout .flex__lg__offset__7,
-  .flex__layout .rc_layout__lg__offset__7,
-  .rc_layout .flex__lg__offset__7,
   .rc_layout .rc_layout__lg__offset__7 {
     margin-left: 58.33333%;
   }
-  .flex__layout .flex__lg__8,
-  .flex__layout .rc_layout__lg__8,
-  .rc_layout .flex__lg__8,
   .rc_layout .rc_layout__lg__8 {
     flex-basis: 66.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 66.66667%;
   }
-  .flex__layout .flex__lg__offset__8,
-  .flex__layout .rc_layout__lg__offset__8,
-  .rc_layout .flex__lg__offset__8,
   .rc_layout .rc_layout__lg__offset__8 {
     margin-left: 66.66667%;
   }
-  .flex__layout .flex__lg__9,
-  .flex__layout .rc_layout__lg__9,
-  .rc_layout .flex__lg__9,
   .rc_layout .rc_layout__lg__9 {
     flex-basis: 75%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 75%;
   }
-  .flex__layout .flex__lg__offset__9,
-  .flex__layout .rc_layout__lg__offset__9,
-  .rc_layout .flex__lg__offset__9,
   .rc_layout .rc_layout__lg__offset__9 {
     margin-left: 75%;
   }
-  .flex__layout .flex__lg__10,
-  .flex__layout .rc_layout__lg__10,
-  .rc_layout .flex__lg__10,
   .rc_layout .rc_layout__lg__10 {
     flex-basis: 83.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 83.33333%;
   }
-  .flex__layout .flex__lg__offset__10,
-  .flex__layout .rc_layout__lg__offset__10,
-  .rc_layout .flex__lg__offset__10,
   .rc_layout .rc_layout__lg__offset__10 {
     margin-left: 83.33333%;
   }
-  .flex__layout .flex__lg__11,
-  .flex__layout .rc_layout__lg__11,
-  .rc_layout .flex__lg__11,
   .rc_layout .rc_layout__lg__11 {
     flex-basis: 91.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 91.66667%;
   }
-  .flex__layout .flex__lg__offset__11,
-  .flex__layout .rc_layout__lg__offset__11,
-  .rc_layout .flex__lg__offset__11,
   .rc_layout .rc_layout__lg__offset__11 {
     margin-left: 91.66667%;
   }
-  .flex__layout .flex__lg__12,
-  .flex__layout .rc_layout__lg__12,
-  .rc_layout .flex__lg__12,
   .rc_layout .rc_layout__lg__12 {
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 100%;
   }
-  .flex__layout .flex__lg__offset__12,
-  .flex__layout .rc_layout__lg__offset__12,
-  .rc_layout .flex__lg__offset__12,
   .rc_layout .rc_layout__lg__offset__12 {
     margin-left: 100%;
   }
-  .flex__layout .flex__lg__offset__0,
-  .flex__layout .rc_layout__lg__offset__0,
-  .rc_layout .flex__lg__offset__0,
   .rc_layout .rc_layout__lg__offset__0 {
     margin-left: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__layout .flex__xl__1,
-  .flex__layout .rc_layout__xl__1,
-  .rc_layout .flex__xl__1,
   .rc_layout .rc_layout__xl__1 {
     flex-basis: 8.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 8.33333%;
   }
-  .flex__layout .flex__xl__offset__1,
-  .flex__layout .rc_layout__xl__offset__1,
-  .rc_layout .flex__xl__offset__1,
   .rc_layout .rc_layout__xl__offset__1 {
     margin-left: 8.33333%;
   }
-  .flex__layout .flex__xl__2,
-  .flex__layout .rc_layout__xl__2,
-  .rc_layout .flex__xl__2,
   .rc_layout .rc_layout__xl__2 {
     flex-basis: 16.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 16.66667%;
   }
-  .flex__layout .flex__xl__offset__2,
-  .flex__layout .rc_layout__xl__offset__2,
-  .rc_layout .flex__xl__offset__2,
   .rc_layout .rc_layout__xl__offset__2 {
     margin-left: 16.66667%;
   }
-  .flex__layout .flex__xl__3,
-  .flex__layout .rc_layout__xl__3,
-  .rc_layout .flex__xl__3,
   .rc_layout .rc_layout__xl__3 {
     flex-basis: 25%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 25%;
   }
-  .flex__layout .flex__xl__offset__3,
-  .flex__layout .rc_layout__xl__offset__3,
-  .rc_layout .flex__xl__offset__3,
   .rc_layout .rc_layout__xl__offset__3 {
     margin-left: 25%;
   }
-  .flex__layout .flex__xl__4,
-  .flex__layout .rc_layout__xl__4,
-  .rc_layout .flex__xl__4,
   .rc_layout .rc_layout__xl__4 {
     flex-basis: 33.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 33.33333%;
   }
-  .flex__layout .flex__xl__offset__4,
-  .flex__layout .rc_layout__xl__offset__4,
-  .rc_layout .flex__xl__offset__4,
   .rc_layout .rc_layout__xl__offset__4 {
     margin-left: 33.33333%;
   }
-  .flex__layout .flex__xl__5,
-  .flex__layout .rc_layout__xl__5,
-  .rc_layout .flex__xl__5,
   .rc_layout .rc_layout__xl__5 {
     flex-basis: 41.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 41.66667%;
   }
-  .flex__layout .flex__xl__offset__5,
-  .flex__layout .rc_layout__xl__offset__5,
-  .rc_layout .flex__xl__offset__5,
   .rc_layout .rc_layout__xl__offset__5 {
     margin-left: 41.66667%;
   }
-  .flex__layout .flex__xl__6,
-  .flex__layout .rc_layout__xl__6,
-  .rc_layout .flex__xl__6,
   .rc_layout .rc_layout__xl__6 {
     flex-basis: 50%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 50%;
   }
-  .flex__layout .flex__xl__offset__6,
-  .flex__layout .rc_layout__xl__offset__6,
-  .rc_layout .flex__xl__offset__6,
   .rc_layout .rc_layout__xl__offset__6 {
     margin-left: 50%;
   }
-  .flex__layout .flex__xl__7,
-  .flex__layout .rc_layout__xl__7,
-  .rc_layout .flex__xl__7,
   .rc_layout .rc_layout__xl__7 {
     flex-basis: 58.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 58.33333%;
   }
-  .flex__layout .flex__xl__offset__7,
-  .flex__layout .rc_layout__xl__offset__7,
-  .rc_layout .flex__xl__offset__7,
   .rc_layout .rc_layout__xl__offset__7 {
     margin-left: 58.33333%;
   }
-  .flex__layout .flex__xl__8,
-  .flex__layout .rc_layout__xl__8,
-  .rc_layout .flex__xl__8,
   .rc_layout .rc_layout__xl__8 {
     flex-basis: 66.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 66.66667%;
   }
-  .flex__layout .flex__xl__offset__8,
-  .flex__layout .rc_layout__xl__offset__8,
-  .rc_layout .flex__xl__offset__8,
   .rc_layout .rc_layout__xl__offset__8 {
     margin-left: 66.66667%;
   }
-  .flex__layout .flex__xl__9,
-  .flex__layout .rc_layout__xl__9,
-  .rc_layout .flex__xl__9,
   .rc_layout .rc_layout__xl__9 {
     flex-basis: 75%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 75%;
   }
-  .flex__layout .flex__xl__offset__9,
-  .flex__layout .rc_layout__xl__offset__9,
-  .rc_layout .flex__xl__offset__9,
   .rc_layout .rc_layout__xl__offset__9 {
     margin-left: 75%;
   }
-  .flex__layout .flex__xl__10,
-  .flex__layout .rc_layout__xl__10,
-  .rc_layout .flex__xl__10,
   .rc_layout .rc_layout__xl__10 {
     flex-basis: 83.33333%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 83.33333%;
   }
-  .flex__layout .flex__xl__offset__10,
-  .flex__layout .rc_layout__xl__offset__10,
-  .rc_layout .flex__xl__offset__10,
   .rc_layout .rc_layout__xl__offset__10 {
     margin-left: 83.33333%;
   }
-  .flex__layout .flex__xl__11,
-  .flex__layout .rc_layout__xl__11,
-  .rc_layout .flex__xl__11,
   .rc_layout .rc_layout__xl__11 {
     flex-basis: 91.66667%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 91.66667%;
   }
-  .flex__layout .flex__xl__offset__11,
-  .flex__layout .rc_layout__xl__offset__11,
-  .rc_layout .flex__xl__offset__11,
   .rc_layout .rc_layout__xl__offset__11 {
     margin-left: 91.66667%;
   }
-  .flex__layout .flex__xl__12,
-  .flex__layout .rc_layout__xl__12,
-  .rc_layout .flex__xl__12,
   .rc_layout .rc_layout__xl__12 {
     flex-basis: 100%;
     flex-grow: 1;
     flex-shrink: 0;
     max-width: 100%;
   }
-  .flex__layout .flex__xl__offset__12,
-  .flex__layout .rc_layout__xl__offset__12,
-  .rc_layout .flex__xl__offset__12,
   .rc_layout .rc_layout__xl__offset__12 {
     margin-left: 100%;
   }
-  .flex__layout .flex__xl__offset__0,
-  .flex__layout .rc_layout__xl__offset__0,
-  .rc_layout .flex__xl__offset__0,
   .rc_layout .rc_layout__xl__offset__0 {
     margin-left: 0;
   }
 }
 
-.flex__layout .flex__xs,
-.flex__layout .flex__block,
-.flex__layout .rc_layout__xs,
-.flex__layout .rc_layout__block,
-.rc_layout .flex__xs,
-.rc_layout .flex__block,
 .rc_layout .rc_layout__xs,
 .rc_layout .rc_layout__block {
   flex-basis: 0;
@@ -1760,9 +1336,6 @@ textarea {
 }
 
 @media screen and (min-width: 576px) {
-  .flex__layout .flex__sm,
-  .flex__layout .rc_layout__sm,
-  .rc_layout .flex__sm,
   .rc_layout .rc_layout__sm {
     flex-basis: 0;
     flex-grow: 1;
@@ -1770,9 +1343,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  .flex__layout .flex__md,
-  .flex__layout .rc_layout__md,
-  .rc_layout .flex__md,
   .rc_layout .rc_layout__md {
     flex-basis: 0;
     flex-grow: 1;
@@ -1780,9 +1350,6 @@ textarea {
 }
 
 @media screen and (min-width: 992px) {
-  .flex__layout .flex__lg,
-  .flex__layout .rc_layout__lg,
-  .rc_layout .flex__lg,
   .rc_layout .rc_layout__lg {
     flex-basis: 0;
     flex-grow: 1;
@@ -1790,9 +1357,6 @@ textarea {
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__layout .flex__xl,
-  .flex__layout .rc_layout__xl,
-  .rc_layout .flex__xl,
   .rc_layout .rc_layout__xl {
     flex-basis: 0;
     flex-grow: 1;
@@ -1803,10 +1367,6 @@ textarea {
   box-sizing: border-box;
 }
 
-[flex-reverse="true"] .flex__layout,
-[flex-reverse="true"] .rc_layout,
-[flex-order="reverse"] .flex__layout,
-[flex-order="reverse"] .rc_layout,
 [rc_layout-reverse="true"] .flex__layout,
 [rc_layout-reverse="true"] .rc_layout,
 [rc_layout-order="reverse"] .flex__layout,
@@ -1814,12 +1374,6 @@ textarea {
   flex-direction: row-reverse;
 }
 
-[flex-row="true"] .flex__layout,
-[flex-row="true"] .rc_layout,
-[flex-order="false"] .flex__layout,
-[flex-order="false"] .rc_layout,
-[flex-order="row"] .flex__layout,
-[flex-order="row"] .rc_layout,
 [rc_layout-row="true"] .flex__layout,
 [rc_layout-row="true"] .rc_layout,
 [rc_layout-order="false"] .flex__layout,
@@ -1829,10 +1383,6 @@ textarea {
   flex-direction: row;
 }
 
-[flex-column="true"] .flex__layout,
-[flex-column="true"] .rc_layout,
-[flex-order="column"] .flex__layout,
-[flex-order="column"] .rc_layout,
 [rc_layout-column="true"] .flex__layout,
 [rc_layout-column="true"] .rc_layout,
 [rc_layout-order="column"] .flex__layout,
@@ -1840,10 +1390,6 @@ textarea {
   flex-direction: column;
 }
 
-[flex-unset="true"] .flex__layout,
-[flex-unset="true"] .rc_layout,
-[flex-order="unset"] .flex__layout,
-[flex-order="unset"] .rc_layout,
 [rc_layout-unset="true"] .flex__layout,
 [rc_layout-unset="true"] .rc_layout,
 [rc_layout-order="unset"] .flex__layout,
@@ -1851,41 +1397,31 @@ textarea {
   flex-direction: unset;
 }
 
-.flex__layout[flex-reverse="true"], .flex__layout[flex-order="reverse"], .flex__layout[rc_layout-reverse="true"], .flex__layout[rc_layout-order="reverse"],
-.rc_layout[flex-reverse="true"],
-.rc_layout[flex-order="reverse"],
+.flex__layout[rc_layout-reverse="true"], .flex__layout[rc_layout-order="reverse"],
 .rc_layout[rc_layout-reverse="true"],
 .rc_layout[rc_layout-order="reverse"] {
   flex-direction: row-reverse;
 }
 
-.flex__layout[flex-row="true"], .flex__layout[flex-order="false"], .flex__layout[flex-order="row"], .flex__layout[rc_layout-row="true"], .flex__layout[rc_layout-order="false"], .flex__layout[rc_layout-order="row"],
-.rc_layout[flex-row="true"],
-.rc_layout[flex-order="false"],
-.rc_layout[flex-order="row"],
+.flex__layout[rc_layout-row="true"], .flex__layout[rc_layout-order="false"], .flex__layout[rc_layout-order="row"],
 .rc_layout[rc_layout-row="true"],
 .rc_layout[rc_layout-order="false"],
 .rc_layout[rc_layout-order="row"] {
   flex-direction: row;
 }
 
-.flex__layout[flex-column="true"], .flex__layout[flex-order="column"], .flex__layout[rc_layout-column="true"], .flex__layout[rc_layout-order="column"],
-.rc_layout[flex-column="true"],
-.rc_layout[flex-order="column"],
+.flex__layout[rc_layout-column="true"], .flex__layout[rc_layout-order="column"],
 .rc_layout[rc_layout-column="true"],
 .rc_layout[rc_layout-order="column"] {
   flex-direction: column;
 }
 
-.flex__layout[flex-unset="true"], .flex__layout[flex-order="unset"], .flex__layout[rc_layout-unset="true"], .flex__layout[rc_layout-order="unset"],
-.rc_layout[flex-unset="true"],
-.rc_layout[flex-order="unset"],
+.flex__layout[rc_layout-unset="true"], .flex__layout[rc_layout-order="unset"],
 .rc_layout[rc_layout-unset="true"],
 .rc_layout[rc_layout-order="unset"] {
   flex-direction: unset;
 }
 
-.flex__container,
 .rc_layout__container {
   position: relative;
   margin-left: auto;
@@ -1894,30 +1430,15 @@ textarea {
   padding-right: 15px;
 }
 
-.flex__container .flex__layout,
-.flex__container .rc_layout,
-.rc_layout__container .flex__layout,
 .rc_layout__container .rc_layout {
   margin-left: -15px;
   margin-right: -15px;
 }
 
 @media screen and (max-width: 575px) {
-  .flex__layout [class^="flex__sm__"],
-  .flex__layout [class^="rc_layout__sm"],
-  .flex__layout [class^="flex__md__"],
-  .flex__layout [class^="rc_layout__md"],
-  .flex__layout [class^="flex__lg__"],
-  .flex__layout [class^="rc_layout__lg"],
-  .flex__layout [class^="flex__xl__"],
-  .flex__layout [class^="rc_layout__xl"],
-  .rc_layout [class^="flex__sm__"],
   .rc_layout [class^="rc_layout__sm"],
-  .rc_layout [class^="flex__md__"],
   .rc_layout [class^="rc_layout__md"],
-  .rc_layout [class^="flex__lg__"],
   .rc_layout [class^="rc_layout__lg"],
-  .rc_layout [class^="flex__xl__"],
   .rc_layout [class^="rc_layout__xl"] {
     padding-left: 30px;
     padding-right: 30px;
@@ -1926,28 +1447,24 @@ textarea {
 
 /*
 	@media screen and (max-width: $screen-sm-max) {
-		[class^="flex__md"],
 		[class^="rc_layout__md"] {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (max-width: $screen-md-max) {
-		[class^="flex__lg"],
 		[class^="rc_layout__lg"] {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (max-width: $screen-lg-max) {
-		[class^="flex__xl"],
 		[class^="rc_layout__xl"] {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (max-width: $mobile-nav-max) {
-		[class^="flex__sm"],
 		[class^="rc_layout__sm"] {
 			padding-left: $gutter / 2;
 			padding-right: $gutter / 2;
@@ -1956,46 +1473,38 @@ textarea {
 }
 */
 /* Fixing the first and last-column padding
-.flex__layout,
 .rc_layout {
 	@media screen and (max-width: $screen-xs-max) {
-		.flex__xs__12
 		.rc_layout__xs__12 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-		.flex__sm__12
 		.rc_layout__sm__12 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-		.flex__md__12
 		.rc_layout__md__12 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
-		.flex__lg__12
 		.rc_layout__lg__12 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (min-width: $screen-xl-min) {
-		.flex__xl__12
 		.rc_layout__xl__12 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 		}
 	}
 	@media screen and (max-width: $mobile-nav-max) {
-		.flex__xs__12,
-		.flex__sm__12
 		.rc_layout__xs__12,
 		.rc_layout__sm__12 {
 			padding-left: $gutter / 2;
@@ -2004,9 +1513,6 @@ textarea {
 	}
 }
 */
-.flex__layout .flex__full,
-.flex__layout .rc_layout__full,
-.rc_layout .flex__full,
 .rc_layout .rc_layout__full {
   padding-top: 25px;
   padding-bottom: 30px;
@@ -2014,9 +1520,6 @@ textarea {
   padding-right: 30px;
 }
 
-.flex__layout .flex__sidebar,
-.flex__layout .rc_layout__sidebar,
-.rc_layout .flex__sidebar,
 .rc_layout .rc_layout__sidebar {
   padding-top: 25px;
   padding-bottom: 30px;
@@ -2024,9 +1527,6 @@ textarea {
   padding-right: 15px;
 }
 
-.flex__layout .flex__content,
-.flex__layout .rc_layout__content,
-.rc_layout .flex__content,
 .rc_layout .rc_layout__content {
   padding-top: 25px;
   padding-bottom: 30px;
@@ -2035,130 +1535,32 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__sidebar,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__sidebar,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__sidebar,
   .rc_layout .rc_layout__content {
     padding-left: 30px;
     padding-right: 30px;
   }
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar,
   .rc_layout .rc_layout__content {
     padding-bottom: 0;
   }
 }
 
-.flex__container[flex-reverse="true"] .flex__layout .flex__sidebar,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout__sidebar,
-.flex__container[flex-reverse="true"] .rc_layout .flex__sidebar,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout__sidebar,
-.flex__container[flex-order="reverse"] .flex__layout .flex__sidebar,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout__sidebar,
-.flex__container[flex-order="reverse"] .rc_layout .flex__sidebar,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout__sidebar,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__sidebar,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout__sidebar,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__sidebar,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout__sidebar,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__sidebar,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout__sidebar,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__sidebar,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout__sidebar,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__sidebar,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout__sidebar,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__sidebar,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout__sidebar,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__sidebar,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout__sidebar,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__sidebar,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout__sidebar {
   padding-left: 15px;
   padding-right: 30px;
 }
 
-.flex__container[flex-reverse="true"] .flex__layout .flex__content,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout__content,
-.flex__container[flex-reverse="true"] .rc_layout .flex__content,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout__content,
-.flex__container[flex-order="reverse"] .flex__layout .flex__content,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout__content,
-.flex__container[flex-order="reverse"] .rc_layout .flex__content,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout__content,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__content,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout__content,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__content,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout__content,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__content,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout__content,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__content,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout__content,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__content,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout__content,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__content,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout__content,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__content,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout__content,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__content,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout__content {
   padding-right: 15px;
   padding-left: 30px;
 }
 
 @media screen and (max-width: 767px) {
-  .flex__container[flex-reverse="true"] .flex__layout .flex__sidebar,
-  .flex__container[flex-reverse="true"] .flex__layout .flex__content,
-  .flex__container[flex-reverse="true"] .flex__layout .rc_layout__sidebar,
-  .flex__container[flex-reverse="true"] .flex__layout .rc_layout__content,
-  .flex__container[flex-reverse="true"] .rc_layout .flex__sidebar,
-  .flex__container[flex-reverse="true"] .rc_layout .flex__content,
-  .flex__container[flex-reverse="true"] .rc_layout .rc_layout__sidebar,
-  .flex__container[flex-reverse="true"] .rc_layout .rc_layout__content,
-  .flex__container[flex-order="reverse"] .flex__layout .flex__sidebar,
-  .flex__container[flex-order="reverse"] .flex__layout .flex__content,
-  .flex__container[flex-order="reverse"] .flex__layout .rc_layout__sidebar,
-  .flex__container[flex-order="reverse"] .flex__layout .rc_layout__content,
-  .flex__container[flex-order="reverse"] .rc_layout .flex__sidebar,
-  .flex__container[flex-order="reverse"] .rc_layout .flex__content,
-  .flex__container[flex-order="reverse"] .rc_layout .rc_layout__sidebar,
-  .flex__container[flex-order="reverse"] .rc_layout .rc_layout__content,
-  .rc_layout__container[flex-reverse="true"] .flex__layout .flex__sidebar,
-  .rc_layout__container[flex-reverse="true"] .flex__layout .flex__content,
-  .rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout__sidebar,
-  .rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout__content,
-  .rc_layout__container[flex-reverse="true"] .rc_layout .flex__sidebar,
-  .rc_layout__container[flex-reverse="true"] .rc_layout .flex__content,
-  .rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout__sidebar,
-  .rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout__content,
-  .rc_layout__container[flex-order="reverse"] .flex__layout .flex__sidebar,
-  .rc_layout__container[flex-order="reverse"] .flex__layout .flex__content,
-  .rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout__sidebar,
-  .rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout__content,
-  .rc_layout__container[flex-order="reverse"] .rc_layout .flex__sidebar,
-  .rc_layout__container[flex-order="reverse"] .rc_layout .flex__content,
-  .rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout__sidebar,
-  .rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout__content,
-  .rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__sidebar,
-  .rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__content,
-  .rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout__content,
-  .rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__sidebar,
-  .rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__content,
   .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout__sidebar,
   .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout__content,
-  .rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__sidebar,
-  .rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__content,
-  .rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout__content,
-  .rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__sidebar,
-  .rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__content,
   .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout__sidebar,
   .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout__content {
     padding-left: 30px;
@@ -2166,121 +1568,11 @@ textarea {
   }
 }
 
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__xl"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__xs"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__sm"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__md"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__lg"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__xl"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__xs"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__sm"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__md"]:first-child,
@@ -2289,121 +1581,11 @@ textarea {
   padding-right: 30px;
 }
 
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="flex__xl"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__xs"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__sm"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__md"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__lg"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="flex__xl"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__xs"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__sm"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout [class^="rc_layout__md"]:last-child,
@@ -2412,241 +1594,11 @@ textarea {
   padding-left: 30px;
 }
 
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:first-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:first-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:first-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:first-child,
@@ -2655,241 +1607,11 @@ textarea {
   padding-right: 15px;
 }
 
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.flex__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[flex-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__lg"]:last-child,
 .rc_layout__container[rc_layout-reverse="true"] .rc_layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .flex__layout .rc_layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="flex__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .flex__layout [class^="rc_layout__xl"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__xs"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__sm"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__md"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__lg"]:last-child,
-.rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="flex__xl"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__xs"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__sm"]:last-child,
 .rc_layout__container[rc_layout-order="reverse"] .rc_layout .rc_layout [class^="rc_layout__md"]:last-child,
@@ -2898,10 +1620,6 @@ textarea {
   padding-left: 15px;
 }
 
-.flex__container[flex-style="static"],
-.flex__container[flex-static="true"],
-.rc_layout__container[flex-style="static"],
-.rc_layout__container[flex-static="true"],
 .rc_layout__container[rc_layout-style="static"],
 .rc_layout__container[rc_layout-static="true"] {
   margin-left: auto;
@@ -2909,10 +1627,6 @@ textarea {
 }
 
 @media screen and (max-width: 575px) {
-  .flex__container[flex-style="static"],
-  .flex__container[flex-static="true"],
-  .rc_layout__container[flex-style="static"],
-  .rc_layout__container[flex-static="true"],
   .rc_layout__container[rc_layout-style="static"],
   .rc_layout__container[rc_layout-static="true"] {
     max-width: 100%;
@@ -2920,10 +1634,6 @@ textarea {
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .flex__container[flex-style="static"],
-  .flex__container[flex-static="true"],
-  .rc_layout__container[flex-style="static"],
-  .rc_layout__container[flex-static="true"],
   .rc_layout__container[rc_layout-style="static"],
   .rc_layout__container[rc_layout-static="true"] {
     max-width: 576px;
@@ -2931,10 +1641,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .flex__container[flex-style="static"],
-  .flex__container[flex-static="true"],
-  .rc_layout__container[flex-style="static"],
-  .rc_layout__container[flex-static="true"],
   .rc_layout__container[rc_layout-style="static"],
   .rc_layout__container[rc_layout-static="true"] {
     max-width: 768px;
@@ -2942,10 +1648,6 @@ textarea {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .flex__container[flex-style="static"],
-  .flex__container[flex-static="true"],
-  .rc_layout__container[flex-style="static"],
-  .rc_layout__container[flex-static="true"],
   .rc_layout__container[rc_layout-style="static"],
   .rc_layout__container[rc_layout-static="true"] {
     max-width: 992px;
@@ -2953,229 +1655,35 @@ textarea {
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__container[flex-style="static"],
-  .flex__container[flex-static="true"],
-  .rc_layout__container[flex-style="static"],
-  .rc_layout__container[flex-static="true"],
   .rc_layout__container[rc_layout-style="static"],
   .rc_layout__container[rc_layout-static="true"] {
     max-width: 1200px;
   }
 }
 
-.flex__container[flex-style="seamless"],
-.flex__container[flex-seamless="true"],
-.rc_layout__container[flex-style="seamless"],
-.rc_layout__container[flex-seamless="true"],
 .rc_layout__container[rc_layout-style="seamless"],
 .rc_layout__container[rc_layout-seamless="true"] {
   padding-left: 0;
   padding-right: 0;
 }
 
-.flex__container[flex-style="seamless"] > .flex__layout,
-.flex__container[flex-style="seamless"] > .rc_layout,
-.flex__container[flex-seamless="true"] > .flex__layout,
-.flex__container[flex-seamless="true"] > .rc_layout,
-.rc_layout__container[flex-style="seamless"] > .flex__layout,
-.rc_layout__container[flex-style="seamless"] > .rc_layout,
-.rc_layout__container[flex-seamless="true"] > .flex__layout,
-.rc_layout__container[flex-seamless="true"] > .rc_layout,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout,
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout,
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout {
   margin-left: 0;
   margin-right: 0;
 }
 
-.flex__container[flex-style="seamless"] > .flex__layout > .flex__full,
-.flex__container[flex-style="seamless"] > .flex__layout > .flex__sidebar,
-.flex__container[flex-style="seamless"] > .flex__layout > .flex__content,
-.flex__container[flex-style="seamless"] > .flex__layout > .rc_layout__full,
-.flex__container[flex-style="seamless"] > .flex__layout > .rc_layout__sidebar,
-.flex__container[flex-style="seamless"] > .flex__layout > .rc_layout__content,
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xs"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__sm"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__md"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__lg"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xl"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__xs"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__sm"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__md"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__lg"],
-.flex__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__xl"],
-.flex__container[flex-style="seamless"] > .rc_layout > .flex__full,
-.flex__container[flex-style="seamless"] > .rc_layout > .flex__sidebar,
-.flex__container[flex-style="seamless"] > .rc_layout > .flex__content,
-.flex__container[flex-style="seamless"] > .rc_layout > .rc_layout__full,
-.flex__container[flex-style="seamless"] > .rc_layout > .rc_layout__sidebar,
-.flex__container[flex-style="seamless"] > .rc_layout > .rc_layout__content,
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="flex__xs"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="flex__sm"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="flex__md"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="flex__lg"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="flex__xl"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__xs"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__sm"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__md"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__lg"],
-.flex__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__xl"],
-.flex__container[flex-seamless="true"] > .flex__layout > .flex__full,
-.flex__container[flex-seamless="true"] > .flex__layout > .flex__sidebar,
-.flex__container[flex-seamless="true"] > .flex__layout > .flex__content,
-.flex__container[flex-seamless="true"] > .flex__layout > .rc_layout__full,
-.flex__container[flex-seamless="true"] > .flex__layout > .rc_layout__sidebar,
-.flex__container[flex-seamless="true"] > .flex__layout > .rc_layout__content,
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xs"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__sm"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__md"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__lg"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xl"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__xs"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__sm"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__md"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__lg"],
-.flex__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__xl"],
-.flex__container[flex-seamless="true"] > .rc_layout > .flex__full,
-.flex__container[flex-seamless="true"] > .rc_layout > .flex__sidebar,
-.flex__container[flex-seamless="true"] > .rc_layout > .flex__content,
-.flex__container[flex-seamless="true"] > .rc_layout > .rc_layout__full,
-.flex__container[flex-seamless="true"] > .rc_layout > .rc_layout__sidebar,
-.flex__container[flex-seamless="true"] > .rc_layout > .rc_layout__content,
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="flex__xs"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="flex__sm"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="flex__md"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="flex__lg"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="flex__xl"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__xs"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__sm"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__md"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__lg"],
-.flex__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__xl"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .flex__full,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .flex__sidebar,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .flex__content,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .rc_layout__full,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .rc_layout__sidebar,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > .rc_layout__content,
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xs"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="flex__sm"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="flex__md"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="flex__lg"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="flex__xl"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__xs"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__sm"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__md"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__lg"],
-.rc_layout__container[flex-style="seamless"] > .flex__layout > div[class^="rc_layout__xl"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .flex__full,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .flex__sidebar,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .flex__content,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .rc_layout__full,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .rc_layout__sidebar,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > .rc_layout__content,
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="flex__xs"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="flex__sm"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="flex__md"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="flex__lg"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="flex__xl"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__xs"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__sm"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__md"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__lg"],
-.rc_layout__container[flex-style="seamless"] > .rc_layout > div[class^="rc_layout__xl"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .flex__full,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .flex__sidebar,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .flex__content,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .rc_layout__full,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .rc_layout__sidebar,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > .rc_layout__content,
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xs"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="flex__sm"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="flex__md"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="flex__lg"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="flex__xl"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__xs"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__sm"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__md"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__lg"],
-.rc_layout__container[flex-seamless="true"] > .flex__layout > div[class^="rc_layout__xl"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .flex__full,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .flex__sidebar,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .flex__content,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .rc_layout__full,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .rc_layout__sidebar,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > .rc_layout__content,
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="flex__xs"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="flex__sm"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="flex__md"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="flex__lg"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="flex__xl"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__xs"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__sm"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__md"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__lg"],
-.rc_layout__container[flex-seamless="true"] > .rc_layout > div[class^="rc_layout__xl"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .flex__full,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .flex__sidebar,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .flex__content,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .rc_layout__full,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .rc_layout__sidebar,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > .rc_layout__content,
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="flex__xs"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="flex__sm"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="flex__md"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="flex__lg"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="flex__xl"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="rc_layout__xs"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="rc_layout__sm"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="rc_layout__md"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="rc_layout__lg"],
-.rc_layout__container[rc_layout-style="seamless"] > .flex__layout > div[class^="rc_layout__xl"],
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .flex__full,
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .flex__sidebar,
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .flex__content,
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .rc_layout__full,
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .rc_layout__sidebar,
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > .rc_layout__content,
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="flex__xs"],
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="flex__sm"],
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="flex__md"],
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="flex__lg"],
-.rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="flex__xl"],
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="rc_layout__xs"],
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="rc_layout__sm"],
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="rc_layout__md"],
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="rc_layout__lg"],
 .rc_layout__container[rc_layout-style="seamless"] > .rc_layout > div[class^="rc_layout__xl"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .flex__full,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .flex__sidebar,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .flex__content,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .rc_layout__full,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .rc_layout__sidebar,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > .rc_layout__content,
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="flex__xs"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="flex__sm"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="flex__md"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="flex__lg"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="flex__xl"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="rc_layout__xs"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="rc_layout__sm"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="rc_layout__md"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="rc_layout__lg"],
-.rc_layout__container[rc_layout-seamless="true"] > .flex__layout > div[class^="rc_layout__xl"],
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .flex__full,
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .flex__sidebar,
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .flex__content,
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .rc_layout__full,
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .rc_layout__sidebar,
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > .rc_layout__content,
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="flex__xs"],
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="flex__sm"],
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="flex__md"],
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="flex__lg"],
-.rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="flex__xl"],
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="rc_layout__xs"],
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="rc_layout__sm"],
 .rc_layout__container[rc_layout-seamless="true"] > .rc_layout > div[class^="rc_layout__md"],
@@ -3185,51 +1693,30 @@ textarea {
   padding-right: 0;
 }
 
-.flex__container[flex-max="xs"],
-.rc_layout__container[flex-max="xs"],
 .rc_layout__container[rc_layout-max="xs"] {
   max-width: 575px !important;
 }
 
-.flex__container[flex-max="sm"],
-.rc_layout__container[flex-max="sm"],
 .rc_layout__container[rc_layout-max="sm"] {
   max-width: 767px !important;
 }
 
-.flex__container[flex-max="md"],
-.rc_layout__container[flex-max="md"],
 .rc_layout__container[rc_layout-max="md"] {
   max-width: 991px !important;
 }
 
-.flex__container[flex-max="lg"],
-.rc_layout__container[flex-max="lg"],
 .rc_layout__container[rc_layout-max="lg"] {
   max-width: 1199px !important;
 }
 
-.flex__container[flex-anchor="left"],
-.rc_layout__container[flex-anchor="left"],
 .rc_layout__container[rc_layout-anchor="left"] {
   margin-left: 0;
 }
 
-.flex__container[flex-anchor="right"],
-.rc_layout__container[flex-anchor="right"],
 .rc_layout__container[rc_layout-anchor="right"] {
   margin-right: 0;
 }
 
-.flex__layout .flex__full,
-.flex__layout .flex__sidebar,
-.flex__layout .flex__content,
-.flex__layout .rc_layout__full,
-.flex__layout .rc_layout__sidebar,
-.flex__layout .rc_layout__content,
-.rc_layout .flex__full,
-.rc_layout .flex__sidebar,
-.rc_layout .flex__content,
 .rc_layout .rc_layout__full,
 .rc_layout .rc_layout__sidebar,
 .rc_layout .rc_layout__content {
@@ -3237,18 +1724,12 @@ textarea {
   flex-shrink: 0;
 }
 
-.flex__layout .flex__full,
-.flex__layout .rc_layout__full,
-.rc_layout .flex__full,
 .rc_layout .rc_layout__full {
   flex-basis: 100%;
   max-width: 100%;
 }
 
 @media screen and (max-width: 767px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar {
     flex-basis: 100%;
     max-width: 100%;
@@ -3256,9 +1737,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 767px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar {
     flex-basis: 33.33333%;
     max-width: 33.33333%;
@@ -3266,9 +1744,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar {
     flex-basis: 25%;
     max-width: 25%;
@@ -3276,9 +1751,6 @@ textarea {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar {
     flex-basis: 25%;
     max-width: 25%;
@@ -3286,9 +1758,6 @@ textarea {
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__layout .flex__sidebar,
-  .flex__layout .rc_layout__sidebar,
-  .rc_layout .flex__sidebar,
   .rc_layout .rc_layout__sidebar {
     flex-basis: 16.66667%;
     max-width: 16.66667%;
@@ -3296,9 +1765,6 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__content {
     flex-basis: 100%;
     max-width: 100%;
@@ -3306,9 +1772,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 767px) {
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__content {
     flex-basis: 66.66667%;
     max-width: 66.66667%;
@@ -3316,9 +1779,6 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__content {
     flex-basis: 75%;
     max-width: 75%;
@@ -3326,9 +1786,6 @@ textarea {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__content {
     flex-basis: 75%;
     max-width: 75%;
@@ -3336,9 +1793,6 @@ textarea {
 }
 
 @media screen and (min-width: 1200px) {
-  .flex__layout .flex__content,
-  .flex__layout .rc_layout__content,
-  .rc_layout .flex__content,
   .rc_layout .rc_layout__content {
     flex-basis: 83.33333%;
     max-width: 83.33333%;
@@ -3346,23 +1800,8 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
-  .flex__container[flex-max="sm"] .flex__sidebar,
-  .flex__container[flex-max="sm"] .rc_layout__sidebar,
-  .flex__container[flex-max="md"] .flex__sidebar,
-  .flex__container[flex-max="md"] .rc_layout__sidebar,
-  .flex__container[flex-max="lg"] .flex__sidebar,
-  .flex__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="sm"] .flex__sidebar,
-  .rc_layout__container[flex-max="sm"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="md"] .flex__sidebar,
-  .rc_layout__container[flex-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="lg"] .flex__sidebar,
-  .rc_layout__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="sm"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="sm"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="md"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="lg"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__sidebar {
     flex-basis: 100%;
     max-width: 100%;
@@ -3370,23 +1809,8 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  .flex__container[flex-max="sm"] .flex__sidebar,
-  .flex__container[flex-max="sm"] .rc_layout__sidebar,
-  .flex__container[flex-max="md"] .flex__sidebar,
-  .flex__container[flex-max="md"] .rc_layout__sidebar,
-  .flex__container[flex-max="lg"] .flex__sidebar,
-  .flex__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="sm"] .flex__sidebar,
-  .rc_layout__container[flex-max="sm"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="md"] .flex__sidebar,
-  .rc_layout__container[flex-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="lg"] .flex__sidebar,
-  .rc_layout__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="sm"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="sm"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="md"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="lg"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__sidebar {
     flex-basis: 25%;
     max-width: 25%;
@@ -3394,23 +1818,8 @@ textarea {
 }
 
 @media screen and (max-width: 767px) {
-  .flex__container[flex-max="sm"] .flex__content,
-  .flex__container[flex-max="sm"] .rc_layout__content,
-  .flex__container[flex-max="md"] .flex__content,
-  .flex__container[flex-max="md"] .rc_layout__content,
-  .flex__container[flex-max="lg"] .flex__content,
-  .flex__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[flex-max="sm"] .flex__content,
-  .rc_layout__container[flex-max="sm"] .rc_layout__content,
-  .rc_layout__container[flex-max="md"] .flex__content,
-  .rc_layout__container[flex-max="md"] .rc_layout__content,
-  .rc_layout__container[flex-max="lg"] .flex__content,
-  .rc_layout__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="sm"] .flex__content,
   .rc_layout__container[rc_layout-max="sm"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="md"] .flex__content,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="lg"] .flex__content,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__content {
     flex-basis: 100%;
     max-width: 100%;
@@ -3418,23 +1827,8 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  .flex__container[flex-max="sm"] .flex__content,
-  .flex__container[flex-max="sm"] .rc_layout__content,
-  .flex__container[flex-max="md"] .flex__content,
-  .flex__container[flex-max="md"] .rc_layout__content,
-  .flex__container[flex-max="lg"] .flex__content,
-  .flex__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[flex-max="sm"] .flex__content,
-  .rc_layout__container[flex-max="sm"] .rc_layout__content,
-  .rc_layout__container[flex-max="md"] .flex__content,
-  .rc_layout__container[flex-max="md"] .rc_layout__content,
-  .rc_layout__container[flex-max="lg"] .flex__content,
-  .rc_layout__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="sm"] .flex__content,
   .rc_layout__container[rc_layout-max="sm"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="md"] .flex__content,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="lg"] .flex__content,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__content {
     flex-basis: 66.66667%;
     max-width: 66.66667%;
@@ -3442,17 +1836,7 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  .flex__container[flex-max="md"] .flex__sidebar,
-  .flex__container[flex-max="md"] .rc_layout__sidebar,
-  .flex__container[flex-max="lg"] .flex__sidebar,
-  .flex__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="md"] .flex__sidebar,
-  .rc_layout__container[flex-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="lg"] .flex__sidebar,
-  .rc_layout__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="md"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="lg"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__sidebar {
     flex-basis: 33.33333%;
     max-width: 33.33333%;
@@ -3460,17 +1844,7 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  .flex__container[flex-max="md"] .flex__content,
-  .flex__container[flex-max="md"] .rc_layout__content,
-  .flex__container[flex-max="lg"] .flex__content,
-  .flex__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[flex-max="md"] .flex__content,
-  .rc_layout__container[flex-max="md"] .rc_layout__content,
-  .rc_layout__container[flex-max="lg"] .flex__content,
-  .rc_layout__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="md"] .flex__content,
   .rc_layout__container[rc_layout-max="md"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="lg"] .flex__content,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__content {
     flex-basis: 66.66667%;
     max-width: 66.66667%;
@@ -3478,11 +1852,6 @@ textarea {
 }
 
 @media screen and (min-width: 992px) {
-  .flex__container[flex-max="lg"] .flex__sidebar,
-  .flex__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[flex-max="lg"] .flex__sidebar,
-  .rc_layout__container[flex-max="lg"] .rc_layout__sidebar,
-  .rc_layout__container[rc_layout-max="lg"] .flex__sidebar,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__sidebar {
     flex-basis: 25%;
     max-width: 25%;
@@ -3490,41 +1859,18 @@ textarea {
 }
 
 @media screen and (min-width: 992px) {
-  .flex__container[flex-max="lg"] .flex__content,
-  .flex__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[flex-max="lg"] .flex__content,
-  .rc_layout__container[flex-max="lg"] .rc_layout__content,
-  .rc_layout__container[rc_layout-max="lg"] .flex__content,
   .rc_layout__container[rc_layout-max="lg"] .rc_layout__content {
     flex-basis: 75%;
     max-width: 75%;
   }
 }
 
-.flex__content > .flex__container,
-.flex__content > .rc_layout__container,
-.rc_layout__content > .flex__container,
 .rc_layout__content > .rc_layout__container {
   padding-left: 0;
   padding-right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  [flex-padded="true"] [class^="flex__xs"],
-  [flex-padded="true"] [class^="flex__sm"],
-  [flex-padded="true"] [class^="flex__md"],
-  [flex-padded="true"] [class^="flex__lg"],
-  [flex-padded="true"] [class^="flex__xl"],
-  [flex-padded="true"] [class^="rc_layout__xs"],
-  [flex-padded="true"] [class^="rc_layout__sm"],
-  [flex-padded="true"] [class^="rc_layout__md"],
-  [flex-padded="true"] [class^="rc_layout__lg"],
-  [flex-padded="true"] [class^="rc_layout__xl"],
-  [rc_layout-padded="true"] [class^="flex__xs"],
-  [rc_layout-padded="true"] [class^="flex__sm"],
-  [rc_layout-padded="true"] [class^="flex__md"],
-  [rc_layout-padded="true"] [class^="flex__lg"],
-  [rc_layout-padded="true"] [class^="flex__xl"],
   [rc_layout-padded="true"] [class^="rc_layout__xs"],
   [rc_layout-padded="true"] [class^="rc_layout__sm"],
   [rc_layout-padded="true"] [class^="rc_layout__md"],
@@ -3536,95 +1882,41 @@ textarea {
 }
 
 @media screen and (min-width: 768px) {
-  [flex-padded="true"] .flex__layout + .flex__layout,
-  [flex-padded="true"] .flex__layout + .rc_layout,
-  [flex-padded="true"] .rc_layout + .flex__layout,
-  [flex-padded="true"] .rc_layout + .rc_layout,
-  [rc_layout-padded="true"] .flex__layout + .flex__layout,
-  [rc_layout-padded="true"] .flex__layout + .rc_layout,
-  [rc_layout-padded="true"] .rc_layout + .flex__layout,
   [rc_layout-padded="true"] .rc_layout + .rc_layout {
     margin-top: 30px;
   }
 }
 
-.flex__full-height > .flex__container > .flex__layout > .flex__sidebar,
-.flex__full-height > .flex__container > .flex__layout > .rc_layout__sidebar,
-.flex__full-height > .flex__container > .rc_layout__layout > .flex__sidebar,
-.flex__full-height > .flex__container > .rc_layout__layout > .rc_layout__sidebar,
-.flex__full-height > .rc_layout__container > .flex__layout > .flex__sidebar,
-.flex__full-height > .rc_layout__container > .flex__layout > .rc_layout__sidebar,
-.flex__full-height > .rc_layout__container > .rc_layout__layout > .flex__sidebar,
-.flex__full-height > .rc_layout__container > .rc_layout__layout > .rc_layout__sidebar,
-.rc_layout__full-height > .flex__container > .flex__layout > .flex__sidebar,
-.rc_layout__full-height > .flex__container > .flex__layout > .rc_layout__sidebar,
-.rc_layout__full-height > .flex__container > .rc_layout__layout > .flex__sidebar,
-.rc_layout__full-height > .flex__container > .rc_layout__layout > .rc_layout__sidebar,
-.rc_layout__full-height > .rc_layout__container > .flex__layout > .flex__sidebar,
-.rc_layout__full-height > .rc_layout__container > .flex__layout > .rc_layout__sidebar,
-.rc_layout__full-height > .rc_layout__container > .rc_layout__layout > .flex__sidebar,
 .rc_layout__full-height > .rc_layout__container > .rc_layout__layout > .rc_layout__sidebar {
   padding-top: 0;
   padding-bottom: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .flex__full-height,
-  .rc___full-height {
+  .rc_layout__full-height {
     height: 100%;
   }
-  .flex__full-height > .navbar,
-  .flex__full-height > .rc_navbar,
-  .rc___full-height > .navbar,
-  .rc___full-height > .rc_navbar {
+  .rc_layout__full-height > .navbar,
+  .rc_layout__full-height > .rc_navbar {
     z-index: 1;
   }
-  .flex__full-height > .navbar + .flex__container,
-  .flex__full-height > .rc_navbar + .rc_layout__container,
-  .rc___full-height > .navbar + .flex__container,
-  .rc___full-height > .rc_navbar + .rc_layout__container {
+  .rc_layout__full-height > .rc_navbar + .rc_layout__container {
     margin-top: -61px;
     padding-top: 61px;
     z-index: 0;
   }
-  .flex__full-height > .flex__container,
-  .flex__full-height > .rc_layout__container,
-  .rc___full-height > .flex__container,
-  .rc___full-height > .rc_layout__container {
+  .rc_layout__full-height > .rc_layout__container {
     height: 100%;
   }
-  .flex__full-height > .flex__container > .flex__layout,
-  .flex__full-height > .flex__container > .rc_layout,
-  .flex__full-height > .rc_layout__container > .flex__layout,
-  .flex__full-height > .rc_layout__container > .rc_layout,
-  .rc___full-height > .flex__container > .flex__layout,
-  .rc___full-height > .flex__container > .rc_layout,
-  .rc___full-height > .rc_layout__container > .flex__layout,
-  .rc___full-height > .rc_layout__container > .rc_layout {
+  .rc_layout__full-height > .rc_layout__container > .rc_layout {
     min-height: 100%;
   }
-  .flex__full-height > .flex__container > .flex__layout > .flex__sidebar,
-  .flex__full-height > .flex__container > .flex__layout > .rc_layout__sidebar,
-  .flex__full-height > .flex__container > .rc_layout > .flex__sidebar,
-  .flex__full-height > .flex__container > .rc_layout > .rc_layout__sidebar,
-  .flex__full-height > .rc_layout__container > .flex__layout > .flex__sidebar,
-  .flex__full-height > .rc_layout__container > .flex__layout > .rc_layout__sidebar,
-  .flex__full-height > .rc_layout__container > .rc_layout > .flex__sidebar,
-  .flex__full-height > .rc_layout__container > .rc_layout > .rc_layout__sidebar,
-  .rc___full-height > .flex__container > .flex__layout > .flex__sidebar,
-  .rc___full-height > .flex__container > .flex__layout > .rc_layout__sidebar,
-  .rc___full-height > .flex__container > .rc_layout > .flex__sidebar,
-  .rc___full-height > .flex__container > .rc_layout > .rc_layout__sidebar,
-  .rc___full-height > .rc_layout__container > .flex__layout > .flex__sidebar,
-  .rc___full-height > .rc_layout__container > .flex__layout > .rc_layout__sidebar,
-  .rc___full-height > .rc_layout__container > .rc_layout > .flex__sidebar,
-  .rc___full-height > .rc_layout__container > .rc_layout > .rc_layout__sidebar {
+  .rc_layout__full-height > .rc_layout__container > .rc_layout > .rc_layout__sidebar {
     padding-top: 0;
     padding-bottom: 0;
   }
 }
 
-.flex__full-height > .rc_notification + .flex__container,
 .rc_layout__full-height > .rc_notification + .rc_layout__container {
   height: auto;
 }

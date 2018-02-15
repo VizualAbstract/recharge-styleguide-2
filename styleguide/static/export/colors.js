@@ -7,7 +7,8 @@
 (function (factory) {
 	"use strict";
 
-	if (typeof define === 'function' && define.amd) { // AMD
+	/* Avoid using amd or exports since we don't want to scramble on other store's structure */
+	/*if (typeof define === 'function' && define.amd) { // AMD
 		define(['jquery'], factory);
 	}
 	else if (typeof exports == "object" && typeof module == "object") { // CommonJS
@@ -15,7 +16,8 @@
 	}
 	else { // Browser
 		factory(jQuery);
-	}
+	}*/
+	factory(jQuery);
 })(function($, undefined) {
 	"use strict";
 

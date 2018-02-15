@@ -1,12 +1,14 @@
 /*! Tether 1.4.0 */
 (function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
+  /* Avoid using amd or exports since we don't want to scramble on other store's structure */
+  /*if (typeof define === 'function' && define.amd) {
     define(factory);
   } else if (typeof exports === 'object') {
     module.exports = factory(require, exports, module);
   } else {
     root.Tether = factory();
-  }
+  }*/
+  root.Tether = factory();
 }(this, function(require, exports, module) {
 
 'use strict';
