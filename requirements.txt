@@ -42,7 +42,7 @@ pycurl==7.19.3
 pyserial==2.6
 python-apt==0.9.3.5ubuntu2
 python-debian==0.1.21-nmu2ubuntu2
-requests==2.2.1
+requests==2.20.0
 scandir==1.4
 simplegeneric==0.8.1
 six==1.10.0
